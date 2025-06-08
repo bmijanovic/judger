@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" 
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U PODGORICI</FRBRauthor>
+                    <FRBRdate date="2016-04-21">2016-04-21</FRBRdate>
+                    <FRBRtitle>K.br. 448/14</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo"/>
+                <TLCPerson eId="lMijuskovic" href="/ontology/person/lMijuskovic" showAs="Larisa Mijušković-Stamatović"/>
+                <TLCPerson eId="vVukasinovic" href="/ontology/person/vVukasinovic" showAs="Valentina Vukašinović"/>
+                <TLCPerson eId="bN" href="/ontology/person/bN" showAs="B. N."/>
+                <TLCPerson eId="aM" href="/ontology/person/aM" showAs="A. M."/>
+                <TLCPerson eId="iMedojevic" href="/ontology/person/iMedojevic" showAs="Ivan Medojević"/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Tužilac"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization>, 
+                kao prvostepeni, krivični, po sudiji 
+                <party id="lMijuskovic" refersTo="#lMijuskovic" as="#judge">Larisi Mijušković-Stamatović</party>, 
+                uz učešće 
+                <party id="vVukasinovic" refersTo="#vVukasinovic" as="#clerk">Valentine Vukašinović</party>, 
+                u krivičnom predmetu protiv okrivljenog 
+                <party id="bN" refersTo="#bN" as="#defendant">B. N.</party>, 
+                iz Podgorice, zbog krivičnog djela protivpravno lišenje slobode iz 
+                <ref href="/krivicni/art_162">čl.162 st. 1 Krivičnog zakonika</ref> 
+                u vezi <ref href="/krivicni/art_23">čl. 23 st. 2 Krivičnog zakonika</ref> 
+                u sticaju sa krivičnim djelom zlostavljanje iz 
+                <ref href="/krivicni/art_166a">čl. 166a st. 1 Krivičnog zakonika</ref> 
+                u vezi <ref href="/krivicni/art_23">čl. 23 st. 2 Krivičnog zakonika</ref>, 
+                odlučujući po optužnom predlogu 
+                <organization id="odt" refersTo="#odt">ODT-a Podgorica Kt.br. 1113/13 od 25.06.2014.</organization>, 
+                kojeg je na glavnom pretresu zastupao 
+                <party id="iMedojevic" refersTo="#iMedojevic" as="#prosecutor">Ivan Medojević</party>, 
+                državni tužilac u Osnovnom državnom tužilaštvu Podgorica, nakon glavnog i javnog pretresa, 
+                održanog dana <date date="2016-04-21">21.04.2016.</date> godine u prisustvu zastupnika optužbe, 
+                okrivljenog sa braniocem po izboru 
+                <party id="aM" refersTo="#aM" as="#lawyer">A. M.</party>, 
+                advokatom iz Podgorice, donio je, a dana <date date="2016-04-25">25.04.2016.</date> godine i javno objavio,
+            </p>
+            
+            <p><b>P R E S U D U</b></p>
+            
+            <p>
+                Okrivljeni: 
+                <party id="bN" refersTo="#bN">B. N.</party>, 
+                od oca Z. i majke N., rođene B., rođen xx.xx.19xx godine u Podgorici, sa prebivalištem u Podgorici, 
+                Ul. D.V. br. x, državljanin Crne Gore, završio srednju školu, neoženjen, bez djece, nezaposlen, 
+                srednjeg imovnog stanja, ranije osuđivan i to: 
+                <ref href="/presuda/123-11">presudom Višeg suda u Podgorici K.br.123/11 od 11.05.2012. godine</ref> 
+                zbog krivičnog djela iz <ref href="/krivicni/art_143">čl. 143</ref> u vezi <ref href="/krivicni/art_20">čl. 20</ref> Krivičnog zakonika na kaznu zatvora u trajanju od dvije godine; 
+                <ref href="/presuda/365-12">presudom Osnovnog suda u Podgorici K.br. 365/12 od 08.10.2012. godine</ref>, 
+                zbog krivičnog djela iz <ref href="/krivicni/art_403">čl. 403 st. 1</ref> Krivičnog zakonika na kaznu zatvora u trajanju od tri mjeseca;
+            </p>
+            
+            <p><b>K R I V J E</b></p>
+            
+            <p>
+                Zato što je: Dana <date date="2013-09-04">04.septembra 2013.</date> godine, u Podgorici, u ulici Bracana Bracanovića, 
+                zajedno sa NN licem, protivpravno oduzeo slobodu kretanja oštećenom <party id="bN" refersTo="#bN">B. N.</party>, te istog zlostavljao, 
+                na način što se upravljajući vozilom marke "Reno clio" registarskih oznaka PG ... zaustavio ispred taksi vozila, 
+                u kojem se na mjestu suvozača nalazio oštećeni, nakon čega su okrivljeni i NN lice prišli taksi vozilu, 
+                a zatim otvorili suvozačeva vrata i oštećenom se predstavili kao policajci, naredili mu da izađe iz vozila, 
+                pa kada je oštećeni izašao iz istog, stavili su mu sredstva za vezivanje na ruke i pokušali da ga uguraju u gepek 
+                njihovih vozila, u čemu nijesu uspjeli, već su ga smjestili na zadnje sjedište vozila, te mu na taj način ograničili 
+                slobodu kretanja, i sa vozilom se udaljili u nepoznatom pravcu, pri čemu su ga tokom vožnje više puta udarali rukama 
+                u predjelu ledja i potiljka, a potom ga odveli u borovu šumu na nepoznatoj lokaciji, gdje su ga izgurali iz vozila 
+                i ponovo mu zadali više udaraca u predjelu glave i tijela, govoreći mu "ti truješ moga brata heroinom" i "jebeš djevojke po gradu", 
+                nakon čega su ga, i pored molbi oštećenog da ga ostave na miru, smatrajući da su ga zamijenili sa nekim drugim, 
+                ugurali u gepek njihovog vozila i odvezli u naselje Kakaricka gora, zatim, izvukli iz vozila, okrenuli licem u pravcu 
+                zemlje i nastavili da ga udaraju u predjelu glave i tijela, nanoseći mu tom prilikom laku tjelesnu povredu u vidu 
+                krvnog podliva kapaka oba oka, razderine lijeve ušne školjke, krvnog podliva tkiva poglavine i oguljotine u predjelu 
+                oba ručnog zgloba da bi ga tu ostavili, a oni se udaljili sa lica mjesta, pri čemu je okrivljeni bio svjestan svojih 
+                djela i htio njihovo izvršenje, znajući da je to zabranjeno,
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <num>I</num>
+                    <p>
+                        - Pa mu Sud primjenom citiranih zakonskih odredbi, te odredbi 
+                        <ref href="/krivicni/art_3">čl. 3</ref>, 
+                        <ref href="/krivicni/art_4">čl. 4</ref>, 
+                        <ref href="/krivicni/art_5">čl. 5</ref>, 
+                        <ref href="/krivicni/art_13">čl. 13</ref>, 
+                        <ref href="/krivicni/art_15">čl. 15</ref>, 
+                        <ref href="/krivicni/art_32">čl. 32</ref>, 
+                        <ref href="/krivicni/art_33">čl. 33</ref>, 
+                        <ref href="/krivicni/art_36">čl. 36</ref>, 
+                        <ref href="/krivicni/art_42">čl. 42</ref> i 
+                        <ref href="/krivicni/art_48">čl. 48 st.1</ref> 
+                        Krivičnog zakonika, prethodno utvrđuje;<br/>
+                        -za krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl.162 st. 1</ref> u vezi <ref href="/krivicni/art_23">čl. 23 st. 2</ref> Krivičnog zakonika, kaznu zatvora u trajanju od 4 (četiri) mjeseca,<br/>
+                        -za krivično djelo zlostavljanje iz <ref href="/krivicni/art_166a">čl. 166a st. 1</ref> u vezi <ref href="/krivicni/art_23">čl. 23 st. 2</ref> Krivičnog zakonika, kaznu zatvora u trajanju od 4 (četiri) mjeseca,
+                    </p>
+                </item>
+                
+                <item id="odluka2">
+                    <num>II</num>
+                    <p>
+                        Za ovim Sud primjenom citiranih zakonskih odredbi, te 
+                        <ref href="/krivicni/art_48">čl. 48 st.2 tač. 2 Krivičnog zakonika</ref>, 
+                        te <ref href="/krivicni/art_226">čl. 226</ref>, 
+                        <ref href="/krivicni/art_227">čl. 227</ref>, 
+                        <ref href="/krivicni/art_229">čl. 229</ref> i 
+                        <ref href="/krivicni/art_374">čl. 374 Zakonika o krivičnom postupku</ref> okrivljenog
+                        <b>OSUDJUJE</b><br/>
+                        Na jedinstvenu kaznu zatvora u trajanju od 6 (šest) mjeseci.<br/>
+                        Obavezuje se okrivljeni na ime troškova krivičnog postupka uplati na račun budžetskih sredstava Crne Gore 
+                        iznos od <amount value="104.50">104,50 €</amount> (stotinučetirieurapedesetcenti), te na ime sudskog paušala 
+                        iznos od <amount value="50.00">50,00 €</amount>, sve prednje u roku od 
+                        <time duration="P15D">15 (petnest) dana</time> od dana pravnosnažnosti presude, 
+                        pod prijetnjom prinudne naplate.
+                    </p>
+                </item>
+            </list>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U PODGORICI</FRBRauthor>
+                    <FRBRdate date="2023-12-29">2023-12-29</FRBRdate>
+                    <FRBRtitle>K.br. 607/23</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo u Podgorici"/>
+                <TLCPerson eId="dLubarda" href="/ontology/person/dLubarda" showAs="Dragana Lubarda"/>
+                <TLCPerson eId="mPerovic" href="/ontology/person/mPerovic" showAs="Marina Perović"/>
+                <TLCPerson eId="qB" href="/ontology/person/qB" showAs="Q. B."/>
+                <TLCPerson eId="mI" href="/ontology/person/mI" showAs="M. I."/>
+                <TLCPerson eId="nM" href="/ontology/person/nM" showAs="N. M."/>
+                <TLCPerson eId="bH" href="/ontology/person/bH" showAs="B. H."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Državni tužilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećena"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization>, kao prvostepeni krivični, sudija 
+                <party id="dLubarda" refersTo="#dLubarda" as="#judge">Dragana Lubarda</party>, uz učešće zapisničara 
+                <party id="mPerovic" refersTo="#mPerovic" as="#clerk">Marine Perović</party>, u krivičnom postupku protiv okrivljenog 
+                <party id="qB" refersTo="#qB" as="#defendant">Q. B.</party>, koga brani branilac 
+                <party id="mI" refersTo="#mI" as="#lawyer">M. I.</party>, advokat iz Podgorice, zbog krivičnog djela laka tjelesna povreda iz 
+                <ref href="/krivicni/art_152">čl.152 st.2 u vezi st.1 Krivičnog zakonika Crne Gore</ref> u sticaju sa krivičnim djelom protivpravno lišenje slobode iz 
+                <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>, odlučujući po optužnom predlogu 
+                <organization id="odt" refersTo="#odt">Osnovnog državnog tužilaštva u Podgorici Kt. br. .../23 od 24.10.2023. godine</organization>, nakon glavnog i javnog pretresa održanog dana 
+                <date date="2023-12-25">25.12.2023.</date> godine, u prisustvu zastupnice optužbe 
+                <party id="nM" refersTo="#nM" as="#prosecutor">N. M.</party>, državnog tužioca u Osnovnom državnom tužilaštvu u Podgorici, okrivljenog i branioca, dana 
+                <date date="2023-12-29">29.12.2023.</date> godine, donio je i javno objavio,
+            </p>
+
+            <p><b>P R E S U D U</b></p>
+
+            <p>
+                Okrivljeni: <party id="qB" refersTo="#qB">Q. B.</party>, JMB ...., od oca H. i majke F., rođene B., rođen dana godine u P., K., sa prebivalištem u P. na adresi K., V. R., državljanin K., čiji je jezik albanski, razumije crnogorski, zaposlen na otpadu, neoženjen, bez djece, pismen, završio osnovnu školu, lošeg imovnog stanja, neosuđivan, lišen slobode dana <date date="2023-10-11">11.10.2023.</date> godine od 18,00 časova do pa nadalje
+            </p>
+
+            <p><b>Kriv je</b></p>
+
+            <p>
+                Zato što je: Dana <date date="2023-10-10">10. oktobra 2023</date> godine, oko 19:00 časova, u Podgorici, u naselju V. R. u neuseljenoj kući B. S., svjestan svojih djela čija je izvršenja htio, znajući da su njegova djela zabranjena, protivpravno zatvorio i držao zatvorenu, oštećenu malodobnu <party id="bH" refersTo="#bH" as="#victim">B. H.</party>, na način što je u blizini pekare, Gold", sreo oštećenu i od nje tražio da dodje da razgovaraju, što je ista odbila, nakon čega su došli ispred kuće B. S., gdje je uveo te zaključao ulazna vrata i oštećenoj, koja ga je molila da je pusti da izađe, rekao: „Nećeš ići kući dok te ne izbijem, gdje je držao zatvorenu do 24,00 časa, za koje vrijeme je okrivljeni izlazio iz kuće i svaki put zaključavao ulazna vrata i ključ nosio sa sobom, dok je za to vrijeme oštećena pokušavala da pobjegne kroz prozor, u čemu nije uspjela i u kojem objektu je lako tjelesno povrijedio oštećenu, na način što je daskom i metalnom šipkom, kao sredstvima podobnim da tijelo teško povrijede i zdravlje teško naruše, više puta udarao u predjelu tijela, i to daskom više puta u predjelu lijeve noge, od kojih udaraca se daska slomila, pa je uzeo metalnu šipku, kojom joj je zadao više udaraca u predjelu lijeve ruke i lijeve noge, kojom prillkom joj je nanio lake tjelesne povrede u vidu krvnog podliva u predjelu lijeve podlaktice, tri krvna podliva u predjelu lijeve potkoljenice i krvnog podliva u kičmenom predjelu, nakon čega joj je rekao da izađe iz kuće i da ćuti o svemu što se desilo,
+            </p>
+            <p>
+                -čime je izvršio krivično djelo laka tjelesna povreda iz <ref href="/krivicni/art_152">čl.152 st. 2 u vezi st. 1 Krivičnog zakonika Crne Gore</ref> u sticaju sa krivičnim djelom protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>.
+            </p>
+            
+            <list>
+                 <item id="odluka1">
+                    <p>
+                        Pa mu sud na osnovu <ref href="/krivicni/art_3">čl. 3</ref>, <ref href="/krivicni/art_4">čl. 4 st. 2</ref>, <ref href="/krivicni/art_5">čl. 5</ref>, <ref href="/krivicni/art_13">čl. 13</ref>, <ref href="/krivicni/art_15">čl. 15</ref>, <ref href="/krivicni/art_32">čl. 32</ref>, <ref href="/krivicni/art_36">čl. 36</ref>, <ref href="/krivicni/art_42">čl. 42 st. 1</ref>, <ref href="/krivicni/art_48">čl. 48 st. 1</ref> Krivičnog zakonika Crne Gore prethodno utvrđuje;<br/>
+                        - za krivično djelo laka tjelesna povreda iz <ref href="/krivicni/art_152">čl. 152 st.2 u vezi st. 1 Krivičnog zakonika Crne Gore</ref>, kaznu zatvora u tajanju od 6 (šest) mjeseci.<br/>
+                        - za krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st.1 Krivičnog zakonika Crne Gore</ref>, kaznu zatvora u trajanju od 5 (pet) mjeseci.
+                    </p>
+                </item>
+                <item id="odluka2">
+                    <p>
+                        Nakon čega sud okrivljenog Q. B. primjenom citiranih zakonskih odredbi, te odredbi <ref href="/krivicni/art_48">čl. 48 st. 2</ref> i <ref href="/krivicni/art_51">čl. 51 Krivičnog zakonika Crne Gore</ref>, te <ref href="/zkp/art_226">čl. 226</ref>, <ref href="/zkp/art_227">čl.227 st.2</ref>, <ref href="/zkp/art_229">čl. 229</ref>, <ref href="/zkp/art_239">čl. 239</ref> i <ref href="/zkp/art_374">čl. 374 Zakonika o krivičnom postupku</ref>
+                        <b>OSUĐUJE</b><br/>
+                        Na jedinstvenu kaznu zatvora u trajanju od 10 (deset) mjeseci, u koju mu se uračunava vrijeme provedeno u pritvoru od <date date="2023-10-11">11.10.2023.</date> godine od 18.00 časova, pa nadalje.
+                    </p>
+                </item>
+                 <item id="odluka3">
+                    <p>
+                        Zakonski zastupnik, oštećene malodobne B. H., se radi ostvarivanja imovinskopravnog zahtjeva upućuje na parnični postupak.
+                    </p>
+                </item>
+            </list>
+            
+            <p>
+                Na osnovu <ref href="/krivicni/art_77a">čl. 77a Krivičnog zakonika Crne Gore</ref> prema okrivljenom se izriče
+            </p>
+
+            <p><b>MJERA BEZBIJEDNOSTI</b></p>
+            <p><b>ZABRANA PRIBLIŽAVANJA</b></p>
+            
+            <p>
+                Oštećenoj B. H. na udaljenosti manjoj od 50 metara, koja ima trajati <time duration="P1Y">1 (jednu) godinu</time>, računajući od dana pravosnažnosti presude, s tim da se vrijeme provedeno na izdržavanju kazne zatvora ne uračunava u vrijeme trajanja ove mjere.
+            </p>
+            <p>
+                 Obavezuje se okrivljeni da na ime troškova krivičnog postupka, u korist budžeta Crne Gore na žiro račun br. 832-21-37, plati iznos od <amount value="104.50">104,50 €</amount> i na ime sudskog paušala iznos od <amount value="30.00">30,00 €</amount>, u roku od <time duration="P15D">15 dana</time> po pravosnažnosti presude, pod prijetnjom prinudnog izvršenja, kao i troškove branioca postavljenog po službenoj dužnosti, o kojim će sud odlučiti posebnim rješenjem nakon pribavljanja podataka o visini istih, shodno odredbi <ref href="/zkp/art_227">čl.227 st.2 Krivičnog zakonika Crne Gore</ref>.
+            </p>
+            
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

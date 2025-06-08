@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U PODGORICI</FRBRauthor>
+                    <FRBRdate date="2017-12-20">2017-12-20</FRBRdate>
+                    <FRBRtitle>K.br. 757/17</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici"/>
+                <TLCPerson eId="gDjukovic" href="/ontology/person/gDjukovic" showAs="Goran Đuković"/>
+                <TLCPerson eId="sRadevic" href="/ontology/person/sRadevic" showAs="Sanja Radević"/>
+                <TLCPerson eId="dL" href="/ontology/person/dL" showAs="D. L."/>
+                <TLCPerson eId="jA" href="/ontology/person/jA" showAs="J. A."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećena"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization>, po sudiji
+                <party id="gDjukovic" refersTo="#gDjukovic" as="#judge">Goranu Đukoviću</party>, uz učešće namještenika suda
+                <party id="sRadevic" refersTo="#sRadevic" as="#clerk">Sanje Radević</party>, kao zapisničara, u krivičnom predmetu protiv okrivljenog
+                <party id="dL" refersTo="#dL" as="#defendant">D. L.</party>, zbog krivičnog djela zlostavljanje, iz
+                <ref href="/krivicni/art_166a">čl.166a st. 1 Krivičnog zakonika Crne Gore</ref>  i krivičnog djela protivpravnog lišenja slobode iz
+                <ref href="/krivicni/art_162">čl. 162 st st.1 Krivičnog zakonika Crne Gore</ref>, nakon pravosnažnosti rješenja o usvajanju sporauma o priznanju krivice, dana
+                <date date="2017-12-20">20.12.2017.</date> godine donio je 
+            </p>
+
+            <p><b>P R E S U D U</b></p>
+
+            <p>
+                Okrivljeni: <party id="dL" refersTo="#dL">D. L.</party>, sa JMBG......., zvani "L.", od oca F. i majke M., rođene Lj., rođen ....... godine u Podgorici, nastanjen u T. - S., državljanin Crne Gore, nezaposlen, neoženjen, nema djecu, sa završenom srednjom školom, osudjivan presudom Osnovnog suda u Podgorici K. br. <ref href="/presuda/09-1665">09/1665 od 30.11.2011.godine</ref>  zbog krivičnog djela iz <ref href="/krivicni/art_256">čl. 256 st. 1 Krivičnog zakonika</ref>  kojom mu je izrečena uslovna osuda i prethodno utvrdjena kazna zatvora u trajanju od 3 mjeseca i istovremeno odredjeno da se utvrdjena kazna neće izvršiti ukoliko okrivljeni u roku od 1 godine po pravosnažnosti presude ne izvrši novo krivično djelo.
+            </p>
+
+            <p><b>Kriv je</b> </p>
+
+            <p>
+                Zato što je: U periodu od <date date="2017-10-07">07.</date> do <date date="2017-10-09">09. oktobra 2017.godine</date>, u kući koja se nalazi u mjestu D.GO T., G. G. F., svjestan svog djela čije je izvršenje htio, znajući da je isto zabranjeno, zlostavljao i držao zatvorenom i ograničio slobodu kretanja oštećenoj <party id="jA" refersTo="#jA" as="#victim">J. A.</party>, na način što je nakon verbalne svadje oštećenoj zadao više naizmjeničnih udaraca otvorenim šakama po glavi i tijelu, a zatim je u više navrata gušio, na način što joj je prilazio sa ledja, rukom obuhvatio preko vrata, stezao vrat podlakticom, a zatim kada bi oštećena počela da se guši, polivao je vodom ili sokom , a kada bi oštećena pokušala da napusti kuću, govorio joj da sjedi, da ne smije da ustaje, da bi u jednom trenutku oštećena ustala i otišla do kuhinje da se umije, kada joj je prišao i pitao "gdje ćeš, što ćes", pa nakon što mu je odgovorila da hoće da se umije, ponovo je ošamario, te zadao više naizmjeničnih udaraca otvorenim šakama u predjelu glave i tijela, od kojih udaraca je oštećena pala ledjima na pod, a zatim je uhvatio za kosu i glavom udarao o pod, nakon čega je pridigao oštećenu, naslonio je na šank, polio je vodom i nastavio sa zadavanjem udaraca otvorenim dlanom u predjelu lica , kojom prilikom je oštećena zadobila više tjelesnih povreda i to u vidu 4-5 krvnih podliva u čeonom predjelu sa lijeve strane ispod lijevog oka, veličine izmedju 1 i 3 cm, 3 linarne oguljotine na prednjoj strani vrata, sa lijeve strane, veličine izmedju tri do pet cm, 2 oguljotine u predjelu iznad lijeve ključnjače veličine oko 2cm, krvnog podliva na prednjoj strani lijeve nadlaktice i prednjim stranama potkoljenica veličine izmedju dva do tri cm , te držao u kući zatvorenom, pri tom je vrata od kuće zaključao i ključeve iz brava izvadio, na koji način joj je ograničio slobodu kretanja i u trenutku kada je otvorila prozor, prišao joj je i odmah ga zatvorio, govoreći joj "nemoj više da ti se desi da ga otvoriš" , nakon čega je oštećena pokušala da otvori vrata koja vode ka dvorišnom dijelu kuće, u čemu nije uspjela, jer su bila zaključana,
+            </p>
+            <p>
+                -čime je izvršio krivično djelo zlostavljanje iz <ref href="/krivicni/art_166a">čl. 166a st. 1 Krivičnog zakonika Crne Gore</ref>  i krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>.
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <p>
+                        Pa sud okrivljenom primjenom <ref href="/krivicni/art_48">čl. 48 st. 1 Krivičnog zakonika Crne Gore</ref>  za svako krivično djelo prethodno utvrdjuje novčane kazne i to:<br/>
+                        - i za krivično djelo zlostavljanje iz <ref href="/krivicni/art_166a">čl. 166a Krivičnog zakonika Crne Gore</ref> novčanu kaznu u iznosu od <amount value="5000.00">5.000,00 (pethiljadaeura)</amount>;<br/>
+                        - za krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>  novčanu kaznu u iznosu od <amount value="2000.00">2.000,00 (dvijehiljadeeura)</amount>,
+                    </p>
+                </item>
+                <item id="odluka2">
+                    <p>
+                        Pa sud okrivljenog primjenom citiranih zakonskih propisa iz <ref href="/krivicni/art_2">čl. 2</ref>, <ref href="/krivicni/art_3">3</ref>, <ref href="/krivicni/art_4">4 st. 2</ref>, <ref href="/krivicni/art_5">5</ref>, <ref href="/krivicni/art_13">13 st. 1</ref>, <ref href="/krivicni/art_15">15</ref>, <ref href="/krivicni/art_39">39</ref>, <ref href="/krivicni/art_42">42 st. 1</ref>, i <ref href="/krivicni/art_48">48 st. 4 Krivičnog zakonika Crne Gore</ref>  i <ref href="/zkp/art_301">čl. 301</ref> i <ref href="/zkp/art_374">374 Zakonika o krivičnom postupku</ref> 
+                        <b>Osudjuje</b><br/>
+                        Na jedinstvenu novčanu kaznu u iznosu od <amount value="7000.00">7.000,00 (sedamhiljada) eura</amount>, koju je okrivljeni obavezan platiti u roku od <time duration="P15D">15 dana</time> po pravosnažnosti presude, a ukoliko okrivljeni ne plati jedinstvenu novčanu kaznu u odredjenom roku, sud će novčanu kaznu zamijeniti kaznom zatvora, tako što će se za svaki započeti 25,00 eura novčane kazne odrediti jedan dan kazne zatvora, s tim da kazna zatvora ne može biti duža od 6 (šest) mjeseci.
+                    </p>
+                </item>
+                <item id="odluka3">
+                    <p>
+                        Obavezuje se okrivljeni da ovom sudu na ime troškova postupka uplati novčani iznos u iznosu od <amount value="71.50">71,50 eura</amount> i iznos od <amount value="30.00">30,00 eura</amount> na ime paušala, u roku od <time duration="P15D">15 dana</time> po pravosnažnosti presude.
+                    </p>
+                </item>
+            </list>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

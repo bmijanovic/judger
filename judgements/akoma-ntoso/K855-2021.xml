@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U PODGORICI</FRBRauthor>
+                    <FRBRdate date="2022-04-05">2022-04-05</FRBRdate>
+                    <FRBRtitle>K.br. 855/21</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo u Podgorici"/>
+                <TLCPerson eId="lMijuskovicStamatovic" href="/ontology/person/lMijuskovicStamatovic" showAs="Larisa Mijušković-Stamatović"/>
+                <TLCPerson eId="mSekulic" href="/ontology/person/mSekulic" showAs="Marina Sekulić"/>
+                <TLCPerson eId="sP" href="/ontology/person/sP" showAs="S. P."/>
+                <TLCPerson eId="sLj" href="/ontology/person/sLj" showAs="S. Lj."/>
+                <TLCPerson eId="zT" href="/ontology/person/zT" showAs="Ž. T."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećena"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization>, sudija
+                <party id="lMijuskovicStamatovic" refersTo="#lMijuskovicStamatovic" as="#judge">Larisa Mijušković-Stamatović</party>, uz učešće
+                <party id="mSekulic" refersTo="#mSekulic" as="#clerk">Marine Sekulić</party> kao zapisničara, u krivičnom postupku protiv okrivljenog
+                <party id="sP" refersTo="#sP" as="#defendant">S. P.</party>, koga u postupku brani advokat
+                <party id="sLj" refersTo="#sLj" as="#lawyer">S. Lj.</party>, zbog krivičnog djela nasilničko ponašanje iz
+                <ref href="/krivicni/art_399">čl. 399 Krivičnog zakonika Crne Gore</ref>  u sticaju sa krivičnim djelom protivpravno lišenje slobode iz
+                <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>, odlučujući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">Osnovnog državnog tužilaštva u Podgorici Kt.br.1774/21 od 23.12.2022. godine</organization> , nakon pravosnažnosti rješenja o usvajanju sporazuma o priznanju krivice, dana
+                <date date="2022-04-05">05.04.2022.</date> godine, donio je 
+            </p>
+
+            <p><b>P R E S U D U</b></p>
+
+            <p>
+                Okrivljeni:
+                <party id="sP" refersTo="#sP">S. P.</party> , JMB xxxxxxxxxxxxx, od oca R. i majke N., rođene L., rođen xx.xx.20xx. godine u Podgorici , sa prebivalištem u Podgorici, Cetinjski put broj $xx/x$ , crnogorski državljanin, neoženjen, bez djece, završio osnovnu školu, pismen, po zanimanju sportista - košarkaš, vanredni učenik IV razreda Sportske gimnazije, lošeg imovnog stanja , nalazio se u pritvoru od <date date="2021-12-05">05.12.2021.</date> godine u 21,40 časova, kao dana i časa lišenja slobode, do <date date="2021-12-10">10.12.2021.</date> godine u 16,18 časova , ranije neosuđivan,
+            </p>
+
+            <p><b>Kriv je</b></p>
+
+            <p>
+                Zato što je: Dana <date date="2021-12-04">04. decembra 2021.</date> godine oko 19,30 časova u Podgorici, u Atinskoj ulici, svjestan svojih djela, čije izvršenje je htio, znajući da su njegova djela zabranjena, vršenjem nasilja prema drugom, zlostavljanjem drugog ili drskim i bezobzirnim ponašanjem ugrozio spokojstvo građana i remetio javni red i mir, kojom prilikom je drugom nanio laku tjelesnu povredu, te na drugi način drugome protivpravno ograničio slobodu kretanja, na način što je, dok se nalazio u vozilu sa svojom djevojkom, oštećenom <party id="zT" refersTo="#zT" as="#victim">Ž. T.</party>, na javnom mjestu, nakon prepirke, oštećenoj uputio riječi "Silovaću te, proganjaću te cijeli život", a potom je udario više puta pesnicama u predjelu butina, te je uhvatio rukama za vrat i gušio, te joj stavio glavu između njegovih butina i tako je stiskao, od čega je oštećena gubila dah, nakon čega je pustio, a potom nastavio da ponavlja istu radnju, da bi je zatim ugrizao više puta po glavi i za nos, od čega joj je potekla krv, te ju je uhvatio rukama za vilicu i jako je stisnuo , pri čemu ga je oštećena svo vrijeme molila da je pusti i da prestane, ali je on nastavljao da vrši nasilje prema njoj, protivpravno joj ograničavajući slobodu kretanja, tako što je, kada je više puta pokušala da izađe iz vozila, oštećenu povukao rukama nazad u vozilo, nedozvoljavajući joj da napusti vozilo, kada je ona to htjela i pokušala da uradi, gdje je nastavio da je fizički zlostavlja, prijeteći joj da će i ona patiti, da će je iseliti iz Podgorice, te da mu se neće sakriti i da će je uvijek naći, kojom prilikom je oštećena zadobila lake tjelesne povrede u vidu krvnog podliva u lijevoj polovini tjemenog predjela, otoka u predjelu desne polovine nosa, krvnog podliva ispod lijevog oka, krvnog podliva u predjelu donje usne, krvnog podliva u predjelu desne strane vrata, krvnog podliva u predjelu desne sake, krvnog podliva u predjelu desne bedrene kosti, više krvnih podliva u predjelu desne potkoljenice, krvnog podliva u predjelu lijeve butane i oguljotine i krvnog podliva u predjelu desne potkoljenice,
+            </p>
+            <p>
+                -čime je izvršio krivično djelo nasilničko ponašanje iz <ref href="/krivicni/art_399">čl. 399 Krivičnog zakonika Crne Gore</ref>  u sticaju sa krivičnim djelom protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>,
+            </p>
+            
+            <list>
+                <item id="odluka1">
+                    <p>
+                        Pa mu Sud za primjenom citirane zakonske odredbe, te <ref href="/krivicni/art_3">čl. 3</ref>, <ref href="/krivicni/art_4">4</ref>, <ref href="/krivicni/art_5">5</ref>, <ref href="/krivicni/art_13">13</ref>, <ref href="/krivicni/art_15">15</ref>, <ref href="/krivicni/art_32">32</ref>, <ref href="/krivicni/art_36">36</ref>, <ref href="/krivicni/art_45">45</ref>, <ref href="/krivicni/art_46">46</ref>, <ref href="/krivicni/art_48">48 st. 1 tač. 1</ref> Krivičnog zakonika Crne Gore, prethodno utvrđuje;<br/>
+                        -za krivično djelo nasilničko ponašanje iz <ref href="/krivicni/art_399">čl. 399 Krivičnog zakonika Crne Gore</ref> kaznu zatvora u trajanju od 3 (tri) mjeseca; <br/>
+                        -za krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>, kaznu zatvora u trajanju od 2 (dva) mjeseca; 
+                    </p>
+                </item>
+                <item id="odluka2">
+                    <p>
+                        Za ovim sud okrivljenog, primjenom <ref href="/krivicni/art_36a">čl. 36a</ref>, <ref href="/krivicni/art_42">42</ref>, <ref href="/krivicni/art_48">48 st. 2 tač. 2</ref> i <ref href="/krivicni/art_51">51</ref> Krivičnog zakonika Crne Gore, te <ref href="/zkp/art_226">čl. 226</ref>, <ref href="/zkp/art_2297">2297</ref>, <ref href="/zkp/art_229">229</ref>, <ref href="/zkp/art_239">239</ref> i <ref href="/zkp/art_374">374</ref> Zakonika o krivičnom postupku,
+                        <b>OSUĐUJE</b><br/>
+                        Na jedinstvenu kaznu zatvora u trajanju od 4 (četiri) mjeseca, u koju kaznu mu se uračunava i vrijeme provedeno u pritvoru od <date date="2021-12-05">05.12.2021.</date> godine od 21,40 časova do <date date="2021-12-10">10.12.2021.</date> godine u 16,18 časova , a koju kaznu će okrivljeni nakon pravnosnažnosti presude izdržavati u prostorijama za stanovanje. 
+                        Okrivljeni ne smije napuštati prostorije u kojima stanuje, osim u slučajevima propisanim zakonom kojim se uređuje izvršenje krivičnih sankcija, a ukoliko okrivljeni jednom u trajanju preko šest časova ili dva puta u trajanju do šest časova samovoljno napusti prostorije u kojima stanujem sud će odrediti da ostatak kazne zatvora izdrži u Upravi za izvršenje krivičnih sankcija. 
+                    </p>
+                </item>
+                 <item id="odluka3">
+                    <p>
+                        Obavezuje se okrivljeni da ovom sudu plati troškove krivičnog postupka u iznosu od <amount value="60.50">60,50 eura</amount>, kao i <amount value="30.00">30,00 eura</amount> na ime sudskog paušala, u roku od <time duration="P15D">15 dana</time> po pravosnažnosti presude, pod prijetnjom izvršenja; kao i troškove branioca po službenoj dužnosti adv. V. J., o kojima će sud nakon pravnosnažnosti presude odlučiti posebnim rješenjem. 
+                    </p>
+                </item>
+                <item id="odluka4">
+                    <p>
+                        Oštećena <party id="zT" refersTo="#zT" as="#victim">Ž. T.</party> se radi ostvarivanja imovinsko-pravnog zahtjeva upućuje na parnični postupak. 
+                    </p>
+                </item>
+            </list>
+            
+            <p>
+                Primjenom <ref href="/krivicni/art_77a">čl. 77a Krivičnog zakonika Crne Gore</ref>, sud okrivljenom izriče i 
+            </p>
+            
+            <p><b>MJERU BEZBJEDNOSTI</b></p>
+            
+            <p>
+                ZABRANA PRIBLIŽAVANJA oštećenoj <party id="zT" refersTo="#zT" as="#victim">Ž. T.</party> na udaljenosti manjoj od 100 metara, u trajanju od 2 (dvije) godine. 
+            </p>
+
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>
