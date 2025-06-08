@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+                        OSNOVNI SUD U PODGORICI
+                    </FRBRauthor>
+                    <FRBRdate date="2022-02-28">
+                        2022-02-28
+                    </FRBRdate>
+                    <FRBRtitle>
+                        K 26/2022
+                    </FRBRtitle>
+                    <FRBRcountry>
+                        CRNA GORE
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici" />
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo" />
+                <TLCPerson eId="lMijuskovic" href="/ontology/person/lMijuskovic" showAs="Larisa Mijušković-Stamatović" />
+                <TLCPerson eId="mSekulic" href="/ontology/person/mSekulic" showAs="Marina Sekulić" />
+                <TLCPerson eId="nV" href="/ontology/person/nV" showAs="N. V." />
+                <TLCPerson eId="dD" href="/ontology/person/dD" showAs="D. D." />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Lawyer" />
+            </references>
+        </meta>
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">
+                    OSNOVNI SUD U PODGORICI
+                </organization>
+                , sudija
+                <party id="lMijuskovic" refersTo="#lMijuskovic" as="#judge">
+                    Larisa Mijušković-Stamatović
+                </party>
+                , uz učešće
+                <party id="mSekulic" refersTo="#mSekulic" as="#clerk">
+                    Marine Sekulić
+                </party>
+                kao zapisničara, u krivičnom predmetu protiv okrivljenog
+                <party id="nV" refersTo="#nV" as="#defendant">
+                    N. V.
+                </party>
+                , koga u postupku brani advokat
+                <party id="dD" refersTo="#dD" as="#lawyer">
+                    D. D.
+                </party>
+                , zbog produženog krivičnog djela protivpravno lišenje slobode iz
+                <ref href="/krivicni#art_162">
+                    čl. 162 st. 1
+                </ref>
+                u vezi
+                <ref href="/krivicni#art_49">
+                    čl. 49
+                </ref>
+                <ref href="/krivicni">
+                    Krivičnog zakonika Crne Gore
+                </ref>
+                , postupajući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">
+                    ODT Podgorica
+                </organization>
+                Kt.br. 1843/21 od 14.01.2022. godine, nakon pravosnažnosti rješenja o usvajanju sporazuma o priznanju krivice, dana 28.02.2022. godine, donio je
+            </p>
+            <p>
+                <b>P R E S U D U</b>
+            </p>
+            <p>
+                Okrivljeni:
+                <party id="nV" refersTo="#nV" as="#defendant">
+                    N. V.
+                </party>
+                , zvani V., JMB XXXXXXXXXXxxx, od majke V., rođene V., rođen xx.xx.20xx. godine u Podgorici, sa prebivalištem u Podgorici, Ulica xx j. broj xx, državljanin Crne Gore, po zanimanju muzičar, neoženjen, bez djece, završio srednju školu, srednjeg imovnog stanja, neosuđivan, lišen slobode od dana 18.12.2021. godine, od 03,05 časova, pa do 20.12.2021. godine, a u pritvoru od 21.01.2022. godine, pa nadalje.
+            </p>
+            <p>
+                Što je:
+            </p>
+            <p>
+                Kriv je
+            </p>
+            <p>
+                U periodu od 11.12. do 17.12.2021. godine, u porodičnoj kući okrivljenog, koja se nalazi u Ulici xx. J. broj xx i stanu koji iznajmljuje oštećena A. D., a koji se nalazi u Ulici O. R. broj x, na teritoriji Glavnog grada Podgorice, u stanju bitno smanjene uračunljivosti, svjestan svog djela, čije je izvršenje htio, znajući da je njegovo djelo zabranjeno, protivpravno u više navrata zatvarao i držao zatvorenu oštećenu, na način što je, dana 11.12.20...
+            </p>
+            </judgmentBody>
+    </judgment>
+</akomaNtoso>

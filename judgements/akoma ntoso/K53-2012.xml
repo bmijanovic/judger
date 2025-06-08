@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+                        OSNOVNI SUD U BARU
+                    </FRBRauthor>
+                    <FRBRdate date="2014-08-01">
+                        2014-08-01
+                    </FRBRdate>
+                    <FRBRtitle>
+                        K 53/2012
+                    </FRBRtitle>
+                    <FRBRcountry>
+                        CRNA GORA
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.BAR" showAs="Osnovni sud u Baru" />
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.BAR" showAs="Osnovno državno tužilaštvo" />
+                <TLCPerson eId="aLekovic" href="/ontology/person/aLekovic" showAs="Aleksandra Leković" />
+                <TLCPerson eId="vLukic" href="/ontology/person/vLukic" showAs="Vesna Lukić" />
+                <TLCPerson eId="sBorozan" href="/ontology/person/sBorozan" showAs="Sanja Borozan" />
+                <TLCPerson eId="rM" href="/ontology/person/rM" showAs="R. M." />
+                <TLCPerson eId="zB" href="/ontology/person/zB" showAs="Z. B." />
+                <TLCPerson eId="nT" href="/ontology/person/nT" showAs="N. T." />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Lawyer" />
+            </references>
+        </meta>
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">
+                    OSNOVNI SUD U BARU
+                </organization>
+                Sudija Osnovnog suda u Baru,
+                <party id="aLekovic" refersTo="#aLekovic" as="#judge">
+                    Aleksandra Leković
+                </party>
+                , uz učešće zapisničara
+                <party id="vLukic" refersTo="#vLukic" as="#clerk">
+                    Vesna Lukić
+                </party>
+                , rješavajući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">
+                    Osnovnog državnog tužilaštva iz Bara
+                </organization>
+                 Kt.br. 277/11 od 07.02.2012.godine podnijetoj protiv okrivljenih
+                <party id="rM" refersTo="#rM" as="#defendant">
+                    R. M.
+                </party>
+                i
+                <party id="zB" refersTo="#zB" as="#defendant">
+                    Z. B.
+                </party>
+                , u prisustvu njihovog branioca
+                <party id="nT" refersTo="#nT" as="#lawyer">
+                    N. T.
+                </party>
+                , zbog krivičnih djela nasilničko ponašanje i protivpravno lišenje slobode iz
+                <ref href="/krivicni#art_399">
+                    čl. 399 Krivičnog zakonika Crne Gore
+                </ref>
+                i
+                <ref href="/krivicni#art_162">
+                    čl. 162. st. 1. Krivičnog zakonika Crne Gore
+                </ref>
+                , nakon održanog glavnog i javnog pretresa dana 25.07.2014. godine donio je i javno objavio
+            </p>
+            <p>
+                <b>P R E S U D U</b>
+            </p>
+            <p>
+                Okrivljeni
+                <party id="rM" refersTo="#rM" as="#defendant">
+                    R. M.
+                </party>
+                i
+                <party id="zB" refersTo="#zB" as="#defendant">
+                    Z. B.
+                </party>
+                , uz prisustvo njihovog branioca
+                <party id="nT" refersTo="#nT" as="#lawyer">
+                    N. T.
+                </party>
+                , krivi su jer su dana 27.06.2011.godine u Baru zajedno počinili nasilničko ponašanje i protivpravno lišenje slobode nad maloljetnim licima
+                <party id="gJ" refersTo="#gJ" as="#victim">
+                    G. J.
+                </party>
+                i
+                <party id="gI" refersTo="#gI" as="#victim">
+                    G. I.
+                </party>
+                , nanoseći im lake tjelesne povrede i ugrožavajući njihovo spokojstvo.
+            </p>
+            <p>
+                Na osnovu navedenih članova Krivičnog zakonika, sud izriče sledeće kazne:
+            </p>
+            <p>
+                Okrivljeni 
+                <party id="rM" refersTo="#rM" as="#defendant">
+                    R. M.
+                </party>
+                osuđuje se na jedinstvenu kaznu zatvora u trajanju od 4 mjeseca, dok se okrivljeni 
+                <party id="zB" refersTo="#zB" as="#defendant">
+                    Z. B.
+                </party>
+                osuđuje na jedinstvenu kaznu zatvora u trajanju od 90 dana.
+            </p>
+            <p>
+                Okrivljeni su obavezni da plate troškove krivičnog postupka u roku od 15 dana od pravosnažnosti presude.
+            </p>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

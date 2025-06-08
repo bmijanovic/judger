@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+                        OSNOVNI SUD U NIKŠIĆU
+                    </FRBRauthor>
+                    <FRBRdate date="2020-06-17">
+                        2020-06-17
+                    </FRBRdate>
+                    <FRBRtitle>
+                        K 32/2020
+                    </FRBRtitle>
+                    <FRBRcountry>
+                        CRNA GORA
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Niksic" showAs="Osnovni sud u Nikšiću" />
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Niksic" showAs="Osnovno državno tužilaštvo" />
+                <TLCPerson eId="vVujacic" href="/ontology/person/vVujacic" showAs="Vukota Vujačić" />
+                <TLCPerson eId="rNikolic" href="/ontology/person/rNikolic" showAs="Rade Nikolić" />
+                <TLCPerson eId="jN" href="/ontology/person/jN" showAs="J. N." />
+                <TLCPerson eId="rZorica" href="/ontology/person/rZorica" showAs="R. Zorica" />
+                <TLCPerson eId="kS" href="/ontology/person/kS" showAs="K. S." />
+                <TLCPerson eId="cJ" href="/ontology/person/cJ" showAs="Ć. J." />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Lawyer" />
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Victim" />
+            </references>
+        </meta>
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">
+                    OSNOVNI SUD U NIKŠIĆU
+                </organization>
+                , kao prvostepeni krivični, sudija
+                <party id="vVujacic" refersTo="#vVujacic" as="#judge">
+                    Vukota Vujačić
+                </party>
+                , uz sudjelovanje
+                <party id="rNikolic" refersTo="#rNikolic" as="#clerk">
+                    Nikolić Rade
+                </party>
+                kao zapisničara, u krivičnom predmetu protiv okrivljenog
+                <party id="jN" refersTo="#jN" as="#defendant">
+                    J. N.
+                </party>
+                , zbog krivičnog djela protivpravno lišenje slobode iz
+                <ref href="/krivicni#art_162">
+                    člana 162 stav 1 Krivičnog zakonika Crne Gore
+                </ref>
+                , po optužnom predlogu
+                <organization id="odt" refersTo="#odt">
+                    ODT-a u Nikšiću
+                </organization>
+                Kt.br. 41/20 od 14.02.2020. godine, nakon završenog glavnog i javnog pretresa, dana 17.06.2020. godine, u prisustvu zastupnika državnog tužioca
+                <party id="rZorica" refersTo="#rZorica" as="#prosecutor">
+                    R. Zorice
+                </party>
+                , okrivljenog
+                <party id="jN" refersTo="#jN" as="#defendant">
+                    J. N.
+                </party>
+                i njegovog branioca
+                <party id="kS" refersTo="#kS" as="#lawyer">
+                    K. S.
+                </party>
+                , advokata iz Nikšića, istog dana donio je, a dana 18.06.2020. godine javno objavio
+            </p>
+            <p>
+                <b>PRESUDU</b>
+            </p>
+            <p>
+                Okrivljeni:
+                <party id="jN" refersTo="#jN" as="#defendant">
+                    J. N.
+                </party>
+                , jmbg --, od oca S. i majke M. rođene M., rođen --.--.----. godine u Nikšiću, sa prebivalištem u Nikšiću, ul. K. --, državljanin Crne Gore, pripravnik kod CB Nikšić, neoženjen, pismen, završio srednju školu, srednjeg imovnog stanja, ranije neosuđivan,
+            </p>
+            <p>
+                Kriv je
+            </p>
+            <p>
+                Što je:
+            </p>
+            <p>
+                Dana 30.12.2019. godine u Nikšiću, iako je bio svjestan svog djela čije je izvršenje htio, protivpravno ograničio slobodu kretanja oštećene
+                <party id="cJ" refersTo="#cJ" as="#victim">
+                    Ć. J.
+                </party>
+                , a na način što je tog dana oko 16:45 časova došao u butik "A. ", lociran u tržnom centru "L. " i od oštećene zatražio da izađe iz butika, pa kada je oštećena odbila da to uradi, svojim rukama sa leđa je uhvatio u predjelu njenih ruku i na silu izveo iz navedenog butika, a zatim i iz trgovinskog objekta "L. " odbijajući da je na njen zahtjev pusti, nakon čega je oštećenu...
+            </p>
+            </judgmentBody>
+    </judgment>
+</akomaNtoso>
