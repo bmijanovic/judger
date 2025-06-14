@@ -1,0 +1,524 @@
+```xml
+ <?xml version="1.0" encoding="UTF-8"?>
+ <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd">
+  <act id="zakonik_o_krivicnom_postupku" name="Zakonik o krivičnom postupku">
+   <meta>
+    <identification source="#gemini">
+     <FRBRWork>
+      <FRBRthis value="/akn/rs/zakon/2021-07-29/!main" />
+      <FRBRuri value="/akn/rs/zakon/2021-07-29" />
+      <FRBRdate date="2021-07-29" name="Generation" />
+      <FRBRauthor href="#parlament" as="#author" />
+      <FRBRcountry value="rs" />
+      <FRBRnumber value="62/2021" />
+      <FRBRname value="zakonikOKrivicnomPostupku" />
+      <FRBRprescriptive value="true" />
+      <FRBRauthoritative value="true" />
+     </FRBRWork>
+     <FRBRExpression>
+      <FRBRthis value="/akn/rs/zakon/2021-07-29/cg@/!main" />
+      <FRBRuri value="/akn/rs/zakon/2021-07-29/cg@" />
+      <FRBRdate date="2021-07-29" name="Generation" />
+      <FRBRauthor href="#gemini" as="#editor" />
+      <FRBRlanguage language="srp" />
+     </FRBRExpression>
+     <FRBRManifestation>
+      <FRBRthis value="/akn/rs/zakon/2021-07-29/cg@/!main.xml" />
+      <FRBRuri value="/akn/rs/zakon/2021-07-29/cg@.xml" />
+      <FRBRdate date="2024-05-21" name="Generation" />
+      <FRBRauthor href="#gemini" as="#editor" />
+      <FRBRformat value="xml" />
+     </FRBRManifestation>
+    </identification>
+    <publication name="sl" date="2021-07-29" showAs="Službeni glasnik RS" number="62/2021" />
+    <classification source="#gemini">
+     <keyword value="krivicni_postupak" showAs="Krivični postupak" dictionary="RS" />
+    </classification>
+    <references>
+     <TLCOrganization eId="sl" href="/akn/rs/ontology/organization/sg" showAs="Službeni glasnik RS" />
+    </references>
+   </meta>
+   <body>
+    <heading>Zakonik o krivičnom postupku</heading>
+    <chapter eId="chp_8">
+     <num>VIII.</num>
+     <heading>MERE ZA OBEZBEĐENJE PRISUSTVA OKRIVLJENOG I ZA NESMETANO VOĐENJE KRIVIČNOG POSTUPKA</heading>
+     <section eId="chp_8_sec_2">
+      <num>2.</num>
+      <heading>Određene mere</heading>
+      <subsection eId="chp_8_sec_2_sub_e">
+       <num>e)</num>
+       <heading>Pritvor</heading>
+       <article eId="art_212">
+        <num>Član 212</num>
+        <heading>Odlučivanje o pritvoru</heading>
+        <paragraph eId="art_212_para_2">
+         <point eId="art_212_para_2_point_1">
+          <num>(2)</num>
+          <content eId="art_212_para_2_point_1_content">
+           <p>Pre donošenja odluke iz stava 1. ovog člana sud će saslušati okrivljenog o razlozima za određivanje pritvora. Saslušanju mogu da prisustvuju javni tužilac i branilac. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+      </subsection>
+     </section>
+    </chapter>
+    <chapter eId="chp_9">
+     <num>IX.</num>
+     <heading>ROKOVI</heading>
+     <section eId="chp_9_sec_2">
+      <num>2.</num>
+      <heading>Povraćaj u pređašnje stanje</heading>
+      <article eId="art_226">
+       <num>Član 226</num>
+       <heading>Razlozi za povraćaj u pređašnje stanje</heading>
+       <paragraph eId="art_226_para_1">
+        <point eId="art_226_para_1_point_1">
+         <num></num>
+         <content eId="art_226_para_1_point_1_content">
+          <p>Povraćaj u pređašnje stanje može tražiti: </p>
+         </content>
+        </point>
+        <point eId="art_226_para_1_point_2">
+         <num>(1)</num>
+         <content eId="art_226_para_1_point_2_content">
+          <p>okrivljeni koji iz opravdanog razloga nije mogao da dođe na ročište na kojem se odlučuje o sporazumu iz člana 313. stav 1. i člana 320. stav 1. ovog zakonika ili propusti rok za izjavu žalbe protiv presude ili rešenja koje odgovara presudi; </p>
+         </content>
+        </point>
+        <point eId="art_226_para_1_point_3">
+         <num>(2)</num>
+         <content eId="art_226_para_1_point_3_content">
+          <p>oštećeni, oštećeni kao tužilac ili privatni tužilac koji iz opravdanog razloga nije mogao da blagovremeno obavesti sud o promeni adrese prebivališta ili boravišta ili da dođe na pripremno ročište, glavni pretres ili ročište iz člana 505. stav 1. ovog zakonika (član 52. stav 4, član 61. stav 2. i član 67.); </p>
+         </content>
+        </point>
+        <point eId="art_226_para_1_point_4">
+         <num>(3)</num>
+         <content eId="art_226_para_1_point_4_content">
+          <p>privatni tužilac koji iz opravdanog razloga propusti rok za ispravljanje nedostataka u privatnoj tužbi ili za prikupljanje dokaza (član 333. stav 3, član 337. stav 5. i član 501. st. 2. i 7.). </p>
+         </content>
+        </point>
+       </paragraph>
+      </article>
+      <article eId="art_227">
+       <num>Član 227</num>
+       <heading>Molba za povraćaj u pređašnje stanje</heading>
+       <paragraph eId="art_227_para_1">
+        <point eId="art_227_para_1_point_1">
+         <num>(1)</num>
+         <content eId="art_227_para_1_point_1_content">
+          <p>Molba za povraćaj u pređašnje stanje podnosi se u roku od osam dana od dana prestanka smetnje. </p>
+         </content>
+        </point>
+       </paragraph>
+       <paragraph eId="art_227_para_2">
+        <point eId="art_227_para_2_point_1">
+         <num>(2)</num>
+         <content eId="art_227_para_2_point_1_content">
+          <p>Okrivljeni koji je propustio rok za žalbu protiv presude ili rešenja koje odgovara presudi dužan je da uz molbu istovremeno preda i žalbu. </p>
+         </content>
+        </point>
+       </paragraph>
+      </article>
+     </section>
+    </chapter>
+    <chapter eId="chp_10">
+     <num>X.</num>
+     <heading>PODNESCI I ZAPISNICI</heading>
+     <section eId="chp_10_sec_1">
+      <num>1.</num>
+      <heading>Podnesci</heading>
+      <article eId="art_229">
+       <num>Član 229</num>
+       <heading>Osnovna pravila o podnošenju</heading>
+       <paragraph eId="art_229_para_1">
+        <point eId="art_229_para_1_point_1">
+         <num>(1)</num>
+         <content eId="art_229_para_1_point_1_content">
+          <p>Optužba, predlog, pravni lek i druga izjava ili saopštenje podnosi se pismeno ili se daje usmeno na zapisnik. </p>
+         </content>
+        </point>
+        <point eId="art_229_para_1_point_2">
+         <num>(2)</num>
+         <content eId="art_229_para_1_point_2_content">
+          <p>Podnesak iz stava 1. ovog člana mora biti razumljiv i sadržati sve što je potrebno da bi se po njemu moglo postupiti. </p>
+         </content>
+        </point>
+        <point eId="art_229_para_1_point_3">
+         <num>(3)</num>
+         <content eId="art_229_para_1_point_3_content">
+          <p>Ako u ovom zakoniku nije drugačije određeno, organ postupka će podnosioca podneska koji je nerazumljiv ili ne sadrži sve što je potrebno da bi se po njemu moglo postupati pozvati da podnesak ispravi, odnosno dopuni, a ako on to ne učini u određenom roku, podnesak će odbaciti. </p>
+         </content>
+        </point>
+        <point eId="art_229_para_1_point_4">
+         <num>(4)</num>
+         <content eId="art_229_para_1_point_4_content">
+          <p>U pozivu za ispravku, odnosno dopunu podneska podnosilac će se upozoriti na posledice propuštanja. </p>
+         </content>
+        </point>
+        <point eId="art_229_para_1_point_5">
+         <num>(5)</num>
+         <content eId="art_229_para_1_point_5_content">
+          <p>Podnesak koji se po ovom zakoniku dostavlja protivnoj stranci predaje se organu postupka u dovoljnom broju primeraka za taj organ i drugu stranku. Ako ovakav podnesak nije predat u dovoljnom broju primeraka, umnožiće se o trošku podnosioca.</p>
+         </content>
+        </point>
+       </paragraph>
+      </article>
+      <article eId="art_230">
+       <num>Član 230</num>
+       <heading>Elektronski podnesak</heading>
+       <paragraph eId="art_230_para_1">
+        <point eId="art_230_para_1_point_1">
+         <num>(1)</num>
+         <content eId="art_230_para_1_point_1_content">
+          <p>Podnesak koji se prema ovom zakoniku sastavlja u pisanom obliku i potpisuje, može se podneti u obliku elektronskog dokumenta koji je snabdeven elektronskim potpisom podnosioca (elektronski podnesak). </p>
+         </content>
+        </point>
+       </paragraph>
+      </article>
+     </section>
+     <section eId="chp_10_sec_2">
+      <num>2.</num>
+      <heading>Zapisnici</heading>
+      <subsection eId="chp_10_sec_2_sub_a">
+       <num>a.</num>
+       <heading>Zapisnik o glavnom pretresu</heading>
+       <article eId="art_239">
+        <num>Član 239</num>
+        <heading>Sadržaj zapisnika o glavnom pretresu</heading>
+        <paragraph eId="art_239_para_2">
+         <point eId="art_239_para_2_point_1">
+          <num>(2)</num>
+          <content eId="art_239_para_2_point_1_content">
+           <p>Zapisnik mora naročito da sadrži podatke o tome koja je optužnica na glavnom pretresu pročitana, odnosno usmeno izložena i da li je tužilac izmenio ili proširio optužbu, kakve su predloge podnele stranke i kakve je odluke donosio predsednik veća ili veće, koji su dokazi izvedeni, da li je izvršen uvid u zapisnike i druga pismena, da li su reprodukovani optički ili tonski snimak ili drugi zapis i kakve su primedbe učinile stranke u pogledu tih zapisnika, pismena ili snimaka.  Ako je na glavnom pretresu isključena javnost, u zapisniku se mora naznačiti da je predsednik veća upozorio prisutne na posledice ako neovlašćeno otkriju ono što su na tom glavnom pretresu saznali kao tajnu. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+      </subsection>
+     </section>
+    </chapter>
+    <chapter eId="chp_16">
+     <num>XVI.</num>
+     <heading>ISTRAGA</heading>
+     <section eId="chp_16_sec_1">
+      <num>1.</num>
+      <heading>Osnovne odredbe</heading>
+      <article eId="art_297">
+       <num>Član 297</num>
+       <heading>Dostavljanje naredbe osumnjičenom</heading>
+       <paragraph eId="art_297_para_1">
+        <point eId="art_297_para_1_point_1">
+         <num>(1)</num>
+         <content eId="art_297_para_1_point_1_content">
+          <p>Naredba o sprovođenju istrage dostavlja se osumnjičenom i njegovom braniocu, ako ga ima, zajedno sa pozivom odnosno obaveštenjem o prvoj dokaznoj radnji kojoj mogu prisustvovati (član 300.). </p>
+         </content>
+        </point>
+        <point eId="art_297_para_1_point_2">
+         <num>(2)</num>
+         <content eId="art_297_para_1_point_2_content">
+          <p>Ako se u toku istrage protiv nepoznatog učinioca utvrdi njegova istovetnost, javni tužilac će dopuniti naredbu o sprovođenju istrage u smislu člana 296. stav 3. ovog zakonika i postupiti u skladu sa stavom 1. ovog člana. </p>
+         </content>
+        </point>
+        <point eId="art_297_para_1_point_3">
+         <num>(3)</num>
+         <content eId="art_297_para_1_point_3_content">
+          <p>Istovremeno sa dostavljanjem naredbe o sprovođenju istrage osumnjičenom i njegovom braniocu, javni tužilac će obavestiti oštećenog o pokretanju istrage i poučiti ga o pravima iz člana 50. stav 1. ovog zakonika. </p>
+         </content>
+        </point>
+       </paragraph>
+      </article>
+      <article eId="art_301">
+       <num>Član 301</num>
+       <heading>Prikupljanje dokaza i materijala u korist odbrane</heading>
+       <paragraph eId="art_301_para_1">
+        <point eId="art_301_para_1_point_1">
+         <num>(1)</num>
+         <content eId="art_301_para_1_point_1_content">
+          <p>Osumnjičeni i njegov branilac mogu samostalno prikupljati dokaze i materijal u korist odbrane. </p>
+         </content>
+        </point>
+        <point eId="art_301_para_1_point_2">
+         <num>(2)</num>
+         <content eId="art_301_para_1_point_2_content">
+          <p>U cilju ostvarivanja ovlašćenja iz stava 1. ovog člana, osumnjičeni i njegov branilac imaju pravo: </p>
+         </content>
+        </point>
+        <point eId="art_301_para_1_point_3">
+         <num>(1)</num>
+         <content eId="art_301_para_1_point_3_content">
+          <p>da razgovaraju sa licem koje im može pružiti podatke korisne za odbranu i da od tog lica pribavljaju pisane izjave i obaveštenja, uz njegovu saglasnost; </p>
+         </content>
+        </point>
+        <point eId="art_301_para_1_point_4">
+         <num>(2)</num>
+         <content eId="art_301_para_1_point_4_content">
+          <p>da ulaze u privatne prostorije ili prostore koji nisu otvoreni za javnost, u stan ili prostore povezane sa stanom, uz pristanak njihovog držaoca; </p>
+         </content>
+        </point>
+        <point eId="art_301_para_1_point_5">
+         <num>(3)</num>
+         <content eId="art_301_para_1_point_5_content">
+          <p>da od fizičkog ili pravnog lica preuzmu predmeta i isprave i pribave obaveštenja kojima ono raspolaže, uz njegovu saglasnost, kao i uz obavezu da tom licu izdaju potvrdu sa popisom preuzetih predmeta i isprava. </p>
+         </content>
+        </point>
+        <point eId="art_301_para_1_point_6">
+         <num>(3)</num>
+         <content eId="art_301_para_1_point_6_content">
+          <p>Ovlašćenje iz stava 2. tačka 1) ovog člana ne odnosi se na oštećenog i na lica koja su već ispitana od strane policije ili javnog tužioca. </p>
+         </content>
+        </point>
+        <point eId="art_301_para_1_point_7">
+         <num>(4)</num>
+         <content eId="art_301_para_1_point_7_content">
+          <p>Pisana izjava i obaveštenje iz stava 2. tačka 1) ovog člana mogu se koristiti od strane okrivljenog i njegovog branioca u toku ispitivanja svedoka ili provere verodostojnosti njegovog iskaza ili za donošenje odluke o ispitivanju određenog lica kao svedoka od strane javnog tužioca ili suda. </p>
+         </content>
+        </point>
+       </paragraph>
+      </article>
+     </section>
+     <section eId="chp_16_sec_2">
+      <num>2.</num>
+      <heading>Sporazumi javnog tužioca i okrivljenog</heading>
+      <subsection eId="chp_16_sec_2_sub_b">
+       <num>b)</num>
+       <heading>Sporazum o svedočenju okrivljenog</heading>
+       <article eId="art_326">
+        <num>Član 326</num>
+        <heading>Vezanost suda za odluku o prihvatanju sporazuma</heading>
+        <paragraph eId="art_326_para_1">
+         <point eId="art_326_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_326_para_1_point_1_content">
+           <p>Rešenje o prihvatanju sporazuma o svedočenju okrivljenog obavezuje prvostepeni i sud pravnog leka prilikom donošenja odluke o krivičnoj sankciji, o troškovima krivičnog postupka, o oduzimanju imovinske koristi pribavljene krivičnim delom, o imovinskopravnom zahtevu i o oduzimanju imovine proistekle iz krivičnog dela, pod uslovom da je okrivljeni saradnik u potpunosti ispunio obaveze iz sporazuma. </p>
+          </content>
+         </point>
+         <point eId="art_326_para_1_point_2">
+          <num>(2)</num>
+          <content eId="art_326_para_1_point_2_content">
+           <p>Sud će staviti van snage rešenje o prihvatanju sporazuma i postupiti u skladu sa članom 324. st. 2. i 3. ovog zakonika: </p>
+          </content>
+         </point>
+         <point eId="art_326_para_1_point_3">
+          <num>(1)</num>
+          <content eId="art_326_para_1_point_3_content">
+           <p>ako okrivljeni saradnik nije ispunio obaveze iz sporazuma; </p>
+          </content>
+         </point>
+         <point eId="art_326_para_1_point_4">
+          <num>(2)</num>
+          <content eId="art_326_para_1_point_4_content">
+           <p>ako javni tužilac pokrene istragu protiv okrivljenog saradnika ili sazna za raniju osuđivanost i podnese predlog sudu za stavljanje van snage sporazuma. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+      </subsection>
+      <subsection eId="chp_16_sec_2_sub_v">
+       <num>v)</num>
+       <heading>Sporazum o svedočenju osuđenog</heading>
+       <article eId="art_329">
+        <num>Član 329</num>
+        <heading>Odlučivanje o sporazumu</heading>
+        <paragraph eId="art_329_para_1">
+         <point eId="art_329_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_329_para_1_point_1_content">
+           <p>O sporazumu o svedočenju osuđenog odlučuje sudija za prethodni postupak, a ako je sporazum podnet sudu nakon potvrđivanja optužnice odluku donosi predsednik veća. </p>
+          </content>
+         </point>
+         <point eId="art_329_para_1_point_2">
+          <num>(2)</num>
+          <content eId="art_329_para_1_point_2_content">
+           <p>Rešenje o odbacivanju, prihvatanju ili odbijanju sporazuma o svedočenju osuđenog donosi se na ročištu na koje se pozivaju javni tužilac, osuđeni i branilac. </p>
+          </content>
+         </point>
+         <point eId="art_329_para_1_point_3">
+          <num>(3)</num>
+          <content eId="art_329_para_1_point_3_content">
+           <p>Prilikom donošenja rešenja iz stava 2. ovog člana shodno se primenjuju odredbe čl. 316, 323. i 324. ovog zakonika. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+      </subsection>
+     </section>
+    </chapter>
+    <chapter eId="chp_18">
+     <num>XVIII.</num>
+     <heading>GLAVNI PRETRES I PRESUDA</heading>
+     <section eId="chp_18_sec_1">
+      <num>1.</num>
+      <heading>Glavni pretres</heading>
+      <subsection eId="chp_18_sec_1_sub_b">
+       <num>b)</num>
+       <heading>Održavanje glavnog pretresa</heading>
+       <article eId="art_369">
+        <num>Član 369</num>
+        <heading>Zaštita ugleda suda i učesnika u postupku</heading>
+        <paragraph eId="art_369_para_1">
+         <point eId="art_369_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_369_para_1_point_1_content">
+           <p>Sud je dužan da svoj ugled i bezbednost, ugled i sigurnost stranaka i drugih učesnika u postupku, zaštiti od uvrede, pretnje i svakog drugog napada. </p>
+          </content>
+         </point>
+         <point eId="art_369_para_1_point_2">
+          <num>(2)</num>
+          <content eId="art_369_para_1_point_2_content">
+           <p>Prilikom ulaska sudije ili članova veća u sudnicu i prilikom njihovog izlaska iz sudnice, svi prisutni dužni su da ustanu. </p>
+          </content>
+         </point>
+         <point eId="art_369_para_1_point_3">
+          <num>(3)</num>
+          <content eId="art_369_para_1_point_3_content">
+           <p>Predsednik veća će odmah posle otvaranja zasedanja, ukoliko za to postoje razlozi, upozoriti prisutna lica da se pristojno ponašaju i ne ometaju rad suda. </p>
+          </content>
+         </point>
+         <point eId="art_369_para_1_point_4">
+          <num>(4)</num>
+          <content eId="art_369_para_1_point_4_content">
+           <p>Stranke i drugi učesnici u postupku dužni su da ustanu kad se obraćaju sudu, osim ako to nije moguće zbog opravdanih razloga ili se saslušanje ili ispitivanje vrši na drugi način. </p>
+          </content>
+         </point>
+         <point eId="art_369_para_1_point_5">
+          <num>(5)</num>
+          <content eId="art_369_para_1_point_5_content">
+           <p>Lica koja prisustvuju glavnom pretresu, osim lica koja obezbeđuju sud i okrivljenog, ne smeju nositi oružje ili opasno oruđe, a u cilju provere da li se pridržavaju zabrane, predsednik veća može narediti njihovo pretresanje. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+       <article eId="art_370">
+        <num>Član 370</num>
+        <heading>Mere za održavanje reda</heading>
+        <paragraph eId="art_370_para_1">
+         <point eId="art_370_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_370_para_1_point_1_content">
+           <p>Ako optuženi, branilac, oštećeni, zakonski zastupnik, punomoćnik, svedok, veštak, stručni savetnik, prevodilac, tumač ili drugo lice koje prisustvuje glavnom pretresu narušava red tako što ne poštuje naređenja predsednika veća za održavanje reda ili vređa dostojanstvo suda, predsednik veća će ga opomenuti, a ako lice nastavi da narušava red, kazniće ga novčanom kaznom do 150.000 dinara. </p>
+          </content>
+         </point>
+         <point eId="art_370_para_1_point_2">
+          <num>(2)</num>
+          <content eId="art_370_para_1_point_2_content">
+           <p>O narušavanju reda od strane javnog tužioca ili lica koje ga zamenjuje, predsednik veća će izvestiti nadležnog javnog tužioca i Državno veće tužilaca, ili će prekinuti glavni pretres i od nadležnog javnog tužioca zatražiti da odredi drugo lice da u nastavku glavnog pretresa zastupa optužnicu, uz obavezu obaveštavanja suda o preduzetim merama. </p>
+          </content>
+         </point>
+         <point eId="art_370_para_1_point_3">
+          <num>(3)</num>
+          <content eId="art_370_para_1_point_3_content">
+           <p>Predsednik veća obavestiće nadležnu advokatsku komoru o kazni izrečenoj advokatu zbog narušavanja reda, uz obavezu obaveštavanja suda o preduzetim merama. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+       <article eId="art_372">
+        <num>Član 372</num>
+        <heading>Isključenje branioca ili punomoćnika</heading>
+        <paragraph eId="art_372_para_1">
+         <point eId="art_372_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_372_para_1_point_1_content">
+           <p>Branioca ili punomoćnika koji posle izricanja kazne produži da narušava red, veće će isključiti iz daljeg postupka i pozvati stranku ili zastupano lice da uzme drugog branioca, odnosno punomoćnika i o tome obavestiti nadležnu advokatsku komoru. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+       <article eId="art_374">
+        <num>Član 374</num>
+        <heading>Mere za sprečavanje odugovlačenja postupka</heading>
+        <paragraph eId="art_374_para_1">
+         <point eId="art_374_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_374_para_1_point_1_content">
+           <p>Braniocu, oštećenom, zakonskom zastupniku, punomoćniku, oštećenom kao tužiocu ili privatnom tužiocu koji preduzima radnje očigledno usmerene na odugovlačenje postupka, veće će izreći opomenu. </p>
+          </content>
+         </point>
+         <point eId="art_374_para_1_point_2">
+          <num>(2)</num>
+          <content eId="art_374_para_1_point_2_content">
+           <p>O neblagovremenom ili neodgovarajućem postupanju javnog tužioca ili lica koje ga zamenjuje, a kojim se prouzrokuje odugovlačenje postupka, predsednik veća će izvestiti nadležnog javnog tužioca i Državno veće tužilaca, uz obavezu obaveštavanja suda o preduzetim merama. </p>
+          </content>
+         </point>
+         <point eId="art_374_para_1_point_3">
+          <num>(3)</num>
+          <content eId="art_374_para_1_point_3_content">
+           <p>Predsednik veća obavestiće nadležnu advokatsku komoru o opomeni izrečenoj advokatu zbog odugovlačenja postupka, uz obavezu obaveštavanja suda o preduzetim merama. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+      </subsection>
+     </section>
+    </chapter>
+    <chapter eId="chp_19">
+     <num>XIX.</num>
+     <heading>POSTUPAK PO PRAVNIM LEKOVIMA</heading>
+     <section eId="chp_19_sec_1">
+      <num>1.</num>
+      <heading>Redovni pravni lekovi</heading>
+      <subsection eId="chp_19_sec_1_sub_v">
+       <num>v)</num>
+       <heading>Žalba protiv rešenja</heading>
+       <article eId="art_465">
+        <num>Član 465</num>
+        <heading>O dozvoljenosti izjavljivanja žalbe</heading>
+        <paragraph eId="art_465_para_1">
+         <point eId="art_465_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_465_para_1_point_1_content">
+           <p>Protiv rešenja organa postupka donesenih u prvom stepenu, stranke, branilac i lica čija su prava povređena mogu izjaviti žalbu uvek kada u ovom zakoniku nije izričito određeno da žalba nije dozvoljena. </p>
+          </content>
+         </point>
+         <point eId="art_465_para_1_point_2">
+          <num>(2)</num>
+          <content eId="art_465_para_1_point_2_content">
+           <p>Protiv rešenja veća donesenog u istrazi i u postupku optuženja, žalba nije dozvoljena, osim ako ovim zakonikom nije drugačije određeno. </p>
+          </content>
+         </point>
+         <point eId="art_465_para_1_point_3">
+          <num>(3)</num>
+          <content eId="art_465_para_1_point_3_content">
+           <p>Rešenja koja se donose radi pripremanja i održavanja glavnog pretresa mogu se pobijati samo u žalbi na presudu. </p>
+          </content>
+         </point>
+         <point eId="art_465_para_1_point_4">
+          <num>(4)</num>
+          <content eId="art_465_para_1_point_4_content">
+           <p>Protiv rešenja drugostepenog suda žalba nije dozvoljena, osim ako ovim zakonikom nije drugačije određeno. </p>
+          </content>
+         </point>
+         <point eId="art_465_para_1_point_5">
+          <num>(5)</num>
+          <content eId="art_465_para_1_point_5_content">
+           <p>Protiv rešenja Vrhovnog kasacionog suda žalba nije dozvoljena. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+       <article eId="art_466">
+        <num>Član 466</num>
+        <heading>Rok za izjavljivanje i suspenzivno dejstvo žalbe</heading>
+        <paragraph eId="art_466_para_1">
+         <point eId="art_466_para_1_point_1">
+          <num>(1)</num>
+          <content eId="art_466_para_1_point_1_content">
+           <p>Žalba se izjavljuje organu postupka koji je doneo rešenje. </p>
+          </content>
+         </point>
+         <point eId="art_466_para_1_point_2">
+          <num>(2)</num>
+          <content eId="art_466_para_1_point_2_content">
+           <p>Žalba se izjavljuje u roku od tri dana od dana dostavljanja rešenja i odlaže njegovo izvršenje, osim ako ovim zakonikom nije drugačije određeno. </p>
+          </content>
+         </point>
+        </paragraph>
+       </article>
+      </subsection>
+     </section>
+    </chapter>
+   </body>
+  </act>
+ </akomaNtoso>
+ ```
