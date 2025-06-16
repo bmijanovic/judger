@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" 
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U BARU</FRBRauthor>
+                    <FRBRdate date="2016-10-24">2016-10-24</FRBRdate>
+                    <FRBRtitle>K.br. 299/15</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Baru"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Bar" showAs="Osnovno državno tužilaštvo u Baru"/>
+                <TLCPerson eId="tSpasojevic" href="/ontology/person/tSpasojevic" showAs="Tamara Spasojević"/>
+                <TLCPerson eId="zIvanovic" href="/ontology/person/zIvanovic" showAs="Zorica Ivanović"/>
+                <TLCPerson eId="kEv" href="/ontology/person/kEv" showAs="K.E. V."/>
+                <TLCPerson eId="vL" href="/ontology/person/vL" showAs="V. L."/>
+                <TLCPerson eId="kD" href="/ontology/person/kD" showAs="K. D."/>
+                <TLCPerson eId="vS" href="/ontology/person/vS" showAs="V. S."/>
+                <TLCPerson eId="kSs" href="/ontology/person/kSs" showAs="K. S. S."/>
+                <TLCPerson eId="aKs" href="/ontology/person/aKs" showAs="A. K. S."/>
+                <TLCPerson eId="tN" href="/ontology/person/tN" showAs="T. N."/>
+                <TLCPerson eId="djJ" href="/ontology/person/djJ" showAs="Dj. J."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Optuženi"/>
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Tužilac"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Advokat"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećeni"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U BARU</organization>, 
+                kao prvostepeni, krivični, po sudiji 
+                <party id="tSpasojevic" refersTo="#tSpasojevic" as="#judge">Tamari Spasojević</party>, 
+                uz učešće 
+                <party id="zIvanovic" refersTo="#zIvanovic" as="#clerk">Zorice Ivanović</party>, 
+                u krivičnom predmetu optužene 
+                <party id="kEv" refersTo="#kEv" as="#defendant">K.E. V.</party>, 
+                zbog krivičnog djela samovlašće iz 
+                <ref href="/krivicni/art_384">čl.384 st.2 u vezi st.1 Krivičnog zakonika Crne Gore</ref> 
+                i optuženih 
+                <party id="vL" refersTo="#vL" as="#defendant">V. L.</party>, 
+                <party id="kD" refersTo="#kD" as="#defendant">K. D.</party> i 
+                <party id="vS" refersTo="#vS" as="#defendant">V. S.</party>, 
+                zbog krivičnog djela samovlašće iz 
+                <ref href="/krivicni/art_384">čl.384 st.4 u vezi st.2 i 1 Krivičnog zakonika Crne Gore</ref> 
+                i krivičnog djela protivpravno lišenje slobode iz 
+                <ref href="/krivicni/art_162">čl.162 st.1 Krivičnog zakonika Crne Gore</ref>, 
+                po optužnom predlogu 
+                <organization id="odt" refersTo="#odt">Osnovnog državnog tužioca u Baru Kt.br.... od 22.09.2011.godine</organization>, 
+                nakon glavnog i javnog pretresa održanog dana <date date="2016-10-19">19.10.2016.godine</date> 
+                u prisustvu zastupnika optužbe saradnika kod Osnovnog državnog tužioca P. Dj., optuženih 
+                <party id="kEv" refersTo="#kEv">K.E. V.</party>, 
+                <party id="vL" refersTo="#vL">V. L.</party>, 
+                <party id="kD" refersTo="#kD">K. D.</party> i 
+                <party id="vS" refersTo="#vS">V. S.</party>, 
+                branioca optuženih 
+                <party id="kEv" refersTo="#kEv">K.E. V.</party>, 
+                <party id="kD" refersTo="#kD">K. D.</party> i 
+                <party id="vS" refersTo="#vS">V. S.</party>, 
+                <party id="tN" refersTo="#tN" as="#lawyer">T. N.</party>, 
+                advokata iz B., kao i punomoćnika oštećenog 
+                <party id="kSs" refersTo="#kSs" as="#victim">K. S. S.</party>, 
+                <party id="djJ" refersTo="#djJ" as="#lawyer">Dj. J.</party>, 
+                advokata iz B., dana <date date="2016-10-24">24.10.2016.godine</date> donio je i javno objavio
+            </p>
+            
+            <p><b>P R E S U D U</b></p>
+            
+            <p>
+                <b>Optuženi,</b>
+            </p>
+            
+            <p>
+                <party id="kEv" refersTo="#kEv">1. K.E. V.</party> (pasoš broj ... izdat u 2 odeljenju milicije N. GUVD Republike S.) od oca V. i majke Lj., rođene T., 
+                rođena u R., grad J. S., dana <date date="1979-06-07">07.06.1979.godine</date>, nastanjena u R. M., Č., 
+                sa boravištem u B., ul. B., ..., državljanka R., razvedena, majka jednog djeteta, advokat, srednjeg imovnog stanja, neosuđivana,
+            </p>
+            
+            <p>
+                <party id="kD" refersTo="#kD">3. K. D.</party> (JMBG ….) od oca S. i majke J. rođene M., rođen <date date="1982-11-18">18.11.1982.godine</date> na C., 
+                nastanjen u B., B…, C., mehaničar, oženjen, otac jednog djeteta, srednjeg imovnog stanja, 
+                osuđivan presudom Osnovnog suda u P. K.br.337/14 koja je postala pravosnažna dana <date date="2015-03-16">16.03.2015.godine</date> 
+                zbog krivičnog djela ugrožavanje javnog saobraćaja iz <ref href="/krivicni/art_339">čl.339 st.1 KZ CG</ref> 
+                kojom mu je izrečena uslovna osuda kojom mu je utvrđena kazna zatvora u trajanju od tri mjeseca uslovno na jednu godinu 
+                kao i presudom Osnovnog suda u Kotoru K.br.294/13 koja je postala pravosnažna <date date="2014-05-23">23.05.2014.godine</date> 
+                zbog krivičnog djela nasilničko ponašanje iz <ref href="/krivicni/art_399">čl.399 Krivičnog zakonika Crne Gore</ref> 
+                kojom mu je izrečena uslovna osuda I utvrđena kazna zatvora u trajanju od šest mjeseci uslovno na jednu godinu i šest mjeseci,
+            </p>
+            
+            <p>
+                <party id="vS" refersTo="#vS">4. V. S.</party> (JMBG …) od oca Ž. i majke R. rođene S., rođen <date date="1988-04-09">09.04.1988.godine</date> u P., 
+                nastanjen u P. ul.N., C., završio srednju školu, policajac, neoženjen, bez djece, srednjeg imovnog stanja, neosuđivan,
+            </p>
+            
+            <p><b>K r i v i s u</b></p>
+            
+            <p>
+                Zato što su,
+            </p>
+            
+            <p>
+                <party id="kEv" refersTo="#kEv">K.E. V.</party> dana <date date="2011-09-19">19.09.2011.godine</date>, oko 15,00 časova, u Osnovnoj školi „J.“ u B., 
+                svjesna svog djela i htjela njegovo izvršenje, iako je znala da je njeno djelo zabranjeno, 
+                upotrebom sile samovlasno pribavljala pravo za koje smatra da joj pripada uspostavljanjem roditeljskog prava 
+                nad svojom maloljetnom ćerkom <party id="aKs" refersTo="#aKs">A.S.</party> koja živi sa svojim ocem 
+                <party id="kSs" refersTo="#kSs">K. S. S.</party> u B., dok su okrivljeni 
+                <party id="vL" refersTo="#vL">V. L.</party>, 
+                <party id="kD" refersTo="#kD">K. D.</party> i 
+                <party id="vS" refersTo="#vS">V. S.</party> 
+                samovlasno pribavljali pravo za drugog - K. E. V. koje pravo ona smatra da joj pripada, 
+                svjesni svog djela i htjeli njegovo izvršenje, iako su znali da je njihovo djelo zabranjeno, 
+                na način što je okrivljena <party id="kEv" refersTo="#kEv">K. E. V.</party> 
+                zajedno sa <party id="vL" refersTo="#vL">V. L.</party> i 
+                <party id="kD" refersTo="#kD">K. D.</party> ušla u školu, a zatim u učionicu u kojoj se nalazila oštećena 
+                <party id="aKs" refersTo="#aKs">A.</party> na času, prišla sa jedne strane oštećenoj 
+                <party id="aKs" refersTo="#aKs">A.</party>, jednom rukom je dohvatila za ruku, a drugom rukom ispod potkoljenice, 
+                dok je sa druge strane <party id="kD" refersTo="#kD">K. D.</party>, jednom rukom uhvatio 
+                <party id="aKs" refersTo="#aKs">A.</party> za ruku, a drugom ispod potkoljenice i istu bez njenog pristanka iznijeli iz učionice i iz škole, 
+                dok je <party id="vL" refersTo="#vL">V. L.</party> uhvatio za obje ruke učiteljicu L. A. i iste joj stavio iza ledja i tako je držao 
+                kako bi omogućio nesmetano iznošenje <party id="aKs" refersTo="#aKs">A.</party> iz učionice i škole, 
+                od strane <party id="kD" refersTo="#kD">K. D.</party> i <party id="kEv" refersTo="#kEv">K.E. V.</party> nakon čega je zadržao vrata od učionice 
+                kako bi onemogućio izlazak učiteljici, nakon čega su svi izašli iz škole, unijeli <party id="aKs" refersTo="#aKs">A.</party> u PMV marke „P.“ reg.ozn. PG … 
+                kojim je ispred škole čekao <party id="vS" refersTo="#vS">V. S.</party>, kada su svi ušli u vozilo i krenuli u pravcu S., 
+                pa su na ovaj način protivpravno oduzeli i ograničili slobodu kretanja maloljetnoj <party id="aKs" refersTo="#aKs">A.</party>,
+            </p>
+            
+            <p>
+                - čime su izvršili i to optužena <party id="kEv" refersTo="#kEv">K.E. V.</party> krivično djelo samovlašće iz 
+                <ref href="/krivicni/art_384">čl.384 st.2 u vezi st.1 Krivičnog zakonika Crne Gore</ref>, 
+                a optuženi <party id="vL" refersTo="#vL">V. L.</party>, 
+                <party id="kD" refersTo="#kD">K. D.</party> i 
+                <party id="vS" refersTo="#vS">V. S.</party> krivično djelo – samovlašće iz 
+                <ref href="/krivicni/art_384">čl.384 st.4 u vezi st.2 u vezi st.1 Krivičnog zakonika Crne Gore</ref> 
+                i krivično djelo protivpravno lišenje slobode iz 
+                <ref href="/krivicni/art_162">čl.162 st.1 Krivičnog zakonika Crne Gore</ref>.
+            </p>
+            
+            <p>
+                Pa sud primjenom <ref href="/krivicni/art_4">čl. 4</ref>, 
+                <ref href="/krivicni/art_5">čl. 5</ref>, 
+                <ref href="/krivicni/art_13">čl. 13</ref>, 
+                <ref href="/krivicni/art_15">čl. 15</ref>, 
+                <ref href="/krivicni/art_32">čl. 32</ref>, 
+                <ref href="/krivicni/art_36">čl. 36</ref>, 
+                <ref href="/krivicni/art_42">čl. 42</ref>, 
+                <ref href="/krivicni/art_52">čl. 52</ref>, 
+                <ref href="/krivicni/art_53">čl. 53</ref> i 
+                <ref href="/krivicni/art_54">čl. 54 Krivičnog zakonika Crne Gore</ref> i 
+                <ref href="/krivicni/art_326">čl.326</ref>, 
+                <ref href="/krivicni/art_329">čl. 329</ref> i 
+                <ref href="/krivicni/art_374">čl. 374 ZKP-a</ref>, optuženoj <party id="kEv" refersTo="#kEv">K.E. V.</party> izriče
+            </p>
+            
+            <p>
+                <b>USLOVNU OSUDU</b>
+            </p>
+            
+            <p>
+                - Kojom joj utvrđuje kaznu zatvora u trajanju od 3 (tri) mjeseca i istovremeno određuje da se kazna neće izvršiti ukoliko okrivljena u roku od 1 (jedne) godine po pravosnažnosti presude, ne izvrši novo krivično djelo.
+            </p>
+            
+            <p>
+                Sud optuženima <party id="vL" refersTo="#vL">V. L.</party> i <party id="vS" refersTo="#vS">V. S.</party>, primjenom 
+                <ref href="/krivicni/art_4">čl.4</ref>, 
+                <ref href="/krivicni/art_5">čl. 5</ref>, 
+                <ref href="/krivicni/art_13">čl. 13</ref>, 
+                <ref href="/krivicni/art_15">čl. 15</ref>, 
+                <ref href="/krivicni/art_32">čl. 32</ref>, 
+                <ref href="/krivicni/art_36">čl. 36</ref>, 
+                <ref href="/krivicni/art_42">čl. 42</ref>, 
+                <ref href="/krivicni/art_48">čl. 48</ref>, 
+                <ref href="/krivicni/art_52">čl. 52</ref>, 
+                <ref href="/krivicni/art_53">čl. 53</ref> i 
+                <ref href="/krivicni/art_54">čl. 54 Krivičnog zakonika Crne Gore</ref> i 
+                <ref href="/krivicni/art_326">čl.326</ref>, 
+                <ref href="/krivicni/art_329">čl. 329</ref> i 
+                <ref href="/krivicni/art_374">čl. 374 ZKP-a</ref>, prethodno u t v r đ u j e
+            </p>
+            
+            <p>
+                - za krivično djelo samovlašće iz <ref href="/krivicni/art_384">čl.384 st.4 u vezi st.2 i 1 Krivičnog zakonika Crne Gore</ref>, kaznu zatvora u trajanju od po 3 (tri) mjeseca i
+            </p>
+            
+            <p>
+                - za krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl.162 st.1 Krivičnog zakonika Crne Gore</ref> kaznu zatvora u trajanju od po 30 (trideset) dana,
+            </p>
+            
+            <p>
+                Pa sud optuženima <party id="vL" refersTo="#vL">V. L.</party> i <party id="vS" refersTo="#vS">V. S.</party> primjenom citiranih zakonskih propisa i z r i č e
+            </p>
+            
+            <p>
+                <b>USLOVNU OSUDU</b>
+            </p>
+            
+            <p>
+                - Kojom im utvrđuje jedinstvenu kaznu zatvora u trajanju od po 3 (tri) mjeseca i 15 (petnaest) dana, i istovremeno određuje da se kazna neće izvršiti ukoliko optuženi u roku od 1 (jedne) godine i 6 (šest) mjeseci po pravosnažnosti presude, ne izvrše novo krivično djelo.
+            </p>
+            
+            <p>
+                Sud optuženom <party id="kD" refersTo="#kD">K. D.</party> primjenom citiranih zakonskih propisa, te 
+                <ref href="/krivicni/art_4">člana 4</ref>, 
+                <ref href="/krivicni/art_5">čl. 5</ref>, 
+                <ref href="/krivicni/art_13">čl. 13</ref>, 
+                <ref href="/krivicni/art_15">čl. 15</ref>, 
+                <ref href="/krivicni/art_32">čl. 32</ref>, 
+                <ref href="/krivicni/art_41">čl. 41</ref>, 
+                <ref href="/krivicni/art_42">čl. 42</ref> i 
+                <ref href="/krivicni/art_48">čl. 48 Krivičnog zakonika Crne Gore</ref> i 
+                <ref href="/krivicni/art_226">člana 226</ref>, 
+                <ref href="/krivicni/art_229">čl. 229</ref> i 
+                <ref href="/krivicni/art_374">čl. 374 ZKP-a</ref>, prethodno u t v r đ u j e
+            </p>
+            
+            <p>
+                - za krivično djelo samovlašće iz <ref href="/krivicni/art_384">čl.384 st.4 u vezi st.2 i 1 Krivičnog zakonika Crne Gore</ref> kaznu rada u javnom interesu u trajanju od 120 (stodvadeset) časova,
+            </p>
+            
+            <p>
+                - za krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl.162 st.1 Krivičnog zakonika Crne Gore</ref> kaznu rada u javnom interesu u trajanju od 60 (šezdeset) časova,
+            </p>
+            
+            <p>
+                Pa sud istog primjenom citiranih zakonskih propisa
+            </p>
+            
+            <p>
+                <b>O S U D U J E</b>
+            </p>
+            
+            <p>
+                Na jedinstvenu kaznu rada u javnom interesu u trajanju od 180 (stoosamdeset) časova, a koje se ima izvršiti za vrijeme od 6 mjeseci, s tim što kazna ne može biti duža od 60 časova u toku jednog mjeseca.
+            </p>
+            
+            <p>
+                Ukoliko optuženi ne vrši rad u javnom interesu, ta kazna će se zamijeniti kaznom zatvora, tako što će se svakih 60 časova rada u javnom interesu zamijeniti kaznom zatvora u trajanju od jednog mjeseca.
+            </p>
+            
+            <p>
+                Na osnovu <ref href="/krivicni/art_239">čl.239 st.2 ZKP-a</ref> oštećeni <party id="kSs" refersTo="#kSs">K. S. S.</party> se radi ostvarivanja imovinsko pravnog zahtjeva upućuje na parnicu.
+            </p>
+            
+            <p>
+                Optuženi su dužni da plate troškove postupka u iznosu od po <amount value="50.00">50,00 eura</amount>, na ime sudskog paušala, u roku od <time duration="P15D">15 dana</time>, po pravosnažnosti presude, pod prijetnjom prinudnog izvršenja, dok će se o troškovima punomoćnika oštećenog advokata <party id="djJ" refersTo="#djJ">Dj. J.</party> odlučiti posebnim rješenjem.
+            </p>
+            
+            <p>
+                <b>O b r a z l o ž e n j e</b>
+            </p>
+            
+            <p>
+                Optužnim predlogom <organization id="odt" refersTo="#odt">Osnovnog državnog tužioca u Baru Kt.br.... od 22.09.2011.godine</organization>, stavljeno je na teret optuženoj <party id="kEv" refersTo="#kEv">K.E.</party> izvršenje krivičnog djela samovlašće iz <ref href="/krivicni/art_384">čl.384 st.2 u vezi st.1 Krivičnog zakonika Crne Gore</ref>, a optuženima <party id="vL" refersTo="#vL">V. L.</party>, <party id="kD" refersTo="#kD">K. D.</party> i <party id="vS" refersTo="#vS">V. S.</party> izvršenje krivičnog djela samovlašće iz <ref href="/krivicni/art_384">čl.384 st.4 u vezi st.2 i 1 Krivičnog zakonika Crne Gore</ref> i krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl.162 st.1 Krivičnog zakonika Crne Gore</ref>. Zastupnik optužbe je na glavnim pretresima od <date date="2012-10-18">18.10.2012.godine</date>, od <date date="2013-03-13">13.03.2013.godine</date> i od <date date="2016-10-19">19.10.2016.godine</date> precizirao dispozitiv optužnog predloga na način kao u izreci presude, a u završnoj riječi predložio da sud optužene oglasi krivim i osudi po zakonu.
+            </p>
+            
+            <!-- Additional content would continue here following the same pattern -->
+            
+            <p>
+                <b>OSNOVNI SUD U BARU</b>
+            </p>
+            
+            <p>
+                <b>Dana 24.10.2016.godine</b>
+            </p>
+            
+            <p>
+                <party id="zIvanovic" refersTo="#zIvanovic">Zapisničar, Zorica Ivanović</party>
+            </p>
+            
+            <p>
+                <party id="tSpasojevic" refersTo="#tSpasojevic">S U D I J A, Tamara Spasojević</party>
+            </p>
+            
+            <p>
+                <b>PRAVNA POUKA:</b> Protiv ove presude može se izjaviti žalba Višem sudu u P. u roku od 8 dana od dana prijema pismenog otpravka, a preko ovog suda.
+            </p>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

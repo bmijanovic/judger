@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U NIKŠIĆU</FRBRauthor>
+                    <FRBRdate date="2019-02-07">2019-02-07</FRBRdate>
+                    <FRBRtitle>K 77/2017</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Niksic" showAs="Osnovni sud u Nikšiću"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Niksic" showAs="Osnovno državno tužilaštvo u Nikšiću"/>
+                <TLCPerson eId="dIgor" href="/ontology/person/dIgor" showAs="Đuričković Igor"/>
+                <TLCPerson eId="pBudimirka" href="/ontology/person/pBudimirka" showAs="Papović Budimirka"/>
+                <TLCPerson eId="rM" href="/ontology/person/rM" showAs="R. M."/>
+                <TLCPerson eId="hS" href="/ontology/person/hS" showAs="H. S."/>
+                <TLCPerson eId="sVanja" href="/ontology/person/sVanja" showAs="Sinđić Vanja"/>
+                <TLCPerson eId="fS" href="/ontology/person/fS" showAs="F.S."/>
+                <TLCPerson eId="b" href="/ontology/person/b" showAs="B."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Državni tužilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećeni"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U NIKŠIĆU</organization>,
+                kao prvostepeni krivični, sudija pojedinac
+                <party id="dIgor" refersTo="#dIgor" as="#judge">Đuričković Igor</party>,
+                uz sudjelovanje namještenika
+                <party id="pBudimirka" refersTo="#pBudimirka" as="#clerk">Papović Budimirke</party>
+                kao zapisničara, rješavajući u krivičnom predmetu okrivljenog
+                <party id="rM" refersTo="#rM" as="#defendant">R. M.</party>
+                iz Nikšića, zbog krivičnog djela protivpravno lišenje slobode iz
+                <ref href="/krivicni/art_162">člana 162 stav 1 KZ CG</ref>
+                i krivičnog djela zlostavljanje iz
+                <ref href="/krivicni/art_166a">člana 166a stav 1 KZ CG</ref>,
+                postupajući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">ODT Nikšić</organization>
+                Kt.br.427/16 od 15.03.2017.godine, nakon javnog glavnog pretresa održanog dana
+                <date date="2019-02-04">04.02.2019.godine</date>,
+                u prisustvu
+                <party id="sVanja" refersTo="#sVanja" as="#prosecutor">državnog tužioca u ODT-u u Nikšiću Sinđić Vanje</party>,
+                okrivljenog
+                <party id="rM" refersTo="#rM">R. M.</party>
+                i njegovih branilaca
+                <party id="fS" refersTo="#fS" as="#lawyer">F.S.</party>
+                i
+                <party id="b" refersTo="#b" as="#lawyer">B.</party>
+                advokata iz Nikšića, donio je dana
+                <date date="2019-02-07">07.02.2019.godine</date>
+                i javno objavio
+            </p>
+
+            <p><b>P R E S U D U</b></p>
+
+            <p>
+                Okrivljeni:
+                <party id="rM" refersTo="#rM">R. M.</party>,
+                JMBG: .., od oca D. i majke Lj. rođene M., rođen ...godine u Nikšiću, sa prebivalištem u Nikšiću-ulica ..,
+                državljanin Crne Gore, sa završenom srednjom školom, nezaposlen, oženjen, otac dvoje djece, srednjeg
+                imovnog stanja, ranije osuđivan.
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <num>I</num>
+                    <p><b>Kriv je</b></p>
+                    <p>
+                        Što je:
+                        Dana <date date="2016-11-30">30.11.2016.godine</date>, u Nikšiću, u ulici Voja Deretića, svjestan svog djela i htio njegovo izvršenje,
+                        protivpravno zatvorio <party id="hS" refersTo="#hS" as="#victim">oštećenog H. S.</party>, jer navedenog dana u ustaljenom terminu od 13:00 do 14:00 časova
+                        oštećeni nije nahranio kerove koji su vlasništvo okrivljenog, za koje poslove odgajanja i čuvanja kerova je od
+                        okrivljenog primao mjesečnu naknadu od 150,00 eura, na način što ga je okrivljeni pitao je li nahranio štenad
+                        i ostale kerove, a potom ga iznenada pesnicom udario u predjelu lica sa lijeve strane, nastavljajući da ga
+                        naizmjenično udara pesnicama po licu, od kojih udaraca je pao na betonsku podlogu ispred kaveza za pse,
+                        nakon čega ga je okrivljeni povukao i podigao za gornji dio tijela i tako ga ubacio u boks za pse, nakon čega je
+                        zaključao vrata od boksa i tako oštećenog držao zatvorenog u trajanju od 20 minuta;
+                    </p>
+                    <p>
+                        -čime je izvršio krivično djelo protivpravno lišenje slobode iz
+                        <ref href="/krivicni/art_162">člana 162 stav 1 Krivičnog zakonika Crne Gore</ref>,
+                    </p>
+                    <p>
+                        -pa sud okrivljenog zbog izvršenja navedenog krivičnog djela primjenom citiranih zakonskih odredbi i
+                        odredbi iz
+                        <ref href="/krivicni/art_4">člana 4 stav 2</ref>,
+                        <ref href="/krivicni/art_32">člana 32</ref>,
+                        <ref href="/krivicni/art_36">36</ref> i
+                        <ref href="/krivicni/art_42">42 KZ CG</ref> i odredbi iz
+                        <ref href="/zakonik_krivicni_postupak/art_226">člana 226</ref>,
+                        <ref href="/zakonik_krivicni_postupak/art_229">229</ref>,
+                        <ref href="/zakonik_krivicni_postupak/art_230">230</ref> i
+                        <ref href="/zakonik_krivicni_postupak/art_374">374 ZKP-a</ref>
+                    </p>
+                    <p>
+                        <b>OSUĐUJE</b>
+                    </p>
+                    <p>
+                        Na kaznu zatvora u trajanju od <time duration="P10M">10 (slovima: deset) mjeseci</time>, koju kaznu je okrivljeni dužan izdržati nakon
+                        pravosnažnosti presude.
+                    </p>
+                    <p>
+                        Obavezuje se okrivljeni da na ime paušala kao dijela troškova krivičnog postupka plati novčani iznos od
+                        <amount value="100.00">100,00 €</amount> u roku od <time duration="P15D">15 dana</time> od dana pravosnažnosti presude, pod prijetnjom prinudnog izvršenja, na žiro
+                        račun Osnovnog suda u Nikšiću broj 832-152-32 i da sudu dostavi dokaz o izvršenoj uplati.
+                    </p>
+                    <p>
+                        Troškovi ovog krivičnog postupka u iznosu od <amount value="500.50">500,50 eura</amount>, koji se odnose na ime troškova vještačenja po
+                        vještacima medicinske struke, padaju na teret budžetskih sredstava ovog suda.
+                    </p>
+                </item>
+                <item id="odluka2">
+                    <num>II</num>
+                    <p>
+                        Prema okrivljenom <party id="rM" refersTo="#rM">R. M.</party>:
+                    </p>
+                    <p>
+                        -Na osnovu <ref href="/zakonik_krivicni_postupak/art_372">člana 372 tačka 3 Zakonika o krivičnom postupku</ref>
+                    </p>
+                    <p><b>ODBIJA SE OPTUŽBA</b></p>
+                    <p>
+                        Da je:
+                        Dana <date date="2016-11-30">30.11.2016.godine</date> u Nikšiću u ulici Voja Deretića, svjestan svog djela i htio njegovo izvršenje, oštećenog
+                        zlostavljao i prema njemu postupao na način kojim se vrijeđa ljudsko dostojanstvo, govoreći mu: “Majku ti
+                        jebem cigansku”, kada je oštećenog dok se nalazio u ležećem položaju više puta udario nogama i šakama po
+                        glavi i tijelu, drvenom letvom, dužine 150 cm, debljine 3 cm, po lijevoj ruci, kada je oštećenom rekao “Ovo ti
+                        je što nijesi dao kerovima da jedu”, nakon čega, pošto je oštećenog prethodno zatvorio u kavez za pse,
+                        oštećenom rekao da skine odjeću sa sebe, što je oštećeni i učinio, koju odjeću je okrivljeni izbacio iz kaveza, a
+                        potom oštećenom oduzeo mobilni telefon,
+                    </p>
+                    <p>
+                        - čime bi izvršio krivično djelo zlostavljanje iz <ref href="/krivicni/art_166a">člana 166a Krivičnog zakonika Crne Gore</ref>.
+                    </p>
+                </item>
+            </list>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

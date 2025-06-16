@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" 
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U BARU</FRBRauthor>
+                    <FRBRdate date="2018-06-12">2018-06-12</FRBRdate>
+                    <FRBRtitle>K.br. 252/17</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Bar" showAs="Osnovni sud u Baru"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Bar" showAs="Osnovno državno tužilaštvo u Baru"/>
+                <TLCPerson eId="gStepanovic" href="/ontology/person/gStepanovic" showAs="Goran Ščepanović"/>
+                <TLCPerson eId="mMinic" href="/ontology/person/mMinic" showAs="Milijana Minić"/>
+                <TLCPerson eId="rS" href="/ontology/person/rS" showAs="R. Š."/>
+                <TLCPerson eId="cS" href="/ontology/person/cS" showAs="Č. S."/>
+                <TLCPerson eId="rGacevic" href="/ontology/person/rGacevic" showAs="Radmila Gačević"/>
+                <TLCPerson eId="lD" href="/ontology/person/lD" showAs="L. D."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Tužilac"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U BARU</organization>, 
+                kao prvostepeni krivični, po sudiji 
+                <party id="gStepanovic" refersTo="#gStepanovic" as="#judge">Goranu Ščepanoviću</party>, 
+                uz učešće 
+                <party id="mMinic" refersTo="#mMinic" as="#clerk">Milijane Minić</party>, 
+                u krivičnom predmetu protiv okrivljenog 
+                <party id="rS" refersTo="#rS" as="#defendant">R. Š.</party>, 
+                zbog krivičnog djela laka tjelesna povreda iz 
+                <ref href="/krivicni/art_151">čl. 151 st. 2</ref> 
+                u vezi <ref href="/krivicni/art_49">čl. 49</ref> 
+                i krivičnog djela protivpravno lišenje slobode iz 
+                <ref href="/krivicni/art_162">čl. 162 st. 1</ref> 
+                Krivičnog zakonika Crne Gore, odlučujući po optužnom predlogu 
+                <organization id="odt" refersTo="#odt">ODT-a Bar Kt.br. 475/17 od 14.12.2017.</organization>, 
+                kojeg je na glavnom pretresu zastupao 
+                <party id="rGacevic" refersTo="#rGacevic" as="#prosecutor">Radmila Gačević</party>, 
+                državni tužilac u Osnovnom državnom tužilaštvu u Baru, nakon glavnog i javnog pretresa, 
+                održanog dana <date date="2018-06-11">11.06.2018.</date> godine u prisustvu zastupnika optužbe, 
+                okrivljenog sa braniocem po izboru 
+                <party id="lD" refersTo="#lD" as="#lawyer">L. D.</party>, 
+                advokatom iz F., donio je, a dana <date date="2018-06-12">12.06.2018.</date> godine i javno objavio,
+            </p>
+            
+            <p><b>P R E S U D U</b></p>
+            
+            <p>
+                Okrivljeni: 
+                <party id="rS" refersTo="#rS">R. Š.</party>, 
+                od oca Č. i majke B., rođene H., rođen xx.xx.19xx godine u S., R. M., sa prebivalištem u R., 
+                državljanin Crne Gore, razveden, otac šestoro djece, pismen, sa završenom srednjom školom, 
+                srednjeg imovnog stanja, ranije osuđivan i to: 
+                <ref href="/presuda/184-97">presudom Osnovnog suda u Rožajama K.br. 184/97 od 23.07.1998. godine</ref> 
+                zbog krivičnog djela otmica iz <ref href="/krivicni/art_46">čl. 46 st. 1</ref> KZ, kaznom zatvora od 3 mjeseca; 
+                <ref href="/presuda/364-98">presudom Osnovnog suda u Rožajama K.br. 364/98 od 18.10.1999. godine</ref>, 
+                zbog krivičnog djela ugrožavanje opasnim orudem iz <ref href="/krivicni/art_39">čl. 39 st. 1</ref> KZ, kaznom zatvora od 3 mjeseca; 
+                <ref href="/presuda/215-00">presudom Osnovnog suda u Rožajama K.br. 215/00 od 28.09.2000. godine</ref>, 
+                zbog krivičnog djela ucjena iz <ref href="/krivicni/art_251">čl. 251 st. 2</ref> KZ, kaznom zatvora od 6 mjeseci;
+                <ref href="/presuda/145-00">presudom Osnovnog suda u Rožajama K.br. 145/00 od 23.11.2000. godine</ref>, 
+                zbog krivičnog djela ucjena iz <ref href="/krivicni/art_251">čl. 251 st. 2</ref> KZ, kaznom zatvora od 4 mjeseca;
+                <ref href="/presuda/358-00">presudom Osnovnog suda u Rožajama K.br. 358/00 od 17.12.2002. godine</ref>, 
+                zbog krivičnog djela krada iz <ref href="/krivicni/art_144">čl. 144 st. 1</ref> u vezi <ref href="/krivicni/art_49">čl. 49</ref> KZ RCG, kaznom zatvora od 7 mjeseci;
+                <ref href="/presuda/33-05">presudom Osnovnog suda u Rožajama K.br. 33/05 od 09.05.2005. godine</ref>, 
+                zbog krivičnog djela prevara iz <ref href="/krivicni/art_244">čl. 244 st. 1</ref> KZ, kaznom zatvora od 4 mjeseci;
+                <ref href="/presuda/79-06">presudom Osnovnog suda u Rožajama K.br. 79/06 od 21.06.2006. godine</ref>, 
+                zbog krivičnog djela ugrožavanje opasnim orudem iz <ref href="/krivicni/art_154">čl. 154 st. 1</ref> KZ, kaznom od 800 €;
+                <ref href="/presuda/60-07">presudom Osnovnog suda u Rožajama K.br. 60/07 od 08.10.2007. godine</ref>, 
+                zbog krivičnog djela falsifikovanje isprave iz <ref href="/krivicni/art_412">čl. 412 st. 2</ref> u vezi <ref href="/krivicni/art_1">čl. 1</ref> KZ, kaznom zatvora od 5 mjeseci.
+            </p>
+            
+            <p><b>K R I V J E</b></p>
+            
+            <p>
+                Zato što je: Dana <date date="2017-12-09">09. decembra 2017.</date> godine, u Baru, u ulici ..., 
+                svjestan svojih djela čije izvršenje je htio, jako je znao da su njegova djela zabranjena, 
+                sredstvima podobnim da tijelo teško povrijede ili zdravlje teško naruše, lako tjelesno povrijedio 
+                oštećenu <party id="cS" refersTo="#cS">Č. S.</party> i protivpravno joj oduzeo slobodu kretanja, 
+                na način što je došao u stan oštećene, i nakon prepirke uzeo nož dužine oko 40 cm, 
+                i za vrijeme dok je držao nož u desnoj ruci, lijevom rukom je uhvatio za vrat i davio, 
+                nakon čega joj je prisionio oštricu noža kod vrata, a potom više puta drškom od tog noža udario 
+                u predjelu glave, od kojih udaraca je pala na pod, nakon čega je nastavio da je udara više puta 
+                nogama u predjelu glave i tijela, da bi je potom na silu stavio na prednje sjedište svog vozila, 
+                i odvezao za Rožaje, gdje je u kući, u ulici ..., bocom od plina od 5 kg udario više puta u predjelu tijela, 
+                a potom džezvom za kafu više puta u predjelu tijela, kojom prilikom je oštećena zadobila lake tjelesne povrede 
+                u vidu krvnog podliva u potiljačnom predjelu, krvnog podliva u lijevom sljepoočnom predjelu, 
+                krvnog podliva u oba jagodična predjela, oguljotine u predjelu nosa, prelom 3. zuba u gornjoj vilici 
+                sa desne strane, nagnječenja u predjelu desne bočne strane vrata, pet krvnih podliva i oguljotina 
+                u predjelu zadnje strane grudnog koša, krvnog podliva u predjelu lijeve pazušne jame, 
+                krvnog podliva u sjedalnom predjelu, i krvnog podliva u predjelu desne nadlaktice.
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <num>I</num>
+                    <p>
+                        - Pa mu Sud primjenom citiranih zakonskih odredbi, te odredbi 
+                        <ref href="/krivicni/art_4">čl. 4</ref>, 
+                        <ref href="/krivicni/art_32">čl. 32</ref>, 
+                        <ref href="/krivicni/art_36">čl. 36</ref>, 
+                        <ref href="/krivicni/art_42">čl. 42</ref>, 
+                        <ref href="/krivicni/art_45">čl. 45</ref>, 
+                        <ref href="/krivicni/art_46">čl. 46</ref> i 
+                        <ref href="/krivicni/art_48">čl. 48</ref> 
+                        Krivičnog zakonika, te <ref href="/krivicni/art_369">čl. 369</ref>, 
+                        <ref href="/krivicni/art_370">čl. 370</ref> i 
+                        <ref href="/krivicni/art_374">čl. 374 Zakonika o krivičnom postupku</ref>, prethodno utvrđuje;<br/>
+                        -za produženo krivično djelo laka tjelesna povreda iz <ref href="/krivicni/art_151">čl. 151 st. 2</ref> u vezi <ref href="/krivicni/art_49">čl. 49</ref> Krivičnog zakonika, kaznu zatvora u trajanju od 5 (pet) mjeseci,<br/>
+                        -za krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1</ref> Krivičnog zakonika, kaznu zatvora u trajanju od 2 (dva) mjeseca,
+                    </p>
+                </item>
+                
+                <item id="odluka2">
+                    <num>II</num>
+                    <p>
+                        Za ovim Sud primjenom citiranih zakonskih odredbi, te 
+                        <ref href="/krivicni/art_48">čl. 48 st.2 Krivičnog zakonika</ref>, 
+                        te <ref href="/krivicni/art_229">čl. 229</ref> i 
+                        <ref href="/krivicni/art_374">čl. 374 Zakonika o krivičnom postupku</ref> okrivljenog
+                        <b>OSUDJUJE</b><br/>
+                        Na jedinstvenu kaznu zatvora u trajanju od 6 (šest) mjeseci, u koju kaznu se uračunava vrijeme provedeno u pritvoru od <date date="2017-12-10">10.12.2017.</date> godine do <date date="2018-06-10">10.06.2018.</date> godine.<br/>
+                        Oštećena <party id="cS" refersTo="#cS">Č. S.</party> se radi ostvarivanja imovinsko-pravnog zahtjeva upućuje na parnični postupak.<br/>
+                        Okrivljeni je dužan da plati troškove krivičnog postupka u iznosu od <amount value="750.00">750,00 €</amount> u roku od <time duration="P15D">15 (petnaest) dana</time> od dana pravnosnažnosti presude, pod prijetnjom prinudne naplate.
+                    </p>
+                </item>
+            </list>
+
+            <p>
+                <b>PRAVNA POUKA:</b> Protiv ove presude može se izjaviti žalba Višem sudu u Podgorici u roku od 8 (osam) dana od dana prijema pismenog otpravka.
+            </p>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

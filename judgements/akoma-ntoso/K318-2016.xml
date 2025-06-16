@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" 
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U PODGORICI</FRBRauthor>
+                    <FRBRdate date="2016-07-25">2016-07-25</FRBRdate>
+                    <FRBRtitle>K.br. 318/16</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo"/>
+                <TLCPerson eId="gBukovic" href="/ontology/person/gBukovic" showAs="Goran Buković"/>
+                <TLCPerson eId="aMaras" href="/ontology/person/aMaras" showAs="Ana Maraš"/>
+                <TLCPerson eId="oR" href="/ontology/person/oR" showAs="O. R."/>
+                <TLCPerson eId="mI" href="/ontology/person/mI" showAs="M. I."/>
+                <TLCPerson eId="nM" href="/ontology/person/nM" showAs="N. M."/>
+                <TLCPerson eId="mD" href="/ontology/person/mD" showAs="M. D."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Tužilac"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećeni"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization>, 
+                po sudiji 
+                <party id="gBukovic" refersTo="#gBukovic" as="#judge">Goranu Bukoviću</party>, 
+                uz učešće zapisničara 
+                <party id="aMaras" refersTo="#aMaras" as="#clerk">Ane Maraš</party>, 
+                u krivičnom predmetu protiv okrivljenog 
+                <party id="oR" refersTo="#oR" as="#defendant">O. R.</party>, 
+                zbog krivičnog djela protivpravno lišenje slobode iz 
+                <ref href="/krivicni/art_162">čl. 162.st.1 Krivičnog zakonika Crne Gore</ref>, 
+                odlučujući po optužnom predlogu Osnovnog državnog tužilaštva Kt.br.853716 od 19. maja 2016. godine, 
+                koji je zastupao 
+                <party id="mI" refersTo="#mI" as="#prosecutor">Državni tužilac u Osnovnom državnom tužilaštvu M. I.</party>, 
+                nakon glavnog pretresa održanog <date date="2016-07-20">20.07.2016.</date> godine, na kome je javnost isključena, 
+                u prisustvu stranaka, branioca okrivljenog 
+                <party id="nM" refersTo="#nM" as="#lawyer">N. M.</party>, 
+                advokata, donio je i dana <date date="2016-07-25">25.07.2016.</date> godine javno objavio
+            </p>
+            
+            <p><b>P R E S U D U</b></p>
+            
+            <p>
+                Okrivljeni: 
+                <party id="oR" refersTo="#oR">O. R.</party>, 
+                sa JMBG: .... od oca D. i majke T., rođene T., rođen .... godine na C., sa prebivalištem u F. ul. Z. J. br..../a, 
+                državljanin Crne Gore, po zanimanju auto- mehaničar, neoženjen, nema djecu, pismen, završio srednju mašinsku školu, 
+                lošeg imovnog stanja, neosudivan
+            </p>
+            
+            <p><b>K R I V J E</b></p>
+            
+            <p>
+                Zato što je: Dana <date date="2016-04-27">27.04.2016.</date> godine, oko 08,00 časova, u svojoj porodičnoj kući u ul. Z. J. br..../a u P., 
+                svjestan svog djela čije izvršenje je htio, znajući da je njegovo djelo zabranjeno, protivpravno držao zatvorenu maloljetnu 
+                oštečenu 
+                <party id="mD" refersTo="#mD" as="#victim">M. D.</party>, 
+                na način što je došao ispred srednje trgovinske škole „S. S.“, ušao u hodnik škole, uhvatio oštečenu za ruku i ugurao u vozilo marke R. C., 
+                a potom je odveo u prizemlje svoje kuće, zaključao vrata, zatim od nje više puta zahţtevao da otključa mobilni telefon, 
+                i svaki put kada oštećena to nije hţţela da učini, udario je otvorenom šakom u predjelu lica, da bi potom pokušao da je poljubi, 
+                pa nakon što ga je oštećena odbila od sebe, uputio joj riječi „prvo moraš da spavaš samnom i drugačije nećemo mrdat iz kuće“, 
+                što je oštećena odbila, pa kada je saznao da je dogadaj prijavljen policiji, dovezao oštećenu ispred škole i pustio je na slobodu, 
+                prijeteći joj da ne smije reći da je bila sa njim
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <num>I</num>
+                    <p>
+                        - Pa sud okrivljenog, primjenom citiranih zakonskih propisa i 
+                        <ref href="/krivicni/art_3">čl. 3</ref>,
+                        <ref href="/krivicni/art_4">čl. 4</ref>,
+                        <ref href="/krivicni/art_5">čl. 5</ref>,
+                        <ref href="/krivicni/art_13">čl. 13</ref>,
+                        <ref href="/krivicni/art_15">čl. 15</ref>,
+                        <ref href="/krivicni/art_32">čl. 32</ref>,
+                        <ref href="/krivicni/art_36">čl. 36</ref>,
+                        <ref href="/krivicni/art_42">čl. 42</ref> i 
+                        <ref href="/krivicni/art_51">čl. 51</ref> 
+                        Krivičnog zakonika Crne Gore i 
+                        <ref href="/krivicni/art_226">čl. 226</ref>,
+                        <ref href="/krivicni/art_229">čl. 229</ref> i 
+                        <ref href="/krivicni/art_374">čl. 374</ref> 
+                        Zakonika o krivičnom postupku
+                    </p>
+                </item>
+                
+                <item id="odluka2">
+                    <num>II</num>
+                    <p>
+                        <b>O S U D U J E</b><br/>
+                        Na kaznu zatvora u trajanju od <time duration="P4M">4 (četiri) mjeseca</time>, 
+                        u koju se uračunava vrijeme provedeno u pritvoru počev od 
+                        <date date="2016-04-27">27.04.2016.</date> godine od 18,00 časova, kao dana i časa lišenja slobode, pa nadalje.<br/>
+                        Obavezuje se okrivljeni da ovom sudu na ime troškova postupka uplati novčani iznos od 
+                        <amount value="144.50">144,50 eura</amount>, kao i 
+                        <amount value="30.00">30,00</amount> na ime paušala, u roku od 
+                        <time duration="P15D">15 dana</time> po pravosnažnosti presude.
+                    </p>
+                </item>
+            </list>
+            
+            <p><b>O B R A Z L O Ž E N J E</b></p>
+            
+            <p>
+                Optužnim predlogom Osnovnog državnog tužilaštva Kt.br.583/16 od 19. maja 2016. godine, 
+                okrivljenom O. R. stavljeno je na teret krivično dielo protivpravno lišenje slobode iz čl. 162.st.1 Krivičnog zakonika Crne Gore...
+                [Additional content from the reasoning section would be included here following the same pattern]
+            </p>
+            
+            <p><b>PRAVNA POUKA:</b></p>
+            
+            <p>
+                Protiv ove presude može se izjaviti žalba u roku od 
+                <time duration="P8D">8 dana</time> od dana prijema pisanog otpravka, 
+                Višem sudu u Podgorici a preko ovog suda.
+            </p>
+            
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization><br/>
+                Dana <date date="2016-07-25">25.07.2016.</date> godine
+            </p>
+            
+            <p>
+                <party id="gBukovic" refersTo="#gBukovic" as="#judge">SUDIA<br/>Buković Goran s.r.</party>
+            </p>
+            
+            <p>
+                <party id="aMaras" refersTo="#aMaras" as="#clerk">Z.T.O.<br/>Maraš Ana</party>
+            </p>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>

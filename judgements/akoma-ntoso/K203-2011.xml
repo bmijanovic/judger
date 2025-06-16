@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" 
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U CETINJU</FRBRauthor>
+                    <FRBRdate date="2013-04-15">2013-04-15</FRBRdate>
+                    <FRBRtitle>K.br. 203/11</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Cetinje" showAs="Osnovni sud u Cetinju"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Cetinje" showAs="Osnovno državno tužilaštvo Cetinje"/>
+                <TLCPerson eId="mCupic" href="/ontology/person/mCupic" showAs="Marija Čupić"/>
+                <TLCPerson eId="aMartinovic" href="/ontology/person/aMartinovic" showAs="Aleksandra Martinović"/>
+                <TLCPerson eId="mD" href="/ontology/person/mD" showAs="M. D."/>
+                <TLCPerson eId="bI" href="/ontology/person/bI" showAs="B. I."/>
+                <TLCPerson eId="mJ" href="/ontology/person/mJ" showAs="M. J."/>
+                <TLCPerson eId="mM" href="/ontology/person/mM" showAs="M. M."/>
+                <TLCPerson eId="zM" href="/ontology/person/zM" showAs="Ž. M."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Optuženi"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećeni"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Advokat"/>
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Tužilac"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U CETINJU</organization>, 
+                kao prvostepeni, krivični, po sudiji 
+                <party id="mCupic" refersTo="#mCupic" as="#judge">Mariji Čupić</party>, 
+                uz učešće 
+                <party id="aMartinovic" refersTo="#aMartinovic" as="#clerk">Aleksandre Martinović</party>, 
+                u krivičnom predmetu protiv optuženih 
+                <party id="mD" refersTo="#mD" as="#defendant">M. D.</party> i 
+                <party id="bI" refersTo="#bI" as="#defendant">B. I.</party>, 
+                iz Cetinja, kao saizvršioca zbog krivičnog djela protivpravno lišenje slobode iz 
+                <ref href="/krivicni/art_162">čl. 162 st. 3</ref> u vezi <ref href="/krivicni/art_23">čl. 23 st. 2</ref> Krivičnog zakonika, 
+                odlučujući po optužnom predlogu 
+                <organization id="odt" refersTo="#odt">ODT-a Cetinje Kt.br. 296/10 od 28.11.2011.</organization>, 
+                nakon glavnog i javnog pretresa, održanog dana <date date="2013-04-10">10.04.2013.</date> godine u prisustvu zamjenika ODT Cetinje, 
+                optuženog <party id="bI" refersTo="#bI">B. I.</party> sa braniocem 
+                <party id="mM" refersTo="#mM" as="#lawyer">M. M.</party>, 
+                advokatom iz Podgorice, optuženog <party id="mD" refersTo="#mD">M. D.</party> i oštećene 
+                <party id="mJ" refersTo="#mJ" as="#victim">M. J.</party> sa punomoćnikom 
+                <party id="zM" refersTo="#zM" as="#lawyer">Ž. M.</party>, 
+                advokatom iz Podgorice, donio je, a dana <date date="2013-04-15">15.04.2013.</date> godine i javno objavio,
+            </p>
+            
+            <p><b>P R E S U D U</b></p>
+            
+            <p>
+                Optuženi: 
+                <party id="mD" refersTo="#mD">1. M. D.</party>, 
+                od oca B. i majke D., rođene J., rođen xx.xx.xxxx godine u Cetinju, gdje i prebiva, državljanin Crne Gore, 
+                po zanimanju mašinski tehničar, neoženjen, pismen, sa završenom srednjom mašinskom školom, srednjeg imovnog stanja, 
+                ranije osuđivan i to: 
+                <ref href="/presuda/508-09">presudom Osnovnog suda u Cetinju K.br. 508/09 od 16.06.2010.</ref> godine, 
+                zbog krivičnog djela teška tjelesna povreda iz <ref href="/krivicni/art_151">čl. 151</ref> Krivičnog zakonika na kaznu zatvora u trajanju od šest mjeseci uslovno na dvije godine; 
+                <ref href="/presuda/320-09">presudom Osnovnog suda u Cetinju posl.br.K. 320/09 od 24.02.2011.</ref> godine, 
+                zbog krivičnog djela nasilničko ponašanje iz <ref href="/krivicni/art_399">čl. 399</ref> Krivičnog zakonika na kaznu zatvora u trajanju od šest mjeseci uslovno na dvije godine;
+            </p>
+            
+            <p>
+                <party id="bI" refersTo="#bI">2. B. I.</party>, 
+                od oca B. i majke B., rođene B., rođena xx.xx.xxxx godine u Cetinju, gdje i prebiva, državljanka Crne Gore, 
+                po zanimanju student, neudata, pismena, sa završenom srednjom školom, srednjeg imovnog stanja, neosuđivana;
+            </p>
+            
+            <p><b>K R I V I S U</b></p>
+            
+            <p>
+                Zato što su: Dana <date date="2010-11-16">16. novembra 2010.</date> godine oko 00,30 časova, u ul. ... u Cetinju, 
+                jako svjesni da je protivpravno zatvaranje lica zabranjeno, voljno protivpravno zatvorili oštećenu 
+                <party id="mJ" refersTo="#mJ">M. J.</party> iz Cetinja, tako što je optužena <party id="bI" refersTo="#bI">B. I.</party> 
+                pozvala telefonom oštećenu i rekla joj da dodje do kuće optuženog <party id="mD" refersTo="#mD">M. D.</party> 
+                gdje su je po njenom dolasku sačekali oboje optuženih, u kojem trenutku je optuženi <party id="mD" refersTo="#mD">M. D.</party> 
+                zahtijevao od oštećene da sjedne u vozilo marke "Audi A 4", što je ista odbila upućujući se prema Bajovoj ulici, 
+                ali je tada optuženi <party id="mD" refersTo="#mD">M. D.</party> sustigao i stiskajući je rukama u predjelu vrata ugurao 
+                oštećenu u navedeno vozilo, dok je vrata od vozila prethodno otvorila optužena <party id="bI" refersTo="#bI">B. I.</party> 
+                te su svjesno i voljno na svirep način protivpravno lišili slobode oštećenu <party id="mJ" refersTo="#mJ">M. J.</party> 
+                upućujući se sa njom vozilom u pravcu "Lovćena", za koje vrijeme je optužena <party id="bI" refersTo="#bI">B. I.</party> 
+                nasilno oduzela mobilni telefon oštećene <party id="mJ" refersTo="#mJ">M. J.</party> i istu poprskala pjenom za kosu u predjelu 
+                očiju udarajući je pri tom stisnutom pesnicom u predjelu lijeve strane čela, nagovarajući optuženog 
+                <party id="mD" refersTo="#mD">M. D.</party> da oštećenoj slomi prete i da je ošiša makazama od pribora za nokte, 
+                da bi po dolasku na "Lovćen" oštećenu <party id="mJ" refersTo="#mJ">M. J.</party> izveli iz vozila na put, 
+                gdje je optuženi <party id="mD" refersTo="#mD">M. D.</party> zahtijevao od nje da skine čitavu odjeću sa sebe, 
+                ali je oštećena uspjela da pobjegne sa lica mjesta, usled čega je kod oštećene <party id="mJ" refersTo="#mJ">M. J.</party> 
+                došlo do lakog narušavanja zdravlja, u vidu psihičkog stanja nestabilnosti lakšeg stepena, 
+                sa zadobijenom lakom tjelesnom povredom u vidu tačkastih krvnih podliva obostrano na vratu, 
+                crvenila i oteklina u slepoočnim regijama glave, bolne osjetljivosti na dodir,
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <num>I</num>
+                    <p>
+                        - Pa Sud optuženom <party id="mD" refersTo="#mD">M. D.</party> primjenom citiranih zakonskih odredbi, 
+                        te odredbi <ref href="/krivicni/art_4">čl. 4</ref>, 
+                        <ref href="/krivicni/art_5">čl. 5</ref>, 
+                        <ref href="/krivicni/art_13">čl. 13</ref>, 
+                        <ref href="/krivicni/art_15">čl. 15</ref>, 
+                        <ref href="/krivicni/art_32">čl. 32</ref>, 
+                        <ref href="/krivicni/art_33">čl. 33</ref>, 
+                        <ref href="/krivicni/art_36">čl. 36</ref>, 
+                        <ref href="/krivicni/art_42">čl. 42</ref>, 
+                        <ref href="/krivicni/art_45">čl. 45</ref>, 
+                        <ref href="/krivicni/art_46">čl. 46</ref>, 
+                        <ref href="/krivicni/art_51">čl. 51</ref> Krivičnog zakonika i 
+                        <ref href="/krivicni/art_226">čl. 226</ref>-<ref href="/krivicni/art_229">229</ref>, 
+                        <ref href="/krivicni/art_239">čl. 239</ref> i 
+                        <ref href="/krivicni/art_374">čl. 374 Zakonika o krivičnom postupku</ref>
+                        <b>OSUDJUJE</b><br/>
+                        Na kaznu zatvora u trajanju od 4 (četiri) mjeseca, koju ima izdržati po pravosnažnosti presude pod prijetnjom prinudnog izvršenja, 
+                        a koju mu se ima uračunati lišenje slobode dana <date date="2010-11-24">24.11.2010.</date> godine od 09,30 časova do 12,30 časova.
+                    </p>
+                </item>
+                
+                <item id="odluka2">
+                    <num>II</num>
+                    <p>
+                        - A Sud optuženoj <party id="bI" refersTo="#bI">B. I.</party> primjenom citiranih zakonskih odredbi, 
+                        te odredbi <ref href="/krivicni/art_4">čl. 4</ref>, 
+                        <ref href="/krivicni/art_5">čl. 5</ref>, 
+                        <ref href="/krivicni/art_13">čl. 13</ref>, 
+                        <ref href="/krivicni/art_15">čl. 15</ref>, 
+                        <ref href="/krivicni/art_42">čl. 42</ref>, 
+                        <ref href="/krivicni/art_45">čl. 45</ref>, 
+                        <ref href="/krivicni/art_46">čl. 46</ref>, 
+                        <ref href="/krivicni/art_52">čl. 52</ref>, 
+                        <ref href="/krivicni/art_53">čl. 53</ref>, 
+                        <ref href="/krivicni/art_54">čl. 54</ref> Krivičnog zakonika i 
+                        <ref href="/krivicni/art_226">čl. 226</ref>-<ref href="/krivicni/art_229">229</ref>, 
+                        <ref href="/krivicni/art_239">čl. 239</ref> i 
+                        <ref href="/krivicni/art_374">čl. 374 Zakonika o krivičnom postupku</ref>
+                        izriče <b>USLOVNU OSUDU</b><br/>
+                        Kojom optuženoj utvrđuje kaznu zatvora u trajanju od 4 (četiri) mjeseca i istovremeno određuje da se navedena kazna neće izvršiti 
+                        ukoliko optužena u vremenskom periodu od 2 (dvije) godine dana po pravosnažnosti presude, ne počini novo krivično djelo.
+                    </p>
+                </item>
+                
+                <item id="odluka3">
+                    <num>III</num>
+                    <p>
+                        Oštećena <party id="mJ" refersTo="#mJ">M. J.</party> se radi ostvarenja imovinsko pravnog zahtjeva upućuje na redovnu parnicu.
+                    </p>
+                </item>
+                
+                <item id="odluka4">
+                    <num>IV</num>
+                    <p>
+                        Obavezuju se optuženi da na ime troškova krivičnog postupka solidarno uplate iznos od 
+                        <amount value="1431.87">1431,87 €</amount> (hiljadučetristotridesetjedaneuraosamdesetsedamcenti), 
+                        te na ime paušala iznos od <amount value="30.00">30,00 €</amount> (trideseteura), 
+                        u korist budžeta Crne Gore, u roku od <time duration="P15D">15 (petnaest) dana</time> 
+                        po pravosnažnosti presude, pod prijetnjom prinudnog izvršenja.
+                    </p>
+                </item>
+            </list>
+            
+            <p>
+                Dana <date date="2013-04-15">15.04.2013.</date> godine.
+            </p>
+            
+            <p>
+                Zapisničar,<br/>
+                <party id="aMartinovic" refersTo="#aMartinovic" as="#clerk">Aleksandra Martinović</party><br/>
+                Sudija,<br/>
+                <party id="mCupic" refersTo="#mCupic" as="#judge">Marija Čupić</party>
+            </p>
+            
+            <p><b>PRAVNA POUKA:</b></p>
+            <p>
+                Protiv ove presude može se izjaviti žalba, Višem sudu u Podgorici, u roku od 
+                <time duration="P15D">15 (petnaest) dana</time> od dana prijema, a preko ovog Suda.
+            </p>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>
