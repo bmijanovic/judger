@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xmlns:mods="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>
+                        OSNOVNI SUD U PODGORICI
+                    </FRBRauthor>
+                    <FRBRdate date="2017-05-09">
+                        2017-05-09
+                    </FRBRdate>
+                    <FRBRtitle>
+                        K 62/2017
+                    </FRBRtitle>
+                    <FRBRcountry>
+                        CRNA GORE
+                    </FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici" />
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo" />
+                <TLCPerson eId="lLarisa" href="/ontology/person/lLarisa" showAs="Larisa Mijušković - Stamatović" />
+                <TLCPerson eId="mMarina" href="/ontology/person/mMarina" showAs="Marina Sekulić" />
+                <TLCPerson eId="mMs" href="/ontology/person/mMs" showAs="M. S." />
+                <TLCPerson eId="mZorica" href="/ontology/person/mZorica" showAs="Milanović Zorica" />
+                <TLCPerson eId="rRs" href="/ontology/person/rRs" showAs="R. S." />
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Judge" />
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Clerk" />
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Defendant" />
+                <TLCRole eId="prosecutor" href="/ontology/role/prosecutor" showAs="Prosecutor" />
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Lawyer" />
+            </references>
+        </meta>
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">
+                    OSNOVNI SUD U PODGORICI
+                </organization>
+                , kao prvostepeni, krivični, po sudiji
+                <party id="lLarisa" refersTo="#lLarisa" as="#judge">
+                    Larisi Mijušković - Stamatović
+                </party>
+                , uz učešće
+                <party id="mMarina" refersTo="#mMarina" as="#clerk">
+                    Marine Sekulić
+                </party>
+                , kao zapisničara, u krivičnom predmetu protiv okrivljenog
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                , iz P., zbog krivičnog djela protivpravno lišenje slobode iz
+                <ref href="/krivicni#art_162">
+                    čl. 162 st.1 Krivičnog zakonika Crne Gore
+                </ref>
+                , u sticaju sa krivičnim djelom zlostavljanje iz
+                <ref href="/krivicni#art_166a">
+                    čl. 166a Krivičnog zakonika Crne Gore
+                </ref>
+                , rješavajući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">
+                    ODT-a Podgorica
+                </organization>
+                Kt.br. 1470/16 od 27.01.2017. godine, nakon održanog glavnog i javnog pretresa dana 09.05.2017. godine, u prisustvu zastupnika optužbe
+                <party id="mZorica" refersTo="#mZorica" as="#prosecutor">
+                    Milanović Zorice
+                </party>
+                državnog tužioca u
+                <organization id="odt" refersTo="#odt">
+                    ODT-u Podgorica
+                </organization>
+                , okrivljenog i njegovog branioca
+                <party id="rRs" refersTo="#rRs" as="#lawyer">
+                    R. S.
+                </party>
+                adv. iz P., donio je, a dana 12.05.2017. godine i javno objavio,
+            </p>
+            <p>
+                Okrivljeni:
+            </p>
+            <p>
+                <heading>
+                    PRESUDU
+                </heading>
+            </p>
+            <p>
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                , JMBG xxxxxx, od oca S. i majke M. rođene J., rođen xx.xx.19xx. godine u K., sa prebivalištem u P., G. P. bb, državljanin Crne Gore, zaposlen, oženjen, bez djece, završio Osnovnu školu, lošeg imovnog stanja, ranije neosudjivan, bio u pritvoru od 30.11.2016.godine od 15,00 časova, do 22.12.2016.godine,
+            </p>
+            <p>
+                <heading>
+                    Krivje
+                </heading>
+            </p>
+            <p>
+                <heading>
+                    Zato što je:
+                </heading>
+            </p>
+            <p>
+                Dana xx. novembra 20xx. godine oko 13,00 časova, u P, u G.p bb, svjestan svojih djela čija je izvršenja htio, znajući da su ista zabranjena, protivpravno zatvorio i zlostavljao oštećenu D. J. na način što je u toku svađe udario staklenom flašom u predjelu glave govoreći joj "Droljo, kurvo, sedam godina smo se družili, sad hoćeš da prekinemo druženje, izlijepiću slike po cijelom gradu da si drolja i kurva", pri tom joj ne dopustivši da izađe iz kuće, da bi, kada je zahtijevala da joj dozvoli da izađe iz kuće istoj rekao "Pustiću te kad ja budem to odlučio", i tom prilikom zaključao ulazna vrata, čime joj je oduzeo slobodu kretanja, a zatim je više puta udarao metalnom vanglom u predjelu glave, od kojih udaraca je pala na pod, da bi tek kada je saznao da je oštećena pozvala policiju, otključao ulazna vrata, i u trenutku kada je oštećena htjela da izađe iz kuće, istu odgurnuo, usled čega je pala, kada joj je zadao više udaraca nogama u predjelu tijela, kojom prilikom je oštećena zadobila lake tjelesne povrede u vidu otoka desnog lakta i oguljotine lijevog koljena,
+            </p>
+            <p>
+                - čime je izvršio krivično djelo protivpravno lišenje slobode iz
+                <ref href="/krivicni#art_162">
+                    čl. 162 st. 1 Krivičnog zakonika Crne Gore
+                </ref>
+                u sticaju sa krivičnim djelom zlostavljanje iz
+                <ref href="/krivicni#art_166a">
+                    čl. 166a Krivičnog zakonika Crne Gore
+                </ref>
+                ,
+            </p>
+            <p>
+                - pa mu Sud, primjenom citiranih zakonskih odredbi, te odredbi
+                <ref href="/krivicni#art_3">
+                    čl. 3
+                </ref>
+                ,
+                <ref href="/krivicni#art_5">
+                    5
+                </ref>
+                ,
+                <ref href="/krivicni#art_13">
+                    13
+                </ref>
+                ,
+                <ref href="/krivicni#art_15">
+                    15
+                </ref>
+                ,
+                <ref href="/krivicni#art_32">
+                    32
+                </ref>
+                ,
+                <ref href="/krivicni#art_36">
+                    36
+                </ref>
+                ,
+                <ref href="/krivicni#art_42">
+                    42
+                </ref>
+                i
+                <ref href="/krivicni#art_48">
+                    48 st. 1 Krivičnog zakonika Crne Gore
+                </ref>
+                , prethodno utvrdjuje:
+            </p>
+            <p>
+                - za krivično djelo protivpravno lišenje slobode iz
+                <ref href="/krivicni#art_162">
+                    čl. 162 st. 1 Krivičnog zakonika Crne Gore
+                </ref>
+                kaznu zatvora u trajanju od 3 (tri) mjeseca
+            </p>
+            <p>
+                - za krivično djelo zlostavljanje iz
+                <ref href="/krivicni#art_166a">
+                    čl. 166a Krivičnog zakonika Crne Gore
+                </ref>
+                kaznu zatvora u trajanju od 3 (tri) mjeseca,
+            </p>
+            <p>
+                Pa mu Sud, primjenom citiranih zakonskih doredbi, te
+                <ref href="/krivicni#art_48">
+                    čl. 48 st.2
+                </ref>
+                ,
+                <ref href="/krivicni#art_51">
+                    51
+                </ref>
+                ,
+                <ref href="/krivicni#art_52">
+                    52
+                </ref>
+                ,
+                <ref href="/krivicni#art_53">
+                    53
+                </ref>
+                i
+                <ref href="/krivicni#art_54">
+                    54 Krivičnog zakonika Crne Gore
+                </ref>
+                , te
+                <ref href="/postupak#art_226">
+                    čl. 226
+                </ref>
+                ,
+                <ref href="/postupak#art_227">
+                    227
+                </ref>
+                ,
+                <ref href="/postupak#art_229">
+                    229
+                </ref>
+                i
+                <ref href="/postupak#art_374">
+                    374 Zakonika o krivičnom postupku
+                </ref>
+                izriče,
+            </p>
+            <p>
+                <heading>
+                    USLOVNU OSUDU
+                </heading>
+            </p>
+            <p>
+                Kojom mu utvrđuje jedinstvenu kaznu zatvora u trajanju od 5 (pet) mjeseci, u koju kaznu mu se ima uračunati i vrijeme provedeno u pritvoru od 30.11.2016.godine od 15,00 časova do 22.12.2016. godine, i istovremeno određuje da se utvrđena kazna neće izvršiti ukoliko okrivljeni u roku od 2 (dvije) godine po pravnosnažnosti presude ne izvrši novo krivično djelo.
+            </p>
+            <p>
+                Obavezuje se okrivljeni da na račun budžetskih sredstava Crne Gore na ime troškova krivičnog postupka uplati iznos od 104,50 € (stotinučetirieuraipedesetcenti), kao i iznos od 50,00 € (pedeseteura) sve prednje u roku od 15 (petnaest) dana od dana pravnosnažnosti presude, pod prijetnjom prinudnog izvršenja.
+            </p>
+            <p>
+                <heading>
+                    Obrazloženje
+                </heading>
+            </p>
+            <p>
+                Optužnim predlogom
+                <organization id="odt" refersTo="#odt">
+                    ODT Podgorica
+                </organization>
+                Kt.br. 1470/16 od 27.01.2017. godine, kojeg je na glavnom pretresu zastupala
+                <party id="mZorica" refersTo="#mZorica" as="#prosecutor">
+                    Milanović Zorica
+                </party>
+                , državni tužilac u
+                <organization id="odt" refersTo="#odt">
+                    ODT-u Podgorica
+                </organization>
+                , stavljeno je na teret okrivljenom
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                , izvršenje krivičnog djela protivpravno lišenje slobode iz
+                <ref href="/krivicni#art_162">
+                    čl. 162 st. 1 Krivičnog zakonika Crne Gore
+                </ref>
+                u sticaju sa krivičnim djelom zlostavljanje iz
+                <ref href="/krivicni#art_166a">
+                    čl. 166a Krivičnog zakonika Crne Gore
+                </ref>
+                , bliže opisanih izrekom ove presude.
+            </p>
+            <p>
+                Zastupnik optužbe je do kraja glavnog pretresa u svemu ostala pri podnijetom optužnom aktu, a u završnoj riječi izjavila da smatra da je provedenim dokazima na nesumnjiv način utvrdjeno da je okrivljeni
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                izvršio krivična djela stavljena mu na teret, i to kako iskazima svjedoka oštećene D. J. i I. S. - Đ. tako i svim provedenim materijalnim dokazima. Navela je da što se tiče iskaza svjedoka D. Lj., supruge okrivljenog koja je pred sudom navela da okrivljeni nije držao zatvorenu niti zlostavljao oštećenu D. J., nalazi da je njen iskaz sračunat u cilju pomaganja okrivljenom imajući u vidu da se nalaze u vanbračnoj zajednici. U konačnom je predložila sudu da okrivljenog oglasi krivim za krivična djela stavljena mu na teret i osudi po Zakonu.
+            </p>
+            <p>
+                Okrivljeni
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                je kako u navodima odbrane iz prethodnog postupka, pred
+                <organization id="odt" refersTo="#odt">
+                    ODT-om Podgorica
+                </organization>
+                na zapisniku Kt.br. 1470/16 od 01.12.2016. godine, tako i na glavnom pretresu izjavio da živi u vanbračnoj zajednici sa D. Lj. već 20 godina. Kako su podstanari to su često mijenjali iznajmljene stanove, a u jednom periodu prije 8 godina iznajmljivali su stan u naselju K., u bilizini kog stana je stanovao Lj. brat D. sa suprugom J. i troje djece. Kako su 4-5 godina živjeli na K., svakodnevno su bili u kontaktu sa porodicom Lj. brata, pa se prije 6 godina izmedju njega i Lj. snahe J. razvila ljubavna veza. U početku je on imao sažaljenja prema J. jer je imala psihičkih problema, svakodnevno je koristila tablete za smirenje, pa je on često sa njom razgovarao, jer je bila agresivna, čak je jednom i podigla nož na svog supruga D. Pojasnio je da se vremenom navikao na nju i ona na njega, pa su počeli da vode intezivan, emotivan i intiman život, a on je nju i zavolio. Ona mu je predlagala da ostavi njenu zaovu, a njegovu nevjenčanu suprugu Lj.i da njih dvoje odu da žive negdje u S, ali on na to nije pristao jer je i tada kao i danas Lj. volio najviše na svijetu. Lj. je znala za njihovu vezu, kao i J. suprug D. Prije 3-4 godine J. se zaposlila i promijenila ponašanje, pa je on saznao da ima i drugog ljubavnika, a saznao je i njegovo ime, ali ne želi da ga kaže, ali i pored toga oni su i dalje bili u ljubavnoj vezi. Prije dvije godine on i Lj. su kupili kuću u G pu Z, u koju su se ubrzo i uselili, a J.je često dolazila kod njih, makar 3 puta nedeljno. Prije pola godine njegova supruga Lj.je saznala da ima karcinom dojke, a kako on nju voli najviše na svijetu, to je potpuno zanemario J. i od tada ima problema sa njom, jer J. hoće da nastave sa ljubavnom vezom, a on sada nema volju za nešto tako, a takodje je i primijetio da ponovo ima novog ljubavnika što je dodatno uticalo na njegove emocije. Izjavio je da je dana xx.11.20xx.godine oko 12,00 časova, D. J. svratila u vrtić gdje radi Lj., i zajedno su došle u njihovu kuću. Kad su ušle u kuću on je po navici zaključao vrata, jer to uvijek rade, a posebno toga dana kada je duvao vjetar, jedini način da vrata budu zatvorena je da budu zaključana, jer se vrata od vjetra sama otvaraju. Pojasnio je da je njihova kuća u jako lošem stanju, te da su oni u nju uselili prije nego je postala uslovna za život. Razgovarali su uobičajeno, on je ponudio da im skuva kafu, što je J. odbila, a bila je vidno uznemirena i nervozna i takvu je nije odavno vidio. Govorila je da ima probleme, a na njegovo pitanje kakve, nije htjela da mu odgovori. Obzirom da je Lj. bolesna i da je njima dosadila J. priča i njeni problemi, on joj je u jednom momentu rekao da im unosi probleme u kuću i da izađe, a ona je njemu rekla da je pusti na miru i da će je psihoza brzo proći. On je tada J. rekao da ne može više da sluša priču o njenim problemima, jer ustvari on ima ozbiljne probleme, supruga mu je bolesna, a on je lošeg zdravstvenog stanja, jer je imao pet operacija kao posljedica saobraćajne nezgode koju je doživio prije 6 godina. Tada J. počinje opet istu priču, i govori mu da sačeka da je prođe psihoza i da želi da ponovo počnu vezu, a sve to govori u prisustvu njegove supruge. Dodao je, da kada je vidio da ne može da je sluša, rekao joj je da će pozvati njene roditelje u S, i reći im da ima trećeg, a pritom je mislio na nekog drugog ljubavnika. Ona se tada prepala, počela da galami, govoreći mu: "Mrš gade, e nećeš ih zvati", a on je prišao ulaznim vratima, otključao ih, otvorio i rekao joj "Mrš kući", a ona je odmah izašla. Istakao je da je nije udarao, niti joj je upućivao bilo kakve prijetnje, osim toga što joj je rekao da će joj pozvati roditelje. Odgovarajući na pitanja tužioca, izjavio je da kada je J. došla kod njega kući, nije primijetio da ima bilo kakve povrede, osim što je bila čudna i užasno nervozna. Istakao je da on i njegova supruga Lj.nijesu udarali J., niti je ona padala dok je bila u njihovoj kući, niti je vidio da je padala kada je istjerao iz kuće. Tokom predmetnog događaja J. je u njegovoj kući provela pola sata, za to vrijeme je primijetio da je nekog pozivala mobilnim telefonom i slala poruke ali ne zna kome, jer nije uzimao njen telefon.
+            </p>
+            <p>
+                Branilac okrivljenog advokat
+                <party id="rRs" refersTo="#rRs" as="#lawyer">
+                    R. S.
+                </party>
+                iz P., je u završnoj riječi istakao da za razliku od stava tužioca stoji pri stanovištu da nije dokazano da je njegov branjenik izvršio krivična djela na način, a posebno ne u vrijeme kako je to predstavljeno dispozitivom optužnog akta. Naime, ono što je nesporno posebno od strane odbrane u ovom postupku to je da su njegov branjenik i svjedok oštećena D. J. bili u dugogodišnjoj ljubavnoj vezi. Nesporno je da je toga dana između njih došlo do rasprave. Životno je apsolutno nelogično da čovjek u svojoj kući u prisustvu svoje supruge bilo koga lišava slobode, a posebno ne svoju ljubavnicu. Da je ovo istina može se zaključiti iz nalaza i mišljenja vještaka dr. N. R. koji u svom stručnom nalazu nigdje ne pominje povrede glave na način kako je to predstavljeno u dispozitivu optužnog akta, a koje bi trebalo da je pretpjela svjedok oštećena D. J. Naime, da se to stvarno dogodilo nesporno je da bi to vještak morao utvrditi, jer je ista izjavila, a to stoji u dispozitivu optužnog akta da je njegov branjenik nekoliko puta udario metalnom vanglom u glavu, od kojih udaraca je ista pala na pod. Dodao je da je jasno da se to tako nije dogodilo. Ostavio je sudu na ocjenu da li se nekom ko nesporno iznosi neistine može u daljem dijelu njegovog iskaza vjerovati, a posebno kod činjenice da se radi o ljubavnicima što ista potvrdjuje svojim stavom da ne želi da se pridruži krivičnom gonjenju protiv njegovog branjenika. Sud u ovom slučaju nije vezan pravnom kvalifikacijom iz optužnice, ostao je pri stanovištu da apsolutno nije dokazano da je njegov branjenik izvršio djela koja su mu optužnim aktom stavljena na teret, sa kojih razloga je predložio da ga sud oslobodi krivične odgovornosti.
+            </p>
+            <p>
+                Sud je u dokaznom postupku: saslušao svjeokda oštećenu D. J., saslušao svjedoka D. Lj., svjedoka S. - Đ. I., pročitao medicinsku dokumentaciju izdatu na ime D. J., pročitao službenu zabilješku
+                <organization id="odt" refersTo="#odt">
+                    Osnovnog državnog tužilaštva u Podgorici
+                </organization>
+                Kt.bt.1470/16 od 22.12.2016. godine, pročitao nalaz i mišljenje stalnog sudskog vještaka medicinske struke dr. N. R. od 25.12.2016. godine, te istog neposredno saslušao na glavnom pretresu dana 09.05.2017.godine, pročitao izvod iz registra kaznenih evidencija na ime okrivljenog izdat od Ministarstva pravde Crne Gore pod brojem KE xxxx od 30.01.2017. godine.
+            </p>
+            <p>
+                Svjedok oštećena D. J. je kako u prethodnom postupku pred
+                <organization id="odt" refersTo="#odt">
+                    ODT-om Podgorica
+                </organization>
+                , tako i na glavnom pretresu posvjedočila da rođena sestra njenog supruga D. Lj, već xx godina živi u vanbračnoj zajednici sa
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                Do prije x godine, oni su bili podstanari u jednoj kući na K koja se nalazila blizu njihove porodične kuće, pa su se često posjećivali i obilazili, i na taj način su se zbližili. Nakon toga su se preselili u Z, gdje su kupili kuću. Prije 3-4 godine, izmedju nje i S. se razvila platonska ljubav, nijesu bili u ljubavnoj vezi, ali se on njoj udvarao, što joj je prijalo. Za njegovo udvaranje saznala je i njegova nevjenčana supruga Lj., koja je iz dva navrata upozorila da pazi šta radi, ali kako ona nije bila u ljubavnoj vezi, to nije imala od čega da se pazi. Dana xx.11.20xx.godine oko 12,00 časova, otišla je u vrtić u G. po svoju zaovu Lj., jer su se prethodno dogovorile da kada ona završi sa poslom, ode za nju svojim vozilom kako bi otišli kod njih kući. Tako je i bilo, pa su zajedno stigli u njihovu kuću, gdje su trebali da razgovaraju sa
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                o njegovom ponašanju, jer je htjela da mu ukaže na to da prestane da joj se udvara, jer joj to više nije prijalo. Dok su vodili razgovor u dnevnoj sobi, bila je prisutna i Lj., a S. je bio prilično nervozan, pa je u jednom momentu sa stola podigao staklenu flašu u kojoj se nalazilo vino, i istom je udario u predjelu glave i to kosmatog dijela, a tom prilikom joj je rekao: "Droljo, kurvo, sedam godina smo se družili, sad hoćeš da prekinemo druženje, izlijepiću slike po cijelom gradu da si dolja i kurva", a zatim je rekao Lj. da uđe u sobu, što je ona i uradila. S. je nastavio sa vrijeđanjem, i zaista se nije mogla sjetiti koje je riječi upotrebljavao, jer je bila u šoku, i tako nešto nije očekivala. Rekla mu je da će da ide na posao, a on joj je saopštio: "Pustiću te kad je budem to odlučio", nakon čega je otišao do ulaznih vrata, zaključao ih, izvukao ključ koji je stavio u džep i rekao joj "Sada ne možeš na posao". Tada je uzeo metalnu vanglu u kojoj se nalazio malter, i istom je udario dva ili tri puta, nije sigurna u potiljačnom dijelu glave, a ti udarci su bili jaki, i ona je od istih pala na pod, pa je tada iz sobe istrčala Lj. i uspjela je da odvoji S. od nje, jer je on namjeravao da nastavi sa udaranjem. Kod sebe je imala službeni mobilni telefon, sa kojeg je svojoj koleginici I. D. pustila SMS poruku u kojoj je obavijestila da je zatvorena i da je M.S.počeo da je bije, a te poruke je sačuvala u svom mobilnom telefonu. Tako zaključanu je držao od 13,00 časova do 14,30 časova, odnosno sve do momenta dok njoj nije stigla SMS poruka od Đ. I., kada je S. uzeo njen telefon i pročitao poruku u kojoj je I. obavijestila da stiže patrola i njen muž. Tada je otključao vrata, odgurnuo je sa ulaznih vrata napolje, od čega je pala na koljena i ruke, i dok je bila u tom položaju S. je tri puta udario nogom obuvenom u cipelu, i to u predjelu lijevog bubrega i dva puta u predjelu desne strane struka. Nakon toga je ušla u svoje vozilo i otišla kod zaove koja stanuje na Z., obzirom da nije imala telefon, pa je sačekala da tu dođe njen suprug, odakle su zajedno otišli u CB da prijave događaj, a nakon toga u KC CG gdje su joj konstatovane povrede. Pojasnila je da S.i Lj. u kući drže dva psa, da je često odlazila kod njih, svakog vikenda, a nije primijetila da zaključavaju vrata i rijetko su to radili. Dok je bila zaključana u sobi M. S., tu se nalazila i Lj. koja za to vrijeme nije izlazila iz kuće, a dok je tog dana bila u njihovoj kući, M. S. je pio bijelo vino sa običnom vodom, ne zna koliko je popio, a misli da je bio pod dejstvom alkohola. Po njegovom ponašanju, misli da je pio alkohol i prije nego što je došla kod njih, jer je bio agresivniji nego obično.
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                fizički liči na njenog supruga D., i upravo zbog te sličnosti se razvila ta njihova veza, koja nije bila ljubavna, već platonska. Nije se pridružila krivičnom gonjenju protiv okrivljenog, i nije postavila imovinsko-pravni zahtjev.
+            </p>
+            <p>
+                Svjedok D. Lj. je u prethodnom postupku pred
+                <organization id="odt" refersTo="#odt">
+                    ODT-om Podgorica
+                </organization>
+                navela da su dana xx.11.20xx.godine oko 12,30 časova, ona i njena snaha D. J stigle u njenu porodičnu kuću, koja se nalazi u selu G p u Z. U kući se nalazio njen nevjenčani suprug
+                <party id="mMs" refersTo="#mMs" as="#defendant">
+                    M. S.
+                </party>
+                , sa kojim živi već xx godina. Ne sjeća se da li je zaključala vrata za sobom, kada je ušla u kuću, ali obično to radi, a zna da njen suprug S. uvijek zaključava vrata za sobom. U kući drže dva psa, pa se plaše da ukoliko neko otvori vrata od kuće psi mogu nasrnuti na gosta, pa je to razlog zbog kojeg su vrata od njihove kuće uvijek zaključana. Kada su ušli u kuću, ona je obavljala neke uobičajene kućne poslove, krećući se svugdje po kući, a S.i J. su sjedjeli u kuhinji, koja je spojena sa dnevnom sobom. Čula je da se svađaju, jer su bili glasniji, a razumjela je da pominju internet i neke ljubavne veze, ali je bježala od njihove priče jer joj je teško da to sluša. Njen suprug S. i J. su više godina u ljubavnoj vezi, a ona je to saznala prije x godine, dok joj je J. tog dana rekla, da su već x godina u vezi. Bila je u nezavidnoj situaciji, i navedeno saznanje je držala za sebe, jer voli svog supruga, a željela je da sačuva mir u svojoj porodici, jer se plašila da ukoliko sazna njen brat, moglo bi biti problema, pa je o svemu ćutala. Sjeća se da je J. ostavila svoja dva telefona u auto kojim su došli, tj. u njenom autu, i da joj je S. donio telefone odprilike pola sata do 40 minuta nakon što su stigli kući. Čula je da je sa nekim razgovarala telefonom, jer je prethodno rekla S. da joj donese telefon kako bi javila kolegama da ne može stići na sastanak. Čini joj se da čula da pominje ime I. ili I. dok je razgovarala telefonom, a čula je i kada je rekla da ne može stići na sastanak. Nakon što je obavila taj razgovor, J. i S. su nastavili da se raspravljaju, i čula je da joj je on rekao "Ne može više ovako, da odluči šta će, da se više ne igraju", a ona je odgovorila da je u svojim psihozama, a S. je pitao da li i dalje koristi tablete, našta je ona odgovorila da ne koristi. Njena snaha J. je prije 7-8 godina bila u lošem psihičkom stanju, jer je njen brat zapostavljao, pa je često pila tablete za smirenje, i upravo tada su se ona i njen suprug S.približili J. kako bi joj pomogli da savlada psihičku krizu, posebno pri činjenici što imaju troje djece. Oko 14,00 časova, izašla je napolje da donese drva, i tada je čula S. da govori "Obaviještena je policija", pa je upitala J. zašto je pozvala policiju, a ona je ćutala. Tada je S. iz kuće izbacio J., na način što je odgurnuo, od čega je J. pala ispred kuće i to bočno, na trotoar desnom stranom tijela, ali nije sigurna, jer joj je u tom momentu zazvonio telefon i vidjela je da je poziva njen brat, a J. suprug, pa je sa njim započela razgovor, i on je tom prilikom pitao gdje mu je supruga, što su je oteli, i tada mu je odgovorila da je krenula kući. Pojasnila je da je ona sve ove godine ćutala, jer je njen brat brz u reakcijama, a njena snaha J. je prije 15 godina podizala nož na svog supruga, i bilo je strah da se ne desi nešto mnogo gore od ljubavne veze njenog supruga i njene snahe. Navela je da nije vidjela da je S.udarao J., da je jedino vidjela da je odgurnuo, ali se nije mogla sjetiti na koji način, te da zna da je od toga pala na trotoar. Kada se podigla nije vidjela da ima bilo kakve povrede. Kada je izašla po drva, vani se zadržala otprilike oko 5 minuta. Dok je bila u kući čula je da je njen suprug rekao J. "Nećeš izlaziti dok ovo ne razjasnimo", a ona je govorila moram na sastanak, a on je njoj rekao da je za takvu priču trebala odvojiti više vremena, ali nije sigurna da li su vrata od kuće tada bila zaključana, možda jesu. Ne sjeća se ko je prvi ušao u kuću, S. ili J., zaista ne zna da li je zaključala vrata za sobom, a nije primijetila da je S. ustajao da zaključa vrata. Dok su se svađali čula je da joj S. govori "Kurvo", a razmjenjivali su uvredljive riječi, nije se mogla sjetiti koje. Izjavila je da je posumnjala da je njen suprug u vezi sa J., i kada ga je pitala on joj je to priznao, pa je nakon toga razgovarala sa svojom snahom kako bi je ubijedila da to ne čini, a ona joj je odgovorila da hoće, jer ga voli. Kada joj je rekla da može ispričati njenom mužu, ona je rekla da je on to oprostio jednom, pa će i drugi put, i taj razgovor su vodile i prije 4 godine. Tog dana S. je zidao šank u kući, ali u kući nije bilo nikakve vangle sa malterom, jer je S. već bio završio zidanje šanka.
+            </p>
+            <p>
+                Ovaj svjedok je na glavnom pretresu ponovila iskaz pred
+                <organization id="odt" refersTo="#odt">
+                    ODT-om Podgorica
+                </organization>
+                i dodala da tvrdi da njen suprug predmetnog dana niti je držao zaključanu J., niti joj je nanio bilo kakve tjelesne povrede, te da je on pogriješio samo zato što je sa njom bio u ljubavnoj vezi.
+            </p>
+            <p>
+                Svjedok S. - Đ. I. je kako u prethodnom postupku pred
+                <organization id="odt" refersTo="#odt">
+                    ODT-om Podgorica
+                </organization>
+                , tako i na glavnom pretresu, posvjedočila da joj je dana xx.11.20xx.godine, oko xx,00 časovi, njena koleginica J. D. rekla da će da ide kod svoje zaove i zeta S. kako bi smirila situaciju, i da će joj se javiti kada dođe od njih. Prethodne večeri, njoj je J. rekla da je nevjenčani muž njene zaove uznemirava porukama, da joj prijeti, a dok joj je to govorila, plakala je. Navedenog dana oko 13,30 časova, stigla joj je SMS poruka od J. u kojoj je navela "Zatvorio me. Bije me", a nakon toga poruku "Zovi D.", pritom misleći na njenog supruga, a kako joj se D. nije javljao, a nije znala gdje stanuje njena zaova i zet, poslala joj je poruku da joj pošalje adresu, kao i da joj pošalje broj njene kćerke, na koje poruke joj ona nije odgovarala. U jednom momentu pozvala je telefonom i saopštila joj da neće doći na posao, a kada je pitala da li da zove policiju, odgovorila je "da", nakon čega je pitala za adresu, a ona joj je odgovorila "Ne", pa joj je bilo jasno da ona ne može da razgovara. Nakon tog njihovog razgovora, pozvao je njen suprug D.kojem je ispričala šta se dešava, a nakon što su saznali S.adresu stanovanja, obaviještena je policija, pa je J. poslala poruku u kojoj je obavijestila "Drži se stiže policija". Iz službene zabilješke
+                <organization id="odt" refersTo="#odt">
+                    Osnovnog državnog tužilaštva u Podgorici
+                </organization>
+                Kt.bt.1470/16 od 22.12.2016. godine, proizilazi da je dana 22.12.2016.godine, nakon što je svjedok-oštećena D. J. izjavila da u mobilnom telefonu i dalje čuva SMS poruke koje je razmjenjivala sa Đ. I. dana xx.11.20xx.godine, tužiocu stavila na uvid mobilni telefon, kako bi pročitala poruke i sadržinu istih evidentirala u citiranoj zabilješci. Iz uvida u SMS poruke mobilnog telefona marke "Nokia" broj xxx/xxx-xxx za dan xx.11.20xx.godine u periodu od 13,45 časova do 14,16 časova proizilazi da je: u 13,45 časova stigla poruka na broj telefona xxx/xxx-xxx sa sadržajem "Zatvori me. Bije me"; u 13,49 časova, sa broja xxx/xxx-xxx stigla SMS poruka "Pošalji adresu, D. se javlja, da pošaljem policiju"; u 13,49 časova sa broja telefona xxx/xxx-xxx stiže SMS poruka "Pošalji mi K. broj", a sa istog broja u 13:51,26 časova stigla SMS poruka sadržine "Adresu da pošaljem policiju, prezime i adresu", a u 1...
+            </p>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>
