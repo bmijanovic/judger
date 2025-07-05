@@ -1,0 +1,88 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U NIKŠIĆU</FRBRauthor>
+                    <FRBRdate date="2020-06-17">2020-06-17</FRBRdate>
+                    <FRBRtitle>K.br. 32/20</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Niksic" showAs="Osnovni sud u Nikšiću"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Niksic" showAs="Osnovno državno tužilaštvo u Nikšiću"/>
+                <TLCPerson eId="vVujacic" href="/ontology/person/vVujacic" showAs="Vukota Vujačić"/>
+                <TLCPerson eId="rNikolic" href="/ontology/person/rNikolic" showAs="Nikolić Rade"/>
+                <TLCPerson eId="jN" href="/ontology/person/jN" showAs="J. N."/>
+                <TLCPerson eId="rZorica" href="/ontology/person/rZorica" showAs="R. Zorica"/>
+                <TLCPerson eId="kS" href="/ontology/person/kS" showAs="K. S."/>
+                <TLCPerson eId="cJ" href="/ontology/person/cJ" showAs="Ć. J."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećena"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U NIKŠIĆU</organization>, sudija
+                <party id="vVujacic" refersTo="#vVujacic" as="#judge">Vukota Vujačić</party>, uz učešće
+                <party id="rNikolic" refersTo="#rNikolic" as="#clerk">Nikolić Rade</party> kao zapisničara, u krivičnom postupku protiv okrivljenog
+                <party id="jN" refersTo="#jN" as="#defendant">J. N.</party>, zbog krivičnog djela protivpravno lišenje slobode iz
+                <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>, odlučujući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">Osnovnog državnog tužilaštva u Nikšiću Kt.br. 41/20 od 14.02.2020. godine</organization>, nakon završenog glavnog i javnog pretresa, dana
+                <date date="2020-06-17">17.06.2020.</date> godine, u prisustvu zastupnika državnog tužioca
+                <party id="rZorica" refersTo="#rZorica">R. Zorice</party>, okrivljenog
+                <party id="jN" refersTo="#jN">J. N.</party> i njegovog branioca
+                <party id="kS" refersTo="#kS" as="#lawyer">K. S.</party>, advokata iz Nikšića, istog dana donio je, a dana
+                <date date="2020-06-18">18.06.2020.</date> godine javno objavio
+            </p>
+
+            <p><b>P R E S U D U</b></p>
+
+            <p>
+                Okrivljeni:
+                <party id="jN" refersTo="#jN">J. N.</party>, jmbg ---------------, od oca S. i majke M. rođene M., rođen --.--.----. godine u Nikšiću, sa prebivalištem u Nikšiću, ul. K. --, državljanin Crne Gore, pripravnik kod CB Nikšić, neoženjen, pismen, završio srednju školu, srednjeg imovnog stanja, ranije neosuđivan,
+            </p>
+
+            <p><b>Kriv je</b></p>
+
+            <p>
+                Što je: Dana <date date="2019-12-30">30.12.2019.</date> godine u Nikšiću, iako je bio svjestan svog djela čije je izvršenje htio, protivpravno ograničio slobodu kretanja oštećene
+                <party id="cJ" refersTo="#cJ" as="#victim">Ć. J.</party>, a na način što je tog dana oko 16:45 časova došao u butik ''A.'', lociran u tržnom centru ''L.'' i od oštećene zatražio da izađe iz butika, pa kada je oštećena odbila da to uradi, svojim rukama sa leđa je uhvatio u predjelu njenih ruku i na silu izveo iz navedenog butika, a zatim i iz trgovinskog objekta ''L.'' odbijajući da je na njen zahtjev pusti, nakon čega je oštećenu doveo na parking prostor gdje je bilo njegovo vozilo, ugurao je u vozilo na mjesto suvozača, a potom stavio vozilo u pogon i sa istim nastavio kretanje kroz grad onemogućavajući
+                <party id="cJ" refersTo="#cJ">Ć. J.</party> da iz vozila izađe, a na način što je u momentu kad je oštećena u toku vožnje otvorila vrata kako bi napustila vozilo, zatvorio vrata i zaključao vozilo i ne zaustavljajući se nastavio kretanje, da bi se vozilom u kom je bila oštećena dovezao do parking prostora ispred G. ''S. C.'' u Nikšiću gdje se zadržao petnaestak minuta, nakon čega je, a po obavljenom telefonskom razgovoru sa ocem oštećene, oštećenu vratio ispred trgovinskog objekta ''L.''.
+            </p>
+
+            <p>
+                - čime je izvršio krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>,
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <p>
+                        Pa sud okrivljenom, primjenom citiranih zakonskih odredbi, kao i odredbi iz <ref href="/krivicni/art_4">čl. 4 st. 2</ref>, <ref href="/krivicni/art_42">čl. 42</ref>, <ref href="/krivicni/art_52">čl. 52</ref>, <ref href="/krivicni/art_53">čl. 53</ref>, <ref href="/krivicni/art_54">čl. 54</ref> Krivičnog zakonika Crne Gore i <ref href="/zkp/art_229">čl. 229</ref>, <ref href="/zkp/art_226">čl. 226</ref> i <ref href="/zkp/art_374">čl. 374</ref> Zakonika o krivičnom postupku, izriče
+                    </p>
+                </item>
+                <item id="odluka2">
+                    <p>
+                        <b>U S L O V N U O S U D U</b><br/>
+                        Sa kojom mu utvrđuje kaznu zatvora u trajanju od 3 (tri) mjeseca i ujedno određuje da se ova kazna neće izvršiti pod uslovom da on u roku od 1 (jedne) godine po pravnosnažnosti presude ne izvrši novo krivično djelo.
+                    </p>
+                </item>
+                <item id="odluka3">
+                    <p>
+                        Obavezuje se okrivljeni da na ime troškova krivičnog postupka plati iznos od <amount value="40.00">40,00 eura</amount> u roku od <time duration="P15D">15 dana</time> od dana pravosnažnosti presude, pod prijetnom prinudnog izvršenja, na žiro račun ovog Suda br. 832-152-32 i da dokaz o izvršenoj uplati dostavi sudu.
+                    </p>
+                </item>
+            </list>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>
+```

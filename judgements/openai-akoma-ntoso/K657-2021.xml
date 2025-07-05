@@ -1,0 +1,182 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U PODGORICI</FRBRauthor>
+                    <FRBRdate date="2022-03-07">2022-03-07</FRBRdate>
+                    <FRBRtitle>K.br. 657/21</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo u Podgorici"/>
+                <TLCPerson eId="rCetkovic" href="/ontology/person/rCetkovic" showAs="Rade Ćetković"/>
+                <TLCPerson eId="eKraje" href="/ontology/person/eKraje" showAs="Edina Kraje"/>
+                <TLCPerson eId="mP" href="/ontology/person/mP" showAs="M. P."/>
+                <TLCPerson eId="jProtic" href="/ontology/person/jProtic" showAs="Jelena Protić"/>
+                <TLCPerson eId="aBozovic" href="/ontology/person/aBozovic" showAs="Ana Božović"/>
+                <TLCPerson eId="sO" href="/ontology/person/sO" showAs="S. O."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Optuženi"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećena"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization>, sudija
+                <party id="rCetkovic" refersTo="#rCetkovic" as="#judge">Rade Ćetković</party>, uz učešće
+                <party id="eKraje" refersTo="#eKraje" as="#clerk">Edine Kraje</party> kao zapisničara, u krivičnom postupku protiv optuženog
+                <party id="mP" refersTo="#mP" as="#defendant">M. P.</party>, zbog krivičnog djela teška tjelesna povreda iz
+                <ref href="/krivicni/art_151#st_2">čl. 151 st. 2 Krivičnog zakonika Crne Gore</ref> u sticaju sa krivičnim djelima zlostavljanje iz
+                <ref href="/krivicni/art_166a#st_1">čl. 166a st. 1 Krivičnog zakonika Crne Gore</ref>, protivpravno lišenje slobode iz
+                <ref href="/krivicni/art_162#st_1">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref> i krađa iz
+                <ref href="/krivicni/art_239#st_1">čl. 239 st. 1 Krivičnog zakonika Crne Gore</ref>, nakon javnog glavnog pretresa održanog dana
+                <date date="2022-03-03">03.03.2022.</date> godine, u prisustvu državne tužiteljke
+                <party id="jProtic" refersTo="#jProtic">Jelene Protić</party>, optuženog i njegove braniteljke adv.
+                <party id="aBozovic" refersTo="#aBozovic" as="#lawyer">Ane Božović</party>, dana
+                <date date="2022-03-07">07.03.2022.</date> godine izrekao je i objavio,
+            </p>
+
+            <p><b>P R E S U D U</b></p>
+
+            <p>
+                Optuženi:
+                <party id="mP" refersTo="#mP">M. P.</party>, JMB 0505971280128, od oca S. i majke B., rođene G., rođen .... godine u B. P., sa prebivalištem
+                u P. - P. š. bb, državljanin C. G., razumije crnogorski jezik, koji je i njegov jezik, penzioner, razveden, otac dvoje
+                djece, pismen, završio srednju školu, srednjeg imovnog stanja, neosuđivan, protiv kojeg se ne vodi postupak
+                za drugo krivično djelo, u pritvoru po rješenju sudije za istragu Osnovnog suda u Podgorici Kri. br. 387/21 od
+                <date date="2021-08-11">11.08.2021.</date> godine koji se računa od
+                <date date="2021-08-08">08.08.2021.</date> godine u 16.45 časova.
+            </p>
+
+            <p><b>Kriv je</b></p>
+
+            <p>
+                Što je: Dana
+                <date date="2021-08-07">07. avgusta 2021.</date> godine u Podgorici, svjestan svojih djela čije izvršenje je htio, znajući da su njegova
+                djela zabranjena, u salonu "Ivana", u Mosorskoj ulici, oko 12.00 časova protivpravno zatvorio i držao
+                zatvorenu, te tako protivpravno ograničio slobodu kretanja oštećenoj
+                <party id="sO" refersTo="#sO" as="#victim">S. O.</party>, na način što je uzeo ključeve od
+                salona "I." i zaključao ulazna vrata od muškog i ženskog salona, a potom je oštećenu izgurao iz muškog
+                salona u ženski, da bi je potom za kosu povukao u odvojenu kancelariju u sklopu ženskog dijela salona, gdje
+                ju je držao zatvorenu sve do 15.00 časova i nije joj dozvolio da napusti označeni prostor iako ga je oštećena
+                molila da je pusti da ide, čime joj je protivpravno ograničio slobodu kretanja, te istog dana prethodno, a i
+                nakon što ju je zatvorio, zlostavljao oštećenu i prema njoj se ponašao na način kojim se vrijeđa ljudsko
+                dostojanstvo, tako što je iz njenog vozila uzeo smeće i pobacao ga po kancelariji u sklopu salona, a onda
+                prišao oštećenoj dok je fenirala mušteriju, te ju je jako udario otvorenim spoljašnjim dijelom dlana u predjelu
+                vrata zbog čega se oštećena osjetila poniženo, da bi je nakon toga, po prethodnom protivpravnom lišenju
+                slobode, zlostavljao i u kancelariji, gdje ju je vrijeđao nazivajući je kurvom, omalovažavajući je tako što ju je
+                pljuvao, čupao za kosu, gazio nogama, udarao pesnicama po glavi i tijelu, udarao glavom u njenu glavu,
+                stavljao joj nož ispod grla, kojom prilikom je oštećena zadobila lake tjelesne povrede u vidu više krvnih
+                podliva u predjelu obje nadlaktice i više krvnih podliva u predjelu oba koljena, a zatim joj je prijetio da će joj
+                se desiti pakao ako ga prijavi policiji, da je sada živa, ali da tada neće biti, ako ga prijavi, da bi je kasnije, iako
+                ga je oštećena molila da pozove pomoć zbog povreda, odvezao do njene zgrade gdje joj je otvorio vrata i
+                uputio riječi: "Vuci se, gubi se, izlazi", i u istom trenutku je rukom odgurnuo kada je izlazila iz vozila, pri čemu
+                je okrivljeni oštećenu i teško tjelesno povrijedio, tako da joj je usljed toga život bio doveden u opasnost, na
+                način što je u kancelariji salona "I." gdje ju je držao zatvorenu i zlostavljao i jako udario nogom u predjelu
+                stomaka, od čega je oštećena zadobila tešku tjelesnu povredu opasnu po život u vidu rascjepa slezine
+                praćenog nakupljanjern krvi u trbušnoj duplji i stanjem šoka zbog gubitka velike količine krvi,
+            </p>
+            <p>
+                - čime je izvršio krivično djelo teška tjelesna povreda iz
+                <ref href="/krivicni/art_151#st_2">čl. 151 st. 2 Krivičnog zakonika Crne Gore</ref> u sticaju sa
+                krivičnim djelima zlostavljanje iz
+                <ref href="/krivicni/art_166a#st_1">čl. 166a st. 1 Krivičnog zakonika Crne Gore</ref> i protivpravno lišenje slobode iz
+                <ref href="/krivicni/art_162#st_1">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>.
+            </p>
+
+            <list>
+                <item id="odluka1">
+                    <p>
+                        Sud optuženom
+                        <party id="mP" refersTo="#mP">M. P.</party> na osnovu
+                        <ref href="/krivicni/art_4#st_2">čl. 4 st. 2</ref>,
+                        <ref href="/krivicni/art_32">čl. 32</ref>,
+                        <ref href="/krivicni/art_36">čl. 36</ref>,
+                        <ref href="/krivicni/art_42#st_1_3">čl. 42 st. 1 i 3</ref> i
+                        <ref href="/krivicni/art_48#st_1">čl. 48 st. 1 Krivičnog zakonika Crne Gore</ref>,
+                        prethodno utvrđuje:<br/>
+                        - za krivično djelo teška tjelesna povreda iz
+                        <ref href="/krivicni/art_151#st_2">čl. 151 st. 2 Krivičnog zakonika Crne Gore</ref> kaznu zatvora u trajanju
+                        od 1 (jedne) godine,<br/>
+                        - za krivično djelo zlostavljanje iz
+                        <ref href="/krivicni/art_166a#st_1">čl. 166a st. 1 Krivičnog zakonika Crne Gore</ref> kaznu zatvora u trajanju od 3 (tri)
+                        mjeseca,<br/>
+                        - za krivično djelo protivpravno lišenje slobode iz
+                        <ref href="/krivicni/art_162#st_1">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref> kaznu zatvora u
+                        trajanju od 30 (trideset) dana.
+                    </p>
+                </item>
+                <item id="odluka2">
+                    <p>
+                        Sud optuženog
+                        <party id="mP" refersTo="#mP">M. P.</party> primjenom
+                        <ref href="/krivicni/art_48#st_2">čl. 48 st. 2</ref> i
+                        <ref href="/krivicni/art_51#st_1">čl. 51 st. 1 Krivičnog zakonika Crne Gore</ref>, te
+                        <ref href="/zkp/art_226">čl. 226</ref>,
+                        <ref href="/zkp/art_229">čl. 229</ref> i
+                        <ref href="/zkp/art_374">čl. 374 Zakonika o krivičnom postupku</ref>,
+                        <b>OSUĐUJE</b><br/>
+                        Na jedinstvenu kaznu zatvora u trajanju od 1 (jedne) godine i 3 (tri) mjeseca, u koju mu se uračunava vrijeme
+                        provedeno u pritvoru od
+                        <date date="2021-08-08">08.08.2021.</date> godine u 16.45 časova, pa nadalje.
+                    </p>
+                </item>
+                <item id="odluka3">
+                    <p>
+                        Obavezuje se optuženi
+                        <party id="mP" refersTo="#mP">M. P.</party> da plati na ime troškova krivičnog postupka iznos od
+                        <amount value="253.50">253,50 €</amount>, u roku od
+                        <time duration="P15D">15 dana</time> po pravosnažnosti presude, pod prijetnjom izvršenja, kao i troškove koji se odnose na nagradu braniteljki po
+                        službenoj dužnosti o čijoj visini će sud odlučiti posebnim rješenjem shodno
+                        <ref href="/zkp/art_227#st_2">čl. 227 st. 2 Zakonika o krivičnom postupku</ref>.
+                    </p>
+                </item>
+                <item id="odluka4">
+                    <p>
+                        Prema optuženom:
+                        <party id="mP" refersTo="#mP">M. P.</party> sa podacima kao u stavu I izreke.
+                    </p>
+                </item>
+                <item id="odluka5">
+                    <p>
+                        Na osnovu
+                        <ref href="/zkp/art_372#st_1_tac_1">čl. 372 st. 1 tač. 1 Zakonika o krivičnom postupku</ref>
+                        <b>ODBIJA SE OPTUŽBA</b><br/>
+                        Kojom je predstavljeno da je: Dana
+                        <date date="2021-08-07">07. avgusta 2021.</date> godine u Podgorici, svjestan svog djela čije je izvršenje htio, znajući da je njegovo
+                        djelo zabranjeno, drugom oduzeo pokretne stvari, u namjeri da njihovim prisvajanjem sebi pribavi
+                        protivpravnu imovinsku korist u iznosu preko 150,00 eura, tako što je
+                        <date date="2021-08-07">07.08.2021.</date> godine oko 01.00 čas od
+                        oštećene
+                        <party id="sO" refersTo="#sO" as="#victim">S. O.</party> oduzeo i prisvojio mobilni telefon marke "Samsung A1", vrijednosti 148,00 eura, a zatim istog
+                        dana oko 12.00 časova i ključeve od vozila marke "Renault Clio", registarskih oznaka ..., vlasništvo oštećene,
+                        vrijednosti 1.620,00 eura, koje vozilo je bilo otključano i koje je kasnije stavio u pogon označenim ključem, te
+                        ga je odvezao ispred svoje kuće, čime je sebi pribavio korist u vrijednosti oduzetih stvari,
+                    </p>
+                </item>
+                <item id="odluka6">
+                    <p>
+                        - čime bi izvršio krivično djelo krađa iz
+                        <ref href="/krivicni/art_239#st_1">čl. 239 st. 1 Krivičnog zakonika Crne Gore</ref>. Troškovi krivičnog postupka u iznosu od
+                        <amount value="60.50">60,50 eura</amount>, kao i nužni izdaci optuženog i nagrada braniteljki
+                        postavljenoj po službenoj dužnosti u dijelu koji se odnosi na odbijajući dio presude, shodno
+                        <ref href="/zkp/art_230#st_1">čl. 230 st. 1 Zakonika o krivičnom postupku</ref>, će biti isplaćeni iz posebnog razdjela budžeta za rad sudova, a o njihovoj
+                        visini će sud odlučiti posebnim rješenjem shodno
+                        <ref href="/zkp/art_230#st_5_6">čl. 230 st. 5 i 6 Zakonika o krivičnom postupku</ref>.
+                    </p>
+                </item>
+            </list>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>
+```

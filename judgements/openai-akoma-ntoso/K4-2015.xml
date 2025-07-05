@@ -1,0 +1,79 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U PODGORICI</FRBRauthor>
+                    <FRBRdate date="2015-03-25">2015-03-25</FRBRdate>
+                    <FRBRtitle>K.br. 4/15</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Podgorica" showAs="Osnovni sud u Podgorici"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Podgorica" showAs="Osnovno državno tužilaštvo u Podgorici"/>
+                <TLCPerson eId="zJovovic" href="/ontology/person/zJovovic" showAs="Željka Jovović"/>
+                <TLCPerson eId="dRajkovic" href="/ontology/person/dRajkovic" showAs="Danijela Rajković"/>
+                <TLCPerson eId="kSaranovic" href="/ontology/person/kSaranovic" showAs="Kristina Šaranović"/>
+                <TLCPerson eId="dIvanovicDjeric" href="/ontology/person/dIvanovicDjeric" showAs="Danka Ivanović Đerić"/>
+                <TLCPerson eId="mMicunovic" href="/ontology/person/mMicunovic" showAs="Mirko Mićunović"/>
+                <TLCPerson eId="nRadunovic" href="/ontology/person/nRadunovic" showAs="Nataša Radunović"/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljena"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećena"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U PODGORICI</organization>, sudija
+                <party id="zJovovic" refersTo="#zJovovic" as="#judge">Željka Jovović</party>, uz učešće
+                <party id="dRajkovic" refersTo="#dRajkovic" as="#clerk">Danijele Rajković</party> kao zapisničara, u krivičnom postupku protiv okrivljene
+                <party id="kSaranovic" refersTo="#kSaranovic" as="#defendant">Kristine Šaranović</party>, zbog krivičnog djela protivpravno lišenje slobode iz
+                <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>, odlučujući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">Osnovnog državnog tužilaštva u Podgorici Kt.br.895/14 od 30.12.2014. godine</organization>, nakon održanog glavnog i javnog pretresa dana
+                <date date="2015-03-25">25.03.2015.</date> godine u prisustvu zastupnika optužbe zamjenika ODT Podgorica
+                <party id="dIvanovicDjeric" refersTo="#dIvanovicDjeric">Danke Ivanović Đerić</party>, okrivljene i njenog branioca advokata
+                <party id="mMicunovic" refersTo="#mMicunovic" as="#lawyer">Mirka Mićunovića</party>, donio je i istog dana javno objavio
+            </p>
+
+            <p><b>R J E Š E N J E</b></p>
+
+            <p>
+                Okrivljenoj:
+                <party id="kSaranovic" refersTo="#kSaranovic">KRISTINI ŠARANOVIĆ</party>, JMB 1806994215041, od oca Vjekoslava i majke Snežane, rođene Jovanović, rođena 18.06.1994. godine u Podgorici, sa prebivalištem u Podgorici Ul. dr Vukašina Markovića bb, državljanka Crne Gore, student, neudata, završila Gimnaziju, srednjeg imovnog stanja, neosuđivana.
+            </p>
+
+            <p>
+                Na osnovu
+                <ref href="/krivicni/art_4">čl. 4 st. 2</ref>,
+                <ref href="/krivicni/art_52">čl. 52</ref> i
+                <ref href="/krivicni/art_65">čl. 65 Krivičnog zakonika Crne Gore</ref>, te odredbi
+                <ref href="/zkp/art_226">čl. 226</ref>,
+                <ref href="/zkp/art_465">čl. 465</ref> i
+                <ref href="/zkp/art_466">čl. 466 Zakonika o krivičnom postupku</ref>, sud izriče
+            </p>
+
+            <p><b>SUDSKU OPOMENU</b></p>
+
+            <p>
+                Što je: Dana <date date="2014-08-19">19.08.2014.</date> godine, oko 17:00 časova, u Ul. dr Vukašina Markovića, u Podgorici, svjesna svog djela čije izvršenje je htjela, znajući da je isto zabranjeno, oštećenu
+                <party id="nRadunovic" refersTo="#nRadunovic" as="#victim">Natašu Radunović</party> držala zatvorenu u svom stanu, na način što je pozvala da dođe u njen stan, pa kada je oštećena ušla u isti, zaključala je ulazna vrata i ključ zadržala kod sebe, pri čemu joj je povišenim tonom saopštila da neće izaći iz stana jer ga je zaključala, nakon čega je, kada je oštećena u više navrata kretala u pravcu vrata kako bi izašla, istoj uputila prijetnje "nećeš izaći, uništiću ti život što sam ti i ranije rekla, to ozbiljno mislim", kao i da joj je najbolje da se iseli iz Podgorice i Crne Gore, i tom prilikom joj naređivala da ne ustaje sa fotelje već da sjedi, kada joj je Bojan Boričić koji je prisustvovao događaju rekao "da je na njeno mjesto puzio bi i molio Kristinu da joj oprosti" pa kada je nakon izvjesnog vremena oštećena pitala na koji način joj je ona to zagorčala život, te zašto je drži zatvorenu protiv njene volje, udarila je donjim dijelom dlana u predjelu čela, od kojeg udarca je oštećena zadobila laku tjelesnu povredu u vidu manjeg krvnog podliva u čeonom predjelu sa lijeve strane, na koji način joj je protivpravno ograničila slobodu kretanja,
+            </p>
+            <p>
+                - čime je izvršila krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>.
+            </p>
+
+            <p>
+                Obavezuje se okrivljena da plati na ime troškova krivičnog postupka iznos od <amount value="151.00">151,00€</amount>, u roku od <time duration="P15D">15 dana</time> po pravosnažnosti presude, pod prijetnjom prinudnog izvršenja.
+            </p>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>
+```

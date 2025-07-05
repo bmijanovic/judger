@@ -1,0 +1,142 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
+            xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17">
+    <judgment>
+        <meta>
+            <identification source="#court">
+                <FRBRWork>
+                    <FRBRauthor>OSNOVNI SUD U BARU</FRBRauthor>
+                    <FRBRdate date="2014-08-01">2014-08-01</FRBRdate>
+                    <FRBRtitle>K.br. 53/12</FRBRtitle>
+                    <FRBRcountry>ME</FRBRcountry>
+                </FRBRWork>
+            </identification>
+            <references>
+                <TLCOrganization eId="os" href="/ontology/organization/OsnovniSud.Baru" showAs="Osnovni sud u Baru"/>
+                <TLCOrganization eId="odt" href="/ontology/organization/OsnovnoDrzavnoTuzilastvo.Baru" showAs="Osnovno državno tužilaštvo u Baru"/>
+                <TLCPerson eId="aLekovic" href="/ontology/person/aLekovic" showAs="Aleksandra Leković"/>
+                <TLCPerson eId="vLukic" href="/ontology/person/vLukic" showAs="Vesna Lukić"/>
+                <TLCPerson eId="rM" href="/ontology/person/rM" showAs="R. M."/>
+                <TLCPerson eId="zB" href="/ontology/person/zB" showAs="Z. B."/>
+                <TLCPerson eId="sBorozan" href="/ontology/person/sBorozan" showAs="Sanja Borozan"/>
+                <TLCPerson eId="nT" href="/ontology/person/nT" showAs="N. T."/>
+                <TLCPerson eId="gJ" href="/ontology/person/gJ" showAs="G. J."/>
+                <TLCPerson eId="gI" href="/ontology/person/gI" showAs="G. I."/>
+                <TLCRole eId="judge" href="/ontology/role/judge" showAs="Sudija"/>
+                <TLCRole eId="clerk" href="/ontology/role/clerk" showAs="Zapisničar"/>
+                <TLCRole eId="defendant" href="/ontology/role/defendant" showAs="Okrivljeni"/>
+                <TLCRole eId="lawyer" href="/ontology/role/lawyer" showAs="Branilac"/>
+                <TLCRole eId="victim" href="/ontology/role/victim" showAs="Oštećeni"/>
+            </references>
+        </meta>
+
+        <judgmentBody>
+            <p>
+                <organization id="os" refersTo="#os">OSNOVNI SUD U BARU</organization>, sudija
+                <party id="aLekovic" refersTo="#aLekovic" as="#judge">Aleksandra Leković</party>, uz učešće
+                <party id="vLukic" refersTo="#vLukic" as="#clerk">Vesne Lukić</party> kao zapisničara, u krivičnom postupku protiv okrivljenih
+                <party id="rM" refersTo="#rM" as="#defendant">R. M.</party> i
+                <party id="zB" refersTo="#zB" as="#defendant">Z. B.</party>, zbog krivičnog djela nasilničko ponašanje iz
+                <ref href="/krivicni/art_399">čl. 399 Krivičnog zakonika</ref> u sticaju sa dva krivična djela protivpravno lišenje slobode iz
+                <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika</ref> a u vezi
+                <ref href="/krivicni/art_23">čl. 23 Krivičnog zakonika</ref>, odlučujući po optužnom predlogu
+                <organization id="odt" refersTo="#odt">Osnovnog državnog tužilaštva iz Bara Kt br. 277/11 od 07.02.2012. godine</organization>, nakon održanog glavnog javnog pretresa dana
+                <date date="2014-07-25">25.07.2014.</date> godine u prisustvu zastupnika optužbe savjetnika kod Osnovnog državnog tužilaštva u Baru
+                <party id="sBorozan" refersTo="#sBorozan">Sanje Borozan</party> i branioca okrivljenog
+                <party id="rM" refersTo="#rM" as="#lawyer">R. M.</party>, advokata
+                <party id="nT" refersTo="#nT">N. T.</party> iz B., a u odsustvu okrivljenih, dana
+                <date date="2014-08-01">01.08.2014.</date> godine donio je i javno objavio
+            </p>
+
+            <p><b>P R E S U D U</b></p>
+
+            <p>
+                Okrivljeni:
+                <party id="rM" refersTo="#rM">R. M.</party>, JMBG …, od oca S. i majke L., rođene G., … u B., stalno nastanjen u S., student, neoženjen,
+                završio srednju školu, lošeg imovnog stanja, neosuđivan;
+            </p>
+            <p>
+                <party id="zB" refersTo="#zB">Z. B.</party>, JMBG …, od oca I. i majke K., rođene H., rođen … u H. N., stalno nastanjen u B., državljanin C. G.,
+                oženjen, otac jednog djeteta, završio srednju školu, srednjeg imovnog stanja, neosuđivan;
+            </p>
+
+            <p><b>Krivi su</b></p>
+
+            <p>
+                Što su: Dana <date date="2011-06-27">27.06.2011.</date> godine oko 19,00 časova, ispred Osnovne škole "K." u S., Opština B., zajedno svjesni
+                svog djela i htjeli njegovo izvršenje, dok su se nalazili u PMV kojim je upravljao okrivljeni
+                <party id="zB" refersTo="#zB">Z. B.</party> i koji je isto zaustavio, protivpravno lišili slobode maloljetne
+                <party id="gJ" refersTo="#gJ" as="#victim">G. J.</party> i
+                <party id="gI" refersTo="#gI" as="#victim">G. I.</party> iz S., i istovremeno vršenjem nasilja prema istim,
+                ugrozili njihovo spokojstvo na način što su bez ikakvog povoda i razloga i to okrivljeni
+                <party id="rM" refersTo="#rM">R. M.</party> pozvao oštećenog
+                <party id="gJ" refersTo="#gJ">G. J.</party> da dođe do vozila i kad je došao
+                <party id="rM" refersTo="#rM">R.</party> ga je kroz otvoren prozor rukama uhvatio za glavu i istom
+                jedanput udario od krov vozila, nakon čega je oštećeni pobjegao i sakrio se u prodavnicu "A." udaljenu 20m
+                od zaustavljenog vozila, gdje ga je
+                <party id="rM" refersTo="#rM">R.</party> stigao, uhvatio za ruke i dovukao do vozila, gdje je naredio i njemu i
+                oštećenom
+                <party id="gI" refersTo="#gI">G. I.</party>, koji se tu nalazio, da uđu u vozilo, što su oni i učinili i sjeli pozadi, gdje je
+                <party id="rM" refersTo="#rM">R.</party>, koji se nalazio na mjestu suvozača, nastavio da
+                <party id="gJ" refersTo="#gJ">J.</party> udara šakama po glavi i tijelu, sve do kuće
+                <party id="zB" refersTo="#zB">Z. B.</party>, tražeći od istih da mu vrate mobilni telefon i fotoaparat, za koje smatra da su mu oni prethodno oduzeli, gdje je isti vozilo zaustavio,
+                <party id="rM" refersTo="#rM">R.</party> je
+                <party id="gJ" refersTo="#gJ">J.</party> izvukao iz vozila i ponovo izudarao šakama u predjelu glave i tijela, odakle ga je
+                <party id="zB" refersTo="#zB">Z.</party> odvezao do apartmana, zadajući mu 2-3 udarca šakama u glavu, a
+                <party id="rM" refersTo="#rM">R.</party> je i u apartmanu nastavio da obojicu oštećenih udara rukama u
+                predjelu glave i tijela, gdje je naredio
+                <party id="gJ" refersTo="#gJ">J.</party> da klekne na koljena a onda ga udario nogom u leđa, i prestao je da
+                ga udara kada mu je potekla krv iz nosa, a zatim im je obojici zaprijetio da će ih zapaliti ako slučaj prijave
+                policiji, i nakon što su ih protivpravno držali zatvorene oko 20 minuta u apartmanu, ograničivši im na taj
+                način slobodu kretanja, pustili su ih, kojom prilikom su im nanijeli lake tjelesne povrede i to: oštećenom
+                <party id="gJ" refersTo="#gJ">G. J.</party> povredu ličnog dijela glave u vidu oguljotine i crvenila kože desne strane čeonog predjela glave i krvni podliv
+                kože oko desnog očnog predjela, povredu ličnog dijela glave u vidu otoka nosne piramide, te crvenila kože
+                oba jagodična predjela glave, povredu grudnog koša u vidu crvenila kože srednjeg dijela prednje strane i u
+                vidu crvenila kože leđa u predjelu lijeve lopatične regije, a oštećenom
+                <party id="gI" refersTo="#gI">G. I.</party>: povredu ličnog dijela glave u vidu
+                nagnječine kože lijeve strane čeonog predjela, te nagnječine kože oko desnog očnog predjela, povredu u vidu
+                crvenila kože desne strane grudnog koša u predjelu ključne kosti i crvenila kože u predjelu desnog rebarnog
+                luka,
+            </p>
+            <p>
+                -čime su kao saizvršioci učinili krivično djelo – nasilničko ponašanje iz <ref href="/krivicni/art_399">čl. 399 Krivičnog zakonika</ref> u sticaju
+                sa dva krivična djela – protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1. Krivičnog zakonika</ref>, u vezi <ref href="/krivicni/art_23">čl. 23 Krivičnog zakonika</ref>,
+            </p>
+            
+            <list>
+                <item id="odluka1">
+                    <p>
+                        Pa sud primjenom <ref href="/krivicni/art_4">čl. 4</ref>, <ref href="/krivicni/art_32">32</ref>, <ref href="/krivicni/art_36">36</ref>, <ref href="/krivicni/art_42">42</ref>, <ref href="/krivicni/art_45">45</ref>, <ref href="/krivicni/art_46">46</ref>, <ref href="/krivicni/art_48">48</ref> i <ref href="/krivicni/art_51">51</ref> Krivičnog zakonika i <ref href="/zkp/art_369">čl. 369</ref>, <ref href="/zkp/art_370">370</ref> i <ref href="/zkp/art_374">374</ref> ZKP-a utvrđuje;<br/>
+                        Okrivljenom <party id="rM" refersTo="#rM">R. M.</party>:<br/>
+                        - za krivično djelo - nasilničko ponašanje iz <ref href="/krivicni/art_399">čl. 399 Krivičnog zakonika</ref>, kaznu zatvora u trajanju od 2 (dva) mjeseca;<br/>
+                        - za krivično djelo – protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1. Krivičnog zakonika</ref> učinjeno na štetu oštećenog <party id="gJ" refersTo="#gJ">G. J.</party>, kaznu zatvora u trajanju od 1 (jedan) mjesec i 15 (petnaest) dana;<br/>
+                        - za krivično djelo – protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1. Krivičnog zakonika</ref> učinjeno na štetu oštećenog <party id="gI" refersTo="#gI">G. I.</party>, kaznu zatvora u trajanju od 1 (jedan) mjesec i 15 (petnaest) dana;<br/>
+                        Pa ga za ova djela <b>OSUĐUJE</b> na jedinstvenu kaznu zatvora u trajanju od 4 (četiri) mjeseca, u koju kaznu mu se uračunava vrijeme za koje je bio lišen slobode u trajanju od 48 sati, počev od <date date="2011-06-28">28.06.2011.</date> godine u 22,50 časova.
+                    </p>
+                </item>
+                <item id="odluka2">
+                    <p>
+                        Okrivljenom <party id="zB" refersTo="#zB">Z. B.</party>, primjenom citiranih članova utvrđuje:<br/>
+                        - za krivično djelo - nasilničko ponašanje iz <ref href="/krivicni/art_399">čl. 399 Krivičnog zakonika</ref>, kaznu zatvora u trajanju od 1 (jedan) mjesec i 15 (petnaest) dana;<br/>
+                        - za krivično djelo – protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1. Krivičnog zakonika</ref> učinjeno na štetu oštećenog <party id="gJ" refersTo="#gJ">G. J.</party>, kaznu zatvora u trajanju od 30 (trideset) dana;<br/>
+                        - za krivično djelo – protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1. Krivičnog zakonika</ref> učinjeno na štetu oštećenog <party id="gI" refersTo="#gI">G. I.</party>, kaznu zatvora u trajanju od 30 (trideset) dana;<br/>
+                        Pa ga za ova djela <b>OSUĐUJE</b> na jedinstvenu kaznu zatvora u trajanju od 90 (devedeset) dana, u koju kaznu mu se uračunava vrijeme za koje je bio lišen slobode u trajanju od 48 sati, počev od <date date="2011-06-28">28.06.2011.</date> godine u 22,50 časova.
+                    </p>
+                </item>
+                <item id="odluka3">
+                    <p>
+                        Oštećeni <party id="gJ" refersTo="#gJ" as="#victim">G. J.</party> i <party id="gI" refersTo="#gI" as="#victim">G. I.</party> se radi ostvarivanja imovinskopravnog zahtjeva upućuju na parnični postupak.
+                    </p>
+                </item>
+                <item id="odluka4">
+                    <p>
+                        Okrivljeni <party id="rM" refersTo="#rM">R. M.</party> je dužan da plati troškove krivičnog postupka u iznosu od <amount value="240.00">240,00 eura</amount>, a okrivljeni <party id="zB" refersTo="#zB">Z. B.</party> u iznosu od <amount value="158.80">158,80 eura</amount>, sve u roku od <time duration="P15D">15 dana</time> od pravosnažnosti presude, pod prijetnjom izvršenja.
+                    </p>
+                </item>
+            </list>
+        </judgmentBody>
+    </judgment>
+</akomaNtoso>
+```
