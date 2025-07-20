@@ -1,4 +1,3 @@
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
@@ -39,9 +38,9 @@
                 <organization id="os" refersTo="#os">OSNOVNI SUD U BARU</organization>, sudija
                 <party id="tSpasojevic" refersTo="#tSpasojevic" as="#judge">Tamara Spasojević</party>, uz učešće
                 <party id="zIvanovic" refersTo="#zIvanovic" as="#clerk">Zorice Ivanović</party> kao zapisničara, u krivičnom postupku protiv optuženih
-                <party id="kEV" refersTo="#kEV" as="#defendant">K.E. V.</party>, 
-                <party id="vL" refersTo="#vL" as="#defendant">V. L.</party>, 
-                <party id="kD" refersTo="#kD" as="#defendant">K. D.</party> i 
+                <party id="kEV" refersTo="#kEV" as="#defendant">K.E. V.</party>,
+                <party id="vL" refersTo="#vL" as="#defendant">V. L.</party>,
+                <party id="kD" refersTo="#kD" as="#defendant">K. D.</party> i
                 <party id="vS" refersTo="#vS" as="#defendant">V. S.</party>, zbog krivičnih djela samovlašće i protivpravno lišenje slobode, po optužnom predlogu
                 <organization id="odt" refersTo="#odt">Osnovnog državnog tužilaštva u Baru</organization>, nakon glavnog i javnog pretresa održanog dana
                 <date date="2016-10-19">19.10.2016.</date> godine, donio je i javno objavio
@@ -66,13 +65,13 @@
             <p><b>Krivi su</b></p>
 
             <p>
-                Zato što su: 
+                Zato što su:
                 <party id="kEV" refersTo="#kEV">K.E. V.</party> dana <date date="2011-09-19">19.09.2011.</date> godine, oko 15,00 časova, u Osnovnoj školi „J.“ u B., svjesna svog djela i htjela njegovo izvršenje, iako je znala da je njeno djelo zabranjeno, upotrebom sile samovlasno pribavljala pravo za koje smatra da joj pripada uspostavljanjem roditeljskog prava nad svojom maloljetnom ćerkom A.S. koja živi sa svojim ocem <party id="kSS" refersTo="#kSS" as="#victim">K. S. S.</party> u B., dok su okrivljeni <party id="vL" refersTo="#vL">V. L.</party>, <party id="kD" refersTo="#kD">K. D.</party> i <party id="vS" refersTo="#vS">V. S.</party> samovlasno pribavljali pravo za drugog - <party id="kEV" refersTo="#kEV">K. E. V.</party> koje pravo ona smatra da joj pripada, svjesni svog djela i htjeli njegovo izvršenje, iako su znali da je njihovo djelo zabranjeno, na način što je okrivljena <party id="kEV" refersTo="#kEV">K. E. V.</party> zajedno sa <party id="vL" refersTo="#vL">V. L.</party> i <party id="kD" refersTo="#kD">K. D.</party> ušla u školu, a zatim u učionicu u kojoj se nalazila oštećena A. na času, prišla sa jedne strane oštećenoj A., jednom rukom je dohvatila za ruku, a drugom rukom ispod potkoljenice, dok je sa druge strane <party id="kD" refersTo="#kD">K. D.</party>, jednom rukom uhvatio A. za ruku, a drugom ispod potkoljenice i istu bez njenog pristanka iznijeli iz učionice i iz škole, dok je <party id="vL" refersTo="#vL">V. L.</party> uhvatio za obje ruke učiteljicu L. A. i iste joj stavio iza leđa i tako je držao kako bi omogućio nesmetano iznošenje A. iz učionice i škole, od strane <party id="kD" refersTo="#kD">K. D.</party> i <party id="kEV" refersTo="#kEV">K. E. V.</party> nakon čega je zadržao vrata od učionice kako bi onemogućio izlazak učiteljici, nakon čega su svi izašli iz škole, unijeli A. u PMV marke „P.“ reg.ozn. PG ... kojim je ispred škole čekao <party id="vS" refersTo="#vS">V. S.</party>, kada su svi ušli u vozilo i krenuli u pravcu S., pa su na ovaj način protivpravno oduzeli i ograničili slobodu kretanja maloljetnoj A.,
             </p>
             <p>
                 - čime su izvršili i to optužena <party id="kEV" refersTo="#kEV">K.E. V.</party> krivično djelo samovlašće iz <ref href="/krivicni/art_384#st_2">čl. 384 st. 2</ref> u vezi <ref href="/krivicni/art_384#st_1">st. 1</ref> Krivičnog zakonika Crne Gore, a optuženi <party id="vL" refersTo="#vL">V. L.</party>, <party id="kD" refersTo="#kD">K. D.</party> i <party id="vS" refersTo="#vS">V. S.</party> krivično djelo – samovlašće iz <ref href="/krivicni/art_384#st_4">čl. 384 st. 4</ref> u vezi <ref href="/krivicni/art_384#st_2">st. 2</ref> u vezi <ref href="/krivicni/art_384#st_1">st. 1</ref> Krivičnog zakonika Crne Gore i krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162#st_1">čl. 162 st. 1</ref> Krivičnog zakonika Crne Gore.
             </p>
-            
+
             <list>
                 <item id="odluka1">
                     <p>
@@ -115,4 +114,3 @@
         </judgmentBody>
     </judgment>
 </akomaNtoso>
-```

@@ -1,4 +1,3 @@
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd"
@@ -60,7 +59,7 @@
             <p>
                 -čime je izvršio krivično djelo protivpravno lišenje slobode iz <ref href="/krivicni/art_162">čl. 162 st. 1 Krivičnog zakonika Crne Gore</ref>
             </p>
-            
+
             <list>
                 <item id="odluka1">
                     <p>
@@ -78,4 +77,3 @@
         </judgmentBody>
     </judgment>
 </akomaNtoso>
-```
