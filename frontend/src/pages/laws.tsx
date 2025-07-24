@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Tab, Tabs } from '@mui/material';
 import {AkomaNtosoRenderer} from "../components/akomantosoRenderer.tsx";
+import axios from 'axios';
 
 export const Laws = () => {
     const [value, setValue] = useState(0);
@@ -12,17 +13,30 @@ export const Laws = () => {
     const [zakonOKrivicnomPostupku, setzakonOKrivicnomPostupku] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch("/krivicni_zakonik.xml")
-            .then((res) => res.text())
-            .then(setKrivicniZakonik)
+        axios
+            .get('http://localhost:8080/laws', {
+                params: {
+                    fileType: 'xml',
+                    lawType: 'krivicni_zakonik'
+                },
+                responseType: 'text'
+            })
+            .then((res) => setKrivicniZakonik(res.data))
             .catch((err) => {
-                console.error("Error loading XML file:", err);
+                console.error('Error loading Krivični Zakonik XML:', err);
             });
-        fetch("/zakonik_o_krivicnom_postupku.xml")
-            .then((res) => res.text())
-            .then(setzakonOKrivicnomPostupku)
+
+        axios
+            .get('http://localhost:8080/laws', {
+                params: {
+                    fileType: 'xml',
+                    lawType: 'zakonik_o_krivicnom_postupku'
+                },
+                responseType: 'text'
+            })
+            .then((res) => setzakonOKrivicnomPostupku(res.data))
             .catch((err) => {
-                console.error("Error loading XML file:", err);
+                console.error('Error loading Zakon o Krivičnom Postupku XML:', err);
             });
     }, []);
 

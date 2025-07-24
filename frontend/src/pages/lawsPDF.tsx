@@ -35,8 +35,8 @@ export const LawsPDF = () => {
                 <iframe
                     src={
                         value === 0
-                            ? '/krivicni_zakonik.pdf'
-                            : '/zakonik_o_krivicnom_postupku.pdf'
+                            ? 'http://localhost:8080/laws?fileType=pdf&lawType=krivicni_zakonik'
+                            : 'http://localhost:8080/laws?fileType=pdf&lawType=zakonik_o_krivicnom_postupku'
                     }
                     title="Zakon"
                     width="100%"
