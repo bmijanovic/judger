@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xmlns:lc="http://informatika.ftn.uns.ac.rs/legal-case.rdf#">
+    <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case">
+        <lc:name>Case 01</lc:name>
+        <lc:defendant>John Doe</lc:defendant>
+        <lc:crime_type>counterfeiting_money</lc:crime_type>
+        <lc:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#double">300.0</lc:amount>
+        <lc:financial_condition>poor</lc:financial_condition>
+        <lc:extended_criminal_activity>true</lc:extended_criminal_activity>
+    </lc:case>
+</rdf:RDF>

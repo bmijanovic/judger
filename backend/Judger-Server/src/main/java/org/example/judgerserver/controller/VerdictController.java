@@ -4,6 +4,7 @@ import org.example.judgerserver.dto.SimilarVerdict;
 import org.example.judgerserver.jcolibri.CbrApp;
 import org.example.judgerserver.model.Verdict;
 import org.example.judgerserver.repository.VerdictRepository;
+import org.example.judgerserver.service.DrDeviceService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -15,10 +16,12 @@ import java.util.List;
 @RequestMapping("/verdicts")
 public class VerdictController {
     private final VerdictRepository verdictRepository;
+    private final DrDeviceService drDeviceService;
     private final CbrApp cbrApp;
 
-    public VerdictController(VerdictRepository verdictRepository, CbrApp cbrApp) {
+    public VerdictController(VerdictRepository verdictRepository, CbrApp cbrApp, DrDeviceService drDeviceService) {
         this.verdictRepository = verdictRepository;
+        this.drDeviceService = drDeviceService;
         this.cbrApp = cbrApp;
     }
 
@@ -57,7 +60,10 @@ public class VerdictController {
     }
 
     @GetMapping("/{id}/rule")
-    public Verdict getRuleVerdict(@PathVariable Long id) {
-        throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED, "Rule-based logic not implemented yet");
+    public String getRuleVerdict(@PathVariable Long id) {
+        Verdict verdict = verdictRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        String s = this.drDeviceService.decisionBasedOnLaw(verdict);
+        return s;
     }
 }

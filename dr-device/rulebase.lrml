@@ -1,0 +1,1444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lrml:LegalRuleML xmlns:lrml="http://docs.oasis-open.org/legalruleml/ns/v1.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legalruleml/ns/v1.0/ xsd-compact/lrml-compact.xsd" xmlns:ruleml="http://ruleml.org/spec">
+    <lrml:Statements>
+
+
+        <lrml:PrescriptiveStatement key="ps1">
+            <ruleml:Rule key=":rule1" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+					
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+				
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">counterfeiting_money</ruleml:Data>
+						</ruleml:Atom>
+
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&lt;=</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>counterfeiting_money_under_15000</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps2">
+            <ruleml:Rule key=":rule2" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&gt;</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">counterfeiting_money</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>counterfeiting_money_over_15000</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps3">
+            <ruleml:Rule key=":rule3" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">procurement_of_counterfeit_money</ruleml:Data>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&lt;=</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>procurement_money_under_15000</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps4">
+            <ruleml:Rule key=":rule4" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">procurement_of_counterfeit_money</ruleml:Data>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&gt;</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>procurement_money_over_15000</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps5">
+            <ruleml:Rule key=":rule5" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+					
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+				
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">counterfeiting_money</ruleml:Data>
+						</ruleml:Atom>
+
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&lt;=</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:financial_condition"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">poor</ruleml:Data>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">false</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>counterfeiting_money_under_15000_mitigating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+
+
+		<lrml:PrescriptiveStatement key="ps5_1">
+			<ruleml:Rule key=":rule5_1" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_under_15000_mitigating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_under_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps6">
+            <ruleml:Rule key=":rule6" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&gt;</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">counterfeiting_money</ruleml:Data>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:financial_condition"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">poor</ruleml:Data>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">false</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>counterfeiting_money_over_15000_mitigating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps6_2">
+			<ruleml:Rule key=":rule6_2" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_over_15000_mitigating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_over_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps7">
+            <ruleml:Rule key=":rule7" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">procurement_of_counterfeit_money</ruleml:Data>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&lt;=</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:financial_condition"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">poor</ruleml:Data>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">false</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>procurement_money_under_15000_mitigating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps7_3">
+			<ruleml:Rule key=":rule7_3" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_under_15000_mitigating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_under_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps8">
+            <ruleml:Rule key=":rule8" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">procurement_of_counterfeit_money</ruleml:Data>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&gt;</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:financial_condition"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">poor</ruleml:Data>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">false</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>procurement_money_over_15000_mitigating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps8_4">
+			<ruleml:Rule key=":rule8_4" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_over_15000_mitigating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_over_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+
+	<lrml:PrescriptiveStatement key="ps9">
+            <ruleml:Rule key=":rule9" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">counterfeiting_money</ruleml:Data>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&lt;=</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>counterfeiting_money_under_15000_aggravating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps9_1">
+			<ruleml:Rule key=":rule9_1" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_under_15000_aggravating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_under_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+
+		<lrml:PrescriptiveStatement key="ps10">
+            <ruleml:Rule key=":rule10" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&gt;</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">counterfeiting_money</ruleml:Data>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>counterfeiting_money_over_15000_aggravating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps10_2">
+			<ruleml:Rule key=":rule10_2" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_over_15000_aggravating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>counterfeiting_money_over_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps11">
+            <ruleml:Rule key=":rule11" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">procurement_of_counterfeit_money</ruleml:Data>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&lt;=</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>procurement_money_under_15000_aggravating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps11_3">
+			<ruleml:Rule key=":rule11_3" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_under_15000_aggravating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_under_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps12">
+            <ruleml:Rule key=":rule12" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+                        <ruleml:Atom>
+						    <ruleml:Rel iri="lc:amount"/>
+    						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						    <ruleml:Var type="amount">Amount</ruleml:Var>
+						</ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">procurement_of_counterfeit_money</ruleml:Data>
+						</ruleml:Atom>
+					    <ruleml:Atom>
+    					    <ruleml:Expr>
+        					    <ruleml:Fun>&gt;</ruleml:Fun>
+        					    <ruleml:Var>Amount</ruleml:Var>
+        					    <ruleml:Ind>15000</ruleml:Ind>
+    					    </ruleml:Expr>
+					    </ruleml:Atom>
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:extended_criminal_activity"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>procurement_money_over_15000_aggravating_circumstances</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps12_4">
+			<ruleml:Rule key=":rule12_4" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:And>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_over_15000_aggravating_circumstances</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Negation>
+						<ruleml:Atom>
+							<ruleml:Rel>procurement_money_over_15000</ruleml:Rel>
+							<ruleml:Var type=":defendant">Defendant</ruleml:Var>
+						</ruleml:Atom>
+					</ruleml:Negation>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+		<lrml:PrescriptiveStatement key="ps13">
+            <ruleml:Rule key=":rule13" closure="universal" strength="defeasible">
+                <ruleml:if>
+					<ruleml:And>
+				
+						<ruleml:Atom>
+							<ruleml:Rel iri="lc:crime_type"/>
+							<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+							<ruleml:Data xsi:type="xs:string">failure_to_report</ruleml:Data>
+						</ruleml:Atom>
+					</ruleml:And>
+				</ruleml:if>               
+                <ruleml:then>
+                    <ruleml:Atom>
+                        <ruleml:Rel>failure_to_report</ruleml:Rel>
+                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                    </ruleml:Atom>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+		
+
+		<lrml:PenaltyStatement key="pen_conf_1">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_2">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_3">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_4">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_5">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_6">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_7">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+		
+		<lrml:PenaltyStatement key="pen_conf_8">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_9">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_10">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_11">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_12">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen_conf_13">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":to_confiscate"/>
+							<ruleml:Var>Goods</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+
+		<lrml:PenaltyStatement key="pn_make_lt_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>2</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_lt_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>12</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_gt_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>5</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_gt_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>15</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_lt_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>2</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_lt_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>10</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_gt_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>5</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_gt_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>15</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		
+		<lrml:PenaltyStatement key="pn_make_lt_mitigating_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_lt_mitigating_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>12</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+
+		<lrml:PenaltyStatement key="pn_make_gt_mitigating_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_gt_mitigating_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>15</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_lt_mitigating_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_lt_mitigating_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>10</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_gt_mitigating_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_gt_mitigating_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>15</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_lt_agg_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_lt_agg_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>20</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_gt_agg_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_make_gt_agg_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>20</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_lt_agg_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_lt_agg_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>20</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_gt_agg_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pn_use_gt_agg_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>20</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="report_failure_min">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":min_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>0</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="report_failure_max">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+						<ruleml:Atom>
+							<ruleml:Rel iri=":max_imprisonment"/>
+							<ruleml:Var>Years</ruleml:Var>
+							<ruleml:Ind>1</ruleml:Ind>
+						</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_1"/>
+				<lrml:toPrescriptiveStatement keyref="#ps1"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_2"/>
+				<lrml:toPrescriptiveStatement keyref="#ps2"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_3"/>
+				<lrml:toPrescriptiveStatement keyref="#ps3"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_4"/>
+				<lrml:toPrescriptiveStatement keyref="#ps4"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_5"/>
+				<lrml:toPrescriptiveStatement keyref="#ps5"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_6"/>
+				<lrml:toPrescriptiveStatement keyref="#ps6"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+		
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_7"/>
+				<lrml:toPrescriptiveStatement keyref="#ps7"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_8"/>
+				<lrml:toPrescriptiveStatement keyref="#ps8"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_9"/>
+				<lrml:toPrescriptiveStatement keyref="#ps9"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_10"/>
+				<lrml:toPrescriptiveStatement keyref="#ps10"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_11"/>
+				<lrml:toPrescriptiveStatement keyref="#ps11"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_12"/>
+				<lrml:toPrescriptiveStatement keyref="#ps12"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen_conf_13"/>
+				<lrml:toPrescriptiveStatement keyref="#ps13"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_lt_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps1"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_lt_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps1"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+	
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_gt_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps2"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_gt_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps2"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_lt_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps3"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_lt_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps3"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_gt_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps4"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_gt_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps4"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+		
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_lt_mitigating_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps5"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_lt_mitigating_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps5"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_gt_mitigating_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps6"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_gt_mitigating_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps6"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_lt_mitigating_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps7"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_lt_mitigating_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps7"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_gt_mitigating_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps8"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_gt_mitigating_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps8"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_lt_agg_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps9"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_lt_agg_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps9"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_gt_agg_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps10"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_make_gt_agg_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps10"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_lt_agg_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps11"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_lt_agg_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps11"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_gt_agg_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps12"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pn_use_gt_agg_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps12"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#report_failure_min"/>
+				<lrml:toPrescriptiveStatement keyref="#ps13"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#report_failure_max"/>
+				<lrml:toPrescriptiveStatement keyref="#ps13"/>
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps1" over="#ps5_1"/>
+		</lrml:OverrideStatement>
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps2" over="#ps6_2"/>
+		</lrml:OverrideStatement>
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps3" over="#ps7_3"/>
+		</lrml:OverrideStatement>
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps4" over="#ps8_4"/>
+		</lrml:OverrideStatement>
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps1" over="#ps9_1"/>
+		</lrml:OverrideStatement>
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps2" over="#ps10_2"/>
+		</lrml:OverrideStatement>
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps3" over="#ps11_3"/>
+		</lrml:OverrideStatement>
+
+		<lrml:OverrideStatement>
+			<lrml:Override under="#ps4" over="#ps12_4"/>
+		</lrml:OverrideStatement>
+
+		
+
+    </lrml:Statements>
+</lrml:LegalRuleML>

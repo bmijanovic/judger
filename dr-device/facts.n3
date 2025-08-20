@@ -1,0 +1,7 @@
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#case> .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#name> "Case 01" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#defendant> "John Doe" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#crime_type> "procurement_of_counterfeit_money" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#amount> "141.47691611190567"^^<http://www.w3.org/2001/XMLSchema#double> .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#financial_condition> "moderate" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#extended_criminal_activity> "false" .
