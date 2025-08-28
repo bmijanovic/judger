@@ -101,9 +101,9 @@ public class DrDeviceService {
                 "    <lc:case rdf:about=\"http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case\">\n" +
                 "        <lc:name>Case 01</lc:name>\n" +
                 "        <lc:defendant>John Doe</lc:defendant>\n" +
-                "        <lc:num_of_victims>" + dict.get(verdict.getNumVictimsEndangered().toString()) + "</lc:crime_type>\n" +
-                "        <lc:previously_convicted>" + dict.get(verdict.getPreviouslyConvicted().toString()) + "</lc:crime_type>\n" +
-                "        <lc:psychological_abuse_involved>" + dict.get(verdict.getPsychologicalAbuseInvolved().toString()) + "</lc:crime_type>\n" +
+                "        <lc:num_of_victims>" + verdict.getNumVictimsEndangered().toString() + "</lc:num_of_victims>\n" +
+                "        <lc:previously_convicted>" + verdict.getPreviouslyConvicted().toString() + "</lc:previously_convicted>\n" +
+                "        <lc:psychological_abuse_involved>" + verdict.getPsychologicalAbuseInvolved().toString() + "</lc:psychological_abuse_involved>\n" +
                 "        <lc:financial_status>" + dict.get(verdict.getDefendantFinancialStatus().toString()) + "</lc:financial_status>\n" +
                 "    </lc:case>\n" +
                 "</rdf:RDF>";

@@ -17,7 +17,7 @@
         <RuleML>
             <xsl:attribute name="proof">proof.ruleml</xsl:attribute>
             <xsl:attribute name="rdf_export">export.rdf</xsl:attribute>
-            <xsl:attribute name="rdf_export_classes"> counterfeiting_money_under_15000 counterfeiting_money_over_15000 procurement_money_under_15000 procurement_money_over_15000 counterfeiting_money_under_15000_mitigating_circumstances counterfeiting_money_over_15000_mitigating_circumstances procurement_money_under_15000_mitigating_circumstances procurement_money_over_15000_mitigating_circumstances counterfeiting_money_under_15000_aggravating_circumstances counterfeiting_money_over_15000_aggravating_circumstances procurement_money_under_15000_aggravating_circumstances procurement_money_over_15000_aggravating_circumstances failure_to_report min_imprisonment max_imprisonment to_confiscate </xsl:attribute>
+            <xsl:attribute name="rdf_export_classes"> </xsl:attribute>
             <xsl:attribute name="rdf_import">&quot;facts.rdf&quot;</xsl:attribute>
             <xsl:apply-templates select="lrml:Statements"/>
         </RuleML>

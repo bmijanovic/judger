@@ -1,0 +1,20 @@
+
+DR-DEVICE: A Defeasible Logic Reasoner for the Semantic Web
+
+Programmed by Dr. Nick Bassiliades
+       Dept. of Informatics, Aristotle University of Thessaloniki, Greece
+in cooperation with Prof. Grigorios Antoniou
+       Institute of Computer Science, FO.R.T.H., Heraklion, Greece
+
+
+Local RULE access at Path: rulebase.ruleml
+
+
+Translating RuleML syntax to DR-DEVICE native syntax for file: rulebase
+
+
+Translating DR-DEVICE rules to R-DEVICE rules...[ROUTER1] Logical name construct was not recognized by any routers
+[PRCCODE4] Execution halted during the actions of deffunction load-only-dr-device.
+[PRCCODE4] Execution halted during the actions of deffunction load-dr-device.
+[PRCCODE4] Execution halted during the actions of deffunction load-ruleml-dr-device-local.
+[PRCCODE4] Execution halted during the actions of deffunction load-ruleml-dr-device-local.

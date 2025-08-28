@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lrml:LegalRuleML xmlns:lrml="http://docs.oasis-open.org/legalruleml/ns/v1.0/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://docs.oasis-open.org/legalruleml/ns/v1.0/xsd-compact/lrml-compact.xsd"
+	xmlns:ruleml="http://ruleml.org/spec">
+	<lrml:Statements>
+
+	</lrml:Statements>
+</lrml:LegalRuleML>
