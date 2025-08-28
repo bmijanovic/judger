@@ -1,9 +1,4 @@
 @echo off
-
-set "targetDirectory=.\dr-device"
-cd /d "%targetDirectory%"
-
-
 del /f /q defeasible-r-device-rule-class-instances-rulebase.clp
 del /f /q defeasible-r-device-rule-instances-rulebase.clp
 del /f /q export.rdf

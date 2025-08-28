@@ -13,8 +13,21 @@ Local RULE access at Path: rulebase.ruleml
 Translating RuleML syntax to DR-DEVICE native syntax for file: rulebase
 
 
-Translating DR-DEVICE rules to R-DEVICE rules...[ROUTER1] Logical name construct was not recognized by any routers
-[PRCCODE4] Execution halted during the actions of deffunction load-only-dr-device.
-[PRCCODE4] Execution halted during the actions of deffunction load-dr-device.
-[PRCCODE4] Execution halted during the actions of deffunction load-ruleml-dr-device-local.
-[PRCCODE4] Execution halted during the actions of deffunction load-ruleml-dr-device-local.
+Translating DR-DEVICE rules to R-DEVICE rules...
+Loading namespaces: facts 
+Parsing RDF file: facts.rdf
+
+
+ ok
+
+
+Loading R-DEVICE rules... ok
+
+Translating R-DEVICE rules... ok
+
+Running R-DEVICE rules...
+
+End of inferencing!
+
+Extracting results... ok
+

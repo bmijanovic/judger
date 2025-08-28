@@ -1,0 +1,8 @@
+( defclass is_speeding_on_town_road_lv1 ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass is_speeding_on_town_road_lv2 ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass is_speeding_on_town_road_lv3 ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass is_speeding_on_town_road_lv3_with_accident ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass to_pay ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )
+( defclass to_pay_min ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )
+( defclass to_pay_max ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )
+( defclass max_imprisonment ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )
