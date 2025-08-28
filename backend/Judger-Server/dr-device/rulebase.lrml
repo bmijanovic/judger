@@ -5,6 +5,56 @@
 	xsi:schemaLocation="http://docs.oasis-open.org/legalruleml/ns/v1.0/xsd-compact/lrml-compact.xsd"
 	xmlns:ruleml="http://ruleml.org/spec">
 	<lrml:Statements>
+		<lrml:PrescriptiveStatement key="kriv_cl_42_st_1">
+			<ruleml:Rule key=":rule10" closure="universal" strength="defeasible">
+				<ruleml:if>
+					<ruleml:Atom>
+						<ruleml:Rel iri="lc:previously_convicted" />
+						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+						<ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+					</ruleml:Atom>
+				</ruleml:if>
+				<ruleml:then>
+					<ruleml:Atom>
+						<ruleml:Rel>recommend_increased_penalty</ruleml:Rel>
+						<ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+					</ruleml:Atom>
+				</ruleml:then>
+			</ruleml:Rule>
+		</lrml:PrescriptiveStatement>
+
+        <lrml:PenaltyStatement key="pen14">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":to_pay_max2" />
+                        <ruleml:Var>Money</ruleml:Var>
+                        <ruleml:Ind>500</ruleml:Ind>
+                    </ruleml:Atom>
+
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+		<lrml:PenaltyStatement key="pen11">
+			<lrml:SuborderList>
+				<lrml:Obligation>
+					<ruleml:Atom>
+						<ruleml:Rel iri=":to_increase_penalty" />
+						<ruleml:Var>Suggestion</ruleml:Var>
+						<ruleml:Ind>true</ruleml:Ind>
+					</ruleml:Atom>
+				</lrml:Obligation>
+			</lrml:SuborderList>
+		</lrml:PenaltyStatement>
+
+		<lrml:ReparationStatement>
+			<lrml:Reparation>
+				<lrml:appliesPenalty keyref="#pen11" />
+				<lrml:toPrescriptiveStatement keyref="#kriv_cl_42_st_1" />
+			</lrml:Reparation>
+		</lrml:ReparationStatement>
+
 
 	</lrml:Statements>
 </lrml:LegalRuleML>
