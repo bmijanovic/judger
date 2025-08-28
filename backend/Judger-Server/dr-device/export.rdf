@@ -15,77 +15,35 @@
      xmlns:export='&export;'
 >
 
-<rdfs:Class rdf:about='&export;is_speeding_on_town_road_lv3_with_accident'>
-     <rdfs:label rdf:resource='is_speeding_on_town_road_lv3_with_accident'/>
+<rdfs:Class rdf:about='&export;to_increase_penalty'>
+     <rdfs:label rdf:resource='to_increase_penalty'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about='&export;is_speeding_on_town_road_lv1'>
-     <rdfs:label rdf:resource='is_speeding_on_town_road_lv1'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
-<rdfs:Class rdf:about='&export;is_speeding_on_town_road_lv2'>
-     <rdfs:label rdf:resource='is_speeding_on_town_road_lv2'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
-<rdfs:Class rdf:about='&export;to_pay_min'>
-     <rdfs:label rdf:resource='to_pay_min'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
-<rdfs:Class rdf:about='&export;to_pay_max'>
-     <rdfs:label rdf:resource='to_pay_max'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
-<rdfs:Class rdf:about='&export;max_imprisonment'>
-     <rdfs:label rdf:resource='max_imprisonment'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
-<rdfs:Class rdf:about='&export;is_speeding_on_town_road_lv3'>
-     <rdfs:label rdf:resource='is_speeding_on_town_road_lv3'/>
-     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
-</rdfs:Class>
-
-<rdfs:Class rdf:about='&export;to_pay'>
-     <rdfs:label rdf:resource='to_pay'/>
+<rdfs:Class rdf:about='&export;not_previously_convicted'>
+     <rdfs:label rdf:resource='not_previously_convicted'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
 
-<rdf:Property rdf:about='&export;defendant'>
-     <rdfs:domain rdf:resource='&export;is_speeding_on_town_road_lv3_with_accident'/>
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;to_increase_penalty'/>
 </rdf:Property>
 
 <rdf:Property rdf:about='&export;defendant'>
-     <rdfs:domain rdf:resource='&export;is_speeding_on_town_road_lv1'/>
+     <rdfs:domain rdf:resource='&export;not_previously_convicted'/>
 </rdf:Property>
 
-<rdf:Property rdf:about='&export;defendant'>
-     <rdfs:domain rdf:resource='&export;is_speeding_on_town_road_lv2'/>
-</rdf:Property>
+<export:to_increase_penalty rdf:about='&export;to_increase_penalty1'>
+     <export:value>true</export:value>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
+</export:to_increase_penalty>
 
-<rdf:Property rdf:about='&export;value'>
-     <rdfs:domain rdf:resource='&export;to_pay_min'/>
-</rdf:Property>
-
-<rdf:Property rdf:about='&export;value'>
-     <rdfs:domain rdf:resource='&export;to_pay_max'/>
-</rdf:Property>
-
-<rdf:Property rdf:about='&export;value'>
-     <rdfs:domain rdf:resource='&export;max_imprisonment'/>
-</rdf:Property>
-
-<rdf:Property rdf:about='&export;defendant'>
-     <rdfs:domain rdf:resource='&export;is_speeding_on_town_road_lv3'/>
-</rdf:Property>
-
-<rdf:Property rdf:about='&export;value'>
-     <rdfs:domain rdf:resource='&export;to_pay'/>
-</rdf:Property>
+<export:not_previously_convicted rdf:about='&export;not_previously_convicted1'>
+     <export:defendant>John Doe</export:defendant>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
+</export:not_previously_convicted>
 
 </rdf:RDF>

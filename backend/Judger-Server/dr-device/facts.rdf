@@ -7,7 +7,7 @@
         <lc:name>Case 01</lc:name>
         <lc:defendant>John Doe</lc:defendant>
         <lc:num_of_victims>1</lc:num_of_victims>
-        <lc:previously_convicted>false</lc:previously_convicted>
+        <lc:previously_convicted>true</lc:previously_convicted>
         <lc:psychological_abuse_involved>true</lc:psychological_abuse_involved>
         <lc:financial_status>middle_income</lc:financial_status>
     </lc:case>

@@ -139,17 +139,18 @@ public class DrDeviceService {
     private ArrayList<String> getPossibleMatches() {
         ArrayList<String> r = new ArrayList<>();
 
-        String[] victimTypes = {"single_victim", "multiple_victim"};
-        String[] abuseTypes = {"psychological_abuse_yes", "psychological_abuse_no"};
-        String[] convictionTypes = {"previously_convicted_yes", "previously_convicted_no"};
-
-        for (String victim : victimTypes) {
-            for (String abuse : abuseTypes) {
-                for (String conviction : convictionTypes) {
-                    r.add(victim + "_" + abuse + "_" + conviction);
-                }
-            }
-        }
+//        String[] victimTypes = {"single_victim", "multiple_victim"};
+//        String[] abuseTypes = {"psychological_abuse_yes", "psychological_abuse_no"};
+//        String[] convictionTypes = {"previously_convicted_yes", "previously_convicted_no"};
+//
+//        for (String victim : victimTypes) {
+//            for (String abuse : abuseTypes) {
+//                for (String conviction : convictionTypes) {
+//                    r.add(victim + "_" + abuse + "_" + conviction);
+//                }
+//            }
+//        }
+        r.add("not_previously_convicted");
 
         return r;
     }
@@ -157,7 +158,7 @@ public class DrDeviceService {
     private HashMap<String, String> getSentenceDict() {
         HashMap<String, String> r = new HashMap<>();
 
-        r.put("single_victim_psychological_abuse_yes_previously_convicted_yes",
+        r.put("not_previously_convicted",
                 "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtve. Okrivljeni je ranije osuđivan, što otežava njegov položaj pred sudom.");
 
         r.put("single_victim_psychological_abuse_yes_previously_convicted_no",
@@ -189,7 +190,7 @@ public class DrDeviceService {
 
     private ArrayList<String> getPossiblePenalties() {
         ArrayList<String> r = new ArrayList<>();
-        r.add("min_imprisonment");
+        r.add("to_increase_penalty");
         r.add("max_imprisonment");
         r.add("to_confiscate");
         return r;
