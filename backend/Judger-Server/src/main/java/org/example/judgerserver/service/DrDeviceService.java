@@ -5,6 +5,7 @@ import org.example.judgerserver.model.Verdict;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -19,9 +20,9 @@ import java.util.regex.Pattern;
 public class DrDeviceService {
 
     public String decisionBasedOnLaw(Verdict verdict)    {
-        this.runScript("./dr-device/clean.bat");
+        this.runScript("clean.bat");
         this.createFile(verdict);
-        this.runScript("./dr-device/start.bat");
+        this.runScript("start.bat");
         return this.createAnswer();
     }
 
@@ -79,11 +80,13 @@ public class DrDeviceService {
     }
 
     private void runScript(String scriptPath) {
-        ProcessBuilder processBuilder = new ProcessBuilder(scriptPath);
+        ProcessBuilder processBuilder = new ProcessBuilder("cmd.exe", "/c", scriptPath);
+        processBuilder.directory(new File("dr-device")); // run inside dr-device folder
+//        processBuilder.inheritIO();
         try {
-            Process process = processBuilder.start();
             processBuilder.redirectOutput(ProcessBuilder.Redirect.INHERIT);
             processBuilder.redirectError(ProcessBuilder.Redirect.INHERIT);
+            Process process = processBuilder.start();
             int exitCode = process.waitFor();
             System.out.println("Batch script exited with code: " + exitCode + "ime skripte je " + scriptPath);
         } catch (InterruptedException | IOException e) {
@@ -111,8 +114,6 @@ public class DrDeviceService {
     }
 
     private void writeToFile(String text) {
-//        String filePath = "../../../../../../../../dr-device/facts.rdf";
-//        String filePath = "C:\\Users\\Nevena\\Desktop\\pravna projekat\\nas pravo\\dr-device\\facts.rdf";
         String filePath = "./dr-device/facts.rdf";
         try {
             Path path = Paths.get(filePath);
