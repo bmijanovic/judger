@@ -3,3 +3,4 @@ parser/.env
 .DS_Store
 **/.venv
 /.idea
+backend/Judger-Server/data/judgerdb.trace.db
