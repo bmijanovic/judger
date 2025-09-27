@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.example.judgerserver.jcolibri.CaseDescription;
 import org.example.judgerserver.model.FinancialStatus;
+import org.example.judgerserver.model.InjurySeverity;
 import org.example.judgerserver.model.VerdictType;
+import org.example.judgerserver.model.WeaponType;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -25,7 +27,7 @@ public class SimilarVerdict {
     private String prosecutor;
     private String defendantName;
     private String criminalOffense;
-    private String appliedProvisions;
+    private Set<String> appliedProvisions;
     private VerdictType verdict;
     private Integer numDefendants;
     private Boolean previouslyConvicted;
@@ -35,8 +37,8 @@ public class SimilarVerdict {
     private Boolean physicalAbuseInvolved;
     private Boolean psychologicalAbuseInvolved;
     private Set<String> injuryDescriptions;
-    private String actionsTakenAgainstVictim;
-    private String methodsOfRestraint;
+    private WeaponType weaponType;
+    private InjurySeverity injurySeverity;
 
     private double similarity;
 
@@ -59,13 +61,14 @@ public class SimilarVerdict {
         this.physicalAbuseInvolved = v.getPhysicalAbuseInvolved();
         this.psychologicalAbuseInvolved = v.getPsychologicalAbuseInvolved();
         this.injuryDescriptions = v.getInjuryDescriptions();
-        this.actionsTakenAgainstVictim = v.getActionsTakenAgainstVictim();
-        this.methodsOfRestraint = v.getMethodsOfRestraint();
+        this.weaponType = v.getWeaponType();
+        this.injurySeverity = v.getInjurySeverity();
     }
 
     public String toCSV() {
         String separator = "|";
         String injuries = injuryDescriptions != null ? String.join(",", injuryDescriptions) : "";
+        String provisions = appliedProvisions != null ? String.join(",", appliedProvisions) : "";
         return id + separator +
                 court + separator +
                 verdictNumber + separator +
@@ -74,7 +77,7 @@ public class SimilarVerdict {
                 prosecutor + separator +
                 defendantName + separator +
                 criminalOffense + separator +
-                appliedProvisions + separator +
+                provisions + separator +
                 verdict + separator +
                 numDefendants + separator +
                 previouslyConvicted + separator +
@@ -84,8 +87,8 @@ public class SimilarVerdict {
                 physicalAbuseInvolved + separator +
                 psychologicalAbuseInvolved + separator +
                 injuries + separator +
-                actionsTakenAgainstVictim + separator +
-                methodsOfRestraint + separator +
+                weaponType + separator +
+                injurySeverity + separator +
                 similarity;
     }
 }
