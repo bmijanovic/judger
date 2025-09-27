@@ -15,35 +15,107 @@
      xmlns:export='&export;'
 >
 
-<rdfs:Class rdf:about='&export;to_increase_penalty'>
-     <rdfs:label rdf:resource='to_increase_penalty'/>
+<rdfs:Class rdf:about='&export;psychological_abuse_one_victim'>
+     <rdfs:label rdf:resource='psychological_abuse_one_victim'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about='&export;not_previously_convicted'>
-     <rdfs:label rdf:resource='not_previously_convicted'/>
+<rdfs:Class rdf:about='&export;psychological_abuse_more_victims'>
+     <rdfs:label rdf:resource='psychological_abuse_more_victims'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;physical_abuse_one_victim'>
+     <rdfs:label rdf:resource='physical_abuse_one_victim'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;physical_abuse_more_victim'>
+     <rdfs:label rdf:resource='physical_abuse_more_victim'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;physical_psychological_abuse_one_victim'>
+     <rdfs:label rdf:resource='physical_psychological_abuse_one_victim'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;physical_psychological_abuse_more_victim'>
+     <rdfs:label rdf:resource='physical_psychological_abuse_more_victim'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;min_imprisonment'>
+     <rdfs:label rdf:resource='min_imprisonment'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about='&export;max_imprisonment'>
+     <rdfs:label rdf:resource='max_imprisonment'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
 
-<rdf:Property rdf:about='&export;value'>
-     <rdfs:domain rdf:resource='&export;to_increase_penalty'/>
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;psychological_abuse_one_victim'/>
 </rdf:Property>
 
 <rdf:Property rdf:about='&export;defendant'>
-     <rdfs:domain rdf:resource='&export;not_previously_convicted'/>
+     <rdfs:domain rdf:resource='&export;psychological_abuse_more_victims'/>
 </rdf:Property>
 
-<export:to_increase_penalty rdf:about='&export;to_increase_penalty1'>
-     <export:value>true</export:value>
-     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
-</export:to_increase_penalty>
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;physical_abuse_one_victim'/>
+</rdf:Property>
 
-<export:not_previously_convicted rdf:about='&export;not_previously_convicted1'>
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;physical_abuse_more_victim'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;physical_psychological_abuse_one_victim'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;physical_psychological_abuse_more_victim'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;min_imprisonment'/>
+</rdf:Property>
+
+<rdf:Property rdf:about='&export;value'>
+     <rdfs:domain rdf:resource='&export;max_imprisonment'/>
+</rdf:Property>
+
+<export:psychological_abuse_more_victims rdf:about='&export;psychological_abuse_more_victims1'>
+     <export:defendant>John Doe</export:defendant>
+     <defeasible:truthStatus>defeasibly-proven-negative</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
+</export:psychological_abuse_more_victims>
+
+<export:physical_abuse_more_victim rdf:about='&export;physical_abuse_more_victim1'>
+     <export:defendant>John Doe</export:defendant>
+     <defeasible:truthStatus>defeasibly-proven-negative</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof3</defeasible:proof>
+</export:physical_abuse_more_victim>
+
+<export:physical_psychological_abuse_more_victim rdf:about='&export;physical_psychological_abuse_more_victim1'>
      <export:defendant>John Doe</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
-</export:not_previously_convicted>
+</export:physical_psychological_abuse_more_victim>
+
+<export:min_imprisonment rdf:about='&export;min_imprisonment1'>
+     <export:value>2</export:value>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
+</export:min_imprisonment>
+
+<export:max_imprisonment rdf:about='&export;max_imprisonment1'>
+     <export:value>15</export:value>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof5</defeasible:proof>
+</export:max_imprisonment>
 
 </rdf:RDF>

@@ -1,0 +1,6 @@
+2025-09-02 21:59:02.322729+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VERDICTS" not found; SQL statement:
+update verdicts where id=2 set physical_abuse_involved=false [42102-232]
+2025-09-02 21:59:08.480378+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "update verdict [*]where id=2 set physical_abuse_involved=false"; expected "., AS, SET"; SQL statement:
+update verdict where id=2 set physical_abuse_involved=false [42001-232]

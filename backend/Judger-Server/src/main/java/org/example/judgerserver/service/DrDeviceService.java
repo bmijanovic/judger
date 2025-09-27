@@ -33,7 +33,6 @@ public class DrDeviceService {
         return finalResult;
     }
 
-    //TODO mozda refaktorisati
     private String addPenalty(String finalResult, String input) {
         ArrayList<String> possiblePenalties = getPossiblePenalties();
         HashMap<String, String> dict = getSentenceDict();
@@ -104,9 +103,10 @@ public class DrDeviceService {
                 "    <lc:case rdf:about=\"http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case\">\n" +
                 "        <lc:name>Case 01</lc:name>\n" +
                 "        <lc:defendant>John Doe</lc:defendant>\n" +
-                "        <lc:num_of_victims>" + verdict.getNumVictimsEndangered().toString() + "</lc:num_of_victims>\n" +
+                "        <lc:num_of_victims rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">" + verdict.getNumVictimsEndangered() + "</lc:num_of_victims>\n" +
                 "        <lc:previously_convicted>" + verdict.getPreviouslyConvicted().toString() + "</lc:previously_convicted>\n" +
                 "        <lc:psychological_abuse_involved>" + verdict.getPsychologicalAbuseInvolved().toString() + "</lc:psychological_abuse_involved>\n" +
+                "        <lc:physical_abuse_involved>" + verdict.getPhysicalAbuseInvolved().toString() + "</lc:physical_abuse_involved>\n" +
                 "        <lc:financial_status>" + dict.get(verdict.getDefendantFinancialStatus().toString()) + "</lc:financial_status>\n" +
                 "    </lc:case>\n" +
                 "</rdf:RDF>";
@@ -139,19 +139,12 @@ public class DrDeviceService {
 
     private ArrayList<String> getPossibleMatches() {
         ArrayList<String> r = new ArrayList<>();
-
-//        String[] victimTypes = {"single_victim", "multiple_victim"};
-//        String[] abuseTypes = {"psychological_abuse_yes", "psychological_abuse_no"};
-//        String[] convictionTypes = {"previously_convicted_yes", "previously_convicted_no"};
-//
-//        for (String victim : victimTypes) {
-//            for (String abuse : abuseTypes) {
-//                for (String conviction : convictionTypes) {
-//                    r.add(victim + "_" + abuse + "_" + conviction);
-//                }
-//            }
-//        }
-        r.add("not_previously_convicted");
+        r.add("psychological_abuse_one_victim");
+        r.add("psychological_abuse_more_victims");
+        r.add("physical_abuse_one_victim");
+        r.add("physical_abuse_more_victim");
+        r.add("physical_psychological_abuse_one_victim");
+        r.add("physical_psychological_abuse_more_victim");
 
         return r;
     }
@@ -162,27 +155,17 @@ public class DrDeviceService {
         r.put("not_previously_convicted",
                 "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtve. Okrivljeni je ranije osuđivan, što otežava njegov položaj pred sudom.");
 
-        r.put("single_victim_psychological_abuse_yes_previously_convicted_no",
-                "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtve. Okrivljeni ranije nije osuđivan, što se može uzeti kao olakšavajuća okolnost.");
+        r.put("psychological_abuse_one_victim",
+                "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtve.");
 
-        r.put("single_victim_psychological_abuse_no_previously_convicted_yes",
-                "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela nije bilo prisutno psihičko zlostavljanje. Okrivljeni je ranije osuđivan, što otežava njegov položaj pred sudom.");
+        r.put("psychological_abuse_more_victims",
+                "Okrivljeni je počinio krivično djelo protiv vise žrtava. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje.");
 
-        r.put("single_victim_psychological_abuse_no_previously_convicted_no",
-                "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela nije bilo prisutno psihičko zlostavljanje. Okrivljeni ranije nije osuđivan, što se može uzeti kao olakšavajuća okolnost.");
 
-        r.put("multiple_victims_psychological_abuse_yes_previously_convicted_yes",
-                "Okrivljeni je počinio krivično djelo protiv više žrtava. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtava. Okrivljeni je ranije osuđivan, što otežava njegov položaj pred sudom.");
-
-        r.put("multiple_victims_psychological_abuse_yes_previously_convicted_no",
-                "Okrivljeni je počinio krivično djelo protiv više žrtava. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtava. Okrivljeni ranije nije osuđivan, što se može uzeti kao olakšavajuća okolnost.");
-
-        r.put("multiple_victims_psychological_abuse_no_previously_convicted_yes",
-                "Okrivljeni je počinio krivično djelo protiv više žrtava. Tokom izvršenja djela nije bilo prisutno psihičko zlostavljanje. Okrivljeni je ranije osuđivan, što otežava njegov položaj pred sudom.");
-
-        r.put("multiple_victims_psychological_abuse_no_previously_convicted_no",
-                "Okrivljeni je počinio krivično djelo protiv više žrtava. Tokom izvršenja djela nije bilo prisutno psihičko zlostavljanje. Okrivljeni ranije nije osuđivan, što se može uzeti kao olakšavajuća okolnost.");
-
+        r.put("physical_abuse_one_victim", "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno fizicko zlostavljanje.");
+        r.put("physical_abuse_more_victim", "MORE Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno fizicko zlostavljanje.");
+        r.put("physical_psychological_abuse_one_victim", "LALALALLALALALALALALLALALALAL");
+        r.put("physical_psychological_abuse_more_victim", "HAHAHAHAHHAHAHAHAHAHAHHA");
 
         r.put("min_imprisonment", "Te ga sud primjenom pomenutih propisa osuđuje na zatvorsku kaznu u trajanju od minimum ");
         r.put("max_imprisonment", ", a najviše ");
@@ -192,6 +175,7 @@ public class DrDeviceService {
     private ArrayList<String> getPossiblePenalties() {
         ArrayList<String> r = new ArrayList<>();
         r.add("to_increase_penalty");
+        r.add("min_imprisonment");
         r.add("max_imprisonment");
         r.add("to_confiscate");
         return r;

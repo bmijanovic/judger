@@ -17,7 +17,7 @@
         <RuleML>
             <xsl:attribute name="proof">proof.ruleml</xsl:attribute>
             <xsl:attribute name="rdf_export">export.rdf</xsl:attribute>
-            <xsl:attribute name="rdf_export_classes">to_increase_penalty not_previously_convicted</xsl:attribute>
+            <xsl:attribute name="rdf_export_classes">psychological_abuse_one_victim psychological_abuse_more_victims physical_abuse_one_victim physical_abuse_more_victim physical_psychological_abuse_one_victim physical_psychological_abuse_more_victim min_imprisonment max_imprisonment</xsl:attribute>
             <xsl:attribute name="rdf_import">&quot;facts.rdf&quot;</xsl:attribute>
             <xsl:apply-templates select="lrml:Statements"/>
         </RuleML>
