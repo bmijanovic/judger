@@ -1,5 +1,4 @@
-```xml
- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
  <akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17 ../schemas/akomantoso30.xsd">
   <act id="zakonik_o_krivicnom_postupku" name="Zakonik o krivičnom postupku">
    <meta>
@@ -521,4 +520,3 @@
    </body>
   </act>
  </akomaNtoso>
- ```

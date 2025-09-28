@@ -5,9 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.judgerserver.model.FinancialStatus;
-import org.example.judgerserver.model.Verdict;
-import org.example.judgerserver.model.VerdictType;
+import org.example.judgerserver.model.*;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Set;
@@ -26,7 +24,7 @@ public class CaseDescription implements CaseComponent {
     private String prosecutor;
     private String defendantName;
     private String criminalOffense;
-    private String appliedProvisions;
+    private Set<String> appliedProvisions;
     private VerdictType verdict;
 
     private Integer numDefendants;
@@ -38,8 +36,8 @@ public class CaseDescription implements CaseComponent {
     private Boolean psychologicalAbuseInvolved;
 
     private Set<String> injuryDescriptions;
-    private String actionsTakenAgainstVictim;
-    private String methodsOfRestraint;
+    private WeaponType weaponType;
+    private InjurySeverity injurySeverity;
 
     public CaseDescription(Verdict v) {
         this.id = v.getId();
@@ -50,7 +48,7 @@ public class CaseDescription implements CaseComponent {
         this.prosecutor = truncate(v.getProsecutor());
         this.defendantName = truncate(v.getDefendantName());
         this.criminalOffense = truncate(v.getCriminalOffense());
-        this.appliedProvisions = truncate(v.getAppliedProvisions());
+        this.appliedProvisions = v.getAppliedProvisions();
         this.verdict = v.getVerdict();
 
         this.numDefendants = v.getNumDefendants();
@@ -61,8 +59,8 @@ public class CaseDescription implements CaseComponent {
         this.physicalAbuseInvolved = v.getPhysicalAbuseInvolved();
         this.psychologicalAbuseInvolved = v.getPsychologicalAbuseInvolved();
         this.injuryDescriptions = v.getInjuryDescriptions();
-        this.actionsTakenAgainstVictim = truncate(v.getActionsTakenAgainstVictim());
-        this.methodsOfRestraint = truncate(v.getMethodsOfRestraint());
+        this.weaponType = v.getWeaponType();
+        this.injurySeverity = v.getInjurySeverity();
     }
 
     private String truncate(String s) {
