@@ -36,7 +36,7 @@ for _, row in df.iterrows():
         "injuryDescriptions": [trunc(row["injuryDescriptions"])] if row["injuryDescriptions"] else [],
         "weaponType": trunc(row["weaponType"]),
         "injurySeverity": trunc(row["injurySeverity"]),
-        "onDuty": trunc(row["onDuty"])
+        "onDuty": row.get("onDuty", "False").lower() == "true",
     }
 
     resp = requests.post(url, headers=headers, json=payload)
