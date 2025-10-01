@@ -35,7 +35,8 @@ for _, row in df.iterrows():
         # Ako ima više opisa povreda, možeš parsirati niz; ovde šaljemo listu sa jednim stringom (truncirano)
         "injuryDescriptions": [trunc(row["injuryDescriptions"])] if row["injuryDescriptions"] else [],
         "weaponType": trunc(row["weaponType"]),
-        "injurySeverity": trunc(row["injurySeverity"])
+        "injurySeverity": trunc(row["injurySeverity"]),
+        "onDuty": trunc(row["onDuty"])
     }
 
     resp = requests.post(url, headers=headers, json=payload)
