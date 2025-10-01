@@ -23,7 +23,7 @@ for _, row in df.iterrows():
         "prosecutor": trunc(row["prosecutor"]),
         "defendantName": trunc(row["defendantName"]),
         "criminalOffense": trunc(row["criminalOffense"]),
-        "appliedProvisions": trunc(row["appliedProvisions"]),
+        "appliedProvisions": trunc(row["appliedProvisions"].split(";")),
         "verdict": trunc(row["verdict"] or "PRISON"),
         "numDefendants": int(row.get("numDefendants", 0)),
         "previouslyConvicted": row.get("previouslyConvicted", "False").lower() == "true",
@@ -34,9 +34,14 @@ for _, row in df.iterrows():
         "psychologicalAbuseInvolved": row.get("psychologicalAbuseInvolved", "False").lower() == "true",
         # Ako ima više opisa povreda, možeš parsirati niz; ovde šaljemo listu sa jednim stringom (truncirano)
         "injuryDescriptions": [trunc(row["injuryDescriptions"])] if row["injuryDescriptions"] else [],
-        "actionsTakenAgainstVictim": trunc(row["actionsTakenAgainstVictim"]),
-        "methodsOfRestraint": trunc(row["methodsOfRestraint"])
+        "weaponType": trunc(row["weaponType"]),
+        "injurySeverity": trunc(row["injurySeverity"])
     }
 
     resp = requests.post(url, headers=headers, json=payload)
     print(f"ID={payload['id']}: HTTP {resp.status_code}")
+    # Print response body (server error message, if any)
+    try:
+        print(resp.json())   # if server returns JSON
+    except ValueError:
+        print(resp.text)

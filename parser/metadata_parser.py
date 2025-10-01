@@ -33,9 +33,10 @@ def process_text(text: str, file_path: Path) -> None:
     print("Invoking chain...")
     chain = prompt | llm
     response = chain.invoke({"models_string": models_string, "input": text})
-    print(response.content)
+    response_content = str(response.content).replace("csv", "").replace("```", "")
+    print(response_content)
 
-    Path(f"../judgements/cache-metadata/{file_path.stem}.csv").write_text(str(response.content))
+    Path(f"../judgements/cache-metadata/{file_path.stem}.csv").write_text(str(response_content))
     print("Done!")
 
 
