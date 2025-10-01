@@ -108,6 +108,7 @@ public class DrDeviceService {
                 "        <lc:psychological_abuse_involved>" + verdict.getPsychologicalAbuseInvolved().toString() + "</lc:psychological_abuse_involved>\n" +
                 "        <lc:physical_abuse_involved>" + verdict.getPhysicalAbuseInvolved().toString() + "</lc:physical_abuse_involved>\n" +
                 "        <lc:financial_status>" + dict.get(verdict.getDefendantFinancialStatus().toString()) + "</lc:financial_status>\n" +
+                "        <lc:injury_severity>" + verdict.getInjurySeverity().toString() + "</lc:injury_severity>\n" +
                 "    </lc:case>\n" +
                 "</rdf:RDF>";
         writeToFile(text);
@@ -145,6 +146,7 @@ public class DrDeviceService {
         r.add("physical_abuse_more_victim");
         r.add("physical_psychological_abuse_one_victim");
         r.add("physical_psychological_abuse_more_victim");
+        r.add("life_threatening_torture");
 
         return r;
     }
@@ -166,6 +168,7 @@ public class DrDeviceService {
         r.put("physical_abuse_more_victim", "MORE Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno fizicko zlostavljanje.");
         r.put("physical_psychological_abuse_one_victim", "LALALALLALALALALALALLALALALAL");
         r.put("physical_psychological_abuse_more_victim", "HAHAHAHAHHAHAHAHAHAHAHHA");
+        r.put("life_threatening_torture", "MUCENJE");
 
         r.put("min_imprisonment", "Te ga sud primjenom pomenutih propisa osuđuje na zatvorsku kaznu u trajanju od minimum ");
         r.put("max_imprisonment", ", a najviše ");

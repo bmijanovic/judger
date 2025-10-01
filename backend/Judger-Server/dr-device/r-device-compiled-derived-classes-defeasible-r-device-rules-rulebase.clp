@@ -4,5 +4,7 @@
 ( defclass physical_abuse_more_victim ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass physical_psychological_abuse_one_victim ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass physical_psychological_abuse_more_victim ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass life_threatening_torture ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass psychological_abuse_more_victim ( is-a DERIVED-CLASS ) ( slot defendant ( type FLOAT INTEGER SYMBOL STRING EXTERNAL-ADDRESS FACT-ADDRESS INSTANCE-ADDRESS INSTANCE-NAME ) ) )
 ( defclass min_imprisonment ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )
 ( defclass max_imprisonment ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )

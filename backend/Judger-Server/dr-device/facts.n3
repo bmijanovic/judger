@@ -1,8 +1,9 @@
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#case> .
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#name> "Case 01" .
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#defendant> "John Doe" .
-<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#num_of_victims> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#previously_convicted> "true" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#num_of_victims> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#previously_convicted> "false" .
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#psychological_abuse_involved> "true" .
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#physical_abuse_involved> "true" .
-<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#financial_status> "high_income" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#financial_status> "middle_income" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#injury_severity> "LIFE_THREATENING" .

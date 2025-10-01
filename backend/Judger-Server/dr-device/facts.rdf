@@ -6,10 +6,11 @@
     <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case">
         <lc:name>Case 01</lc:name>
         <lc:defendant>John Doe</lc:defendant>
-        <lc:num_of_victims rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</lc:num_of_victims>
-        <lc:previously_convicted>true</lc:previously_convicted>
+        <lc:num_of_victims rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</lc:num_of_victims>
+        <lc:previously_convicted>false</lc:previously_convicted>
         <lc:psychological_abuse_involved>true</lc:psychological_abuse_involved>
         <lc:physical_abuse_involved>true</lc:physical_abuse_involved>
-        <lc:financial_status>high_income</lc:financial_status>
+        <lc:financial_status>middle_income</lc:financial_status>
+        <lc:injury_severity>LIFE_THREATENING</lc:injury_severity>
     </lc:case>
 </rdf:RDF>

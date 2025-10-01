@@ -45,6 +45,11 @@
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
 </rdfs:Class>
 
+<rdfs:Class rdf:about='&export;life_threatening_torture'>
+     <rdfs:label rdf:resource='life_threatening_torture'/>
+     <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
+</rdfs:Class>
+
 <rdfs:Class rdf:about='&export;min_imprisonment'>
      <rdfs:label rdf:resource='min_imprisonment'/>
      <rdfs:subClassOf rdf:resource='&defeasible;DefeasibleObject'/>
@@ -80,6 +85,10 @@
      <rdfs:domain rdf:resource='&export;physical_psychological_abuse_more_victim'/>
 </rdf:Property>
 
+<rdf:Property rdf:about='&export;defendant'>
+     <rdfs:domain rdf:resource='&export;life_threatening_torture'/>
+</rdf:Property>
+
 <rdf:Property rdf:about='&export;value'>
      <rdfs:domain rdf:resource='&export;min_imprisonment'/>
 </rdf:Property>
@@ -88,34 +97,52 @@
      <rdfs:domain rdf:resource='&export;max_imprisonment'/>
 </rdf:Property>
 
-<export:psychological_abuse_more_victims rdf:about='&export;psychological_abuse_more_victims1'>
+<export:psychological_abuse_one_victim rdf:about='&export;psychological_abuse_one_victim1'>
      <export:defendant>John Doe</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-negative</defeasible:truthStatus>
      <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof1</defeasible:proof>
-</export:psychological_abuse_more_victims>
+</export:psychological_abuse_one_victim>
+
+<export:physical_abuse_one_victim rdf:about='&export;physical_abuse_one_victim1'>
+     <export:defendant>John Doe</export:defendant>
+     <defeasible:truthStatus>defeasibly-proven-negative</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof3</defeasible:proof>
+</export:physical_abuse_one_victim>
 
 <export:physical_abuse_more_victim rdf:about='&export;physical_abuse_more_victim1'>
      <export:defendant>John Doe</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-negative</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof3</defeasible:proof>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
 </export:physical_abuse_more_victim>
+
+<export:physical_psychological_abuse_one_victim rdf:about='&export;physical_psychological_abuse_one_victim1'>
+     <export:defendant>John Doe</export:defendant>
+     <defeasible:truthStatus>defeasibly-proven-negative</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof5</defeasible:proof>
+</export:physical_psychological_abuse_one_victim>
 
 <export:physical_psychological_abuse_more_victim rdf:about='&export;physical_psychological_abuse_more_victim1'>
      <export:defendant>John Doe</export:defendant>
-     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
+     <defeasible:truthStatus>defeasibly-proven-negative</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof6</defeasible:proof>
 </export:physical_psychological_abuse_more_victim>
 
-<export:min_imprisonment rdf:about='&export;min_imprisonment1'>
-     <export:value>2</export:value>
+<export:life_threatening_torture rdf:about='&export;life_threatening_torture1'>
+     <export:defendant>John Doe</export:defendant>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof4</defeasible:proof>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof2</defeasible:proof>
+</export:life_threatening_torture>
+
+<export:min_imprisonment rdf:about='&export;min_imprisonment1'>
+     <export:value>1</export:value>
+     <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof7</defeasible:proof>
 </export:min_imprisonment>
 
 <export:max_imprisonment rdf:about='&export;max_imprisonment1'>
-     <export:value>15</export:value>
+     <export:value>5</export:value>
      <defeasible:truthStatus>defeasibly-proven-positive</defeasible:truthStatus>
-     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof5</defeasible:proof>
+     <defeasible:proof rdf:datatype='&xsd;anyURI'>&proof-export;proof8</defeasible:proof>
 </export:max_imprisonment>
 
 </rdf:RDF>
