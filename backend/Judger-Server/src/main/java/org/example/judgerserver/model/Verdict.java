@@ -42,7 +42,7 @@ public class Verdict {
     private String criminalOffense;
 
     @Column(name = "applied_provisions")
-    private String appliedProvisions;
+    private Set<String> appliedProvisions;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "verdict")
@@ -76,16 +76,18 @@ public class Verdict {
     @Column(name = "psychological_abuse_involved")
     private Boolean psychologicalAbuseInvolved;
 
-    // "Koje vrste povrede su nanesene žrtvi?" (Could be a Set<String> or a JSON string if multiple detailed types are needed)
-    // "Koje su lokacije (i broj povreda)?" (Could be a more complex object/JSON if structured data is needed for each injury)
-    @Column(name = "injury_descriptions")
+    // "Koje vrste povrede su nanesene žrtvi?"
+    @Column(name = "injury_description")
     private Set<String> injuryDescriptions;
 
-    // "Koje radnje su preduzete nad žrtvom?"
-    @Column(name = "actions_taken_against_victim")
-    private String actionsTakenAgainstVictim;
+    // "Koje oružje je korišćeno? (Hladno, Vatreno ...)"
+    @Enumerated(EnumType.STRING)
+    @Column(name = "weapon_type")
+    private WeaponType weaponType;
 
-    // "Koje su metode ograničenja urađene nad žrtvom?"
-    @Column(name = "methods_of_restraint")
-    private String methodsOfRestraint;
+    // "Koja je težina povreda? (Lake telesne, Teške telesne ...)"
+    @Enumerated(EnumType.STRING)
+    @Column(name = "injury_severity")
+    private InjurySeverity injurySeverity;
+
 }

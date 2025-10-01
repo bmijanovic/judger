@@ -4,3 +4,4 @@ parser/.env
 **/.venv
 /.idea
 /backend/.idea
+backend/Judger-Server/data/judgerdb.trace.db
