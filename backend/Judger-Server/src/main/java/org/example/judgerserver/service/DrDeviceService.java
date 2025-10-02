@@ -147,6 +147,7 @@ public class DrDeviceService {
         r.add("physical_psychological_abuse_one_victim");
         r.add("physical_psychological_abuse_more_victim");
         r.add("life_threatening_torture");
+        r.add("coercion_abuse");
 
         return r;
     }
@@ -169,6 +170,7 @@ public class DrDeviceService {
         r.put("physical_psychological_abuse_one_victim", "LALALALLALALALALALALLALALALAL");
         r.put("physical_psychological_abuse_more_victim", "HAHAHAHAHHAHAHAHAHAHAHHA");
         r.put("life_threatening_torture", "MUCENJE");
+        r.put("coercion_abuse", "PRINUDA");
 
         r.put("min_imprisonment", "Te ga sud primjenom pomenutih propisa osuđuje na zatvorsku kaznu u trajanju od minimum ");
         r.put("max_imprisonment", ", a najviše ");
