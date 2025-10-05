@@ -5,18 +5,11 @@
                   xmlns:ruleml="http://ruleml.org/spec">
     <lrml:Statements>
 
-        <!--        Psihicko zlostavljanje jedne zrtve-->
+        <!--        Psihicko zlostavljanje-->
         <lrml:PrescriptiveStatement key="ps1">
             <ruleml:Rule key=":rule1" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
-
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:num_of_victims"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Var type="num_of_victims">num_of_victims</ruleml:Var>
-                        </ruleml:Atom>
-
                         <ruleml:Atom>
                             <ruleml:Rel iri="lc:psychological_abuse_involved"/>
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
@@ -24,163 +17,278 @@
                         </ruleml:Atom>
 
                         <ruleml:Atom>
-                            <ruleml:Expr>
-                                <ruleml:Fun>&lt;</ruleml:Fun>
-                                <ruleml:Var>num_of_victims</ruleml:Var>
-                                <ruleml:Ind>2</ruleml:Ind>
-                            </ruleml:Expr>
+                            <ruleml:Rel iri="lc:physical_abuse_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">false</ruleml:Data>
                         </ruleml:Atom>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
                     <ruleml:Atom>
-                        <ruleml:Rel>psychological_abuse_one_victim</ruleml:Rel>
+                        <ruleml:Rel>psychological_abuse</ruleml:Rel>
                         <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                     </ruleml:Atom>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--        Psihicko zlostavljanje vise zrtvi-->
+                Psihicko zlostavljanje na duznosti
         <lrml:PrescriptiveStatement key="ps2">
             <ruleml:Rule key=":rule2" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
 
                         <ruleml:Atom>
-                            <ruleml:Rel iri="lc:num_of_victims"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Var type="num_of_victims">num_of_victims</ruleml:Var>
-                        </ruleml:Atom>
-
-                        <ruleml:Atom>
                             <ruleml:Rel iri="lc:psychological_abuse_involved"/>
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                             <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
                         </ruleml:Atom>
 
                         <ruleml:Atom>
-                            <ruleml:Expr>
-                                <ruleml:Fun>&gt;</ruleml:Fun>
-                                <ruleml:Var>num_of_victims</ruleml:Var>
-                                <ruleml:Ind>1</ruleml:Ind>
-                            </ruleml:Expr>
+                            <ruleml:Rel iri="lc:physical_abuse_involved"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">false</ruleml:Data>
+                        </ruleml:Atom>
+
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:on_duty"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
                         </ruleml:Atom>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
                     <ruleml:Atom>
-                        <ruleml:Rel>psychological_abuse_more_victims</ruleml:Rel>
+                        <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
                         <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                     </ruleml:Atom>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--        Fizicko zlostavljanje jedne zrtve-->
+        <!--                Negacija ps2-->
+        <lrml:PrescriptiveStatement key="ps2_1">
+            <ruleml:Rule key=":rule2_1" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>psychological_abuse</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--        Ogranicanvanje slobode kretanja-->
         <lrml:PrescriptiveStatement key="ps3">
             <ruleml:Rule key=":rule3" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
-
                         <ruleml:Atom>
                             <ruleml:Rel iri="lc:num_of_victims"/>
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Var type="num_of_victims">num_of_victims</ruleml:Var>
+                            <ruleml:Var type="num_of_victims">num_of_defendants</ruleml:Var>
                         </ruleml:Atom>
+                        <ruleml:Or>
+                                <ruleml:Atom>
+                                    <ruleml:Rel iri="lc:physical_abuse_involved"/>
+                                    <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                    <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                                </ruleml:Atom>
 
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:physical_abuse_involved"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                        </ruleml:Atom>
+                                <ruleml:Atom>
+                                    <ruleml:Rel iri="lc:psychological_abuse_involved"/>
+                                    <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                    <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                                </ruleml:Atom>
+                        </ruleml:Or>
 
-                        <ruleml:Atom>
-                            <ruleml:Expr>
-                                <ruleml:Fun>&lt;</ruleml:Fun>
-                                <ruleml:Var>num_of_victims</ruleml:Var>
-                                <ruleml:Ind>2</ruleml:Ind>
-                            </ruleml:Expr>
-                        </ruleml:Atom>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
                     <ruleml:Atom>
-                        <ruleml:Rel>physical_abuse_one_victim</ruleml:Rel>
+                        <ruleml:Rel>movement_restrictions</ruleml:Rel>
                         <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                     </ruleml:Atom>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--        Fizicko zlostavljanje vise zrtvi-->
+        <!--                Negacija ps3-->
+        <lrml:PrescriptiveStatement key="ps3_1">
+            <ruleml:Rule key=":rule3_1" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>psychological_abuse</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--                Negacija ps3-->
+        <lrml:PrescriptiveStatement key="ps3_2">
+            <ruleml:Rule key=":rule3_2" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--        Ogranicavanje slobode kretanja na duznosti-->
         <lrml:PrescriptiveStatement key="ps4">
             <ruleml:Rule key=":rule4" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
 
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:num_of_victims"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Var type="num_of_victims">num_of_victims</ruleml:Var>
-                        </ruleml:Atom>
+                        <ruleml:Or>
+                            <ruleml:Atom>
+                                <ruleml:Rel iri="lc:physical_abuse_involved"/>
+                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                            </ruleml:Atom>
+
+                            <ruleml:Atom>
+                                <ruleml:Rel iri="lc:psychological_abuse_involved"/>
+                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                            </ruleml:Atom>
+                        </ruleml:Or>
 
                         <ruleml:Atom>
-                            <ruleml:Rel iri="lc:physical_abuse_involved"/>
+                            <ruleml:Rel iri="lc:on_duty"/>
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                             <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                        </ruleml:Atom>
-
-                        <ruleml:Atom>
-                            <ruleml:Expr>
-                                <ruleml:Fun>&gt;</ruleml:Fun>
-                                <ruleml:Var>num_of_victims</ruleml:Var>
-                                <ruleml:Ind>1</ruleml:Ind>
-                            </ruleml:Expr>
                         </ruleml:Atom>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
                     <ruleml:Atom>
-                        <ruleml:Rel>physical_abuse_more_victim</ruleml:Rel>
+                        <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
                         <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                     </ruleml:Atom>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--        Psihofizicko zlostavlanje jedne zrtve-->
+        <!--                Negacija ps4-->
+        <lrml:PrescriptiveStatement key="ps4_1">
+            <ruleml:Rule key=":rule4_1" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>psychological_abuse</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--                Negacija ps4-->
+        <lrml:PrescriptiveStatement key="ps4_2">
+            <ruleml:Rule key=":rule4_2" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--                Negacija ps4-->
+        <lrml:PrescriptiveStatement key="ps4_3">
+            <ruleml:Rule key=":rule4_3" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--        Lisenje slobode lice zivotno ugrozeno-->
         <lrml:PrescriptiveStatement key="ps5">
             <ruleml:Rule key=":rule5" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
 
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:num_of_victims"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Var type="num_of_victims">num_of_victims</ruleml:Var>
-                        </ruleml:Atom>
+                        <ruleml:Or>
+                            <ruleml:Atom>
+                                <ruleml:Rel iri="lc:physical_abuse_involved"/>
+                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                            </ruleml:Atom>
+
+                            <ruleml:Atom>
+                                <ruleml:Rel iri="lc:psychological_abuse_involved"/>
+                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                            </ruleml:Atom>
+                        </ruleml:Or>
 
                         <ruleml:Atom>
-                            <ruleml:Rel iri="lc:physical_abuse_involved"/>
+                            <ruleml:Rel iri="lc:injury_severity"/>
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                        </ruleml:Atom>
-
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:psychological_abuse_involved"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                        </ruleml:Atom>
-
-                        <ruleml:Atom>
-                            <ruleml:Expr>
-                                <ruleml:Fun>&lt;</ruleml:Fun>
-                                <ruleml:Var>num_of_victims</ruleml:Var>
-                                <ruleml:Ind>2</ruleml:Ind>
-                            </ruleml:Expr>
+                            <ruleml:Data xsi:type="xs:string">LIFE_THREATENING</ruleml:Data>
                         </ruleml:Atom>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
                     <ruleml:Atom>
-                        <ruleml:Rel>physical_psychological_abuse_one_victim</ruleml:Rel>
+                        <ruleml:Rel>movement_restrictions_life_threatening</ruleml:Rel>
                         <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                     </ruleml:Atom>
                 </ruleml:then>
@@ -192,7 +300,7 @@
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_one_victim</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_life_threatening</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -200,7 +308,7 @@
                 <ruleml:then>
                     <ruleml:Negation>
                             <ruleml:Atom>
-                                <ruleml:Rel>physical_abuse_one_victim</ruleml:Rel>
+                                <ruleml:Rel>psychological_abuse</ruleml:Rel>
                                 <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                             </ruleml:Atom>
                     </ruleml:Negation>
@@ -213,7 +321,7 @@
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_one_victim</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_life_threatening</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -221,138 +329,97 @@
                 <ruleml:then>
                     <ruleml:Negation>
                             <ruleml:Atom>
-                                <ruleml:Rel>psychological_abuse_one_victim</ruleml:Rel>
+                                <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
                                 <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                             </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--        Psihofizicko zlostavlanje vise zrtvi-->
+<!--                Negacije ps5-->
+        <lrml:PrescriptiveStatement key="ps5_3">
+            <ruleml:Rule key=":rule5_3" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions_life_threatening</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                            <ruleml:Atom>
+                                <ruleml:Rel>movement_restrictions</ruleml:Rel>
+                                <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                            </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+<!--                Negacije ps5-->
+        <lrml:PrescriptiveStatement key="ps5_4">
+            <ruleml:Rule key=":rule5_4" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>movement_restrictions_life_threatening</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                            <ruleml:Atom>
+                                <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
+                                <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                            </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--        Lisenje slobode lice preminulo-->
         <lrml:PrescriptiveStatement key="ps6">
             <ruleml:Rule key=":rule6" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
 
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:num_of_victims"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Var type="num_of_victims">num_of_victims</ruleml:Var>
-                        </ruleml:Atom>
-
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:physical_abuse_involved"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                        </ruleml:Atom>
-
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:psychological_abuse_involved"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                        </ruleml:Atom>
-
-                        <ruleml:Atom>
-                            <ruleml:Expr>
-                                <ruleml:Fun>&gt;</ruleml:Fun>
-                                <ruleml:Var>num_of_victims</ruleml:Var>
-                                <ruleml:Ind>1</ruleml:Ind>
-                            </ruleml:Expr>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Atom>
-                        <ruleml:Rel>physical_psychological_abuse_more_victim</ruleml:Rel>
-                        <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                    </ruleml:Atom>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-<!--                Negacije ps6-->
-        <lrml:PrescriptiveStatement key="ps6_1">
-            <ruleml:Rule key=":rule6_1" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_more_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                            <ruleml:Atom>
-                                <ruleml:Rel>physical_abuse_more_victim</ruleml:Rel>
-                                <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                            </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-<!--                Negacije ps6-->
-        <lrml:PrescriptiveStatement key="ps6_2">
-            <ruleml:Rule key=":rule6_2" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_more_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                            <ruleml:Atom>
-                                <ruleml:Rel>psychological_abuse_more_victims</ruleml:Rel>
-                                <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                            </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-
-        <!--        Psihicko/Fizicko zlostavljanje zivotno ugrozen-->
-        <lrml:PrescriptiveStatement key="ps7">
-            <ruleml:Rule key=":rule7" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
                         <ruleml:Or>
-                            <ruleml:Atom>
-                                <ruleml:Rel iri="lc:psychological_abuse_involved"/>
-                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                                <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                            </ruleml:Atom>
                             <ruleml:Atom>
                                 <ruleml:Rel iri="lc:physical_abuse_involved"/>
                                 <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                                 <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
                             </ruleml:Atom>
+
+                            <ruleml:Atom>
+                                <ruleml:Rel iri="lc:psychological_abuse_involved"/>
+                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
+                            </ruleml:Atom>
                         </ruleml:Or>
+
                         <ruleml:Atom>
                             <ruleml:Rel iri="lc:injury_severity"/>
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Data xsi:type="xs:string">LIFE_THREATENING</ruleml:Data>
+                            <ruleml:Data xsi:type="xs:string">FATAL</ruleml:Data>
                         </ruleml:Atom>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
                     <ruleml:Atom>
-                        <ruleml:Rel>life_threatening_torture</ruleml:Rel>
+                        <ruleml:Rel>movement_restrictions_death</ruleml:Rel>
                         <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                     </ruleml:Atom>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-
-        <!--                Negacije ps7-->
-        <lrml:PrescriptiveStatement key="ps7_1">
-            <ruleml:Rule key=":rule7_1" closure="universal" strength="defeasible">
+        <!--                Negacije ps6-->
+        <lrml:PrescriptiveStatement key="ps6_1">
+            <ruleml:Rule key=":rule6_1" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>life_threatening_torture</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_death</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -360,21 +427,20 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_one_victim</ruleml:Rel>
+                            <ruleml:Rel>psychological_abuse</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps7-->
-        <lrml:PrescriptiveStatement key="ps7_2">
-            <ruleml:Rule key=":rule7_2" closure="universal" strength="defeasible">
+        <!--                Negacije ps6-->
+        <lrml:PrescriptiveStatement key="ps6_2">
+            <ruleml:Rule key=":rule6_2" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>life_threatening_torture</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_death</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -382,21 +448,20 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_more_victim</ruleml:Rel>
+                            <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps7-->
-        <lrml:PrescriptiveStatement key="ps7_3">
-            <ruleml:Rule key=":rule7_3" closure="universal" strength="defeasible">
+        <!--                Negacije ps6-->
+        <lrml:PrescriptiveStatement key="ps6_3">
+            <ruleml:Rule key=":rule6_3" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>life_threatening_torture</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_death</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -404,20 +469,20 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_abuse_more_victim</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--                Negacije ps7-->
-        <lrml:PrescriptiveStatement key="ps7_4">
-            <ruleml:Rule key=":rule7_4" closure="universal" strength="defeasible">
+        <!--                Negacije ps6-->
+        <lrml:PrescriptiveStatement key="ps6_4">
+            <ruleml:Rule key=":rule6_4" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>life_threatening_torture</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_death</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -425,60 +490,17 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_abuse_one_victim</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps7-->
-        <lrml:PrescriptiveStatement key="ps7_5">
-            <ruleml:Rule key=":rule7_5" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>life_threatening_torture</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                        <ruleml:Atom>
-                            <ruleml:Rel>psychological_abuse_more_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-        <!--                Negacije ps7-->
-        <lrml:PrescriptiveStatement key="ps7_6">
-            <ruleml:Rule key=":rule7_6" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>life_threatening_torture</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                        <ruleml:Atom>
-                            <ruleml:Rel>psychological_abuse_one_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-
+        <!--                Prinuda-->
         <!--        Ucena zlostavljanje zivotno ugrozen-->
-        <lrml:PrescriptiveStatement key="ps8">
-            <ruleml:Rule key=":rule8" closure="universal" strength="defeasible">
+        <lrml:PrescriptiveStatement key="ps7">
+            <ruleml:Rule key=":rule7" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Or>
@@ -510,9 +532,9 @@
         </lrml:PrescriptiveStatement>
 
 
-        <!--                Negacije ps8-->
-        <lrml:PrescriptiveStatement key="ps8_1">
-            <ruleml:Rule key=":rule8_1" closure="universal" strength="defeasible">
+        <!--                Negacije ps7-->
+        <lrml:PrescriptiveStatement key="ps7_1">
+            <ruleml:Rule key=":rule7_1" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
@@ -524,17 +546,16 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_one_victim</ruleml:Rel>
+                            <ruleml:Rel>psychological_abuse</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps8-->
-        <lrml:PrescriptiveStatement key="ps8_2">
-            <ruleml:Rule key=":rule8_2" closure="universal" strength="defeasible">
+        <!--                Negacije ps7-->
+        <lrml:PrescriptiveStatement key="ps7_2">
+            <ruleml:Rule key=":rule7_2" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
@@ -546,17 +567,16 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_more_victim</ruleml:Rel>
+                            <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps8-->
-        <lrml:PrescriptiveStatement key="ps8_3">
-            <ruleml:Rule key=":rule8_3" closure="universal" strength="defeasible">
+        <!--                Negacije ps7-->
+        <lrml:PrescriptiveStatement key="ps7_3">
+            <ruleml:Rule key=":rule7_3" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
@@ -568,16 +588,16 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_abuse_more_victim</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--                Negacije ps8-->
-        <lrml:PrescriptiveStatement key="ps8_4">
-            <ruleml:Rule key=":rule8_4" closure="universal" strength="defeasible">
+        <!--                Negacije ps7-->
+        <lrml:PrescriptiveStatement key="ps7_4">
+            <ruleml:Rule key=":rule7_4" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
@@ -589,7 +609,7 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_abuse_one_victim</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
@@ -597,56 +617,18 @@
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
 
-        <!--                Negacije ps8-->
-        <lrml:PrescriptiveStatement key="ps8_5">
-            <ruleml:Rule key=":rule8_5" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                        <ruleml:Atom>
-                            <ruleml:Rel>psychological_abuse_more_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-        <!--                Negacije ps8-->
-        <lrml:PrescriptiveStatement key="ps8_6">
-            <ruleml:Rule key=":rule8_6" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>life_threatening_torture</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                        <ruleml:Atom>
-                            <ruleml:Rel>psychological_abuse_one_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-
-
-<!--        Ucena zlostavljanje zivotno ugrozen-->
-        <lrml:PrescriptiveStatement key="ps9">
-            <ruleml:Rule key=":rule9" closure="universal" strength="defeasible">
+        <!--        Prinuda vise okrivljenih-->
+        <lrml:PrescriptiveStatement key="ps8">
+            <ruleml:Rule key=":rule8" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Or>
+                            <ruleml:Atom>
+                                <ruleml:Rel iri="lc:num_of_victims"/>
+                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                                <ruleml:Var type="num_of_victims">num_of_defendants</ruleml:Var>
+                            </ruleml:Atom>
+
                             <ruleml:Atom>
                                 <ruleml:Rel iri="lc:psychological_abuse_involved"/>
                                 <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
@@ -663,16 +645,16 @@
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                             <ruleml:Data xsi:type="xs:string">BLACKMAIL</ruleml:Data>
                         </ruleml:Atom>
-                        <ruleml:Atom>
-                            <ruleml:Rel iri="lc:on_duty"/>
-                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Data xsi:type="xs:string">true</ruleml:Data>
-                        </ruleml:Atom>
+                        <ruleml:Expr>
+                            <ruleml:Fun>&gt;</ruleml:Fun>
+                            <ruleml:Var>num_of_defendants</ruleml:Var>
+                            <ruleml:Ind>1</ruleml:Ind>
+                        </ruleml:Expr>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
                     <ruleml:Atom>
-                        <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
+                        <ruleml:Rel>coercion_abuse_multiple_defendant</ruleml:Rel>
                         <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                     </ruleml:Atom>
                 </ruleml:then>
@@ -680,13 +662,13 @@
         </lrml:PrescriptiveStatement>
 
 
-        <!--                Negacije ps9-->
-        <lrml:PrescriptiveStatement key="ps9_1">
-            <ruleml:Rule key=":rule9_1" closure="universal" strength="defeasible">
+        <!--                Negacije ps7-->
+        <lrml:PrescriptiveStatement key="ps8_1">
+            <ruleml:Rule key=":rule8_1" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
+                            <ruleml:Rel>coercion_abuse_multiple_defendant</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -694,21 +676,20 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_one_victim</ruleml:Rel>
+                            <ruleml:Rel>psychological_abuse</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps9-->
-        <lrml:PrescriptiveStatement key="ps9_2">
-            <ruleml:Rule key=":rule9_2" closure="universal" strength="defeasible">
+        <!--                Negacije ps8-->
+        <lrml:PrescriptiveStatement key="ps8_2">
+            <ruleml:Rule key=":rule8_2" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
+                            <ruleml:Rel>coercion_abuse_multiple_defendant</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -716,21 +697,20 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_psychological_abuse_more_victim</ruleml:Rel>
+                            <ruleml:Rel>psychological_abuse_on_duty</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps9-->
-        <lrml:PrescriptiveStatement key="ps9_3">
-            <ruleml:Rule key=":rule9_3" closure="universal" strength="defeasible">
+        <!--                Negacije ps8-->
+        <lrml:PrescriptiveStatement key="ps8_3">
+            <ruleml:Rule key=":rule8_3" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
+                            <ruleml:Rel>coercion_abuse_multiple_defendant</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -738,20 +718,20 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_abuse_more_victim</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
                 </ruleml:then>
             </ruleml:Rule>
         </lrml:PrescriptiveStatement>
-        <!--                Negacije ps9-->
-        <lrml:PrescriptiveStatement key="ps9_4">
-            <ruleml:Rule key=":rule9_4" closure="universal" strength="defeasible">
+        <!--                Negacije ps8-->
+        <lrml:PrescriptiveStatement key="ps8_4">
+            <ruleml:Rule key=":rule8_4" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
+                            <ruleml:Rel>coercion_abuse_multiple_defendant</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:And>
@@ -759,71 +739,7 @@
                 <ruleml:then>
                     <ruleml:Negation>
                         <ruleml:Atom>
-                            <ruleml:Rel>physical_abuse_one_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-
-        <!--                Negacije ps9-->
-        <lrml:PrescriptiveStatement key="ps9_5">
-            <ruleml:Rule key=":rule9_5" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                        <ruleml:Atom>
-                            <ruleml:Rel>psychological_abuse_more_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-        <!--                Negacije ps9-->
-        <lrml:PrescriptiveStatement key="ps9_6">
-            <ruleml:Rule key=":rule9_6" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                        <ruleml:Atom>
-                            <ruleml:Rel>psychological_abuse_one_victim</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:Negation>
-                </ruleml:then>
-            </ruleml:Rule>
-        </lrml:PrescriptiveStatement>
-        <!--                Negacije ps9-->
-        <lrml:PrescriptiveStatement key="ps9_7">
-            <ruleml:Rule key=":rule9_7" closure="universal" strength="defeasible">
-                <ruleml:if>
-                    <ruleml:And>
-                        <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse_on_duty</ruleml:Rel>
-                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
-                        </ruleml:Atom>
-                    </ruleml:And>
-                </ruleml:if>
-                <ruleml:then>
-                    <ruleml:Negation>
-                        <ruleml:Atom>
-                            <ruleml:Rel>coercion_abuse</ruleml:Rel>
+                            <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
@@ -834,35 +750,23 @@
 
 
 
-        <lrml:PenaltyStatement key="pn_psy_one_person_min">
+        <lrml:PenaltyStatement key="pn_psy_abuse_min">
             <lrml:SuborderList>
                 <lrml:Obligation>
                     <ruleml:Atom>
                         <ruleml:Rel iri=":min_imprisonment"/>
                         <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>2</ruleml:Ind>
+                        <ruleml:Ind>0</ruleml:Ind>
                     </ruleml:Atom>
                 </lrml:Obligation>
             </lrml:SuborderList>
         </lrml:PenaltyStatement>
 
-        <lrml:PenaltyStatement key="pn_psy_one_person_max">
+        <lrml:PenaltyStatement key="pn_psy_abuse_max">
             <lrml:SuborderList>
                 <lrml:Obligation>
                     <ruleml:Atom>
                         <ruleml:Rel iri=":max_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>5</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_phy_one_person_min">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":min_imprisonment"/>
                         <ruleml:Var>Years</ruleml:Var>
                         <ruleml:Ind>3</ruleml:Ind>
                     </ruleml:Atom>
@@ -870,129 +774,7 @@
             </lrml:SuborderList>
         </lrml:PenaltyStatement>
 
-        <lrml:PenaltyStatement key="pn_phy_one_person_max">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":max_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>6</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_phy_more_person_min">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":min_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>3</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_phy_more_person_max">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":max_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>6</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_psy_more_person_min">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":min_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>5</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_psy_more_person_max">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":max_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>10</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_phy_psy_one_person_max">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":max_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>15</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_phy_psy_one_person_min">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":min_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>2</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_phy_psy_more_person_max">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":max_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>15</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_phy_psy_more_person_min">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":min_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>2</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-
-
-        <lrml:PenaltyStatement key="pn_life_threatening_torture_max">
-            <lrml:SuborderList>
-                <lrml:Obligation>
-                    <ruleml:Atom>
-                        <ruleml:Rel iri=":max_imprisonment"/>
-                        <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>5</ruleml:Ind>
-                    </ruleml:Atom>
-                </lrml:Obligation>
-            </lrml:SuborderList>
-        </lrml:PenaltyStatement>
-
-        <lrml:PenaltyStatement key="pn_life_threatening_torture_min">
+        <lrml:PenaltyStatement key="pn_psy_abuse_on_duty_min">
             <lrml:SuborderList>
                 <lrml:Obligation>
                     <ruleml:Atom>
@@ -1004,201 +786,342 @@
             </lrml:SuborderList>
         </lrml:PenaltyStatement>
 
+        <lrml:PenaltyStatement key="pn_psy_abuse_on_duty_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>8</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>0</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_on_duty_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_on_duty_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>5</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_life_threatening_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>8</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_life_threatening_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>1</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_death_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>12</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_movement_restrct_death_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>2</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+
+        <lrml:PenaltyStatement key="pn_coercion_abuse_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>3</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_coercion_abuse_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>0.25</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_coercion_abuse_multiple_defendant_max">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":max_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>12</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
+        <lrml:PenaltyStatement key="pn_coercion_abuse_multiple_defendant_min">
+            <lrml:SuborderList>
+                <lrml:Obligation>
+                    <ruleml:Atom>
+                        <ruleml:Rel iri=":min_imprisonment"/>
+                        <ruleml:Var>Years</ruleml:Var>
+                        <ruleml:Ind>2</ruleml:Ind>
+                    </ruleml:Atom>
+                </lrml:Obligation>
+            </lrml:SuborderList>
+        </lrml:PenaltyStatement>
+
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_psy_one_person_min"/>
+                <lrml:appliesPenalty keyref="#pn_psy_abuse_min"/>
                 <lrml:toPrescriptiveStatement keyref="#ps1"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_psy_one_person_max"/>
+                <lrml:appliesPenalty keyref="#pn_psy_abuse_max"/>
                 <lrml:toPrescriptiveStatement keyref="#ps1"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_one_person_min"/>
-                <lrml:toPrescriptiveStatement keyref="#ps3"/>
-            </lrml:Reparation>
-        </lrml:ReparationStatement>
-
-        <lrml:ReparationStatement>
-            <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_one_person_max"/>
-                <lrml:toPrescriptiveStatement keyref="#ps3"/>
-            </lrml:Reparation>
-        </lrml:ReparationStatement>
-
-        <lrml:ReparationStatement>
-            <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_more_person_min"/>
-                <lrml:toPrescriptiveStatement keyref="#ps4"/>
-            </lrml:Reparation>
-        </lrml:ReparationStatement>
-
-        <lrml:ReparationStatement>
-            <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_more_person_max"/>
-                <lrml:toPrescriptiveStatement keyref="#ps4"/>
-            </lrml:Reparation>
-        </lrml:ReparationStatement>
-
-        <lrml:ReparationStatement>
-            <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_psy_more_person_min"/>
+                <lrml:appliesPenalty keyref="#pn_psy_abuse_on_duty_min"/>
                 <lrml:toPrescriptiveStatement keyref="#ps2"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_psy_more_person_max"/>
+                <lrml:appliesPenalty keyref="#pn_psy_abuse_on_duty_max"/>
                 <lrml:toPrescriptiveStatement keyref="#ps2"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_psy_one_person_min"/>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps3"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps3"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_on_duty_min"/>
+                <lrml:toPrescriptiveStatement keyref="#ps4"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_on_duty_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps4"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_life_threatening_min"/>
                 <lrml:toPrescriptiveStatement keyref="#ps5"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_psy_one_person_max"/>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_life_threatening_max"/>
                 <lrml:toPrescriptiveStatement keyref="#ps5"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_psy_more_person_min"/>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_death_min"/>
                 <lrml:toPrescriptiveStatement keyref="#ps6"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_phy_psy_more_person_max"/>
+                <lrml:appliesPenalty keyref="#pn_movement_restrct_death_max"/>
                 <lrml:toPrescriptiveStatement keyref="#ps6"/>
-            </lrml:Reparation>
-        </lrml:ReparationStatement>
-
-        <lrml:ReparationStatement>
-            <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_life_threatening_torture_min"/>
-                <lrml:toPrescriptiveStatement keyref="#ps7"/>
-            </lrml:Reparation>
-        </lrml:ReparationStatement>
-
-        <lrml:ReparationStatement>
-            <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_life_threatening_torture_max"/>
-                <lrml:toPrescriptiveStatement keyref="#ps7"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
                 <lrml:appliesPenalty keyref="#pn_coercion_abuse_min"/>
-                <lrml:toPrescriptiveStatement keyref="#ps8"/>
+                <lrml:toPrescriptiveStatement keyref="#ps7"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
                 <lrml:appliesPenalty keyref="#pn_coercion_abuse_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps7"/>
+            </lrml:Reparation>
+        </lrml:ReparationStatement>
+
+        <lrml:ReparationStatement>
+            <lrml:Reparation>
+                <lrml:appliesPenalty keyref="#pn_coercion_abuse_multiple_defendant_min"/>
                 <lrml:toPrescriptiveStatement keyref="#ps8"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
         <lrml:ReparationStatement>
             <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_coercion_abuse_on_duty_min"/>
-                <lrml:toPrescriptiveStatement keyref="#ps9"/>
+                <lrml:appliesPenalty keyref="#pn_coercion_abuse_multiple_defendant_max"/>
+                <lrml:toPrescriptiveStatement keyref="#ps8"/>
             </lrml:Reparation>
         </lrml:ReparationStatement>
 
-        <lrml:ReparationStatement>
-            <lrml:Reparation>
-                <lrml:appliesPenalty keyref="#pn_coercion_abuse_on_duty_max"/>
-                <lrml:toPrescriptiveStatement keyref="#ps9"/>
-            </lrml:Reparation>
-        </lrml:ReparationStatement>
 
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps3" over="#ps5_1"/>
+            <lrml:Override under="#ps1" over="#ps2_1"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps1" over="#ps5_2"/>
+            <lrml:Override under="#ps1" over="#ps3_1"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps4" over="#ps6_1"/>
+            <lrml:Override under="#ps2" over="#ps3_2"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps1" over="#ps4_1"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps2" over="#ps4_2"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps3" over="#ps4_3"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps1" over="#ps5_1"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps2" over="#ps5_2"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps3" over="#ps5_3"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps4" over="#ps5_4"/>
+        </lrml:OverrideStatement>
+        <lrml:OverrideStatement>
+            <lrml:Override under="#ps1" over="#ps6_1"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
             <lrml:Override under="#ps2" over="#ps6_2"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps5" over="#ps7_1"/>
+            <lrml:Override under="#ps3" over="#ps6_3"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps6" over="#ps7_2"/>
+            <lrml:Override under="#ps4" over="#ps6_4"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps4" over="#ps7_3"/>
+            <lrml:Override under="#ps1" over="#ps7_1"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps3" over="#ps7_4"/>
+            <lrml:Override under="#ps2" over="#ps7_2"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps2" over="#ps7_5"/>
+            <lrml:Override under="#ps3" over="#ps7_3"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps1" over="#ps7_6"/>
+            <lrml:Override under="#ps4" over="#ps7_4"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps5" over="#ps8_1"/>
+            <lrml:Override under="#ps1" over="#ps8_1"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps6" over="#ps8_2"/>
+            <lrml:Override under="#ps2" over="#ps8_2"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps4" over="#ps8_3"/>
+            <lrml:Override under="#ps3" over="#ps8_3"/>
         </lrml:OverrideStatement>
         <lrml:OverrideStatement>
-            <lrml:Override under="#ps3" over="#ps8_4"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps2" over="#ps8_5"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps1" over="#ps8_6"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps5" over="#ps9_1"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps6" over="#ps9_2"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps4" over="#ps9_3"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps3" over="#ps9_4"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps2" over="#ps9_5"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps1" over="#ps9_6"/>
-        </lrml:OverrideStatement>
-        <lrml:OverrideStatement>
-            <lrml:Override under="#ps8" over="#ps9_7"/>
+            <lrml:Override under="#ps4" over="#ps8_4"/>
         </lrml:OverrideStatement>
 
     </lrml:Statements>

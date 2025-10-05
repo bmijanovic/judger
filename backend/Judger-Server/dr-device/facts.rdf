@@ -12,5 +12,7 @@
         <lc:physical_abuse_involved>true</lc:physical_abuse_involved>
         <lc:financial_status>middle_income</lc:financial_status>
         <lc:injury_severity>LIFE_THREATENING</lc:injury_severity>
+        <lc:on_duty>true</lc:on_duty>
+        <lc:num_of_defendants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</lc:num_of_defendants>
     </lc:case>
 </rdf:RDF>

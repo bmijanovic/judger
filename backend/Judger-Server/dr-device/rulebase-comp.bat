@@ -2,4 +2,4 @@
 (import-rdf-files facts.rdf)
 (load-compiled-dr-device rulebase.clp)
 (go-dr-device)
-(dr-device_export_rdf rulebase.ruleml export.rdf proof.ruleml psychological_abuse_one_victim psychological_abuse_more_victims physical_abuse_one_victim physical_abuse_more_victim physical_psychological_abuse_one_victim physical_psychological_abuse_more_victim life_threatening_torture min_imprisonment max_imprisonment)
+(dr-device_export_rdf rulebase.ruleml export.rdf proof.ruleml movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)

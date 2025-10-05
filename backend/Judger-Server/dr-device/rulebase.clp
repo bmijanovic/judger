@@ -1,5 +1,5 @@
 (import-rdf "facts.rdf")
-		(export-rdf export.rdf  psychological_abuse_one_victim psychological_abuse_more_victims physical_abuse_one_victim physical_abuse_more_victim physical_psychological_abuse_one_victim physical_psychological_abuse_more_victim life_threatening_torture min_imprisonment max_imprisonment)
+		(export-rdf export.rdf  movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)
 		(export-proof proof.ruleml)
 		
 (defeasiblerule rule1
@@ -9,23 +9,18 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:num_of_victims ?num_of_victims)
+		 lc:psychological_abuse_involved "true")
 	)  
 	(lc:case 
 		(
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:psychological_abuse_involved "true")
+		 lc:physical_abuse_involved "false")
 	) 
-		(test 
-		(<  ?num_of_victims 2
-		)
-	)
-	
   => 
 	 
-	(psychological_abuse_one_victim 
+	(psychological_abuse 
 		(
 		 defendant ?Defendant)
 	) 
@@ -38,26 +33,44 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:num_of_victims ?num_of_victims)
+		 lc:psychological_abuse_involved "true")
 	)  
 	(lc:case 
 		(
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:psychological_abuse_involved "true")
-	) 
-		(test 
-		(>  ?num_of_victims 1
-		)
-	)
+		 lc:physical_abuse_involved "false")
+	)  
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
 	
+		(
+		 lc:on_duty "true")
+	) 
   => 
 	 
-	(psychological_abuse_more_victims 
+	(psychological_abuse_on_duty 
 		(
 		 defendant ?Defendant)
 	) 
+) 
+	
+(defeasiblerule rule2_1
+		(declare (superior rule1 )) 
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
 ) 
 	
 (defeasiblerule rule3
@@ -67,26 +80,46 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:num_of_victims ?num_of_victims)
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:physical_abuse_involved "true")
+		 lc:num_of_defendants ?num_of_defendants)
 	) 
-		(test 
-		(<  ?num_of_victims 2
-		)
-	)
-	
   => 
 	 
-	(physical_abuse_one_victim 
+	(movement_restrictions 
 		(
 		 defendant ?Defendant)
 	) 
+) 
+	
+(defeasiblerule rule3_1
+		(declare (superior rule1 )) 
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule3_2
+		(declare (superior rule2 )) 
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
 ) 
 	
 (defeasiblerule rule4
@@ -96,26 +129,62 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:num_of_victims ?num_of_victims)
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:physical_abuse_involved "true")
+		 lc:on_duty "true")
 	) 
-		(test 
-		(>  ?num_of_victims 1
-		)
-	)
-	
   => 
 	 
-	(physical_abuse_more_victim 
+	(movement_restrictions_on_duty 
 		(
 		 defendant ?Defendant)
 	) 
+) 
+	
+(defeasiblerule rule4_1
+		(declare (superior rule1 )) 
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule4_2
+		(declare (superior rule2 )) 
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule4_3
+		(declare (superior rule3 )) 
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) )
+	
 ) 
 	
 (defeasiblerule rule5
@@ -125,45 +194,26 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:num_of_victims ?num_of_victims)
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:physical_abuse_involved "true")
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:psychological_abuse_involved "true")
+		 lc:injury_severity "LIFE_THREATENING")
 	) 
-		(test 
-		(<  ?num_of_victims 2
-		)
-	)
-	
   => 
 	 
-	(physical_psychological_abuse_one_victim 
+	(movement_restrictions_life_threatening 
 		(
 		 defendant ?Defendant)
 	) 
 ) 
 	
 (defeasiblerule rule5_1
-		(declare (superior rule3 )) 
-	(physical_psychological_abuse_one_victim 
+		(declare (superior rule1 )) 
+	(movement_restrictions_life_threatening 
 		(
 		 defendant ?Defendant)
 	) 
   => 
 	
 		(not  
-	(physical_abuse_one_victim 
+	(psychological_abuse 
 		(
 		 defendant ?Defendant)
 	) )
@@ -171,15 +221,47 @@
 ) 
 	
 (defeasiblerule rule5_2
-		(declare (superior rule1 )) 
-	(physical_psychological_abuse_one_victim 
+		(declare (superior rule2 )) 
+	(movement_restrictions_life_threatening 
 		(
 		 defendant ?Defendant)
 	) 
   => 
 	
 		(not  
-	(psychological_abuse_one_victim 
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule5_3
+		(declare (superior rule3 )) 
+	(movement_restrictions_life_threatening 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule5_4
+		(declare (superior rule4 )) 
+	(movement_restrictions_life_threatening 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions_on_duty 
 		(
 		 defendant ?Defendant)
 	) )
@@ -193,45 +275,26 @@
 		 lc:defendant ?Defendant)
 	
 		(
-		 lc:num_of_victims ?num_of_victims)
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:physical_abuse_involved "true")
-	)  
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:psychological_abuse_involved "true")
+		 lc:injury_severity "FATAL")
 	) 
-		(test 
-		(>  ?num_of_victims 1
-		)
-	)
-	
   => 
 	 
-	(physical_psychological_abuse_more_victim 
+	(movement_restrictions_death 
 		(
 		 defendant ?Defendant)
 	) 
 ) 
 	
 (defeasiblerule rule6_1
-		(declare (superior rule4 )) 
-	(physical_psychological_abuse_more_victim 
+		(declare (superior rule1 )) 
+	(movement_restrictions_death 
 		(
 		 defendant ?Defendant)
 	) 
   => 
 	
 		(not  
-	(physical_abuse_more_victim 
+	(psychological_abuse 
 		(
 		 defendant ?Defendant)
 	) )
@@ -240,136 +303,55 @@
 	
 (defeasiblerule rule6_2
 		(declare (superior rule2 )) 
-	(physical_psychological_abuse_more_victim 
+	(movement_restrictions_death 
 		(
 		 defendant ?Defendant)
 	) 
   => 
 	
 		(not  
-	(psychological_abuse_more_victims 
+	(psychological_abuse_on_duty 
 		(
 		 defendant ?Defendant)
 	) )
 	
 ) 
 	
-(defeasiblerule rule7
-		 
-	(lc:case 
-		(
-		 lc:defendant ?Defendant)
-	
-		(
-		 lc:injury_severity "LIFE_THREATENING")
-	) 
-  => 
-	 
-	(life_threatening_torture 
-		(
-		 defendant ?Defendant)
-	) 
-) 
-	
-(defeasiblerule rule7_1
-		(declare (superior rule5 )) 
-	(life_threatening_torture 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	
-		(not  
-	(physical_psychological_abuse_one_victim 
-		(
-		 defendant ?Defendant)
-	) )
-	
-) 
-	
-(defeasiblerule rule7_2
-		(declare (superior rule6 )) 
-	(life_threatening_torture 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	
-		(not  
-	(physical_psychological_abuse_more_victim 
-		(
-		 defendant ?Defendant)
-	) )
-	
-) 
-	
-(defeasiblerule rule7_3
-		(declare (superior rule4 )) 
-	(life_threatening_torture 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	
-		(not  
-	(physical_abuse_more_victim 
-		(
-		 defendant ?Defendant)
-	) )
-	
-) 
-	
-(defeasiblerule rule7_4
+(defeasiblerule rule6_3
 		(declare (superior rule3 )) 
-	(life_threatening_torture 
+	(movement_restrictions_death 
 		(
 		 defendant ?Defendant)
 	) 
   => 
 	
 		(not  
-	(physical_abuse_one_victim 
+	(movement_restrictions 
 		(
 		 defendant ?Defendant)
 	) )
 	
 ) 
 	
-(defeasiblerule rule7_5
-		(declare (superior rule2 )) 
-	(life_threatening_torture 
+(defeasiblerule rule6_4
+		(declare (superior rule4 )) 
+	(movement_restrictions_death 
 		(
 		 defendant ?Defendant)
 	) 
   => 
 	
 		(not  
-	(psychological_abuse_more_victim 
+	(movement_restrictions_on_duty 
 		(
 		 defendant ?Defendant)
 	) )
 	
 ) 
 	
-(defeasiblerule rule7_6
-		(declare (superior rule1 )) 
-	(life_threatening_torture 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	
-		(not  
-	(psychological_abuse_one_victim 
-		(
-		 defendant ?Defendant)
-	) )
-	
-) 
-	
-(defeasiblerule pn_psy_one_person_min
+(defeasiblerule pn_psy_abuse_min
 		 
-	(psychological_abuse_one_victim 
+	(psychological_abuse 
 		(
 		 defendant ?Defendant)
 	) 
@@ -377,167 +359,27 @@
 	 
 	(min_imprisonment 
 		(
-		 value 2)
+		 value 0)
 	) 
 ) 
 	
-(defeasiblerule pn_psy_one_person_max
+(defeasiblerule pn_psy_abuse_max
 		 
-	(psychological_abuse_one_victim 
+	(psychological_abuse 
 		(
 		 defendant ?Defendant)
 	) 
   => 
 	 
 	(max_imprisonment 
-		(
-		 value 5)
-	) 
-) 
-	
-(defeasiblerule pn_phy_one_person_min
-		 
-	(physical_abuse_one_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(min_imprisonment 
 		(
 		 value 3)
 	) 
 ) 
 	
-(defeasiblerule pn_phy_one_person_max
+(defeasiblerule pn_psy_abuse_on_duty_min
 		 
-	(physical_abuse_one_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(max_imprisonment 
-		(
-		 value 6)
-	) 
-) 
-	
-(defeasiblerule pn_phy_more_person_min
-		 
-	(physical_abuse_more_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(min_imprisonment 
-		(
-		 value 3)
-	) 
-) 
-	
-(defeasiblerule pn_phy_more_person_max
-		 
-	(physical_abuse_more_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(max_imprisonment 
-		(
-		 value 6)
-	) 
-) 
-	
-(defeasiblerule pn_psy_more_person_min
-		 
-	(psychological_abuse_more_victims 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(min_imprisonment 
-		(
-		 value 5)
-	) 
-) 
-	
-(defeasiblerule pn_psy_more_person_max
-		 
-	(psychological_abuse_more_victims 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(max_imprisonment 
-		(
-		 value 10)
-	) 
-) 
-	
-(defeasiblerule pn_phy_psy_one_person_min
-		 
-	(physical_psychological_abuse_one_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(min_imprisonment 
-		(
-		 value 2)
-	) 
-) 
-	
-(defeasiblerule pn_phy_psy_one_person_max
-		 
-	(physical_psychological_abuse_one_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(max_imprisonment 
-		(
-		 value 15)
-	) 
-) 
-	
-(defeasiblerule pn_phy_psy_more_person_min
-		 
-	(physical_psychological_abuse_more_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(min_imprisonment 
-		(
-		 value 2)
-	) 
-) 
-	
-(defeasiblerule pn_phy_psy_more_person_max
-		 
-	(physical_psychological_abuse_more_victim 
-		(
-		 defendant ?Defendant)
-	) 
-  => 
-	 
-	(max_imprisonment 
-		(
-		 value 15)
-	) 
-) 
-	
-(defeasiblerule pn_life_threatening_torture_min
-		 
-	(life_threatening_torture 
+	(psychological_abuse_on_duty 
 		(
 		 defendant ?Defendant)
 	) 
@@ -549,9 +391,65 @@
 	) 
 ) 
 	
-(defeasiblerule pn_life_threatening_torture_max
+(defeasiblerule pn_psy_abuse_on_duty_max
 		 
-	(life_threatening_torture 
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 8)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_min
+		 
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 0)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_max
+		 
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 1)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_on_duty_min
+		 
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 1)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_on_duty_max
+		 
+	(movement_restrictions_on_duty 
 		(
 		 defendant ?Defendant)
 	) 
@@ -560,6 +458,62 @@
 	(max_imprisonment 
 		(
 		 value 5)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_life_threatening_min
+		 
+	(movement_restrictions_life_threatening 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 1)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_life_threatening_max
+		 
+	(movement_restrictions_life_threatening 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 8)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_death_min
+		 
+	(movement_restrictions_death 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 2)
+	) 
+) 
+	
+(defeasiblerule pn_movement_restrct_death_max
+		 
+	(movement_restrictions_death 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 12)
 	) 
 ) 
 	

@@ -7,3 +7,5 @@
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#physical_abuse_involved> "true" .
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#financial_status> "middle_income" .
 <http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#injury_severity> "LIFE_THREATENING" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#on_duty> "true" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#num_of_defendants> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .

@@ -6,7 +6,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          proof="proof.ruleml"
          rdf_export="export.rdf"
-         rdf_export_classes="psychological_abuse_one_victim psychological_abuse_more_victims physical_abuse_one_victim physical_abuse_more_victim physical_psychological_abuse_one_victim physical_psychological_abuse_more_victim life_threatening_torture min_imprisonment max_imprisonment"
+         rdf_export_classes="movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment"
          rdf_import="&#34;facts.rdf&#34;">
    <Assert>
       <Implies ruletype="defeasiblerule">
@@ -24,8 +24,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:num_of_victims"/>
-                     <Var>num_of_victims</Var>
+                     <Ind uri="lc:psychological_abuse_involved"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
                <Atom>
@@ -37,23 +37,16 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:psychological_abuse_involved"/>
-                     <Data xsi:type="xs:string">true</Data>
+                     <Ind uri="lc:physical_abuse_involved"/>
+                     <Data xsi:type="xs:string">false</Data>
                   </slot>
                </Atom>
-               <Equal>
-                  <Expr>
-                     <Fun in="yes">&lt;</Fun>
-                     <Var>num_of_victims</Var>
-                     <Ind>2</Ind>
-                  </Expr>
-               </Equal>
             </And>
          </body>
          <head>
             <Atom>
                <op>
-                  <Rel>psychological_abuse_one_victim</Rel>
+                  <Rel>psychological_abuse</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -77,8 +70,8 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:num_of_victims"/>
-                     <Var>num_of_victims</Var>
+                     <Ind uri="lc:psychological_abuse_involved"/>
+                     <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
                <Atom>
@@ -90,23 +83,29 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:psychological_abuse_involved"/>
+                     <Ind uri="lc:physical_abuse_involved"/>
+                     <Data xsi:type="xs:string">false</Data>
+                  </slot>
+               </Atom>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:on_duty"/>
                      <Data xsi:type="xs:string">true</Data>
                   </slot>
                </Atom>
-               <Equal>
-                  <Expr>
-                     <Fun in="yes">&gt;</Fun>
-                     <Var>num_of_victims</Var>
-                     <Ind>1</Ind>
-                  </Expr>
-               </Equal>
             </And>
          </body>
          <head>
             <Atom>
                <op>
-                  <Rel>psychological_abuse_more_victims</Rel>
+                  <Rel>psychological_abuse_on_duty</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -114,6 +113,40 @@
                </slot>
             </Atom>
          </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule2_1">rule2_1</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>psychological_abuse_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>psychological_abuse</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
@@ -130,36 +163,44 @@
                      <Var>Defendant</Var>
                   </slot>
                   <slot>
-                     <Ind uri="lc:num_of_victims"/>
-                     <Var>num_of_victims</Var>
+                     <Ind uri="lc:num_of_defendants"/>
+                     <Var>num_of_defendants</Var>
                   </slot>
                </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:physical_abuse_involved"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Equal>
-                  <Expr>
-                     <Fun in="yes">&lt;</Fun>
-                     <Var>num_of_victims</Var>
-                     <Ind>2</Ind>
-                  </Expr>
-               </Equal>
+               <Or>
+                  <Atom>
+                     <op>
+                        <Rel uri="lc:case"/>
+                     </op>
+                     <slot>
+                        <Ind uri="lc:defendant"/>
+                        <Var>Defendant</Var>
+                     </slot>
+                     <slot>
+                        <Ind uri="lc:physical_abuse_involved"/>
+                        <Data xsi:type="xs:string">true</Data>
+                     </slot>
+                  </Atom>
+                  <Atom>
+                     <op>
+                        <Rel uri="lc:case"/>
+                     </op>
+                     <slot>
+                        <Ind uri="lc:defendant"/>
+                        <Var>Defendant</Var>
+                     </slot>
+                     <slot>
+                        <Ind uri="lc:psychological_abuse_involved"/>
+                        <Data xsi:type="xs:string">true</Data>
+                     </slot>
+                  </Atom>
+               </Or>
             </And>
          </body>
          <head>
             <Atom>
                <op>
-                  <Rel>physical_abuse_one_victim</Rel>
+                  <Rel>movement_restrictions</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -170,132 +211,13 @@
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="rule4">rule4</Ind>
+            <Ind uri="rule3_1">rule3_1</Ind>
          </oid>
          <body>
             <And>
                <Atom>
                   <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:num_of_victims"/>
-                     <Var>num_of_victims</Var>
-                  </slot>
-               </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:physical_abuse_involved"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Equal>
-                  <Expr>
-                     <Fun in="yes">&gt;</Fun>
-                     <Var>num_of_victims</Var>
-                     <Ind>1</Ind>
-                  </Expr>
-               </Equal>
-            </And>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>physical_abuse_more_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule5">rule5</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:num_of_victims"/>
-                     <Var>num_of_victims</Var>
-                  </slot>
-               </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:physical_abuse_involved"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:psychological_abuse_involved"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Equal>
-                  <Expr>
-                     <Fun in="yes">&lt;</Fun>
-                     <Var>num_of_victims</Var>
-                     <Ind>2</Ind>
-                  </Expr>
-               </Equal>
-            </And>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>physical_psychological_abuse_one_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule5_1">rule5_1</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>physical_psychological_abuse_one_victim</Rel>
+                     <Rel>movement_restrictions</Rel>
                   </op>
                   <slot>
                      <Ind uri="defendant"/>
@@ -308,41 +230,7 @@
             <Neg>
                <Atom>
                   <op>
-                     <Rel>physical_abuse_one_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </Neg>
-         </head>
-         <superior>
-            <Ind uri="rule3"/>
-         </superior>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule5_2">rule5_2</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>physical_psychological_abuse_one_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
-         </body>
-         <head>
-            <Neg>
-               <Atom>
-                  <op>
-                     <Rel>psychological_abuse_one_victim</Rel>
+                     <Rel>psychological_abuse</Rel>
                   </op>
                   <slot>
                      <Ind uri="defendant"/>
@@ -357,79 +245,13 @@
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="rule6">rule6</Ind>
+            <Ind uri="rule3_2">rule3_2</Ind>
          </oid>
          <body>
             <And>
                <Atom>
                   <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:num_of_victims"/>
-                     <Var>num_of_victims</Var>
-                  </slot>
-               </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:physical_abuse_involved"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Atom>
-                  <op>
-                     <Rel uri="lc:case"/>
-                  </op>
-                  <slot>
-                     <Ind uri="lc:defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-                  <slot>
-                     <Ind uri="lc:psychological_abuse_involved"/>
-                     <Data xsi:type="xs:string">true</Data>
-                  </slot>
-               </Atom>
-               <Equal>
-                  <Expr>
-                     <Fun in="yes">&gt;</Fun>
-                     <Var>num_of_victims</Var>
-                     <Ind>1</Ind>
-                  </Expr>
-               </Equal>
-            </And>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>physical_psychological_abuse_more_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule6_1">rule6_1</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>physical_psychological_abuse_more_victim</Rel>
+                     <Rel>movement_restrictions</Rel>
                   </op>
                   <slot>
                      <Ind uri="defendant"/>
@@ -442,41 +264,7 @@
             <Neg>
                <Atom>
                   <op>
-                     <Rel>physical_abuse_more_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </Neg>
-         </head>
-         <superior>
-            <Ind uri="rule4"/>
-         </superior>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule6_2">rule6_2</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>physical_psychological_abuse_more_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
-         </body>
-         <head>
-            <Neg>
-               <Atom>
-                  <op>
-                     <Rel>psychological_abuse_more_victims</Rel>
+                     <Rel>psychological_abuse_on_duty</Rel>
                   </op>
                   <slot>
                      <Ind uri="defendant"/>
@@ -491,7 +279,7 @@
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="rule7">rule7</Ind>
+            <Ind uri="rule4">rule4</Ind>
          </oid>
          <body>
             <And>
@@ -505,7 +293,7 @@
                         <Var>Defendant</Var>
                      </slot>
                      <slot>
-                        <Ind uri="lc:psychological_abuse_involved"/>
+                        <Ind uri="lc:physical_abuse_involved"/>
                         <Data xsi:type="xs:string">true</Data>
                      </slot>
                   </Atom>
@@ -518,7 +306,170 @@
                         <Var>Defendant</Var>
                      </slot>
                      <slot>
+                        <Ind uri="lc:psychological_abuse_involved"/>
+                        <Data xsi:type="xs:string">true</Data>
+                     </slot>
+                  </Atom>
+               </Or>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:on_duty"/>
+                     <Data xsi:type="xs:string">true</Data>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_on_duty</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule4_1">rule4_1</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>psychological_abuse</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule4_2">rule4_2</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>psychological_abuse_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule4_3">rule4_3</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule3"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule5">rule5</Ind>
+         </oid>
+         <body>
+            <And>
+               <Or>
+                  <Atom>
+                     <op>
+                        <Rel uri="lc:case"/>
+                     </op>
+                     <slot>
+                        <Ind uri="lc:defendant"/>
+                        <Var>Defendant</Var>
+                     </slot>
+                     <slot>
                         <Ind uri="lc:physical_abuse_involved"/>
+                        <Data xsi:type="xs:string">true</Data>
+                     </slot>
+                  </Atom>
+                  <Atom>
+                     <op>
+                        <Rel uri="lc:case"/>
+                     </op>
+                     <slot>
+                        <Ind uri="lc:defendant"/>
+                        <Var>Defendant</Var>
+                     </slot>
+                     <slot>
+                        <Ind uri="lc:psychological_abuse_involved"/>
                         <Data xsi:type="xs:string">true</Data>
                      </slot>
                   </Atom>
@@ -541,7 +492,7 @@
          <head>
             <Atom>
                <op>
-                  <Rel>life_threatening_torture</Rel>
+                  <Rel>movement_restrictions_life_threatening</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -552,13 +503,13 @@
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="rule7_1">rule7_1</Ind>
+            <Ind uri="rule5_1">rule5_1</Ind>
          </oid>
          <body>
             <And>
                <Atom>
                   <op>
-                     <Rel>life_threatening_torture</Rel>
+                     <Rel>movement_restrictions_life_threatening</Rel>
                   </op>
                   <slot>
                      <Ind uri="defendant"/>
@@ -571,177 +522,7 @@
             <Neg>
                <Atom>
                   <op>
-                     <Rel>physical_psychological_abuse_one_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </Neg>
-         </head>
-         <superior>
-            <Ind uri="rule5"/>
-         </superior>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule7_2">rule7_2</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>life_threatening_torture</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
-         </body>
-         <head>
-            <Neg>
-               <Atom>
-                  <op>
-                     <Rel>physical_psychological_abuse_more_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </Neg>
-         </head>
-         <superior>
-            <Ind uri="rule6"/>
-         </superior>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule7_3">rule7_3</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>life_threatening_torture</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
-         </body>
-         <head>
-            <Neg>
-               <Atom>
-                  <op>
-                     <Rel>physical_abuse_more_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </Neg>
-         </head>
-         <superior>
-            <Ind uri="rule4"/>
-         </superior>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule7_4">rule7_4</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>life_threatening_torture</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
-         </body>
-         <head>
-            <Neg>
-               <Atom>
-                  <op>
-                     <Rel>physical_abuse_one_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </Neg>
-         </head>
-         <superior>
-            <Ind uri="rule3"/>
-         </superior>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule7_5">rule7_5</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>life_threatening_torture</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
-         </body>
-         <head>
-            <Neg>
-               <Atom>
-                  <op>
-                     <Rel>psychological_abuse_more_victim</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </Neg>
-         </head>
-         <superior>
-            <Ind uri="rule2"/>
-         </superior>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="rule7_6">rule7_6</Ind>
-         </oid>
-         <body>
-            <And>
-               <Atom>
-                  <op>
-                     <Rel>life_threatening_torture</Rel>
-                  </op>
-                  <slot>
-                     <Ind uri="defendant"/>
-                     <Var>Defendant</Var>
-                  </slot>
-               </Atom>
-            </And>
-         </body>
-         <head>
-            <Neg>
-               <Atom>
-                  <op>
-                     <Rel>psychological_abuse_one_victim</Rel>
+                     <Rel>psychological_abuse</Rel>
                   </op>
                   <slot>
                      <Ind uri="defendant"/>
@@ -756,12 +537,311 @@
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="pn_psy_one_person_min">pn_psy_one_person_min</Ind>
+            <Ind uri="rule5_2">rule5_2</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_life_threatening</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>psychological_abuse_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule5_3">rule5_3</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_life_threatening</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule3"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule5_4">rule5_4</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_life_threatening</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule4"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6">rule6</Ind>
+         </oid>
+         <body>
+            <And>
+               <Or>
+                  <Atom>
+                     <op>
+                        <Rel uri="lc:case"/>
+                     </op>
+                     <slot>
+                        <Ind uri="lc:defendant"/>
+                        <Var>Defendant</Var>
+                     </slot>
+                     <slot>
+                        <Ind uri="lc:physical_abuse_involved"/>
+                        <Data xsi:type="xs:string">true</Data>
+                     </slot>
+                  </Atom>
+                  <Atom>
+                     <op>
+                        <Rel uri="lc:case"/>
+                     </op>
+                     <slot>
+                        <Ind uri="lc:defendant"/>
+                        <Var>Defendant</Var>
+                     </slot>
+                     <slot>
+                        <Ind uri="lc:psychological_abuse_involved"/>
+                        <Data xsi:type="xs:string">true</Data>
+                     </slot>
+                  </Atom>
+               </Or>
+               <Atom>
+                  <op>
+                     <Rel uri="lc:case"/>
+                  </op>
+                  <slot>
+                     <Ind uri="lc:defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+                  <slot>
+                     <Ind uri="lc:injury_severity"/>
+                     <Data xsi:type="xs:string">FATAL</Data>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_death</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6_1">rule6_1</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_death</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>psychological_abuse</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule1"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6_2">rule6_2</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_death</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>psychological_abuse_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule2"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6_3">rule6_3</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_death</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule3"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="rule6_4">rule6_4</Ind>
+         </oid>
+         <body>
+            <And>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_death</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </And>
+         </body>
+         <head>
+            <Neg>
+               <Atom>
+                  <op>
+                     <Rel>movement_restrictions_on_duty</Rel>
+                  </op>
+                  <slot>
+                     <Ind uri="defendant"/>
+                     <Var>Defendant</Var>
+                  </slot>
+               </Atom>
+            </Neg>
+         </head>
+         <superior>
+            <Ind uri="rule4"/>
+         </superior>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_psy_abuse_min">pn_psy_abuse_min</Ind>
          </oid>
          <body>
             <Atom>
                <op>
-                  <Rel>psychological_abuse_one_victim</Rel>
+                  <Rel>psychological_abuse</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -776,19 +856,19 @@
                </op>
                <slot>
                   <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">2</Data>
+                  <Data xsi:type="xs:integer">0</Data>
                </slot>
             </Atom>
          </head>
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="pn_psy_one_person_max">pn_psy_one_person_max</Ind>
+            <Ind uri="pn_psy_abuse_max">pn_psy_abuse_max</Ind>
          </oid>
          <body>
             <Atom>
                <op>
-                  <Rel>psychological_abuse_one_victim</Rel>
+                  <Rel>psychological_abuse</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -800,33 +880,6 @@
             <Atom>
                <op>
                   <Rel>max_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">5</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_phy_one_person_min">pn_phy_one_person_min</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>physical_abuse_one_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>min_imprisonment</Rel>
                </op>
                <slot>
                   <Ind uri="value"/>
@@ -837,255 +890,12 @@
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="pn_phy_one_person_max">pn_phy_one_person_max</Ind>
+            <Ind uri="pn_psy_abuse_on_duty_min">pn_psy_abuse_on_duty_min</Ind>
          </oid>
          <body>
             <Atom>
                <op>
-                  <Rel>physical_abuse_one_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>max_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">6</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_phy_more_person_min">pn_phy_more_person_min</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>physical_abuse_more_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>min_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">3</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_phy_more_person_max">pn_phy_more_person_max</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>physical_abuse_more_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>max_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">6</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_psy_more_person_min">pn_psy_more_person_min</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>psychological_abuse_more_victims</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>min_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">5</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_psy_more_person_max">pn_psy_more_person_max</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>psychological_abuse_more_victims</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>max_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">10</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_phy_psy_one_person_min">pn_phy_psy_one_person_min</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>physical_psychological_abuse_one_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>min_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">2</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_phy_psy_one_person_max">pn_phy_psy_one_person_max</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>physical_psychological_abuse_one_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>max_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">15</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_phy_psy_more_person_min">pn_phy_psy_more_person_min</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>physical_psychological_abuse_more_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>min_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">2</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_phy_psy_more_person_max">pn_phy_psy_more_person_max</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>physical_psychological_abuse_more_victim</Rel>
-               </op>
-               <slot>
-                  <Ind uri="defendant"/>
-                  <Var>Defendant</Var>
-               </slot>
-            </Atom>
-         </body>
-         <head>
-            <Atom>
-               <op>
-                  <Rel>max_imprisonment</Rel>
-               </op>
-               <slot>
-                  <Ind uri="value"/>
-                  <Data xsi:type="xs:integer">15</Data>
-               </slot>
-            </Atom>
-         </head>
-      </Implies>
-      <Implies ruletype="defeasiblerule">
-         <oid>
-            <Ind uri="pn_life_threatening_torture_min">pn_life_threatening_torture_min</Ind>
-         </oid>
-         <body>
-            <Atom>
-               <op>
-                  <Rel>life_threatening_torture</Rel>
+                  <Rel>psychological_abuse_on_duty</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -1107,12 +917,120 @@
       </Implies>
       <Implies ruletype="defeasiblerule">
          <oid>
-            <Ind uri="pn_life_threatening_torture_max">pn_life_threatening_torture_max</Ind>
+            <Ind uri="pn_psy_abuse_on_duty_max">pn_psy_abuse_on_duty_max</Ind>
          </oid>
          <body>
             <Atom>
                <op>
-                  <Rel>life_threatening_torture</Rel>
+                  <Rel>psychological_abuse_on_duty</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>max_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">8</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_min">pn_movement_restrct_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>min_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">0</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_max">pn_movement_restrct_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>max_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">1</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_on_duty_min">pn_movement_restrct_on_duty_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_on_duty</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>min_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">1</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_on_duty_max">pn_movement_restrct_on_duty_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_on_duty</Rel>
                </op>
                <slot>
                   <Ind uri="defendant"/>
@@ -1128,6 +1046,114 @@
                <slot>
                   <Ind uri="value"/>
                   <Data xsi:type="xs:integer">5</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_life_threatening_min">pn_movement_restrct_life_threatening_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_life_threatening</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>min_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">1</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_life_threatening_max">pn_movement_restrct_life_threatening_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_life_threatening</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>max_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">8</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_death_min">pn_movement_restrct_death_min</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_death</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>min_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">2</Data>
+               </slot>
+            </Atom>
+         </head>
+      </Implies>
+      <Implies ruletype="defeasiblerule">
+         <oid>
+            <Ind uri="pn_movement_restrct_death_max">pn_movement_restrct_death_max</Ind>
+         </oid>
+         <body>
+            <Atom>
+               <op>
+                  <Rel>movement_restrictions_death</Rel>
+               </op>
+               <slot>
+                  <Ind uri="defendant"/>
+                  <Var>Defendant</Var>
+               </slot>
+            </Atom>
+         </body>
+         <head>
+            <Atom>
+               <op>
+                  <Rel>max_imprisonment</Rel>
+               </op>
+               <slot>
+                  <Ind uri="value"/>
+                  <Data xsi:type="xs:integer">12</Data>
                </slot>
             </Atom>
          </head>

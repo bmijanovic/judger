@@ -109,6 +109,8 @@ public class DrDeviceService {
                 "        <lc:physical_abuse_involved>" + verdict.getPhysicalAbuseInvolved().toString() + "</lc:physical_abuse_involved>\n" +
                 "        <lc:financial_status>" + dict.get(verdict.getDefendantFinancialStatus().toString()) + "</lc:financial_status>\n" +
                 "        <lc:injury_severity>" + verdict.getInjurySeverity().toString() + "</lc:injury_severity>\n" +
+                "        <lc:on_duty>" + verdict.getOnDuty().toString() + "</lc:on_duty>\n" +
+                "        <lc:num_of_defendants rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">" + verdict.getNumDefendants() + "</lc:num_of_defendants>\n" +
                 "    </lc:case>\n" +
                 "</rdf:RDF>";
         writeToFile(text);
@@ -140,14 +142,14 @@ public class DrDeviceService {
 
     private ArrayList<String> getPossibleMatches() {
         ArrayList<String> r = new ArrayList<>();
-        r.add("psychological_abuse_one_victim");
-        r.add("psychological_abuse_more_victims");
-        r.add("physical_abuse_one_victim");
-        r.add("physical_abuse_more_victim");
-        r.add("physical_psychological_abuse_one_victim");
-        r.add("physical_psychological_abuse_more_victim");
-        r.add("life_threatening_torture");
+        r.add("psychological_abuse");
+        r.add("psychological_abuse_on_duty");
+        r.add("movement_restrictions");
+        r.add("movement_restrictions_on_duty");
+        r.add("movement_restrictions_life_threatening");
+        r.add("movement_restrictions_death");
         r.add("coercion_abuse");
+        r.add("coercion_abuse_multiple_defendant");
 
         return r;
     }
@@ -155,22 +157,15 @@ public class DrDeviceService {
     private HashMap<String, String> getSentenceDict() {
         HashMap<String, String> r = new HashMap<>();
 
-        r.put("not_previously_convicted",
-                "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtve. Okrivljeni je ranije osuđivan, što otežava njegov položaj pred sudom.");
+        r.put("psychological_abuse", "Okrivljeni je počinio krivično delo uskraćivanja ili ograničavanja ljudskih prava i slobode utvrđeno ustavom ( čl 159. st 1.).");
+        r.put("psychological_abuse_on_duty", "Okrivljeni je počinio krivično delo uskraćivanja ili ograničavanja ljudskih prava i slobode utvrđeno ustavom tokom vršenja službene dužnosti ( čl 159. st 3.).");
+        r.put("movement_restrictions", "Okrivljeni je počinio krivično delo radnji protivpravno zatvoranje, držanje zatvorenog ili ograničavanje slobode kretanja (čl 162. st 1.).");
+        r.put("movement_restrictions_on_duty", "Okrivljeni je počinio krivično delo radnji protivpravno zatvoranje, držanje zatvorenog ili ograničavanje slobode kretanja tokom vršenja službene dužnosti (čl 162. st 2.).");
+        r.put("movement_restrictions_life_threatening", "Okrivljeni je počinio krivično delo radnji protivpravno zatvoranje, držanje zatvorenog ili ograničavanje slobode kretanja usled čega je licu teško narušeno zdravlje ili su nastupile druge teške posledice (čl 162. st 3.).");
+        r.put("movement_restrictions_death", "Okrivljeni je počinio krivično delo radnji protivpravno zatvoranje, držanje zatvorenog ili ograničavanje slobode kretanja usled čega je nastala smrt lica (čl 162. st 4.).");
+        r.put("coercion_abuse", "Okrivljeni je silom ili prijetnjom prinudio drugog da nešto učini ili ne učini ili trpi (čl 165 st 1.).");
+        r.put("coercion_abuse_multiple_defendant", "Okrivljeni je silom ili prijetnjom prinudio drugog da nešto učini ili ne učini ili trpi u čemu je učestvovalo više okrivljenih (čl 165 st 4.).");
 
-        r.put("psychological_abuse_one_victim",
-                "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje žrtve.");
-
-        r.put("psychological_abuse_more_victims",
-                "Okrivljeni je počinio krivično djelo protiv vise žrtava. Tokom izvršenja djela bilo je prisutno psihičko zlostavljanje.");
-
-
-        r.put("physical_abuse_one_victim", "Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno fizicko zlostavljanje.");
-        r.put("physical_abuse_more_victim", "MORE Okrivljeni je počinio krivično djelo protiv jedne žrtve. Tokom izvršenja djela bilo je prisutno fizicko zlostavljanje.");
-        r.put("physical_psychological_abuse_one_victim", "LALALALLALALALALALALLALALALAL");
-        r.put("physical_psychological_abuse_more_victim", "HAHAHAHAHHAHAHAHAHAHAHHA");
-        r.put("life_threatening_torture", "MUCENJE");
-        r.put("coercion_abuse", "PRINUDA");
 
         r.put("min_imprisonment", "Te ga sud primjenom pomenutih propisa osuđuje na zatvorsku kaznu u trajanju od minimum ");
         r.put("max_imprisonment", ", a najviše ");

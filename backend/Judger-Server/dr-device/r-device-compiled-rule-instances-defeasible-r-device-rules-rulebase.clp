@@ -1,1473 +1,1572 @@
-([pn_life_threatening_torture_max-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_max-defeasibly-dot-gen355)
-   (depends-on declare max_imprisonment life_threatening_torture max_imprisonment)
+([pn_movement_restrct_death_max-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_max-defeasibly-dot-gen344)
+   (depends-on declare max_imprisonment movement_restrictions_death max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_life_threatening_torture_max] ) ) ) ?gen316 <- ( max_imprisonment ( value 5 ) ( positive 1 ) ( positive-derivator pn_life_threatening_torture_max $? ) ) ( test ( eq ( class ?gen316 ) max_imprisonment ) ) ( not ( and ?gen323 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen322 & : ( >= ?gen322 1 ) ) ) ?gen316 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen318 & : ( not ( member$ pn_life_threatening_torture_max $?gen318 ) ) ) ) ) ) => ?gen316 <- ( max_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_death_max] ) ) ) ?gen304 <- ( max_imprisonment ( value 12 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_death_max $? ) ) ( test ( eq ( class ?gen304 ) max_imprisonment ) ) ( not ( and ?gen311 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen310 & : ( >= ?gen310 1 ) ) ) ?gen304 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen306 & : ( not ( member$ pn_movement_restrct_death_max $?gen306 ) ) ) ) ) ) => ?gen304 <- ( max_imprisonment ( positive 0 ) )"))
 
-([pn_life_threatening_torture_max-defeasibly] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_max-defeasibly-gen357)
-   (depends-on declare life_threatening_torture max_imprisonment)
+([pn_movement_restrct_death_max-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_max-defeasibly-gen346)
+   (depends-on declare movement_restrictions_death max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_life_threatening_torture_max] ) ) ) ?gen323 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen322 & : ( >= ?gen322 1 ) ) ) ?gen316 <- ( max_imprisonment ( value 5 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen318 & : ( not ( member$ pn_life_threatening_torture_max $?gen318 ) ) ) ) ( test ( eq ( class ?gen316 ) max_imprisonment ) ) => ?gen316 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_life_threatening_torture_max ?gen323 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_death_max] ) ) ) ?gen311 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen310 & : ( >= ?gen310 1 ) ) ) ?gen304 <- ( max_imprisonment ( value 12 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen306 & : ( not ( member$ pn_movement_restrct_death_max $?gen306 ) ) ) ) ( test ( eq ( class ?gen304 ) max_imprisonment ) ) => ?gen304 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_death_max ?gen311 ) )"))
 
-([pn_life_threatening_torture_max-overruled-dot] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_max-overruled-dot-gen359)
-   (depends-on declare max_imprisonment life_threatening_torture max_imprisonment)
+([pn_movement_restrct_death_max-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_max-overruled-dot-gen348)
+   (depends-on declare max_imprisonment movement_restrictions_death max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_life_threatening_torture_max] ) ) ) ?gen316 <- ( max_imprisonment ( value 5 ) ( negative-support $?gen319 ) ( negative-overruled $?gen320 & : ( subseq-pos ( create$ pn_life_threatening_torture_max-overruled $?gen319 $$$ $?gen320 ) ) ) ) ( test ( eq ( class ?gen316 ) max_imprisonment ) ) ( not ( and ?gen323 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen322 & : ( >= ?gen322 1 ) ) ) ?gen316 <- ( max_imprisonment ( positive-defeated $?gen318 & : ( not ( member$ pn_life_threatening_torture_max $?gen318 ) ) ) ) ) ) => ( calc ( bind $?gen321 ( delete-member$ $?gen320 ( create$ pn_life_threatening_torture_max-overruled $?gen319 ) ) ) ) ?gen316 <- ( max_imprisonment ( negative-overruled $?gen321 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_death_max] ) ) ) ?gen304 <- ( max_imprisonment ( value 12 ) ( negative-support $?gen307 ) ( negative-overruled $?gen308 & : ( subseq-pos ( create$ pn_movement_restrct_death_max-overruled $?gen307 $$$ $?gen308 ) ) ) ) ( test ( eq ( class ?gen304 ) max_imprisonment ) ) ( not ( and ?gen311 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen310 & : ( >= ?gen310 1 ) ) ) ?gen304 <- ( max_imprisonment ( positive-defeated $?gen306 & : ( not ( member$ pn_movement_restrct_death_max $?gen306 ) ) ) ) ) ) => ( calc ( bind $?gen309 ( delete-member$ $?gen308 ( create$ pn_movement_restrct_death_max-overruled $?gen307 ) ) ) ) ?gen304 <- ( max_imprisonment ( negative-overruled $?gen309 ) )"))
 
-([pn_life_threatening_torture_max-overruled] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_max-overruled-gen361)
-   (depends-on declare life_threatening_torture max_imprisonment)
+([pn_movement_restrct_death_max-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_max-overruled-gen350)
+   (depends-on declare movement_restrictions_death max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_life_threatening_torture_max] ) ) ) ?gen323 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen322 & : ( >= ?gen322 1 ) ) ) ?gen316 <- ( max_imprisonment ( value 5 ) ( negative-support $?gen319 ) ( negative-overruled $?gen320 & : ( not ( subseq-pos ( create$ pn_life_threatening_torture_max-overruled $?gen319 $$$ $?gen320 ) ) ) ) ( positive-defeated $?gen318 & : ( not ( member$ pn_life_threatening_torture_max $?gen318 ) ) ) ) ( test ( eq ( class ?gen316 ) max_imprisonment ) ) => ( calc ( bind $?gen321 ( create$ pn_life_threatening_torture_max-overruled $?gen319 $?gen320 ) ) ) ?gen316 <- ( max_imprisonment ( negative-overruled $?gen321 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_death_max] ) ) ) ?gen311 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen310 & : ( >= ?gen310 1 ) ) ) ?gen304 <- ( max_imprisonment ( value 12 ) ( negative-support $?gen307 ) ( negative-overruled $?gen308 & : ( not ( subseq-pos ( create$ pn_movement_restrct_death_max-overruled $?gen307 $$$ $?gen308 ) ) ) ) ( positive-defeated $?gen306 & : ( not ( member$ pn_movement_restrct_death_max $?gen306 ) ) ) ) ( test ( eq ( class ?gen304 ) max_imprisonment ) ) => ( calc ( bind $?gen309 ( create$ pn_movement_restrct_death_max-overruled $?gen307 $?gen308 ) ) ) ?gen304 <- ( max_imprisonment ( negative-overruled $?gen309 ) )"))
 
-([pn_life_threatening_torture_max-support] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_max-support-gen363)
-   (depends-on declare life_threatening_torture max_imprisonment)
+([pn_movement_restrct_death_max-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_max-support-gen352)
+   (depends-on declare movement_restrictions_death max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_life_threatening_torture_max] ) ) ) ?gen315 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen316 <- ( max_imprisonment ( value 5 ) ( positive-support $?gen318 & : ( not ( subseq-pos ( create$ pn_life_threatening_torture_max ?gen315 $$$ $?gen318 ) ) ) ) ) ( test ( eq ( class ?gen316 ) max_imprisonment ) ) => ( calc ( bind $?gen321 ( create$ pn_life_threatening_torture_max ?gen315 $?gen318 ) ) ) ?gen316 <- ( max_imprisonment ( positive-support $?gen321 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_death_max] ) ) ) ?gen303 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ?gen304 <- ( max_imprisonment ( value 12 ) ( positive-support $?gen306 & : ( not ( subseq-pos ( create$ pn_movement_restrct_death_max ?gen303 $$$ $?gen306 ) ) ) ) ) ( test ( eq ( class ?gen304 ) max_imprisonment ) ) => ( calc ( bind $?gen309 ( create$ pn_movement_restrct_death_max ?gen303 $?gen306 ) ) ) ?gen304 <- ( max_imprisonment ( positive-support $?gen309 ) )"))
 
-([pn_life_threatening_torture_min-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_min-defeasibly-dot-gen365)
-   (depends-on declare min_imprisonment life_threatening_torture min_imprisonment)
+([pn_movement_restrct_death_min-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_min-defeasibly-dot-gen354)
+   (depends-on declare min_imprisonment movement_restrictions_death min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_life_threatening_torture_min] ) ) ) ?gen307 <- ( min_imprisonment ( value 1 ) ( positive 1 ) ( positive-derivator pn_life_threatening_torture_min $? ) ) ( test ( eq ( class ?gen307 ) min_imprisonment ) ) ( not ( and ?gen314 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen313 & : ( >= ?gen313 1 ) ) ) ?gen307 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen309 & : ( not ( member$ pn_life_threatening_torture_min $?gen309 ) ) ) ) ) ) => ?gen307 <- ( min_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_death_min] ) ) ) ?gen295 <- ( min_imprisonment ( value 2 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_death_min $? ) ) ( test ( eq ( class ?gen295 ) min_imprisonment ) ) ( not ( and ?gen302 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen301 & : ( >= ?gen301 1 ) ) ) ?gen295 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen297 & : ( not ( member$ pn_movement_restrct_death_min $?gen297 ) ) ) ) ) ) => ?gen295 <- ( min_imprisonment ( positive 0 ) )"))
 
-([pn_life_threatening_torture_min-defeasibly] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_min-defeasibly-gen367)
-   (depends-on declare life_threatening_torture min_imprisonment)
+([pn_movement_restrct_death_min-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_min-defeasibly-gen356)
+   (depends-on declare movement_restrictions_death min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_life_threatening_torture_min] ) ) ) ?gen314 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen313 & : ( >= ?gen313 1 ) ) ) ?gen307 <- ( min_imprisonment ( value 1 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen309 & : ( not ( member$ pn_life_threatening_torture_min $?gen309 ) ) ) ) ( test ( eq ( class ?gen307 ) min_imprisonment ) ) => ?gen307 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_life_threatening_torture_min ?gen314 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_death_min] ) ) ) ?gen302 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen301 & : ( >= ?gen301 1 ) ) ) ?gen295 <- ( min_imprisonment ( value 2 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen297 & : ( not ( member$ pn_movement_restrct_death_min $?gen297 ) ) ) ) ( test ( eq ( class ?gen295 ) min_imprisonment ) ) => ?gen295 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_death_min ?gen302 ) )"))
 
-([pn_life_threatening_torture_min-overruled-dot] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_min-overruled-dot-gen369)
-   (depends-on declare min_imprisonment life_threatening_torture min_imprisonment)
+([pn_movement_restrct_death_min-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_min-overruled-dot-gen358)
+   (depends-on declare min_imprisonment movement_restrictions_death min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_life_threatening_torture_min] ) ) ) ?gen307 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen310 ) ( negative-overruled $?gen311 & : ( subseq-pos ( create$ pn_life_threatening_torture_min-overruled $?gen310 $$$ $?gen311 ) ) ) ) ( test ( eq ( class ?gen307 ) min_imprisonment ) ) ( not ( and ?gen314 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen313 & : ( >= ?gen313 1 ) ) ) ?gen307 <- ( min_imprisonment ( positive-defeated $?gen309 & : ( not ( member$ pn_life_threatening_torture_min $?gen309 ) ) ) ) ) ) => ( calc ( bind $?gen312 ( delete-member$ $?gen311 ( create$ pn_life_threatening_torture_min-overruled $?gen310 ) ) ) ) ?gen307 <- ( min_imprisonment ( negative-overruled $?gen312 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_death_min] ) ) ) ?gen295 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen298 ) ( negative-overruled $?gen299 & : ( subseq-pos ( create$ pn_movement_restrct_death_min-overruled $?gen298 $$$ $?gen299 ) ) ) ) ( test ( eq ( class ?gen295 ) min_imprisonment ) ) ( not ( and ?gen302 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen301 & : ( >= ?gen301 1 ) ) ) ?gen295 <- ( min_imprisonment ( positive-defeated $?gen297 & : ( not ( member$ pn_movement_restrct_death_min $?gen297 ) ) ) ) ) ) => ( calc ( bind $?gen300 ( delete-member$ $?gen299 ( create$ pn_movement_restrct_death_min-overruled $?gen298 ) ) ) ) ?gen295 <- ( min_imprisonment ( negative-overruled $?gen300 ) )"))
 
-([pn_life_threatening_torture_min-overruled] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_min-overruled-gen371)
-   (depends-on declare life_threatening_torture min_imprisonment)
+([pn_movement_restrct_death_min-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_min-overruled-gen360)
+   (depends-on declare movement_restrictions_death min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_life_threatening_torture_min] ) ) ) ?gen314 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen313 & : ( >= ?gen313 1 ) ) ) ?gen307 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen310 ) ( negative-overruled $?gen311 & : ( not ( subseq-pos ( create$ pn_life_threatening_torture_min-overruled $?gen310 $$$ $?gen311 ) ) ) ) ( positive-defeated $?gen309 & : ( not ( member$ pn_life_threatening_torture_min $?gen309 ) ) ) ) ( test ( eq ( class ?gen307 ) min_imprisonment ) ) => ( calc ( bind $?gen312 ( create$ pn_life_threatening_torture_min-overruled $?gen310 $?gen311 ) ) ) ?gen307 <- ( min_imprisonment ( negative-overruled $?gen312 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_death_min] ) ) ) ?gen302 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen301 & : ( >= ?gen301 1 ) ) ) ?gen295 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen298 ) ( negative-overruled $?gen299 & : ( not ( subseq-pos ( create$ pn_movement_restrct_death_min-overruled $?gen298 $$$ $?gen299 ) ) ) ) ( positive-defeated $?gen297 & : ( not ( member$ pn_movement_restrct_death_min $?gen297 ) ) ) ) ( test ( eq ( class ?gen295 ) min_imprisonment ) ) => ( calc ( bind $?gen300 ( create$ pn_movement_restrct_death_min-overruled $?gen298 $?gen299 ) ) ) ?gen295 <- ( min_imprisonment ( negative-overruled $?gen300 ) )"))
 
-([pn_life_threatening_torture_min-support] of derived-attribute-rule
-   (pos-name pn_life_threatening_torture_min-support-gen373)
-   (depends-on declare life_threatening_torture min_imprisonment)
+([pn_movement_restrct_death_min-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_death_min-support-gen362)
+   (depends-on declare movement_restrictions_death min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_life_threatening_torture_min] ) ) ) ?gen306 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen307 <- ( min_imprisonment ( value 1 ) ( positive-support $?gen309 & : ( not ( subseq-pos ( create$ pn_life_threatening_torture_min ?gen306 $$$ $?gen309 ) ) ) ) ) ( test ( eq ( class ?gen307 ) min_imprisonment ) ) => ( calc ( bind $?gen312 ( create$ pn_life_threatening_torture_min ?gen306 $?gen309 ) ) ) ?gen307 <- ( min_imprisonment ( positive-support $?gen312 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_death_min] ) ) ) ?gen294 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ?gen295 <- ( min_imprisonment ( value 2 ) ( positive-support $?gen297 & : ( not ( subseq-pos ( create$ pn_movement_restrct_death_min ?gen294 $$$ $?gen297 ) ) ) ) ) ( test ( eq ( class ?gen295 ) min_imprisonment ) ) => ( calc ( bind $?gen300 ( create$ pn_movement_restrct_death_min ?gen294 $?gen297 ) ) ) ?gen295 <- ( min_imprisonment ( positive-support $?gen300 ) )"))
 
-([pn_phy_psy_more_person_max-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_max-defeasibly-dot-gen375)
-   (depends-on declare max_imprisonment physical_psychological_abuse_more_victim max_imprisonment)
+([pn_movement_restrct_life_threatening_max-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_max-defeasibly-dot-gen364)
+   (depends-on declare max_imprisonment movement_restrictions_life_threatening max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_psy_more_person_max] ) ) ) ?gen298 <- ( max_imprisonment ( value 15 ) ( positive 1 ) ( positive-derivator pn_phy_psy_more_person_max $? ) ) ( test ( eq ( class ?gen298 ) max_imprisonment ) ) ( not ( and ?gen305 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen304 & : ( >= ?gen304 1 ) ) ) ?gen298 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen300 & : ( not ( member$ pn_phy_psy_more_person_max $?gen300 ) ) ) ) ) ) => ?gen298 <- ( max_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_life_threatening_max] ) ) ) ?gen286 <- ( max_imprisonment ( value 8 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_life_threatening_max $? ) ) ( test ( eq ( class ?gen286 ) max_imprisonment ) ) ( not ( and ?gen293 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen292 & : ( >= ?gen292 1 ) ) ) ?gen286 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen288 & : ( not ( member$ pn_movement_restrct_life_threatening_max $?gen288 ) ) ) ) ) ) => ?gen286 <- ( max_imprisonment ( positive 0 ) )"))
 
-([pn_phy_psy_more_person_max-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_max-defeasibly-gen377)
-   (depends-on declare physical_psychological_abuse_more_victim max_imprisonment)
+([pn_movement_restrct_life_threatening_max-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_max-defeasibly-gen366)
+   (depends-on declare movement_restrictions_life_threatening max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_psy_more_person_max] ) ) ) ?gen305 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen304 & : ( >= ?gen304 1 ) ) ) ?gen298 <- ( max_imprisonment ( value 15 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen300 & : ( not ( member$ pn_phy_psy_more_person_max $?gen300 ) ) ) ) ( test ( eq ( class ?gen298 ) max_imprisonment ) ) => ?gen298 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_phy_psy_more_person_max ?gen305 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_life_threatening_max] ) ) ) ?gen293 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen292 & : ( >= ?gen292 1 ) ) ) ?gen286 <- ( max_imprisonment ( value 8 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen288 & : ( not ( member$ pn_movement_restrct_life_threatening_max $?gen288 ) ) ) ) ( test ( eq ( class ?gen286 ) max_imprisonment ) ) => ?gen286 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_life_threatening_max ?gen293 ) )"))
 
-([pn_phy_psy_more_person_max-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_max-overruled-dot-gen379)
-   (depends-on declare max_imprisonment physical_psychological_abuse_more_victim max_imprisonment)
+([pn_movement_restrct_life_threatening_max-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_max-overruled-dot-gen368)
+   (depends-on declare max_imprisonment movement_restrictions_life_threatening max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_psy_more_person_max] ) ) ) ?gen298 <- ( max_imprisonment ( value 15 ) ( negative-support $?gen301 ) ( negative-overruled $?gen302 & : ( subseq-pos ( create$ pn_phy_psy_more_person_max-overruled $?gen301 $$$ $?gen302 ) ) ) ) ( test ( eq ( class ?gen298 ) max_imprisonment ) ) ( not ( and ?gen305 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen304 & : ( >= ?gen304 1 ) ) ) ?gen298 <- ( max_imprisonment ( positive-defeated $?gen300 & : ( not ( member$ pn_phy_psy_more_person_max $?gen300 ) ) ) ) ) ) => ( calc ( bind $?gen303 ( delete-member$ $?gen302 ( create$ pn_phy_psy_more_person_max-overruled $?gen301 ) ) ) ) ?gen298 <- ( max_imprisonment ( negative-overruled $?gen303 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_life_threatening_max] ) ) ) ?gen286 <- ( max_imprisonment ( value 8 ) ( negative-support $?gen289 ) ( negative-overruled $?gen290 & : ( subseq-pos ( create$ pn_movement_restrct_life_threatening_max-overruled $?gen289 $$$ $?gen290 ) ) ) ) ( test ( eq ( class ?gen286 ) max_imprisonment ) ) ( not ( and ?gen293 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen292 & : ( >= ?gen292 1 ) ) ) ?gen286 <- ( max_imprisonment ( positive-defeated $?gen288 & : ( not ( member$ pn_movement_restrct_life_threatening_max $?gen288 ) ) ) ) ) ) => ( calc ( bind $?gen291 ( delete-member$ $?gen290 ( create$ pn_movement_restrct_life_threatening_max-overruled $?gen289 ) ) ) ) ?gen286 <- ( max_imprisonment ( negative-overruled $?gen291 ) )"))
 
-([pn_phy_psy_more_person_max-overruled] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_max-overruled-gen381)
-   (depends-on declare physical_psychological_abuse_more_victim max_imprisonment)
+([pn_movement_restrct_life_threatening_max-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_max-overruled-gen370)
+   (depends-on declare movement_restrictions_life_threatening max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_psy_more_person_max] ) ) ) ?gen305 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen304 & : ( >= ?gen304 1 ) ) ) ?gen298 <- ( max_imprisonment ( value 15 ) ( negative-support $?gen301 ) ( negative-overruled $?gen302 & : ( not ( subseq-pos ( create$ pn_phy_psy_more_person_max-overruled $?gen301 $$$ $?gen302 ) ) ) ) ( positive-defeated $?gen300 & : ( not ( member$ pn_phy_psy_more_person_max $?gen300 ) ) ) ) ( test ( eq ( class ?gen298 ) max_imprisonment ) ) => ( calc ( bind $?gen303 ( create$ pn_phy_psy_more_person_max-overruled $?gen301 $?gen302 ) ) ) ?gen298 <- ( max_imprisonment ( negative-overruled $?gen303 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_life_threatening_max] ) ) ) ?gen293 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen292 & : ( >= ?gen292 1 ) ) ) ?gen286 <- ( max_imprisonment ( value 8 ) ( negative-support $?gen289 ) ( negative-overruled $?gen290 & : ( not ( subseq-pos ( create$ pn_movement_restrct_life_threatening_max-overruled $?gen289 $$$ $?gen290 ) ) ) ) ( positive-defeated $?gen288 & : ( not ( member$ pn_movement_restrct_life_threatening_max $?gen288 ) ) ) ) ( test ( eq ( class ?gen286 ) max_imprisonment ) ) => ( calc ( bind $?gen291 ( create$ pn_movement_restrct_life_threatening_max-overruled $?gen289 $?gen290 ) ) ) ?gen286 <- ( max_imprisonment ( negative-overruled $?gen291 ) )"))
 
-([pn_phy_psy_more_person_max-support] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_max-support-gen383)
-   (depends-on declare physical_psychological_abuse_more_victim max_imprisonment)
+([pn_movement_restrct_life_threatening_max-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_max-support-gen372)
+   (depends-on declare movement_restrictions_life_threatening max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_psy_more_person_max] ) ) ) ?gen297 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ?gen298 <- ( max_imprisonment ( value 15 ) ( positive-support $?gen300 & : ( not ( subseq-pos ( create$ pn_phy_psy_more_person_max ?gen297 $$$ $?gen300 ) ) ) ) ) ( test ( eq ( class ?gen298 ) max_imprisonment ) ) => ( calc ( bind $?gen303 ( create$ pn_phy_psy_more_person_max ?gen297 $?gen300 ) ) ) ?gen298 <- ( max_imprisonment ( positive-support $?gen303 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_life_threatening_max] ) ) ) ?gen285 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ?gen286 <- ( max_imprisonment ( value 8 ) ( positive-support $?gen288 & : ( not ( subseq-pos ( create$ pn_movement_restrct_life_threatening_max ?gen285 $$$ $?gen288 ) ) ) ) ) ( test ( eq ( class ?gen286 ) max_imprisonment ) ) => ( calc ( bind $?gen291 ( create$ pn_movement_restrct_life_threatening_max ?gen285 $?gen288 ) ) ) ?gen286 <- ( max_imprisonment ( positive-support $?gen291 ) )"))
 
-([pn_phy_psy_more_person_min-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_min-defeasibly-dot-gen385)
-   (depends-on declare min_imprisonment physical_psychological_abuse_more_victim min_imprisonment)
+([pn_movement_restrct_life_threatening_min-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_min-defeasibly-dot-gen374)
+   (depends-on declare min_imprisonment movement_restrictions_life_threatening min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_psy_more_person_min] ) ) ) ?gen289 <- ( min_imprisonment ( value 2 ) ( positive 1 ) ( positive-derivator pn_phy_psy_more_person_min $? ) ) ( test ( eq ( class ?gen289 ) min_imprisonment ) ) ( not ( and ?gen296 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen295 & : ( >= ?gen295 1 ) ) ) ?gen289 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen291 & : ( not ( member$ pn_phy_psy_more_person_min $?gen291 ) ) ) ) ) ) => ?gen289 <- ( min_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_life_threatening_min] ) ) ) ?gen277 <- ( min_imprisonment ( value 1 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_life_threatening_min $? ) ) ( test ( eq ( class ?gen277 ) min_imprisonment ) ) ( not ( and ?gen284 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen283 & : ( >= ?gen283 1 ) ) ) ?gen277 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen279 & : ( not ( member$ pn_movement_restrct_life_threatening_min $?gen279 ) ) ) ) ) ) => ?gen277 <- ( min_imprisonment ( positive 0 ) )"))
 
-([pn_phy_psy_more_person_min-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_min-defeasibly-gen387)
-   (depends-on declare physical_psychological_abuse_more_victim min_imprisonment)
+([pn_movement_restrct_life_threatening_min-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_min-defeasibly-gen376)
+   (depends-on declare movement_restrictions_life_threatening min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_psy_more_person_min] ) ) ) ?gen296 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen295 & : ( >= ?gen295 1 ) ) ) ?gen289 <- ( min_imprisonment ( value 2 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen291 & : ( not ( member$ pn_phy_psy_more_person_min $?gen291 ) ) ) ) ( test ( eq ( class ?gen289 ) min_imprisonment ) ) => ?gen289 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_phy_psy_more_person_min ?gen296 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_life_threatening_min] ) ) ) ?gen284 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen283 & : ( >= ?gen283 1 ) ) ) ?gen277 <- ( min_imprisonment ( value 1 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen279 & : ( not ( member$ pn_movement_restrct_life_threatening_min $?gen279 ) ) ) ) ( test ( eq ( class ?gen277 ) min_imprisonment ) ) => ?gen277 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_life_threatening_min ?gen284 ) )"))
 
-([pn_phy_psy_more_person_min-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_min-overruled-dot-gen389)
-   (depends-on declare min_imprisonment physical_psychological_abuse_more_victim min_imprisonment)
+([pn_movement_restrct_life_threatening_min-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_min-overruled-dot-gen378)
+   (depends-on declare min_imprisonment movement_restrictions_life_threatening min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_psy_more_person_min] ) ) ) ?gen289 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen292 ) ( negative-overruled $?gen293 & : ( subseq-pos ( create$ pn_phy_psy_more_person_min-overruled $?gen292 $$$ $?gen293 ) ) ) ) ( test ( eq ( class ?gen289 ) min_imprisonment ) ) ( not ( and ?gen296 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen295 & : ( >= ?gen295 1 ) ) ) ?gen289 <- ( min_imprisonment ( positive-defeated $?gen291 & : ( not ( member$ pn_phy_psy_more_person_min $?gen291 ) ) ) ) ) ) => ( calc ( bind $?gen294 ( delete-member$ $?gen293 ( create$ pn_phy_psy_more_person_min-overruled $?gen292 ) ) ) ) ?gen289 <- ( min_imprisonment ( negative-overruled $?gen294 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_life_threatening_min] ) ) ) ?gen277 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen280 ) ( negative-overruled $?gen281 & : ( subseq-pos ( create$ pn_movement_restrct_life_threatening_min-overruled $?gen280 $$$ $?gen281 ) ) ) ) ( test ( eq ( class ?gen277 ) min_imprisonment ) ) ( not ( and ?gen284 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen283 & : ( >= ?gen283 1 ) ) ) ?gen277 <- ( min_imprisonment ( positive-defeated $?gen279 & : ( not ( member$ pn_movement_restrct_life_threatening_min $?gen279 ) ) ) ) ) ) => ( calc ( bind $?gen282 ( delete-member$ $?gen281 ( create$ pn_movement_restrct_life_threatening_min-overruled $?gen280 ) ) ) ) ?gen277 <- ( min_imprisonment ( negative-overruled $?gen282 ) )"))
 
-([pn_phy_psy_more_person_min-overruled] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_min-overruled-gen391)
-   (depends-on declare physical_psychological_abuse_more_victim min_imprisonment)
+([pn_movement_restrct_life_threatening_min-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_min-overruled-gen380)
+   (depends-on declare movement_restrictions_life_threatening min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_psy_more_person_min] ) ) ) ?gen296 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen295 & : ( >= ?gen295 1 ) ) ) ?gen289 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen292 ) ( negative-overruled $?gen293 & : ( not ( subseq-pos ( create$ pn_phy_psy_more_person_min-overruled $?gen292 $$$ $?gen293 ) ) ) ) ( positive-defeated $?gen291 & : ( not ( member$ pn_phy_psy_more_person_min $?gen291 ) ) ) ) ( test ( eq ( class ?gen289 ) min_imprisonment ) ) => ( calc ( bind $?gen294 ( create$ pn_phy_psy_more_person_min-overruled $?gen292 $?gen293 ) ) ) ?gen289 <- ( min_imprisonment ( negative-overruled $?gen294 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_life_threatening_min] ) ) ) ?gen284 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen283 & : ( >= ?gen283 1 ) ) ) ?gen277 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen280 ) ( negative-overruled $?gen281 & : ( not ( subseq-pos ( create$ pn_movement_restrct_life_threatening_min-overruled $?gen280 $$$ $?gen281 ) ) ) ) ( positive-defeated $?gen279 & : ( not ( member$ pn_movement_restrct_life_threatening_min $?gen279 ) ) ) ) ( test ( eq ( class ?gen277 ) min_imprisonment ) ) => ( calc ( bind $?gen282 ( create$ pn_movement_restrct_life_threatening_min-overruled $?gen280 $?gen281 ) ) ) ?gen277 <- ( min_imprisonment ( negative-overruled $?gen282 ) )"))
 
-([pn_phy_psy_more_person_min-support] of derived-attribute-rule
-   (pos-name pn_phy_psy_more_person_min-support-gen393)
-   (depends-on declare physical_psychological_abuse_more_victim min_imprisonment)
+([pn_movement_restrct_life_threatening_min-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_life_threatening_min-support-gen382)
+   (depends-on declare movement_restrictions_life_threatening min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_psy_more_person_min] ) ) ) ?gen288 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ?gen289 <- ( min_imprisonment ( value 2 ) ( positive-support $?gen291 & : ( not ( subseq-pos ( create$ pn_phy_psy_more_person_min ?gen288 $$$ $?gen291 ) ) ) ) ) ( test ( eq ( class ?gen289 ) min_imprisonment ) ) => ( calc ( bind $?gen294 ( create$ pn_phy_psy_more_person_min ?gen288 $?gen291 ) ) ) ?gen289 <- ( min_imprisonment ( positive-support $?gen294 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_life_threatening_min] ) ) ) ?gen276 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ?gen277 <- ( min_imprisonment ( value 1 ) ( positive-support $?gen279 & : ( not ( subseq-pos ( create$ pn_movement_restrct_life_threatening_min ?gen276 $$$ $?gen279 ) ) ) ) ) ( test ( eq ( class ?gen277 ) min_imprisonment ) ) => ( calc ( bind $?gen282 ( create$ pn_movement_restrct_life_threatening_min ?gen276 $?gen279 ) ) ) ?gen277 <- ( min_imprisonment ( positive-support $?gen282 ) )"))
 
-([pn_phy_psy_one_person_max-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_max-defeasibly-dot-gen395)
-   (depends-on declare max_imprisonment physical_psychological_abuse_one_victim max_imprisonment)
+([pn_movement_restrct_on_duty_max-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_max-defeasibly-dot-gen384)
+   (depends-on declare max_imprisonment movement_restrictions_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_psy_one_person_max] ) ) ) ?gen280 <- ( max_imprisonment ( value 15 ) ( positive 1 ) ( positive-derivator pn_phy_psy_one_person_max $? ) ) ( test ( eq ( class ?gen280 ) max_imprisonment ) ) ( not ( and ?gen287 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen286 & : ( >= ?gen286 1 ) ) ) ?gen280 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen282 & : ( not ( member$ pn_phy_psy_one_person_max $?gen282 ) ) ) ) ) ) => ?gen280 <- ( max_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_on_duty_max] ) ) ) ?gen268 <- ( max_imprisonment ( value 5 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_on_duty_max $? ) ) ( test ( eq ( class ?gen268 ) max_imprisonment ) ) ( not ( and ?gen275 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen274 & : ( >= ?gen274 1 ) ) ) ?gen268 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen270 & : ( not ( member$ pn_movement_restrct_on_duty_max $?gen270 ) ) ) ) ) ) => ?gen268 <- ( max_imprisonment ( positive 0 ) )"))
 
-([pn_phy_psy_one_person_max-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_max-defeasibly-gen397)
-   (depends-on declare physical_psychological_abuse_one_victim max_imprisonment)
+([pn_movement_restrct_on_duty_max-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_max-defeasibly-gen386)
+   (depends-on declare movement_restrictions_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_psy_one_person_max] ) ) ) ?gen287 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen286 & : ( >= ?gen286 1 ) ) ) ?gen280 <- ( max_imprisonment ( value 15 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen282 & : ( not ( member$ pn_phy_psy_one_person_max $?gen282 ) ) ) ) ( test ( eq ( class ?gen280 ) max_imprisonment ) ) => ?gen280 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_phy_psy_one_person_max ?gen287 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_on_duty_max] ) ) ) ?gen275 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen274 & : ( >= ?gen274 1 ) ) ) ?gen268 <- ( max_imprisonment ( value 5 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen270 & : ( not ( member$ pn_movement_restrct_on_duty_max $?gen270 ) ) ) ) ( test ( eq ( class ?gen268 ) max_imprisonment ) ) => ?gen268 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_on_duty_max ?gen275 ) )"))
 
-([pn_phy_psy_one_person_max-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_max-overruled-dot-gen399)
-   (depends-on declare max_imprisonment physical_psychological_abuse_one_victim max_imprisonment)
+([pn_movement_restrct_on_duty_max-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_max-overruled-dot-gen388)
+   (depends-on declare max_imprisonment movement_restrictions_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_psy_one_person_max] ) ) ) ?gen280 <- ( max_imprisonment ( value 15 ) ( negative-support $?gen283 ) ( negative-overruled $?gen284 & : ( subseq-pos ( create$ pn_phy_psy_one_person_max-overruled $?gen283 $$$ $?gen284 ) ) ) ) ( test ( eq ( class ?gen280 ) max_imprisonment ) ) ( not ( and ?gen287 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen286 & : ( >= ?gen286 1 ) ) ) ?gen280 <- ( max_imprisonment ( positive-defeated $?gen282 & : ( not ( member$ pn_phy_psy_one_person_max $?gen282 ) ) ) ) ) ) => ( calc ( bind $?gen285 ( delete-member$ $?gen284 ( create$ pn_phy_psy_one_person_max-overruled $?gen283 ) ) ) ) ?gen280 <- ( max_imprisonment ( negative-overruled $?gen285 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_on_duty_max] ) ) ) ?gen268 <- ( max_imprisonment ( value 5 ) ( negative-support $?gen271 ) ( negative-overruled $?gen272 & : ( subseq-pos ( create$ pn_movement_restrct_on_duty_max-overruled $?gen271 $$$ $?gen272 ) ) ) ) ( test ( eq ( class ?gen268 ) max_imprisonment ) ) ( not ( and ?gen275 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen274 & : ( >= ?gen274 1 ) ) ) ?gen268 <- ( max_imprisonment ( positive-defeated $?gen270 & : ( not ( member$ pn_movement_restrct_on_duty_max $?gen270 ) ) ) ) ) ) => ( calc ( bind $?gen273 ( delete-member$ $?gen272 ( create$ pn_movement_restrct_on_duty_max-overruled $?gen271 ) ) ) ) ?gen268 <- ( max_imprisonment ( negative-overruled $?gen273 ) )"))
 
-([pn_phy_psy_one_person_max-overruled] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_max-overruled-gen401)
-   (depends-on declare physical_psychological_abuse_one_victim max_imprisonment)
+([pn_movement_restrct_on_duty_max-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_max-overruled-gen390)
+   (depends-on declare movement_restrictions_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_psy_one_person_max] ) ) ) ?gen287 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen286 & : ( >= ?gen286 1 ) ) ) ?gen280 <- ( max_imprisonment ( value 15 ) ( negative-support $?gen283 ) ( negative-overruled $?gen284 & : ( not ( subseq-pos ( create$ pn_phy_psy_one_person_max-overruled $?gen283 $$$ $?gen284 ) ) ) ) ( positive-defeated $?gen282 & : ( not ( member$ pn_phy_psy_one_person_max $?gen282 ) ) ) ) ( test ( eq ( class ?gen280 ) max_imprisonment ) ) => ( calc ( bind $?gen285 ( create$ pn_phy_psy_one_person_max-overruled $?gen283 $?gen284 ) ) ) ?gen280 <- ( max_imprisonment ( negative-overruled $?gen285 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_on_duty_max] ) ) ) ?gen275 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen274 & : ( >= ?gen274 1 ) ) ) ?gen268 <- ( max_imprisonment ( value 5 ) ( negative-support $?gen271 ) ( negative-overruled $?gen272 & : ( not ( subseq-pos ( create$ pn_movement_restrct_on_duty_max-overruled $?gen271 $$$ $?gen272 ) ) ) ) ( positive-defeated $?gen270 & : ( not ( member$ pn_movement_restrct_on_duty_max $?gen270 ) ) ) ) ( test ( eq ( class ?gen268 ) max_imprisonment ) ) => ( calc ( bind $?gen273 ( create$ pn_movement_restrct_on_duty_max-overruled $?gen271 $?gen272 ) ) ) ?gen268 <- ( max_imprisonment ( negative-overruled $?gen273 ) )"))
 
-([pn_phy_psy_one_person_max-support] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_max-support-gen403)
-   (depends-on declare physical_psychological_abuse_one_victim max_imprisonment)
+([pn_movement_restrct_on_duty_max-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_max-support-gen392)
+   (depends-on declare movement_restrictions_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_psy_one_person_max] ) ) ) ?gen279 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ?gen280 <- ( max_imprisonment ( value 15 ) ( positive-support $?gen282 & : ( not ( subseq-pos ( create$ pn_phy_psy_one_person_max ?gen279 $$$ $?gen282 ) ) ) ) ) ( test ( eq ( class ?gen280 ) max_imprisonment ) ) => ( calc ( bind $?gen285 ( create$ pn_phy_psy_one_person_max ?gen279 $?gen282 ) ) ) ?gen280 <- ( max_imprisonment ( positive-support $?gen285 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_on_duty_max] ) ) ) ?gen267 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ?gen268 <- ( max_imprisonment ( value 5 ) ( positive-support $?gen270 & : ( not ( subseq-pos ( create$ pn_movement_restrct_on_duty_max ?gen267 $$$ $?gen270 ) ) ) ) ) ( test ( eq ( class ?gen268 ) max_imprisonment ) ) => ( calc ( bind $?gen273 ( create$ pn_movement_restrct_on_duty_max ?gen267 $?gen270 ) ) ) ?gen268 <- ( max_imprisonment ( positive-support $?gen273 ) )"))
 
-([pn_phy_psy_one_person_min-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_min-defeasibly-dot-gen405)
-   (depends-on declare min_imprisonment physical_psychological_abuse_one_victim min_imprisonment)
+([pn_movement_restrct_on_duty_min-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_min-defeasibly-dot-gen394)
+   (depends-on declare min_imprisonment movement_restrictions_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_psy_one_person_min] ) ) ) ?gen271 <- ( min_imprisonment ( value 2 ) ( positive 1 ) ( positive-derivator pn_phy_psy_one_person_min $? ) ) ( test ( eq ( class ?gen271 ) min_imprisonment ) ) ( not ( and ?gen278 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen277 & : ( >= ?gen277 1 ) ) ) ?gen271 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen273 & : ( not ( member$ pn_phy_psy_one_person_min $?gen273 ) ) ) ) ) ) => ?gen271 <- ( min_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_on_duty_min] ) ) ) ?gen259 <- ( min_imprisonment ( value 1 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_on_duty_min $? ) ) ( test ( eq ( class ?gen259 ) min_imprisonment ) ) ( not ( and ?gen266 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen265 & : ( >= ?gen265 1 ) ) ) ?gen259 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen261 & : ( not ( member$ pn_movement_restrct_on_duty_min $?gen261 ) ) ) ) ) ) => ?gen259 <- ( min_imprisonment ( positive 0 ) )"))
 
-([pn_phy_psy_one_person_min-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_min-defeasibly-gen407)
-   (depends-on declare physical_psychological_abuse_one_victim min_imprisonment)
+([pn_movement_restrct_on_duty_min-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_min-defeasibly-gen396)
+   (depends-on declare movement_restrictions_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_psy_one_person_min] ) ) ) ?gen278 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen277 & : ( >= ?gen277 1 ) ) ) ?gen271 <- ( min_imprisonment ( value 2 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen273 & : ( not ( member$ pn_phy_psy_one_person_min $?gen273 ) ) ) ) ( test ( eq ( class ?gen271 ) min_imprisonment ) ) => ?gen271 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_phy_psy_one_person_min ?gen278 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_on_duty_min] ) ) ) ?gen266 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen265 & : ( >= ?gen265 1 ) ) ) ?gen259 <- ( min_imprisonment ( value 1 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen261 & : ( not ( member$ pn_movement_restrct_on_duty_min $?gen261 ) ) ) ) ( test ( eq ( class ?gen259 ) min_imprisonment ) ) => ?gen259 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_on_duty_min ?gen266 ) )"))
 
-([pn_phy_psy_one_person_min-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_min-overruled-dot-gen409)
-   (depends-on declare min_imprisonment physical_psychological_abuse_one_victim min_imprisonment)
+([pn_movement_restrct_on_duty_min-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_min-overruled-dot-gen398)
+   (depends-on declare min_imprisonment movement_restrictions_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_psy_one_person_min] ) ) ) ?gen271 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen274 ) ( negative-overruled $?gen275 & : ( subseq-pos ( create$ pn_phy_psy_one_person_min-overruled $?gen274 $$$ $?gen275 ) ) ) ) ( test ( eq ( class ?gen271 ) min_imprisonment ) ) ( not ( and ?gen278 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen277 & : ( >= ?gen277 1 ) ) ) ?gen271 <- ( min_imprisonment ( positive-defeated $?gen273 & : ( not ( member$ pn_phy_psy_one_person_min $?gen273 ) ) ) ) ) ) => ( calc ( bind $?gen276 ( delete-member$ $?gen275 ( create$ pn_phy_psy_one_person_min-overruled $?gen274 ) ) ) ) ?gen271 <- ( min_imprisonment ( negative-overruled $?gen276 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_on_duty_min] ) ) ) ?gen259 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen262 ) ( negative-overruled $?gen263 & : ( subseq-pos ( create$ pn_movement_restrct_on_duty_min-overruled $?gen262 $$$ $?gen263 ) ) ) ) ( test ( eq ( class ?gen259 ) min_imprisonment ) ) ( not ( and ?gen266 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen265 & : ( >= ?gen265 1 ) ) ) ?gen259 <- ( min_imprisonment ( positive-defeated $?gen261 & : ( not ( member$ pn_movement_restrct_on_duty_min $?gen261 ) ) ) ) ) ) => ( calc ( bind $?gen264 ( delete-member$ $?gen263 ( create$ pn_movement_restrct_on_duty_min-overruled $?gen262 ) ) ) ) ?gen259 <- ( min_imprisonment ( negative-overruled $?gen264 ) )"))
 
-([pn_phy_psy_one_person_min-overruled] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_min-overruled-gen411)
-   (depends-on declare physical_psychological_abuse_one_victim min_imprisonment)
+([pn_movement_restrct_on_duty_min-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_min-overruled-gen400)
+   (depends-on declare movement_restrictions_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_psy_one_person_min] ) ) ) ?gen278 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen277 & : ( >= ?gen277 1 ) ) ) ?gen271 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen274 ) ( negative-overruled $?gen275 & : ( not ( subseq-pos ( create$ pn_phy_psy_one_person_min-overruled $?gen274 $$$ $?gen275 ) ) ) ) ( positive-defeated $?gen273 & : ( not ( member$ pn_phy_psy_one_person_min $?gen273 ) ) ) ) ( test ( eq ( class ?gen271 ) min_imprisonment ) ) => ( calc ( bind $?gen276 ( create$ pn_phy_psy_one_person_min-overruled $?gen274 $?gen275 ) ) ) ?gen271 <- ( min_imprisonment ( negative-overruled $?gen276 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_on_duty_min] ) ) ) ?gen266 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen265 & : ( >= ?gen265 1 ) ) ) ?gen259 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen262 ) ( negative-overruled $?gen263 & : ( not ( subseq-pos ( create$ pn_movement_restrct_on_duty_min-overruled $?gen262 $$$ $?gen263 ) ) ) ) ( positive-defeated $?gen261 & : ( not ( member$ pn_movement_restrct_on_duty_min $?gen261 ) ) ) ) ( test ( eq ( class ?gen259 ) min_imprisonment ) ) => ( calc ( bind $?gen264 ( create$ pn_movement_restrct_on_duty_min-overruled $?gen262 $?gen263 ) ) ) ?gen259 <- ( min_imprisonment ( negative-overruled $?gen264 ) )"))
 
-([pn_phy_psy_one_person_min-support] of derived-attribute-rule
-   (pos-name pn_phy_psy_one_person_min-support-gen413)
-   (depends-on declare physical_psychological_abuse_one_victim min_imprisonment)
+([pn_movement_restrct_on_duty_min-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_on_duty_min-support-gen402)
+   (depends-on declare movement_restrictions_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_psy_one_person_min] ) ) ) ?gen270 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ?gen271 <- ( min_imprisonment ( value 2 ) ( positive-support $?gen273 & : ( not ( subseq-pos ( create$ pn_phy_psy_one_person_min ?gen270 $$$ $?gen273 ) ) ) ) ) ( test ( eq ( class ?gen271 ) min_imprisonment ) ) => ( calc ( bind $?gen276 ( create$ pn_phy_psy_one_person_min ?gen270 $?gen273 ) ) ) ?gen271 <- ( min_imprisonment ( positive-support $?gen276 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_on_duty_min] ) ) ) ?gen258 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ?gen259 <- ( min_imprisonment ( value 1 ) ( positive-support $?gen261 & : ( not ( subseq-pos ( create$ pn_movement_restrct_on_duty_min ?gen258 $$$ $?gen261 ) ) ) ) ) ( test ( eq ( class ?gen259 ) min_imprisonment ) ) => ( calc ( bind $?gen264 ( create$ pn_movement_restrct_on_duty_min ?gen258 $?gen261 ) ) ) ?gen259 <- ( min_imprisonment ( positive-support $?gen264 ) )"))
 
-([pn_psy_more_person_max-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_psy_more_person_max-defeasibly-dot-gen415)
-   (depends-on declare max_imprisonment psychological_abuse_more_victims max_imprisonment)
+([pn_movement_restrct_max-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_max-defeasibly-dot-gen404)
+   (depends-on declare max_imprisonment movement_restrictions max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_more_person_max] ) ) ) ?gen262 <- ( max_imprisonment ( value 10 ) ( positive 1 ) ( positive-derivator pn_psy_more_person_max $? ) ) ( test ( eq ( class ?gen262 ) max_imprisonment ) ) ( not ( and ?gen269 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen268 & : ( >= ?gen268 1 ) ) ) ?gen262 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen264 & : ( not ( member$ pn_psy_more_person_max $?gen264 ) ) ) ) ) ) => ?gen262 <- ( max_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_max] ) ) ) ?gen250 <- ( max_imprisonment ( value 1 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_max $? ) ) ( test ( eq ( class ?gen250 ) max_imprisonment ) ) ( not ( and ?gen257 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen256 & : ( >= ?gen256 1 ) ) ) ?gen250 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen252 & : ( not ( member$ pn_movement_restrct_max $?gen252 ) ) ) ) ) ) => ?gen250 <- ( max_imprisonment ( positive 0 ) )"))
 
-([pn_psy_more_person_max-defeasibly] of derived-attribute-rule
-   (pos-name pn_psy_more_person_max-defeasibly-gen417)
-   (depends-on declare psychological_abuse_more_victims max_imprisonment)
+([pn_movement_restrct_max-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_max-defeasibly-gen406)
+   (depends-on declare movement_restrictions max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_more_person_max] ) ) ) ?gen269 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen268 & : ( >= ?gen268 1 ) ) ) ?gen262 <- ( max_imprisonment ( value 10 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen264 & : ( not ( member$ pn_psy_more_person_max $?gen264 ) ) ) ) ( test ( eq ( class ?gen262 ) max_imprisonment ) ) => ?gen262 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_psy_more_person_max ?gen269 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_max] ) ) ) ?gen257 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen256 & : ( >= ?gen256 1 ) ) ) ?gen250 <- ( max_imprisonment ( value 1 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen252 & : ( not ( member$ pn_movement_restrct_max $?gen252 ) ) ) ) ( test ( eq ( class ?gen250 ) max_imprisonment ) ) => ?gen250 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_max ?gen257 ) )"))
 
-([pn_psy_more_person_max-overruled-dot] of derived-attribute-rule
-   (pos-name pn_psy_more_person_max-overruled-dot-gen419)
-   (depends-on declare max_imprisonment psychological_abuse_more_victims max_imprisonment)
+([pn_movement_restrct_max-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_max-overruled-dot-gen408)
+   (depends-on declare max_imprisonment movement_restrictions max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_more_person_max] ) ) ) ?gen262 <- ( max_imprisonment ( value 10 ) ( negative-support $?gen265 ) ( negative-overruled $?gen266 & : ( subseq-pos ( create$ pn_psy_more_person_max-overruled $?gen265 $$$ $?gen266 ) ) ) ) ( test ( eq ( class ?gen262 ) max_imprisonment ) ) ( not ( and ?gen269 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen268 & : ( >= ?gen268 1 ) ) ) ?gen262 <- ( max_imprisonment ( positive-defeated $?gen264 & : ( not ( member$ pn_psy_more_person_max $?gen264 ) ) ) ) ) ) => ( calc ( bind $?gen267 ( delete-member$ $?gen266 ( create$ pn_psy_more_person_max-overruled $?gen265 ) ) ) ) ?gen262 <- ( max_imprisonment ( negative-overruled $?gen267 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_max] ) ) ) ?gen250 <- ( max_imprisonment ( value 1 ) ( negative-support $?gen253 ) ( negative-overruled $?gen254 & : ( subseq-pos ( create$ pn_movement_restrct_max-overruled $?gen253 $$$ $?gen254 ) ) ) ) ( test ( eq ( class ?gen250 ) max_imprisonment ) ) ( not ( and ?gen257 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen256 & : ( >= ?gen256 1 ) ) ) ?gen250 <- ( max_imprisonment ( positive-defeated $?gen252 & : ( not ( member$ pn_movement_restrct_max $?gen252 ) ) ) ) ) ) => ( calc ( bind $?gen255 ( delete-member$ $?gen254 ( create$ pn_movement_restrct_max-overruled $?gen253 ) ) ) ) ?gen250 <- ( max_imprisonment ( negative-overruled $?gen255 ) )"))
 
-([pn_psy_more_person_max-overruled] of derived-attribute-rule
-   (pos-name pn_psy_more_person_max-overruled-gen421)
-   (depends-on declare psychological_abuse_more_victims max_imprisonment)
+([pn_movement_restrct_max-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_max-overruled-gen410)
+   (depends-on declare movement_restrictions max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_more_person_max] ) ) ) ?gen269 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen268 & : ( >= ?gen268 1 ) ) ) ?gen262 <- ( max_imprisonment ( value 10 ) ( negative-support $?gen265 ) ( negative-overruled $?gen266 & : ( not ( subseq-pos ( create$ pn_psy_more_person_max-overruled $?gen265 $$$ $?gen266 ) ) ) ) ( positive-defeated $?gen264 & : ( not ( member$ pn_psy_more_person_max $?gen264 ) ) ) ) ( test ( eq ( class ?gen262 ) max_imprisonment ) ) => ( calc ( bind $?gen267 ( create$ pn_psy_more_person_max-overruled $?gen265 $?gen266 ) ) ) ?gen262 <- ( max_imprisonment ( negative-overruled $?gen267 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_max] ) ) ) ?gen257 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen256 & : ( >= ?gen256 1 ) ) ) ?gen250 <- ( max_imprisonment ( value 1 ) ( negative-support $?gen253 ) ( negative-overruled $?gen254 & : ( not ( subseq-pos ( create$ pn_movement_restrct_max-overruled $?gen253 $$$ $?gen254 ) ) ) ) ( positive-defeated $?gen252 & : ( not ( member$ pn_movement_restrct_max $?gen252 ) ) ) ) ( test ( eq ( class ?gen250 ) max_imprisonment ) ) => ( calc ( bind $?gen255 ( create$ pn_movement_restrct_max-overruled $?gen253 $?gen254 ) ) ) ?gen250 <- ( max_imprisonment ( negative-overruled $?gen255 ) )"))
 
-([pn_psy_more_person_max-support] of derived-attribute-rule
-   (pos-name pn_psy_more_person_max-support-gen423)
-   (depends-on declare psychological_abuse_more_victims max_imprisonment)
+([pn_movement_restrct_max-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_max-support-gen412)
+   (depends-on declare movement_restrictions max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_more_person_max] ) ) ) ?gen261 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ) ?gen262 <- ( max_imprisonment ( value 10 ) ( positive-support $?gen264 & : ( not ( subseq-pos ( create$ pn_psy_more_person_max ?gen261 $$$ $?gen264 ) ) ) ) ) ( test ( eq ( class ?gen262 ) max_imprisonment ) ) => ( calc ( bind $?gen267 ( create$ pn_psy_more_person_max ?gen261 $?gen264 ) ) ) ?gen262 <- ( max_imprisonment ( positive-support $?gen267 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_max] ) ) ) ?gen249 <- ( movement_restrictions ( defendant ?Defendant ) ) ?gen250 <- ( max_imprisonment ( value 1 ) ( positive-support $?gen252 & : ( not ( subseq-pos ( create$ pn_movement_restrct_max ?gen249 $$$ $?gen252 ) ) ) ) ) ( test ( eq ( class ?gen250 ) max_imprisonment ) ) => ( calc ( bind $?gen255 ( create$ pn_movement_restrct_max ?gen249 $?gen252 ) ) ) ?gen250 <- ( max_imprisonment ( positive-support $?gen255 ) )"))
 
-([pn_psy_more_person_min-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_psy_more_person_min-defeasibly-dot-gen425)
-   (depends-on declare min_imprisonment psychological_abuse_more_victims min_imprisonment)
+([pn_movement_restrct_min-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_min-defeasibly-dot-gen414)
+   (depends-on declare min_imprisonment movement_restrictions min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_more_person_min] ) ) ) ?gen253 <- ( min_imprisonment ( value 5 ) ( positive 1 ) ( positive-derivator pn_psy_more_person_min $? ) ) ( test ( eq ( class ?gen253 ) min_imprisonment ) ) ( not ( and ?gen260 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen259 & : ( >= ?gen259 1 ) ) ) ?gen253 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen255 & : ( not ( member$ pn_psy_more_person_min $?gen255 ) ) ) ) ) ) => ?gen253 <- ( min_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_movement_restrct_min] ) ) ) ?gen241 <- ( min_imprisonment ( value 0 ) ( positive 1 ) ( positive-derivator pn_movement_restrct_min $? ) ) ( test ( eq ( class ?gen241 ) min_imprisonment ) ) ( not ( and ?gen248 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen247 & : ( >= ?gen247 1 ) ) ) ?gen241 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen243 & : ( not ( member$ pn_movement_restrct_min $?gen243 ) ) ) ) ) ) => ?gen241 <- ( min_imprisonment ( positive 0 ) )"))
 
-([pn_psy_more_person_min-defeasibly] of derived-attribute-rule
-   (pos-name pn_psy_more_person_min-defeasibly-gen427)
-   (depends-on declare psychological_abuse_more_victims min_imprisonment)
+([pn_movement_restrct_min-defeasibly] of derived-attribute-rule
+   (pos-name pn_movement_restrct_min-defeasibly-gen416)
+   (depends-on declare movement_restrictions min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_more_person_min] ) ) ) ?gen260 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen259 & : ( >= ?gen259 1 ) ) ) ?gen253 <- ( min_imprisonment ( value 5 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen255 & : ( not ( member$ pn_psy_more_person_min $?gen255 ) ) ) ) ( test ( eq ( class ?gen253 ) min_imprisonment ) ) => ?gen253 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_psy_more_person_min ?gen260 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_movement_restrct_min] ) ) ) ?gen248 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen247 & : ( >= ?gen247 1 ) ) ) ?gen241 <- ( min_imprisonment ( value 0 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen243 & : ( not ( member$ pn_movement_restrct_min $?gen243 ) ) ) ) ( test ( eq ( class ?gen241 ) min_imprisonment ) ) => ?gen241 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_movement_restrct_min ?gen248 ) )"))
 
-([pn_psy_more_person_min-overruled-dot] of derived-attribute-rule
-   (pos-name pn_psy_more_person_min-overruled-dot-gen429)
-   (depends-on declare min_imprisonment psychological_abuse_more_victims min_imprisonment)
+([pn_movement_restrct_min-overruled-dot] of derived-attribute-rule
+   (pos-name pn_movement_restrct_min-overruled-dot-gen418)
+   (depends-on declare min_imprisonment movement_restrictions min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_more_person_min] ) ) ) ?gen253 <- ( min_imprisonment ( value 5 ) ( negative-support $?gen256 ) ( negative-overruled $?gen257 & : ( subseq-pos ( create$ pn_psy_more_person_min-overruled $?gen256 $$$ $?gen257 ) ) ) ) ( test ( eq ( class ?gen253 ) min_imprisonment ) ) ( not ( and ?gen260 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen259 & : ( >= ?gen259 1 ) ) ) ?gen253 <- ( min_imprisonment ( positive-defeated $?gen255 & : ( not ( member$ pn_psy_more_person_min $?gen255 ) ) ) ) ) ) => ( calc ( bind $?gen258 ( delete-member$ $?gen257 ( create$ pn_psy_more_person_min-overruled $?gen256 ) ) ) ) ?gen253 <- ( min_imprisonment ( negative-overruled $?gen258 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_movement_restrct_min] ) ) ) ?gen241 <- ( min_imprisonment ( value 0 ) ( negative-support $?gen244 ) ( negative-overruled $?gen245 & : ( subseq-pos ( create$ pn_movement_restrct_min-overruled $?gen244 $$$ $?gen245 ) ) ) ) ( test ( eq ( class ?gen241 ) min_imprisonment ) ) ( not ( and ?gen248 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen247 & : ( >= ?gen247 1 ) ) ) ?gen241 <- ( min_imprisonment ( positive-defeated $?gen243 & : ( not ( member$ pn_movement_restrct_min $?gen243 ) ) ) ) ) ) => ( calc ( bind $?gen246 ( delete-member$ $?gen245 ( create$ pn_movement_restrct_min-overruled $?gen244 ) ) ) ) ?gen241 <- ( min_imprisonment ( negative-overruled $?gen246 ) )"))
 
-([pn_psy_more_person_min-overruled] of derived-attribute-rule
-   (pos-name pn_psy_more_person_min-overruled-gen431)
-   (depends-on declare psychological_abuse_more_victims min_imprisonment)
+([pn_movement_restrct_min-overruled] of derived-attribute-rule
+   (pos-name pn_movement_restrct_min-overruled-gen420)
+   (depends-on declare movement_restrictions min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_more_person_min] ) ) ) ?gen260 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive ?gen259 & : ( >= ?gen259 1 ) ) ) ?gen253 <- ( min_imprisonment ( value 5 ) ( negative-support $?gen256 ) ( negative-overruled $?gen257 & : ( not ( subseq-pos ( create$ pn_psy_more_person_min-overruled $?gen256 $$$ $?gen257 ) ) ) ) ( positive-defeated $?gen255 & : ( not ( member$ pn_psy_more_person_min $?gen255 ) ) ) ) ( test ( eq ( class ?gen253 ) min_imprisonment ) ) => ( calc ( bind $?gen258 ( create$ pn_psy_more_person_min-overruled $?gen256 $?gen257 ) ) ) ?gen253 <- ( min_imprisonment ( negative-overruled $?gen258 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_movement_restrct_min] ) ) ) ?gen248 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen247 & : ( >= ?gen247 1 ) ) ) ?gen241 <- ( min_imprisonment ( value 0 ) ( negative-support $?gen244 ) ( negative-overruled $?gen245 & : ( not ( subseq-pos ( create$ pn_movement_restrct_min-overruled $?gen244 $$$ $?gen245 ) ) ) ) ( positive-defeated $?gen243 & : ( not ( member$ pn_movement_restrct_min $?gen243 ) ) ) ) ( test ( eq ( class ?gen241 ) min_imprisonment ) ) => ( calc ( bind $?gen246 ( create$ pn_movement_restrct_min-overruled $?gen244 $?gen245 ) ) ) ?gen241 <- ( min_imprisonment ( negative-overruled $?gen246 ) )"))
 
-([pn_psy_more_person_min-support] of derived-attribute-rule
-   (pos-name pn_psy_more_person_min-support-gen433)
-   (depends-on declare psychological_abuse_more_victims min_imprisonment)
+([pn_movement_restrct_min-support] of derived-attribute-rule
+   (pos-name pn_movement_restrct_min-support-gen422)
+   (depends-on declare movement_restrictions min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_more_person_min] ) ) ) ?gen252 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ) ?gen253 <- ( min_imprisonment ( value 5 ) ( positive-support $?gen255 & : ( not ( subseq-pos ( create$ pn_psy_more_person_min ?gen252 $$$ $?gen255 ) ) ) ) ) ( test ( eq ( class ?gen253 ) min_imprisonment ) ) => ( calc ( bind $?gen258 ( create$ pn_psy_more_person_min ?gen252 $?gen255 ) ) ) ?gen253 <- ( min_imprisonment ( positive-support $?gen258 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_movement_restrct_min] ) ) ) ?gen240 <- ( movement_restrictions ( defendant ?Defendant ) ) ?gen241 <- ( min_imprisonment ( value 0 ) ( positive-support $?gen243 & : ( not ( subseq-pos ( create$ pn_movement_restrct_min ?gen240 $$$ $?gen243 ) ) ) ) ) ( test ( eq ( class ?gen241 ) min_imprisonment ) ) => ( calc ( bind $?gen246 ( create$ pn_movement_restrct_min ?gen240 $?gen243 ) ) ) ?gen241 <- ( min_imprisonment ( positive-support $?gen246 ) )"))
 
-([pn_phy_more_person_max-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_more_person_max-defeasibly-dot-gen435)
-   (depends-on declare max_imprisonment physical_abuse_more_victim max_imprisonment)
+([pn_psy_abuse_on_duty_max-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_max-defeasibly-dot-gen424)
+   (depends-on declare max_imprisonment psychological_abuse_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_more_person_max] ) ) ) ?gen244 <- ( max_imprisonment ( value 6 ) ( positive 1 ) ( positive-derivator pn_phy_more_person_max $? ) ) ( test ( eq ( class ?gen244 ) max_imprisonment ) ) ( not ( and ?gen251 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen250 & : ( >= ?gen250 1 ) ) ) ?gen244 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen246 & : ( not ( member$ pn_phy_more_person_max $?gen246 ) ) ) ) ) ) => ?gen244 <- ( max_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_abuse_on_duty_max] ) ) ) ?gen232 <- ( max_imprisonment ( value 8 ) ( positive 1 ) ( positive-derivator pn_psy_abuse_on_duty_max $? ) ) ( test ( eq ( class ?gen232 ) max_imprisonment ) ) ( not ( and ?gen239 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen238 & : ( >= ?gen238 1 ) ) ) ?gen232 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen234 & : ( not ( member$ pn_psy_abuse_on_duty_max $?gen234 ) ) ) ) ) ) => ?gen232 <- ( max_imprisonment ( positive 0 ) )"))
 
-([pn_phy_more_person_max-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_more_person_max-defeasibly-gen437)
-   (depends-on declare physical_abuse_more_victim max_imprisonment)
+([pn_psy_abuse_on_duty_max-defeasibly] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_max-defeasibly-gen426)
+   (depends-on declare psychological_abuse_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_more_person_max] ) ) ) ?gen251 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen250 & : ( >= ?gen250 1 ) ) ) ?gen244 <- ( max_imprisonment ( value 6 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen246 & : ( not ( member$ pn_phy_more_person_max $?gen246 ) ) ) ) ( test ( eq ( class ?gen244 ) max_imprisonment ) ) => ?gen244 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_phy_more_person_max ?gen251 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_abuse_on_duty_max] ) ) ) ?gen239 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen238 & : ( >= ?gen238 1 ) ) ) ?gen232 <- ( max_imprisonment ( value 8 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen234 & : ( not ( member$ pn_psy_abuse_on_duty_max $?gen234 ) ) ) ) ( test ( eq ( class ?gen232 ) max_imprisonment ) ) => ?gen232 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_psy_abuse_on_duty_max ?gen239 ) )"))
 
-([pn_phy_more_person_max-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_more_person_max-overruled-dot-gen439)
-   (depends-on declare max_imprisonment physical_abuse_more_victim max_imprisonment)
+([pn_psy_abuse_on_duty_max-overruled-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_max-overruled-dot-gen428)
+   (depends-on declare max_imprisonment psychological_abuse_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_more_person_max] ) ) ) ?gen244 <- ( max_imprisonment ( value 6 ) ( negative-support $?gen247 ) ( negative-overruled $?gen248 & : ( subseq-pos ( create$ pn_phy_more_person_max-overruled $?gen247 $$$ $?gen248 ) ) ) ) ( test ( eq ( class ?gen244 ) max_imprisonment ) ) ( not ( and ?gen251 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen250 & : ( >= ?gen250 1 ) ) ) ?gen244 <- ( max_imprisonment ( positive-defeated $?gen246 & : ( not ( member$ pn_phy_more_person_max $?gen246 ) ) ) ) ) ) => ( calc ( bind $?gen249 ( delete-member$ $?gen248 ( create$ pn_phy_more_person_max-overruled $?gen247 ) ) ) ) ?gen244 <- ( max_imprisonment ( negative-overruled $?gen249 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_abuse_on_duty_max] ) ) ) ?gen232 <- ( max_imprisonment ( value 8 ) ( negative-support $?gen235 ) ( negative-overruled $?gen236 & : ( subseq-pos ( create$ pn_psy_abuse_on_duty_max-overruled $?gen235 $$$ $?gen236 ) ) ) ) ( test ( eq ( class ?gen232 ) max_imprisonment ) ) ( not ( and ?gen239 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen238 & : ( >= ?gen238 1 ) ) ) ?gen232 <- ( max_imprisonment ( positive-defeated $?gen234 & : ( not ( member$ pn_psy_abuse_on_duty_max $?gen234 ) ) ) ) ) ) => ( calc ( bind $?gen237 ( delete-member$ $?gen236 ( create$ pn_psy_abuse_on_duty_max-overruled $?gen235 ) ) ) ) ?gen232 <- ( max_imprisonment ( negative-overruled $?gen237 ) )"))
 
-([pn_phy_more_person_max-overruled] of derived-attribute-rule
-   (pos-name pn_phy_more_person_max-overruled-gen441)
-   (depends-on declare physical_abuse_more_victim max_imprisonment)
+([pn_psy_abuse_on_duty_max-overruled] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_max-overruled-gen430)
+   (depends-on declare psychological_abuse_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_more_person_max] ) ) ) ?gen251 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen250 & : ( >= ?gen250 1 ) ) ) ?gen244 <- ( max_imprisonment ( value 6 ) ( negative-support $?gen247 ) ( negative-overruled $?gen248 & : ( not ( subseq-pos ( create$ pn_phy_more_person_max-overruled $?gen247 $$$ $?gen248 ) ) ) ) ( positive-defeated $?gen246 & : ( not ( member$ pn_phy_more_person_max $?gen246 ) ) ) ) ( test ( eq ( class ?gen244 ) max_imprisonment ) ) => ( calc ( bind $?gen249 ( create$ pn_phy_more_person_max-overruled $?gen247 $?gen248 ) ) ) ?gen244 <- ( max_imprisonment ( negative-overruled $?gen249 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_abuse_on_duty_max] ) ) ) ?gen239 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen238 & : ( >= ?gen238 1 ) ) ) ?gen232 <- ( max_imprisonment ( value 8 ) ( negative-support $?gen235 ) ( negative-overruled $?gen236 & : ( not ( subseq-pos ( create$ pn_psy_abuse_on_duty_max-overruled $?gen235 $$$ $?gen236 ) ) ) ) ( positive-defeated $?gen234 & : ( not ( member$ pn_psy_abuse_on_duty_max $?gen234 ) ) ) ) ( test ( eq ( class ?gen232 ) max_imprisonment ) ) => ( calc ( bind $?gen237 ( create$ pn_psy_abuse_on_duty_max-overruled $?gen235 $?gen236 ) ) ) ?gen232 <- ( max_imprisonment ( negative-overruled $?gen237 ) )"))
 
-([pn_phy_more_person_max-support] of derived-attribute-rule
-   (pos-name pn_phy_more_person_max-support-gen443)
-   (depends-on declare physical_abuse_more_victim max_imprisonment)
+([pn_psy_abuse_on_duty_max-support] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_max-support-gen432)
+   (depends-on declare psychological_abuse_on_duty max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_more_person_max] ) ) ) ?gen243 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ) ?gen244 <- ( max_imprisonment ( value 6 ) ( positive-support $?gen246 & : ( not ( subseq-pos ( create$ pn_phy_more_person_max ?gen243 $$$ $?gen246 ) ) ) ) ) ( test ( eq ( class ?gen244 ) max_imprisonment ) ) => ( calc ( bind $?gen249 ( create$ pn_phy_more_person_max ?gen243 $?gen246 ) ) ) ?gen244 <- ( max_imprisonment ( positive-support $?gen249 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_abuse_on_duty_max] ) ) ) ?gen231 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ?gen232 <- ( max_imprisonment ( value 8 ) ( positive-support $?gen234 & : ( not ( subseq-pos ( create$ pn_psy_abuse_on_duty_max ?gen231 $$$ $?gen234 ) ) ) ) ) ( test ( eq ( class ?gen232 ) max_imprisonment ) ) => ( calc ( bind $?gen237 ( create$ pn_psy_abuse_on_duty_max ?gen231 $?gen234 ) ) ) ?gen232 <- ( max_imprisonment ( positive-support $?gen237 ) )"))
 
-([pn_phy_more_person_min-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_more_person_min-defeasibly-dot-gen445)
-   (depends-on declare min_imprisonment physical_abuse_more_victim min_imprisonment)
+([pn_psy_abuse_on_duty_min-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_min-defeasibly-dot-gen434)
+   (depends-on declare min_imprisonment psychological_abuse_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_more_person_min] ) ) ) ?gen235 <- ( min_imprisonment ( value 3 ) ( positive 1 ) ( positive-derivator pn_phy_more_person_min $? ) ) ( test ( eq ( class ?gen235 ) min_imprisonment ) ) ( not ( and ?gen242 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen241 & : ( >= ?gen241 1 ) ) ) ?gen235 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen237 & : ( not ( member$ pn_phy_more_person_min $?gen237 ) ) ) ) ) ) => ?gen235 <- ( min_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_abuse_on_duty_min] ) ) ) ?gen223 <- ( min_imprisonment ( value 1 ) ( positive 1 ) ( positive-derivator pn_psy_abuse_on_duty_min $? ) ) ( test ( eq ( class ?gen223 ) min_imprisonment ) ) ( not ( and ?gen230 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen229 & : ( >= ?gen229 1 ) ) ) ?gen223 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen225 & : ( not ( member$ pn_psy_abuse_on_duty_min $?gen225 ) ) ) ) ) ) => ?gen223 <- ( min_imprisonment ( positive 0 ) )"))
 
-([pn_phy_more_person_min-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_more_person_min-defeasibly-gen447)
-   (depends-on declare physical_abuse_more_victim min_imprisonment)
+([pn_psy_abuse_on_duty_min-defeasibly] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_min-defeasibly-gen436)
+   (depends-on declare psychological_abuse_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_more_person_min] ) ) ) ?gen242 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen241 & : ( >= ?gen241 1 ) ) ) ?gen235 <- ( min_imprisonment ( value 3 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen237 & : ( not ( member$ pn_phy_more_person_min $?gen237 ) ) ) ) ( test ( eq ( class ?gen235 ) min_imprisonment ) ) => ?gen235 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_phy_more_person_min ?gen242 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_abuse_on_duty_min] ) ) ) ?gen230 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen229 & : ( >= ?gen229 1 ) ) ) ?gen223 <- ( min_imprisonment ( value 1 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen225 & : ( not ( member$ pn_psy_abuse_on_duty_min $?gen225 ) ) ) ) ( test ( eq ( class ?gen223 ) min_imprisonment ) ) => ?gen223 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_psy_abuse_on_duty_min ?gen230 ) )"))
 
-([pn_phy_more_person_min-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_more_person_min-overruled-dot-gen449)
-   (depends-on declare min_imprisonment physical_abuse_more_victim min_imprisonment)
+([pn_psy_abuse_on_duty_min-overruled-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_min-overruled-dot-gen438)
+   (depends-on declare min_imprisonment psychological_abuse_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_more_person_min] ) ) ) ?gen235 <- ( min_imprisonment ( value 3 ) ( negative-support $?gen238 ) ( negative-overruled $?gen239 & : ( subseq-pos ( create$ pn_phy_more_person_min-overruled $?gen238 $$$ $?gen239 ) ) ) ) ( test ( eq ( class ?gen235 ) min_imprisonment ) ) ( not ( and ?gen242 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen241 & : ( >= ?gen241 1 ) ) ) ?gen235 <- ( min_imprisonment ( positive-defeated $?gen237 & : ( not ( member$ pn_phy_more_person_min $?gen237 ) ) ) ) ) ) => ( calc ( bind $?gen240 ( delete-member$ $?gen239 ( create$ pn_phy_more_person_min-overruled $?gen238 ) ) ) ) ?gen235 <- ( min_imprisonment ( negative-overruled $?gen240 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_abuse_on_duty_min] ) ) ) ?gen223 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen226 ) ( negative-overruled $?gen227 & : ( subseq-pos ( create$ pn_psy_abuse_on_duty_min-overruled $?gen226 $$$ $?gen227 ) ) ) ) ( test ( eq ( class ?gen223 ) min_imprisonment ) ) ( not ( and ?gen230 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen229 & : ( >= ?gen229 1 ) ) ) ?gen223 <- ( min_imprisonment ( positive-defeated $?gen225 & : ( not ( member$ pn_psy_abuse_on_duty_min $?gen225 ) ) ) ) ) ) => ( calc ( bind $?gen228 ( delete-member$ $?gen227 ( create$ pn_psy_abuse_on_duty_min-overruled $?gen226 ) ) ) ) ?gen223 <- ( min_imprisonment ( negative-overruled $?gen228 ) )"))
 
-([pn_phy_more_person_min-overruled] of derived-attribute-rule
-   (pos-name pn_phy_more_person_min-overruled-gen451)
-   (depends-on declare physical_abuse_more_victim min_imprisonment)
+([pn_psy_abuse_on_duty_min-overruled] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_min-overruled-gen440)
+   (depends-on declare psychological_abuse_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_more_person_min] ) ) ) ?gen242 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen241 & : ( >= ?gen241 1 ) ) ) ?gen235 <- ( min_imprisonment ( value 3 ) ( negative-support $?gen238 ) ( negative-overruled $?gen239 & : ( not ( subseq-pos ( create$ pn_phy_more_person_min-overruled $?gen238 $$$ $?gen239 ) ) ) ) ( positive-defeated $?gen237 & : ( not ( member$ pn_phy_more_person_min $?gen237 ) ) ) ) ( test ( eq ( class ?gen235 ) min_imprisonment ) ) => ( calc ( bind $?gen240 ( create$ pn_phy_more_person_min-overruled $?gen238 $?gen239 ) ) ) ?gen235 <- ( min_imprisonment ( negative-overruled $?gen240 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_abuse_on_duty_min] ) ) ) ?gen230 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen229 & : ( >= ?gen229 1 ) ) ) ?gen223 <- ( min_imprisonment ( value 1 ) ( negative-support $?gen226 ) ( negative-overruled $?gen227 & : ( not ( subseq-pos ( create$ pn_psy_abuse_on_duty_min-overruled $?gen226 $$$ $?gen227 ) ) ) ) ( positive-defeated $?gen225 & : ( not ( member$ pn_psy_abuse_on_duty_min $?gen225 ) ) ) ) ( test ( eq ( class ?gen223 ) min_imprisonment ) ) => ( calc ( bind $?gen228 ( create$ pn_psy_abuse_on_duty_min-overruled $?gen226 $?gen227 ) ) ) ?gen223 <- ( min_imprisonment ( negative-overruled $?gen228 ) )"))
 
-([pn_phy_more_person_min-support] of derived-attribute-rule
-   (pos-name pn_phy_more_person_min-support-gen453)
-   (depends-on declare physical_abuse_more_victim min_imprisonment)
+([pn_psy_abuse_on_duty_min-support] of derived-attribute-rule
+   (pos-name pn_psy_abuse_on_duty_min-support-gen442)
+   (depends-on declare psychological_abuse_on_duty min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_more_person_min] ) ) ) ?gen234 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ) ?gen235 <- ( min_imprisonment ( value 3 ) ( positive-support $?gen237 & : ( not ( subseq-pos ( create$ pn_phy_more_person_min ?gen234 $$$ $?gen237 ) ) ) ) ) ( test ( eq ( class ?gen235 ) min_imprisonment ) ) => ( calc ( bind $?gen240 ( create$ pn_phy_more_person_min ?gen234 $?gen237 ) ) ) ?gen235 <- ( min_imprisonment ( positive-support $?gen240 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_abuse_on_duty_min] ) ) ) ?gen222 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ?gen223 <- ( min_imprisonment ( value 1 ) ( positive-support $?gen225 & : ( not ( subseq-pos ( create$ pn_psy_abuse_on_duty_min ?gen222 $$$ $?gen225 ) ) ) ) ) ( test ( eq ( class ?gen223 ) min_imprisonment ) ) => ( calc ( bind $?gen228 ( create$ pn_psy_abuse_on_duty_min ?gen222 $?gen225 ) ) ) ?gen223 <- ( min_imprisonment ( positive-support $?gen228 ) )"))
 
-([pn_phy_one_person_max-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_one_person_max-defeasibly-dot-gen455)
-   (depends-on declare max_imprisonment physical_abuse_one_victim max_imprisonment)
+([pn_psy_abuse_max-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_max-defeasibly-dot-gen444)
+   (depends-on declare max_imprisonment psychological_abuse max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_one_person_max] ) ) ) ?gen226 <- ( max_imprisonment ( value 6 ) ( positive 1 ) ( positive-derivator pn_phy_one_person_max $? ) ) ( test ( eq ( class ?gen226 ) max_imprisonment ) ) ( not ( and ?gen233 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen232 & : ( >= ?gen232 1 ) ) ) ?gen226 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen228 & : ( not ( member$ pn_phy_one_person_max $?gen228 ) ) ) ) ) ) => ?gen226 <- ( max_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_abuse_max] ) ) ) ?gen214 <- ( max_imprisonment ( value 3 ) ( positive 1 ) ( positive-derivator pn_psy_abuse_max $? ) ) ( test ( eq ( class ?gen214 ) max_imprisonment ) ) ( not ( and ?gen221 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen220 & : ( >= ?gen220 1 ) ) ) ?gen214 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen216 & : ( not ( member$ pn_psy_abuse_max $?gen216 ) ) ) ) ) ) => ?gen214 <- ( max_imprisonment ( positive 0 ) )"))
 
-([pn_phy_one_person_max-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_one_person_max-defeasibly-gen457)
-   (depends-on declare physical_abuse_one_victim max_imprisonment)
+([pn_psy_abuse_max-defeasibly] of derived-attribute-rule
+   (pos-name pn_psy_abuse_max-defeasibly-gen446)
+   (depends-on declare psychological_abuse max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_one_person_max] ) ) ) ?gen233 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen232 & : ( >= ?gen232 1 ) ) ) ?gen226 <- ( max_imprisonment ( value 6 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen228 & : ( not ( member$ pn_phy_one_person_max $?gen228 ) ) ) ) ( test ( eq ( class ?gen226 ) max_imprisonment ) ) => ?gen226 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_phy_one_person_max ?gen233 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_abuse_max] ) ) ) ?gen221 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen220 & : ( >= ?gen220 1 ) ) ) ?gen214 <- ( max_imprisonment ( value 3 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen216 & : ( not ( member$ pn_psy_abuse_max $?gen216 ) ) ) ) ( test ( eq ( class ?gen214 ) max_imprisonment ) ) => ?gen214 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_psy_abuse_max ?gen221 ) )"))
 
-([pn_phy_one_person_max-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_one_person_max-overruled-dot-gen459)
-   (depends-on declare max_imprisonment physical_abuse_one_victim max_imprisonment)
+([pn_psy_abuse_max-overruled-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_max-overruled-dot-gen448)
+   (depends-on declare max_imprisonment psychological_abuse max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_one_person_max] ) ) ) ?gen226 <- ( max_imprisonment ( value 6 ) ( negative-support $?gen229 ) ( negative-overruled $?gen230 & : ( subseq-pos ( create$ pn_phy_one_person_max-overruled $?gen229 $$$ $?gen230 ) ) ) ) ( test ( eq ( class ?gen226 ) max_imprisonment ) ) ( not ( and ?gen233 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen232 & : ( >= ?gen232 1 ) ) ) ?gen226 <- ( max_imprisonment ( positive-defeated $?gen228 & : ( not ( member$ pn_phy_one_person_max $?gen228 ) ) ) ) ) ) => ( calc ( bind $?gen231 ( delete-member$ $?gen230 ( create$ pn_phy_one_person_max-overruled $?gen229 ) ) ) ) ?gen226 <- ( max_imprisonment ( negative-overruled $?gen231 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_abuse_max] ) ) ) ?gen214 <- ( max_imprisonment ( value 3 ) ( negative-support $?gen217 ) ( negative-overruled $?gen218 & : ( subseq-pos ( create$ pn_psy_abuse_max-overruled $?gen217 $$$ $?gen218 ) ) ) ) ( test ( eq ( class ?gen214 ) max_imprisonment ) ) ( not ( and ?gen221 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen220 & : ( >= ?gen220 1 ) ) ) ?gen214 <- ( max_imprisonment ( positive-defeated $?gen216 & : ( not ( member$ pn_psy_abuse_max $?gen216 ) ) ) ) ) ) => ( calc ( bind $?gen219 ( delete-member$ $?gen218 ( create$ pn_psy_abuse_max-overruled $?gen217 ) ) ) ) ?gen214 <- ( max_imprisonment ( negative-overruled $?gen219 ) )"))
 
-([pn_phy_one_person_max-overruled] of derived-attribute-rule
-   (pos-name pn_phy_one_person_max-overruled-gen461)
-   (depends-on declare physical_abuse_one_victim max_imprisonment)
+([pn_psy_abuse_max-overruled] of derived-attribute-rule
+   (pos-name pn_psy_abuse_max-overruled-gen450)
+   (depends-on declare psychological_abuse max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_one_person_max] ) ) ) ?gen233 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen232 & : ( >= ?gen232 1 ) ) ) ?gen226 <- ( max_imprisonment ( value 6 ) ( negative-support $?gen229 ) ( negative-overruled $?gen230 & : ( not ( subseq-pos ( create$ pn_phy_one_person_max-overruled $?gen229 $$$ $?gen230 ) ) ) ) ( positive-defeated $?gen228 & : ( not ( member$ pn_phy_one_person_max $?gen228 ) ) ) ) ( test ( eq ( class ?gen226 ) max_imprisonment ) ) => ( calc ( bind $?gen231 ( create$ pn_phy_one_person_max-overruled $?gen229 $?gen230 ) ) ) ?gen226 <- ( max_imprisonment ( negative-overruled $?gen231 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_abuse_max] ) ) ) ?gen221 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen220 & : ( >= ?gen220 1 ) ) ) ?gen214 <- ( max_imprisonment ( value 3 ) ( negative-support $?gen217 ) ( negative-overruled $?gen218 & : ( not ( subseq-pos ( create$ pn_psy_abuse_max-overruled $?gen217 $$$ $?gen218 ) ) ) ) ( positive-defeated $?gen216 & : ( not ( member$ pn_psy_abuse_max $?gen216 ) ) ) ) ( test ( eq ( class ?gen214 ) max_imprisonment ) ) => ( calc ( bind $?gen219 ( create$ pn_psy_abuse_max-overruled $?gen217 $?gen218 ) ) ) ?gen214 <- ( max_imprisonment ( negative-overruled $?gen219 ) )"))
 
-([pn_phy_one_person_max-support] of derived-attribute-rule
-   (pos-name pn_phy_one_person_max-support-gen463)
-   (depends-on declare physical_abuse_one_victim max_imprisonment)
+([pn_psy_abuse_max-support] of derived-attribute-rule
+   (pos-name pn_psy_abuse_max-support-gen452)
+   (depends-on declare psychological_abuse max_imprisonment)
    (implies max_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_one_person_max] ) ) ) ?gen225 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ) ?gen226 <- ( max_imprisonment ( value 6 ) ( positive-support $?gen228 & : ( not ( subseq-pos ( create$ pn_phy_one_person_max ?gen225 $$$ $?gen228 ) ) ) ) ) ( test ( eq ( class ?gen226 ) max_imprisonment ) ) => ( calc ( bind $?gen231 ( create$ pn_phy_one_person_max ?gen225 $?gen228 ) ) ) ?gen226 <- ( max_imprisonment ( positive-support $?gen231 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_abuse_max] ) ) ) ?gen213 <- ( psychological_abuse ( defendant ?Defendant ) ) ?gen214 <- ( max_imprisonment ( value 3 ) ( positive-support $?gen216 & : ( not ( subseq-pos ( create$ pn_psy_abuse_max ?gen213 $$$ $?gen216 ) ) ) ) ) ( test ( eq ( class ?gen214 ) max_imprisonment ) ) => ( calc ( bind $?gen219 ( create$ pn_psy_abuse_max ?gen213 $?gen216 ) ) ) ?gen214 <- ( max_imprisonment ( positive-support $?gen219 ) )"))
 
-([pn_phy_one_person_min-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_phy_one_person_min-defeasibly-dot-gen465)
-   (depends-on declare min_imprisonment physical_abuse_one_victim min_imprisonment)
+([pn_psy_abuse_min-defeasibly-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_min-defeasibly-dot-gen454)
+   (depends-on declare min_imprisonment psychological_abuse min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_phy_one_person_min] ) ) ) ?gen217 <- ( min_imprisonment ( value 3 ) ( positive 1 ) ( positive-derivator pn_phy_one_person_min $? ) ) ( test ( eq ( class ?gen217 ) min_imprisonment ) ) ( not ( and ?gen224 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen223 & : ( >= ?gen223 1 ) ) ) ?gen217 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen219 & : ( not ( member$ pn_phy_one_person_min $?gen219 ) ) ) ) ) ) => ?gen217 <- ( min_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_abuse_min] ) ) ) ?gen205 <- ( min_imprisonment ( value 0 ) ( positive 1 ) ( positive-derivator pn_psy_abuse_min $? ) ) ( test ( eq ( class ?gen205 ) min_imprisonment ) ) ( not ( and ?gen212 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen211 & : ( >= ?gen211 1 ) ) ) ?gen205 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen207 & : ( not ( member$ pn_psy_abuse_min $?gen207 ) ) ) ) ) ) => ?gen205 <- ( min_imprisonment ( positive 0 ) )"))
 
-([pn_phy_one_person_min-defeasibly] of derived-attribute-rule
-   (pos-name pn_phy_one_person_min-defeasibly-gen467)
-   (depends-on declare physical_abuse_one_victim min_imprisonment)
+([pn_psy_abuse_min-defeasibly] of derived-attribute-rule
+   (pos-name pn_psy_abuse_min-defeasibly-gen456)
+   (depends-on declare psychological_abuse min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_phy_one_person_min] ) ) ) ?gen224 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen223 & : ( >= ?gen223 1 ) ) ) ?gen217 <- ( min_imprisonment ( value 3 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen219 & : ( not ( member$ pn_phy_one_person_min $?gen219 ) ) ) ) ( test ( eq ( class ?gen217 ) min_imprisonment ) ) => ?gen217 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_phy_one_person_min ?gen224 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_abuse_min] ) ) ) ?gen212 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen211 & : ( >= ?gen211 1 ) ) ) ?gen205 <- ( min_imprisonment ( value 0 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen207 & : ( not ( member$ pn_psy_abuse_min $?gen207 ) ) ) ) ( test ( eq ( class ?gen205 ) min_imprisonment ) ) => ?gen205 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_psy_abuse_min ?gen212 ) )"))
 
-([pn_phy_one_person_min-overruled-dot] of derived-attribute-rule
-   (pos-name pn_phy_one_person_min-overruled-dot-gen469)
-   (depends-on declare min_imprisonment physical_abuse_one_victim min_imprisonment)
+([pn_psy_abuse_min-overruled-dot] of derived-attribute-rule
+   (pos-name pn_psy_abuse_min-overruled-dot-gen458)
+   (depends-on declare min_imprisonment psychological_abuse min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_phy_one_person_min] ) ) ) ?gen217 <- ( min_imprisonment ( value 3 ) ( negative-support $?gen220 ) ( negative-overruled $?gen221 & : ( subseq-pos ( create$ pn_phy_one_person_min-overruled $?gen220 $$$ $?gen221 ) ) ) ) ( test ( eq ( class ?gen217 ) min_imprisonment ) ) ( not ( and ?gen224 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen223 & : ( >= ?gen223 1 ) ) ) ?gen217 <- ( min_imprisonment ( positive-defeated $?gen219 & : ( not ( member$ pn_phy_one_person_min $?gen219 ) ) ) ) ) ) => ( calc ( bind $?gen222 ( delete-member$ $?gen221 ( create$ pn_phy_one_person_min-overruled $?gen220 ) ) ) ) ?gen217 <- ( min_imprisonment ( negative-overruled $?gen222 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_abuse_min] ) ) ) ?gen205 <- ( min_imprisonment ( value 0 ) ( negative-support $?gen208 ) ( negative-overruled $?gen209 & : ( subseq-pos ( create$ pn_psy_abuse_min-overruled $?gen208 $$$ $?gen209 ) ) ) ) ( test ( eq ( class ?gen205 ) min_imprisonment ) ) ( not ( and ?gen212 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen211 & : ( >= ?gen211 1 ) ) ) ?gen205 <- ( min_imprisonment ( positive-defeated $?gen207 & : ( not ( member$ pn_psy_abuse_min $?gen207 ) ) ) ) ) ) => ( calc ( bind $?gen210 ( delete-member$ $?gen209 ( create$ pn_psy_abuse_min-overruled $?gen208 ) ) ) ) ?gen205 <- ( min_imprisonment ( negative-overruled $?gen210 ) )"))
 
-([pn_phy_one_person_min-overruled] of derived-attribute-rule
-   (pos-name pn_phy_one_person_min-overruled-gen471)
-   (depends-on declare physical_abuse_one_victim min_imprisonment)
+([pn_psy_abuse_min-overruled] of derived-attribute-rule
+   (pos-name pn_psy_abuse_min-overruled-gen460)
+   (depends-on declare psychological_abuse min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_phy_one_person_min] ) ) ) ?gen224 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen223 & : ( >= ?gen223 1 ) ) ) ?gen217 <- ( min_imprisonment ( value 3 ) ( negative-support $?gen220 ) ( negative-overruled $?gen221 & : ( not ( subseq-pos ( create$ pn_phy_one_person_min-overruled $?gen220 $$$ $?gen221 ) ) ) ) ( positive-defeated $?gen219 & : ( not ( member$ pn_phy_one_person_min $?gen219 ) ) ) ) ( test ( eq ( class ?gen217 ) min_imprisonment ) ) => ( calc ( bind $?gen222 ( create$ pn_phy_one_person_min-overruled $?gen220 $?gen221 ) ) ) ?gen217 <- ( min_imprisonment ( negative-overruled $?gen222 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_abuse_min] ) ) ) ?gen212 <- ( psychological_abuse ( defendant ?Defendant ) ( positive ?gen211 & : ( >= ?gen211 1 ) ) ) ?gen205 <- ( min_imprisonment ( value 0 ) ( negative-support $?gen208 ) ( negative-overruled $?gen209 & : ( not ( subseq-pos ( create$ pn_psy_abuse_min-overruled $?gen208 $$$ $?gen209 ) ) ) ) ( positive-defeated $?gen207 & : ( not ( member$ pn_psy_abuse_min $?gen207 ) ) ) ) ( test ( eq ( class ?gen205 ) min_imprisonment ) ) => ( calc ( bind $?gen210 ( create$ pn_psy_abuse_min-overruled $?gen208 $?gen209 ) ) ) ?gen205 <- ( min_imprisonment ( negative-overruled $?gen210 ) )"))
 
-([pn_phy_one_person_min-support] of derived-attribute-rule
-   (pos-name pn_phy_one_person_min-support-gen473)
-   (depends-on declare physical_abuse_one_victim min_imprisonment)
+([pn_psy_abuse_min-support] of derived-attribute-rule
+   (pos-name pn_psy_abuse_min-support-gen462)
+   (depends-on declare psychological_abuse min_imprisonment)
    (implies min_imprisonment)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_phy_one_person_min] ) ) ) ?gen216 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ) ?gen217 <- ( min_imprisonment ( value 3 ) ( positive-support $?gen219 & : ( not ( subseq-pos ( create$ pn_phy_one_person_min ?gen216 $$$ $?gen219 ) ) ) ) ) ( test ( eq ( class ?gen217 ) min_imprisonment ) ) => ( calc ( bind $?gen222 ( create$ pn_phy_one_person_min ?gen216 $?gen219 ) ) ) ?gen217 <- ( min_imprisonment ( positive-support $?gen222 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_abuse_min] ) ) ) ?gen204 <- ( psychological_abuse ( defendant ?Defendant ) ) ?gen205 <- ( min_imprisonment ( value 0 ) ( positive-support $?gen207 & : ( not ( subseq-pos ( create$ pn_psy_abuse_min ?gen204 $$$ $?gen207 ) ) ) ) ) ( test ( eq ( class ?gen205 ) min_imprisonment ) ) => ( calc ( bind $?gen210 ( create$ pn_psy_abuse_min ?gen204 $?gen207 ) ) ) ?gen205 <- ( min_imprisonment ( positive-support $?gen210 ) )"))
 
-([pn_psy_one_person_max-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_psy_one_person_max-defeasibly-dot-gen475)
-   (depends-on declare max_imprisonment psychological_abuse_one_victim max_imprisonment)
-   (implies max_imprisonment)
+([rule6_4-defeated-dot] of derived-attribute-rule
+   (pos-name rule6_4-defeated-dot-gen464)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions_death)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_one_person_max] ) ) ) ?gen208 <- ( max_imprisonment ( value 5 ) ( positive 1 ) ( positive-derivator pn_psy_one_person_max $? ) ) ( test ( eq ( class ?gen208 ) max_imprisonment ) ) ( not ( and ?gen215 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen214 & : ( >= ?gen214 1 ) ) ) ?gen208 <- ( max_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen210 & : ( not ( member$ pn_psy_one_person_max $?gen210 ) ) ) ) ) ) => ?gen208 <- ( max_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule6_4] ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen199 & : ( subseq-pos ( create$ rule6_4-defeated rule4 $$$ $?gen199 ) ) ) ) ( test ( eq ( class ?gen196 ) movement_restrictions_on_duty ) ) ( not ?gen203 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen202 & : ( >= ?gen202 1 ) ) ) ) => ( calc ( bind $?gen198 ( delete-member$ $?gen199 ( create$ rule6_4-defeated rule4 ) ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( positive-defeated $?gen198 ) )"))
 
-([pn_psy_one_person_max-defeasibly] of derived-attribute-rule
-   (pos-name pn_psy_one_person_max-defeasibly-gen477)
-   (depends-on declare psychological_abuse_one_victim max_imprisonment)
-   (implies max_imprisonment)
+([rule6_4-defeated] of derived-attribute-rule
+   (pos-name rule6_4-defeated-gen466)
+   (depends-on declare movement_restrictions_death movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_one_person_max] ) ) ) ?gen215 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen214 & : ( >= ?gen214 1 ) ) ) ?gen208 <- ( max_imprisonment ( value 5 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen210 & : ( not ( member$ pn_psy_one_person_max $?gen210 ) ) ) ) ( test ( eq ( class ?gen208 ) max_imprisonment ) ) => ?gen208 <- ( max_imprisonment ( positive 1 ) ( positive-derivator pn_psy_one_person_max ?gen215 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule6_4] ) ) ) ?gen203 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen202 & : ( >= ?gen202 1 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen199 & : ( not ( subseq-pos ( create$ rule6_4-defeated rule4 $$$ $?gen199 ) ) ) ) ) ( test ( eq ( class ?gen196 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen198 ( create$ rule6_4-defeated rule4 $?gen199 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( positive-defeated $?gen198 ) )"))
 
-([pn_psy_one_person_max-overruled-dot] of derived-attribute-rule
-   (pos-name pn_psy_one_person_max-overruled-dot-gen479)
-   (depends-on declare max_imprisonment psychological_abuse_one_victim max_imprisonment)
-   (implies max_imprisonment)
+([rule6_4-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule6_4-defeasibly-dot-gen468)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions_death movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_one_person_max] ) ) ) ?gen208 <- ( max_imprisonment ( value 5 ) ( negative-support $?gen211 ) ( negative-overruled $?gen212 & : ( subseq-pos ( create$ pn_psy_one_person_max-overruled $?gen211 $$$ $?gen212 ) ) ) ) ( test ( eq ( class ?gen208 ) max_imprisonment ) ) ( not ( and ?gen215 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen214 & : ( >= ?gen214 1 ) ) ) ?gen208 <- ( max_imprisonment ( positive-defeated $?gen210 & : ( not ( member$ pn_psy_one_person_max $?gen210 ) ) ) ) ) ) => ( calc ( bind $?gen213 ( delete-member$ $?gen212 ( create$ pn_psy_one_person_max-overruled $?gen211 ) ) ) ) ?gen208 <- ( max_imprisonment ( negative-overruled $?gen213 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6_4] ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule6_4 $? ) ) ( test ( eq ( class ?gen196 ) movement_restrictions_on_duty ) ) ( not ( and ?gen203 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen202 & : ( >= ?gen202 1 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( positive ~ 2 ) ( negative-overruled $?gen198 & : ( not ( member$ rule6_4 $?gen198 ) ) ) ) ) ) => ?gen196 <- ( movement_restrictions_on_duty ( negative 0 ) )"))
 
-([pn_psy_one_person_max-overruled] of derived-attribute-rule
-   (pos-name pn_psy_one_person_max-overruled-gen481)
-   (depends-on declare psychological_abuse_one_victim max_imprisonment)
-   (implies max_imprisonment)
+([rule6_4-defeasibly] of derived-attribute-rule
+   (pos-name rule6_4-defeasibly-gen470)
+   (depends-on declare movement_restrictions_death movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_one_person_max] ) ) ) ?gen215 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen214 & : ( >= ?gen214 1 ) ) ) ?gen208 <- ( max_imprisonment ( value 5 ) ( negative-support $?gen211 ) ( negative-overruled $?gen212 & : ( not ( subseq-pos ( create$ pn_psy_one_person_max-overruled $?gen211 $$$ $?gen212 ) ) ) ) ( positive-defeated $?gen210 & : ( not ( member$ pn_psy_one_person_max $?gen210 ) ) ) ) ( test ( eq ( class ?gen208 ) max_imprisonment ) ) => ( calc ( bind $?gen213 ( create$ pn_psy_one_person_max-overruled $?gen211 $?gen212 ) ) ) ?gen208 <- ( max_imprisonment ( negative-overruled $?gen213 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6_4] ) ) ) ?gen203 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen202 & : ( >= ?gen202 1 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen198 & : ( not ( member$ rule6_4 $?gen198 ) ) ) ) ( test ( eq ( class ?gen196 ) movement_restrictions_on_duty ) ) => ?gen196 <- ( movement_restrictions_on_duty ( negative 1 ) ( negative-derivator rule6_4 ?gen203 ) )"))
 
-([pn_psy_one_person_max-support] of derived-attribute-rule
-   (pos-name pn_psy_one_person_max-support-gen483)
-   (depends-on declare psychological_abuse_one_victim max_imprisonment)
-   (implies max_imprisonment)
+([rule6_4-overruled-dot] of derived-attribute-rule
+   (pos-name rule6_4-overruled-dot-gen472)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions_death movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_one_person_max] ) ) ) ?gen207 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ) ?gen208 <- ( max_imprisonment ( value 5 ) ( positive-support $?gen210 & : ( not ( subseq-pos ( create$ pn_psy_one_person_max ?gen207 $$$ $?gen210 ) ) ) ) ) ( test ( eq ( class ?gen208 ) max_imprisonment ) ) => ( calc ( bind $?gen213 ( create$ pn_psy_one_person_max ?gen207 $?gen210 ) ) ) ?gen208 <- ( max_imprisonment ( positive-support $?gen213 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6_4] ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-support $?gen199 ) ( positive-overruled $?gen200 & : ( subseq-pos ( create$ rule6_4-overruled $?gen199 $$$ $?gen200 ) ) ) ) ( test ( eq ( class ?gen196 ) movement_restrictions_on_duty ) ) ( not ( and ?gen203 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen202 & : ( >= ?gen202 1 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( negative-defeated $?gen198 & : ( not ( member$ rule6_4 $?gen198 ) ) ) ) ) ) => ( calc ( bind $?gen201 ( delete-member$ $?gen200 ( create$ rule6_4-overruled $?gen199 ) ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( positive-overruled $?gen201 ) )"))
 
-([pn_psy_one_person_min-defeasibly-dot] of derived-attribute-rule
-   (pos-name pn_psy_one_person_min-defeasibly-dot-gen485)
-   (depends-on declare min_imprisonment psychological_abuse_one_victim min_imprisonment)
-   (implies min_imprisonment)
+([rule6_4-overruled] of derived-attribute-rule
+   (pos-name rule6_4-overruled-gen474)
+   (depends-on declare movement_restrictions_death movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [pn_psy_one_person_min] ) ) ) ?gen199 <- ( min_imprisonment ( value 2 ) ( positive 1 ) ( positive-derivator pn_psy_one_person_min $? ) ) ( test ( eq ( class ?gen199 ) min_imprisonment ) ) ( not ( and ?gen206 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen205 & : ( >= ?gen205 1 ) ) ) ?gen199 <- ( min_imprisonment ( negative ~ 2 ) ( positive-overruled $?gen201 & : ( not ( member$ pn_psy_one_person_min $?gen201 ) ) ) ) ) ) => ?gen199 <- ( min_imprisonment ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6_4] ) ) ) ?gen203 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen202 & : ( >= ?gen202 1 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-support $?gen199 ) ( positive-overruled $?gen200 & : ( not ( subseq-pos ( create$ rule6_4-overruled $?gen199 $$$ $?gen200 ) ) ) ) ( negative-defeated $?gen198 & : ( not ( member$ rule6_4 $?gen198 ) ) ) ) ( test ( eq ( class ?gen196 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen201 ( create$ rule6_4-overruled $?gen199 $?gen200 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( positive-overruled $?gen201 ) )"))
 
-([pn_psy_one_person_min-defeasibly] of derived-attribute-rule
-   (pos-name pn_psy_one_person_min-defeasibly-gen487)
-   (depends-on declare psychological_abuse_one_victim min_imprisonment)
-   (implies min_imprisonment)
+([rule6_4-support] of derived-attribute-rule
+   (pos-name rule6_4-support-gen476)
+   (depends-on declare movement_restrictions_death movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [pn_psy_one_person_min] ) ) ) ?gen206 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen205 & : ( >= ?gen205 1 ) ) ) ?gen199 <- ( min_imprisonment ( value 2 ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen201 & : ( not ( member$ pn_psy_one_person_min $?gen201 ) ) ) ) ( test ( eq ( class ?gen199 ) min_imprisonment ) ) => ?gen199 <- ( min_imprisonment ( positive 1 ) ( positive-derivator pn_psy_one_person_min ?gen206 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6_4] ) ) ) ?gen195 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ?gen196 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative-support $?gen198 & : ( not ( subseq-pos ( create$ rule6_4 ?gen195 $$$ $?gen198 ) ) ) ) ) ( test ( eq ( class ?gen196 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen201 ( create$ rule6_4 ?gen195 $?gen198 ) ) ) ?gen196 <- ( movement_restrictions_on_duty ( negative-support $?gen201 ) )"))
 
-([pn_psy_one_person_min-overruled-dot] of derived-attribute-rule
-   (pos-name pn_psy_one_person_min-overruled-dot-gen489)
-   (depends-on declare min_imprisonment psychological_abuse_one_victim min_imprisonment)
-   (implies min_imprisonment)
+([rule6_3-defeated-dot] of derived-attribute-rule
+   (pos-name rule6_3-defeated-dot-gen478)
+   (depends-on declare movement_restrictions movement_restrictions_death)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [pn_psy_one_person_min] ) ) ) ?gen199 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen202 ) ( negative-overruled $?gen203 & : ( subseq-pos ( create$ pn_psy_one_person_min-overruled $?gen202 $$$ $?gen203 ) ) ) ) ( test ( eq ( class ?gen199 ) min_imprisonment ) ) ( not ( and ?gen206 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen205 & : ( >= ?gen205 1 ) ) ) ?gen199 <- ( min_imprisonment ( positive-defeated $?gen201 & : ( not ( member$ pn_psy_one_person_min $?gen201 ) ) ) ) ) ) => ( calc ( bind $?gen204 ( delete-member$ $?gen203 ( create$ pn_psy_one_person_min-overruled $?gen202 ) ) ) ) ?gen199 <- ( min_imprisonment ( negative-overruled $?gen204 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule6_3] ) ) ) ?gen187 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-defeated $?gen190 & : ( subseq-pos ( create$ rule6_3-defeated rule3 $$$ $?gen190 ) ) ) ) ( test ( eq ( class ?gen187 ) movement_restrictions ) ) ( not ?gen194 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen193 & : ( >= ?gen193 1 ) ) ) ) => ( calc ( bind $?gen189 ( delete-member$ $?gen190 ( create$ rule6_3-defeated rule3 ) ) ) ) ?gen187 <- ( movement_restrictions ( positive-defeated $?gen189 ) )"))
 
-([pn_psy_one_person_min-overruled] of derived-attribute-rule
-   (pos-name pn_psy_one_person_min-overruled-gen491)
-   (depends-on declare psychological_abuse_one_victim min_imprisonment)
-   (implies min_imprisonment)
+([rule6_3-defeated] of derived-attribute-rule
+   (pos-name rule6_3-defeated-gen480)
+   (depends-on declare movement_restrictions_death movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [pn_psy_one_person_min] ) ) ) ?gen206 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen205 & : ( >= ?gen205 1 ) ) ) ?gen199 <- ( min_imprisonment ( value 2 ) ( negative-support $?gen202 ) ( negative-overruled $?gen203 & : ( not ( subseq-pos ( create$ pn_psy_one_person_min-overruled $?gen202 $$$ $?gen203 ) ) ) ) ( positive-defeated $?gen201 & : ( not ( member$ pn_psy_one_person_min $?gen201 ) ) ) ) ( test ( eq ( class ?gen199 ) min_imprisonment ) ) => ( calc ( bind $?gen204 ( create$ pn_psy_one_person_min-overruled $?gen202 $?gen203 ) ) ) ?gen199 <- ( min_imprisonment ( negative-overruled $?gen204 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule6_3] ) ) ) ?gen194 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen193 & : ( >= ?gen193 1 ) ) ) ?gen187 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-defeated $?gen190 & : ( not ( subseq-pos ( create$ rule6_3-defeated rule3 $$$ $?gen190 ) ) ) ) ) ( test ( eq ( class ?gen187 ) movement_restrictions ) ) => ( calc ( bind $?gen189 ( create$ rule6_3-defeated rule3 $?gen190 ) ) ) ?gen187 <- ( movement_restrictions ( positive-defeated $?gen189 ) )"))
 
-([pn_psy_one_person_min-support] of derived-attribute-rule
-   (pos-name pn_psy_one_person_min-support-gen493)
-   (depends-on declare psychological_abuse_one_victim min_imprisonment)
-   (implies min_imprisonment)
+([rule6_3-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule6_3-defeasibly-dot-gen482)
+   (depends-on declare movement_restrictions movement_restrictions_death movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [pn_psy_one_person_min] ) ) ) ?gen198 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ) ?gen199 <- ( min_imprisonment ( value 2 ) ( positive-support $?gen201 & : ( not ( subseq-pos ( create$ pn_psy_one_person_min ?gen198 $$$ $?gen201 ) ) ) ) ) ( test ( eq ( class ?gen199 ) min_imprisonment ) ) => ( calc ( bind $?gen204 ( create$ pn_psy_one_person_min ?gen198 $?gen201 ) ) ) ?gen199 <- ( min_imprisonment ( positive-support $?gen204 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6_3] ) ) ) ?gen187 <- ( movement_restrictions ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule6_3 $? ) ) ( test ( eq ( class ?gen187 ) movement_restrictions ) ) ( not ( and ?gen194 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen193 & : ( >= ?gen193 1 ) ) ) ?gen187 <- ( movement_restrictions ( positive ~ 2 ) ( negative-overruled $?gen189 & : ( not ( member$ rule6_3 $?gen189 ) ) ) ) ) ) => ?gen187 <- ( movement_restrictions ( negative 0 ) )"))
 
-([rule7_6-defeated-dot] of derived-attribute-rule
-   (pos-name rule7_6-defeated-dot-gen495)
-   (depends-on declare psychological_abuse_one_victim life_threatening_torture)
-   (implies psychological_abuse_one_victim)
+([rule6_3-defeasibly] of derived-attribute-rule
+   (pos-name rule6_3-defeasibly-gen484)
+   (depends-on declare movement_restrictions_death movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule7_6] ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen193 & : ( subseq-pos ( create$ rule7_6-defeated rule1 $$$ $?gen193 ) ) ) ) ( test ( eq ( class ?gen190 ) psychological_abuse_one_victim ) ) ( not ?gen197 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen196 & : ( >= ?gen196 1 ) ) ) ) => ( calc ( bind $?gen192 ( delete-member$ $?gen193 ( create$ rule7_6-defeated rule1 ) ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( positive-defeated $?gen192 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6_3] ) ) ) ?gen194 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen193 & : ( >= ?gen193 1 ) ) ) ?gen187 <- ( movement_restrictions ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen189 & : ( not ( member$ rule6_3 $?gen189 ) ) ) ) ( test ( eq ( class ?gen187 ) movement_restrictions ) ) => ?gen187 <- ( movement_restrictions ( negative 1 ) ( negative-derivator rule6_3 ?gen194 ) )"))
 
-([rule7_6-defeated] of derived-attribute-rule
-   (pos-name rule7_6-defeated-gen497)
-   (depends-on declare life_threatening_torture psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+([rule6_3-overruled-dot] of derived-attribute-rule
+   (pos-name rule6_3-overruled-dot-gen486)
+   (depends-on declare movement_restrictions movement_restrictions_death movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule7_6] ) ) ) ?gen197 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen196 & : ( >= ?gen196 1 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen193 & : ( not ( subseq-pos ( create$ rule7_6-defeated rule1 $$$ $?gen193 ) ) ) ) ) ( test ( eq ( class ?gen190 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen192 ( create$ rule7_6-defeated rule1 $?gen193 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( positive-defeated $?gen192 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6_3] ) ) ) ?gen187 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-support $?gen190 ) ( positive-overruled $?gen191 & : ( subseq-pos ( create$ rule6_3-overruled $?gen190 $$$ $?gen191 ) ) ) ) ( test ( eq ( class ?gen187 ) movement_restrictions ) ) ( not ( and ?gen194 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen193 & : ( >= ?gen193 1 ) ) ) ?gen187 <- ( movement_restrictions ( negative-defeated $?gen189 & : ( not ( member$ rule6_3 $?gen189 ) ) ) ) ) ) => ( calc ( bind $?gen192 ( delete-member$ $?gen191 ( create$ rule6_3-overruled $?gen190 ) ) ) ) ?gen187 <- ( movement_restrictions ( positive-overruled $?gen192 ) )"))
 
-([rule7_6-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule7_6-defeasibly-dot-gen499)
-   (depends-on declare psychological_abuse_one_victim life_threatening_torture psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+([rule6_3-overruled] of derived-attribute-rule
+   (pos-name rule6_3-overruled-gen488)
+   (depends-on declare movement_restrictions_death movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule7_6] ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule7_6 $? ) ) ( test ( eq ( class ?gen190 ) psychological_abuse_one_victim ) ) ( not ( and ?gen197 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen196 & : ( >= ?gen196 1 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( positive ~ 2 ) ( negative-overruled $?gen192 & : ( not ( member$ rule7_6 $?gen192 ) ) ) ) ) ) => ?gen190 <- ( psychological_abuse_one_victim ( negative 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6_3] ) ) ) ?gen194 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen193 & : ( >= ?gen193 1 ) ) ) ?gen187 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-support $?gen190 ) ( positive-overruled $?gen191 & : ( not ( subseq-pos ( create$ rule6_3-overruled $?gen190 $$$ $?gen191 ) ) ) ) ( negative-defeated $?gen189 & : ( not ( member$ rule6_3 $?gen189 ) ) ) ) ( test ( eq ( class ?gen187 ) movement_restrictions ) ) => ( calc ( bind $?gen192 ( create$ rule6_3-overruled $?gen190 $?gen191 ) ) ) ?gen187 <- ( movement_restrictions ( positive-overruled $?gen192 ) )"))
 
-([rule7_6-defeasibly] of derived-attribute-rule
-   (pos-name rule7_6-defeasibly-gen501)
-   (depends-on declare life_threatening_torture psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+([rule6_3-support] of derived-attribute-rule
+   (pos-name rule6_3-support-gen490)
+   (depends-on declare movement_restrictions_death movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule7_6] ) ) ) ?gen197 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen196 & : ( >= ?gen196 1 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen192 & : ( not ( member$ rule7_6 $?gen192 ) ) ) ) ( test ( eq ( class ?gen190 ) psychological_abuse_one_victim ) ) => ?gen190 <- ( psychological_abuse_one_victim ( negative 1 ) ( negative-derivator rule7_6 ?gen197 ) )"))
-
-([rule7_6-overruled-dot] of derived-attribute-rule
-   (pos-name rule7_6-overruled-dot-gen503)
-   (depends-on declare psychological_abuse_one_victim life_threatening_torture psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule7_6] ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen193 ) ( positive-overruled $?gen194 & : ( subseq-pos ( create$ rule7_6-overruled $?gen193 $$$ $?gen194 ) ) ) ) ( test ( eq ( class ?gen190 ) psychological_abuse_one_victim ) ) ( not ( and ?gen197 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen196 & : ( >= ?gen196 1 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( negative-defeated $?gen192 & : ( not ( member$ rule7_6 $?gen192 ) ) ) ) ) ) => ( calc ( bind $?gen195 ( delete-member$ $?gen194 ( create$ rule7_6-overruled $?gen193 ) ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( positive-overruled $?gen195 ) )"))
-
-([rule7_6-overruled] of derived-attribute-rule
-   (pos-name rule7_6-overruled-gen505)
-   (depends-on declare life_threatening_torture psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule7_6] ) ) ) ?gen197 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen196 & : ( >= ?gen196 1 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen193 ) ( positive-overruled $?gen194 & : ( not ( subseq-pos ( create$ rule7_6-overruled $?gen193 $$$ $?gen194 ) ) ) ) ( negative-defeated $?gen192 & : ( not ( member$ rule7_6 $?gen192 ) ) ) ) ( test ( eq ( class ?gen190 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen195 ( create$ rule7_6-overruled $?gen193 $?gen194 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( positive-overruled $?gen195 ) )"))
-
-([rule7_6-support] of derived-attribute-rule
-   (pos-name rule7_6-support-gen507)
-   (depends-on declare life_threatening_torture psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule7_6] ) ) ) ?gen189 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen190 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen192 & : ( not ( subseq-pos ( create$ rule7_6 ?gen189 $$$ $?gen192 ) ) ) ) ) ( test ( eq ( class ?gen190 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen195 ( create$ rule7_6 ?gen189 $?gen192 ) ) ) ?gen190 <- ( psychological_abuse_one_victim ( negative-support $?gen195 ) )"))
-
-([rule7_5-defeated-dot] of derived-attribute-rule
-   (pos-name rule7_5-defeated-dot-gen509)
-   (depends-on declare psychological_abuse_more_victim life_threatening_torture)
-   (implies psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule7_5] ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen184 & : ( subseq-pos ( create$ rule7_5-defeated rule2 $$$ $?gen184 ) ) ) ) ( test ( eq ( class ?gen181 ) psychological_abuse_more_victim ) ) ( not ?gen188 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen187 & : ( >= ?gen187 1 ) ) ) ) => ( calc ( bind $?gen183 ( delete-member$ $?gen184 ( create$ rule7_5-defeated rule2 ) ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( positive-defeated $?gen183 ) )"))
-
-([rule7_5-defeated] of derived-attribute-rule
-   (pos-name rule7_5-defeated-gen511)
-   (depends-on declare life_threatening_torture psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule7_5] ) ) ) ?gen188 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen187 & : ( >= ?gen187 1 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen184 & : ( not ( subseq-pos ( create$ rule7_5-defeated rule2 $$$ $?gen184 ) ) ) ) ) ( test ( eq ( class ?gen181 ) psychological_abuse_more_victim ) ) => ( calc ( bind $?gen183 ( create$ rule7_5-defeated rule2 $?gen184 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( positive-defeated $?gen183 ) )"))
-
-([rule7_5-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule7_5-defeasibly-dot-gen513)
-   (depends-on declare psychological_abuse_more_victim life_threatening_torture psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule7_5] ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule7_5 $? ) ) ( test ( eq ( class ?gen181 ) psychological_abuse_more_victim ) ) ( not ( and ?gen188 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen187 & : ( >= ?gen187 1 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( positive ~ 2 ) ( negative-overruled $?gen183 & : ( not ( member$ rule7_5 $?gen183 ) ) ) ) ) ) => ?gen181 <- ( psychological_abuse_more_victim ( negative 0 ) )"))
-
-([rule7_5-defeasibly] of derived-attribute-rule
-   (pos-name rule7_5-defeasibly-gen515)
-   (depends-on declare life_threatening_torture psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule7_5] ) ) ) ?gen188 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen187 & : ( >= ?gen187 1 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen183 & : ( not ( member$ rule7_5 $?gen183 ) ) ) ) ( test ( eq ( class ?gen181 ) psychological_abuse_more_victim ) ) => ?gen181 <- ( psychological_abuse_more_victim ( negative 1 ) ( negative-derivator rule7_5 ?gen188 ) )"))
-
-([rule7_5-overruled-dot] of derived-attribute-rule
-   (pos-name rule7_5-overruled-dot-gen517)
-   (depends-on declare psychological_abuse_more_victim life_threatening_torture psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule7_5] ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen184 ) ( positive-overruled $?gen185 & : ( subseq-pos ( create$ rule7_5-overruled $?gen184 $$$ $?gen185 ) ) ) ) ( test ( eq ( class ?gen181 ) psychological_abuse_more_victim ) ) ( not ( and ?gen188 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen187 & : ( >= ?gen187 1 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( negative-defeated $?gen183 & : ( not ( member$ rule7_5 $?gen183 ) ) ) ) ) ) => ( calc ( bind $?gen186 ( delete-member$ $?gen185 ( create$ rule7_5-overruled $?gen184 ) ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( positive-overruled $?gen186 ) )"))
-
-([rule7_5-overruled] of derived-attribute-rule
-   (pos-name rule7_5-overruled-gen519)
-   (depends-on declare life_threatening_torture psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule7_5] ) ) ) ?gen188 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen187 & : ( >= ?gen187 1 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen184 ) ( positive-overruled $?gen185 & : ( not ( subseq-pos ( create$ rule7_5-overruled $?gen184 $$$ $?gen185 ) ) ) ) ( negative-defeated $?gen183 & : ( not ( member$ rule7_5 $?gen183 ) ) ) ) ( test ( eq ( class ?gen181 ) psychological_abuse_more_victim ) ) => ( calc ( bind $?gen186 ( create$ rule7_5-overruled $?gen184 $?gen185 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( positive-overruled $?gen186 ) )"))
-
-([rule7_5-support] of derived-attribute-rule
-   (pos-name rule7_5-support-gen521)
-   (depends-on declare life_threatening_torture psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule7_5] ) ) ) ?gen180 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen181 <- ( psychological_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen183 & : ( not ( subseq-pos ( create$ rule7_5 ?gen180 $$$ $?gen183 ) ) ) ) ) ( test ( eq ( class ?gen181 ) psychological_abuse_more_victim ) ) => ( calc ( bind $?gen186 ( create$ rule7_5 ?gen180 $?gen183 ) ) ) ?gen181 <- ( psychological_abuse_more_victim ( negative-support $?gen186 ) )"))
-
-([rule7_4-defeated-dot] of derived-attribute-rule
-   (pos-name rule7_4-defeated-dot-gen523)
-   (depends-on declare physical_abuse_one_victim life_threatening_torture)
-   (implies physical_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule7_4] ) ) ) ?gen172 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen175 & : ( subseq-pos ( create$ rule7_4-defeated rule3 $$$ $?gen175 ) ) ) ) ( test ( eq ( class ?gen172 ) physical_abuse_one_victim ) ) ( not ?gen179 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen178 & : ( >= ?gen178 1 ) ) ) ) => ( calc ( bind $?gen174 ( delete-member$ $?gen175 ( create$ rule7_4-defeated rule3 ) ) ) ) ?gen172 <- ( physical_abuse_one_victim ( positive-defeated $?gen174 ) )"))
-
-([rule7_4-defeated] of derived-attribute-rule
-   (pos-name rule7_4-defeated-gen525)
-   (depends-on declare life_threatening_torture physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule7_4] ) ) ) ?gen179 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen178 & : ( >= ?gen178 1 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen175 & : ( not ( subseq-pos ( create$ rule7_4-defeated rule3 $$$ $?gen175 ) ) ) ) ) ( test ( eq ( class ?gen172 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen174 ( create$ rule7_4-defeated rule3 $?gen175 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( positive-defeated $?gen174 ) )"))
-
-([rule7_4-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule7_4-defeasibly-dot-gen527)
-   (depends-on declare physical_abuse_one_victim life_threatening_torture physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule7_4] ) ) ) ?gen172 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule7_4 $? ) ) ( test ( eq ( class ?gen172 ) physical_abuse_one_victim ) ) ( not ( and ?gen179 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen178 & : ( >= ?gen178 1 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( positive ~ 2 ) ( negative-overruled $?gen174 & : ( not ( member$ rule7_4 $?gen174 ) ) ) ) ) ) => ?gen172 <- ( physical_abuse_one_victim ( negative 0 ) )"))
-
-([rule7_4-defeasibly] of derived-attribute-rule
-   (pos-name rule7_4-defeasibly-gen529)
-   (depends-on declare life_threatening_torture physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule7_4] ) ) ) ?gen179 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen178 & : ( >= ?gen178 1 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen174 & : ( not ( member$ rule7_4 $?gen174 ) ) ) ) ( test ( eq ( class ?gen172 ) physical_abuse_one_victim ) ) => ?gen172 <- ( physical_abuse_one_victim ( negative 1 ) ( negative-derivator rule7_4 ?gen179 ) )"))
-
-([rule7_4-overruled-dot] of derived-attribute-rule
-   (pos-name rule7_4-overruled-dot-gen531)
-   (depends-on declare physical_abuse_one_victim life_threatening_torture physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule7_4] ) ) ) ?gen172 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen175 ) ( positive-overruled $?gen176 & : ( subseq-pos ( create$ rule7_4-overruled $?gen175 $$$ $?gen176 ) ) ) ) ( test ( eq ( class ?gen172 ) physical_abuse_one_victim ) ) ( not ( and ?gen179 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen178 & : ( >= ?gen178 1 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( negative-defeated $?gen174 & : ( not ( member$ rule7_4 $?gen174 ) ) ) ) ) ) => ( calc ( bind $?gen177 ( delete-member$ $?gen176 ( create$ rule7_4-overruled $?gen175 ) ) ) ) ?gen172 <- ( physical_abuse_one_victim ( positive-overruled $?gen177 ) )"))
-
-([rule7_4-overruled] of derived-attribute-rule
-   (pos-name rule7_4-overruled-gen533)
-   (depends-on declare life_threatening_torture physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule7_4] ) ) ) ?gen179 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen178 & : ( >= ?gen178 1 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen175 ) ( positive-overruled $?gen176 & : ( not ( subseq-pos ( create$ rule7_4-overruled $?gen175 $$$ $?gen176 ) ) ) ) ( negative-defeated $?gen174 & : ( not ( member$ rule7_4 $?gen174 ) ) ) ) ( test ( eq ( class ?gen172 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen177 ( create$ rule7_4-overruled $?gen175 $?gen176 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( positive-overruled $?gen177 ) )"))
-
-([rule7_4-support] of derived-attribute-rule
-   (pos-name rule7_4-support-gen535)
-   (depends-on declare life_threatening_torture physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule7_4] ) ) ) ?gen171 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen172 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen174 & : ( not ( subseq-pos ( create$ rule7_4 ?gen171 $$$ $?gen174 ) ) ) ) ) ( test ( eq ( class ?gen172 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen177 ( create$ rule7_4 ?gen171 $?gen174 ) ) ) ?gen172 <- ( physical_abuse_one_victim ( negative-support $?gen177 ) )"))
-
-([rule7_3-defeated-dot] of derived-attribute-rule
-   (pos-name rule7_3-defeated-dot-gen537)
-   (depends-on declare physical_abuse_more_victim life_threatening_torture)
-   (implies physical_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule7_3] ) ) ) ?gen163 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen166 & : ( subseq-pos ( create$ rule7_3-defeated rule4 $$$ $?gen166 ) ) ) ) ( test ( eq ( class ?gen163 ) physical_abuse_more_victim ) ) ( not ?gen170 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen169 & : ( >= ?gen169 1 ) ) ) ) => ( calc ( bind $?gen165 ( delete-member$ $?gen166 ( create$ rule7_3-defeated rule4 ) ) ) ) ?gen163 <- ( physical_abuse_more_victim ( positive-defeated $?gen165 ) )"))
-
-([rule7_3-defeated] of derived-attribute-rule
-   (pos-name rule7_3-defeated-gen539)
-   (depends-on declare life_threatening_torture physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule7_3] ) ) ) ?gen170 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen169 & : ( >= ?gen169 1 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen166 & : ( not ( subseq-pos ( create$ rule7_3-defeated rule4 $$$ $?gen166 ) ) ) ) ) ( test ( eq ( class ?gen163 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen165 ( create$ rule7_3-defeated rule4 $?gen166 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( positive-defeated $?gen165 ) )"))
-
-([rule7_3-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule7_3-defeasibly-dot-gen541)
-   (depends-on declare physical_abuse_more_victim life_threatening_torture physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule7_3] ) ) ) ?gen163 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule7_3 $? ) ) ( test ( eq ( class ?gen163 ) physical_abuse_more_victim ) ) ( not ( and ?gen170 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen169 & : ( >= ?gen169 1 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( positive ~ 2 ) ( negative-overruled $?gen165 & : ( not ( member$ rule7_3 $?gen165 ) ) ) ) ) ) => ?gen163 <- ( physical_abuse_more_victim ( negative 0 ) )"))
-
-([rule7_3-defeasibly] of derived-attribute-rule
-   (pos-name rule7_3-defeasibly-gen543)
-   (depends-on declare life_threatening_torture physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule7_3] ) ) ) ?gen170 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen169 & : ( >= ?gen169 1 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen165 & : ( not ( member$ rule7_3 $?gen165 ) ) ) ) ( test ( eq ( class ?gen163 ) physical_abuse_more_victim ) ) => ?gen163 <- ( physical_abuse_more_victim ( negative 1 ) ( negative-derivator rule7_3 ?gen170 ) )"))
-
-([rule7_3-overruled-dot] of derived-attribute-rule
-   (pos-name rule7_3-overruled-dot-gen545)
-   (depends-on declare physical_abuse_more_victim life_threatening_torture physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule7_3] ) ) ) ?gen163 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen166 ) ( positive-overruled $?gen167 & : ( subseq-pos ( create$ rule7_3-overruled $?gen166 $$$ $?gen167 ) ) ) ) ( test ( eq ( class ?gen163 ) physical_abuse_more_victim ) ) ( not ( and ?gen170 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen169 & : ( >= ?gen169 1 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( negative-defeated $?gen165 & : ( not ( member$ rule7_3 $?gen165 ) ) ) ) ) ) => ( calc ( bind $?gen168 ( delete-member$ $?gen167 ( create$ rule7_3-overruled $?gen166 ) ) ) ) ?gen163 <- ( physical_abuse_more_victim ( positive-overruled $?gen168 ) )"))
-
-([rule7_3-overruled] of derived-attribute-rule
-   (pos-name rule7_3-overruled-gen547)
-   (depends-on declare life_threatening_torture physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule7_3] ) ) ) ?gen170 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen169 & : ( >= ?gen169 1 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen166 ) ( positive-overruled $?gen167 & : ( not ( subseq-pos ( create$ rule7_3-overruled $?gen166 $$$ $?gen167 ) ) ) ) ( negative-defeated $?gen165 & : ( not ( member$ rule7_3 $?gen165 ) ) ) ) ( test ( eq ( class ?gen163 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen168 ( create$ rule7_3-overruled $?gen166 $?gen167 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( positive-overruled $?gen168 ) )"))
-
-([rule7_3-support] of derived-attribute-rule
-   (pos-name rule7_3-support-gen549)
-   (depends-on declare life_threatening_torture physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule7_3] ) ) ) ?gen162 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen163 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen165 & : ( not ( subseq-pos ( create$ rule7_3 ?gen162 $$$ $?gen165 ) ) ) ) ) ( test ( eq ( class ?gen163 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen168 ( create$ rule7_3 ?gen162 $?gen165 ) ) ) ?gen163 <- ( physical_abuse_more_victim ( negative-support $?gen168 ) )"))
-
-([rule7_2-defeated-dot] of derived-attribute-rule
-   (pos-name rule7_2-defeated-dot-gen551)
-   (depends-on declare physical_psychological_abuse_more_victim life_threatening_torture)
-   (implies physical_psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule7_2] ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen157 & : ( subseq-pos ( create$ rule7_2-defeated rule6 $$$ $?gen157 ) ) ) ) ( test ( eq ( class ?gen154 ) physical_psychological_abuse_more_victim ) ) ( not ?gen161 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen160 & : ( >= ?gen160 1 ) ) ) ) => ( calc ( bind $?gen156 ( delete-member$ $?gen157 ( create$ rule7_2-defeated rule6 ) ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( positive-defeated $?gen156 ) )"))
-
-([rule7_2-defeated] of derived-attribute-rule
-   (pos-name rule7_2-defeated-gen553)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule7_2] ) ) ) ?gen161 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen160 & : ( >= ?gen160 1 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen157 & : ( not ( subseq-pos ( create$ rule7_2-defeated rule6 $$$ $?gen157 ) ) ) ) ) ( test ( eq ( class ?gen154 ) physical_psychological_abuse_more_victim ) ) => ( calc ( bind $?gen156 ( create$ rule7_2-defeated rule6 $?gen157 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( positive-defeated $?gen156 ) )"))
-
-([rule7_2-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule7_2-defeasibly-dot-gen555)
-   (depends-on declare physical_psychological_abuse_more_victim life_threatening_torture physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule7_2] ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule7_2 $? ) ) ( test ( eq ( class ?gen154 ) physical_psychological_abuse_more_victim ) ) ( not ( and ?gen161 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen160 & : ( >= ?gen160 1 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( positive ~ 2 ) ( negative-overruled $?gen156 & : ( not ( member$ rule7_2 $?gen156 ) ) ) ) ) ) => ?gen154 <- ( physical_psychological_abuse_more_victim ( negative 0 ) )"))
-
-([rule7_2-defeasibly] of derived-attribute-rule
-   (pos-name rule7_2-defeasibly-gen557)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule7_2] ) ) ) ?gen161 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen160 & : ( >= ?gen160 1 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen156 & : ( not ( member$ rule7_2 $?gen156 ) ) ) ) ( test ( eq ( class ?gen154 ) physical_psychological_abuse_more_victim ) ) => ?gen154 <- ( physical_psychological_abuse_more_victim ( negative 1 ) ( negative-derivator rule7_2 ?gen161 ) )"))
-
-([rule7_2-overruled-dot] of derived-attribute-rule
-   (pos-name rule7_2-overruled-dot-gen559)
-   (depends-on declare physical_psychological_abuse_more_victim life_threatening_torture physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule7_2] ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen157 ) ( positive-overruled $?gen158 & : ( subseq-pos ( create$ rule7_2-overruled $?gen157 $$$ $?gen158 ) ) ) ) ( test ( eq ( class ?gen154 ) physical_psychological_abuse_more_victim ) ) ( not ( and ?gen161 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen160 & : ( >= ?gen160 1 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( negative-defeated $?gen156 & : ( not ( member$ rule7_2 $?gen156 ) ) ) ) ) ) => ( calc ( bind $?gen159 ( delete-member$ $?gen158 ( create$ rule7_2-overruled $?gen157 ) ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( positive-overruled $?gen159 ) )"))
-
-([rule7_2-overruled] of derived-attribute-rule
-   (pos-name rule7_2-overruled-gen561)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule7_2] ) ) ) ?gen161 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen160 & : ( >= ?gen160 1 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen157 ) ( positive-overruled $?gen158 & : ( not ( subseq-pos ( create$ rule7_2-overruled $?gen157 $$$ $?gen158 ) ) ) ) ( negative-defeated $?gen156 & : ( not ( member$ rule7_2 $?gen156 ) ) ) ) ( test ( eq ( class ?gen154 ) physical_psychological_abuse_more_victim ) ) => ( calc ( bind $?gen159 ( create$ rule7_2-overruled $?gen157 $?gen158 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( positive-overruled $?gen159 ) )"))
-
-([rule7_2-support] of derived-attribute-rule
-   (pos-name rule7_2-support-gen563)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule7_2] ) ) ) ?gen153 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen156 & : ( not ( subseq-pos ( create$ rule7_2 ?gen153 $$$ $?gen156 ) ) ) ) ) ( test ( eq ( class ?gen154 ) physical_psychological_abuse_more_victim ) ) => ( calc ( bind $?gen159 ( create$ rule7_2 ?gen153 $?gen156 ) ) ) ?gen154 <- ( physical_psychological_abuse_more_victim ( negative-support $?gen159 ) )"))
-
-([rule7_1-defeated-dot] of derived-attribute-rule
-   (pos-name rule7_1-defeated-dot-gen565)
-   (depends-on declare physical_psychological_abuse_one_victim life_threatening_torture)
-   (implies physical_psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule7_1] ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen148 & : ( subseq-pos ( create$ rule7_1-defeated rule5 $$$ $?gen148 ) ) ) ) ( test ( eq ( class ?gen145 ) physical_psychological_abuse_one_victim ) ) ( not ?gen152 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen151 & : ( >= ?gen151 1 ) ) ) ) => ( calc ( bind $?gen147 ( delete-member$ $?gen148 ( create$ rule7_1-defeated rule5 ) ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( positive-defeated $?gen147 ) )"))
-
-([rule7_1-defeated] of derived-attribute-rule
-   (pos-name rule7_1-defeated-gen567)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule7_1] ) ) ) ?gen152 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen151 & : ( >= ?gen151 1 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen148 & : ( not ( subseq-pos ( create$ rule7_1-defeated rule5 $$$ $?gen148 ) ) ) ) ) ( test ( eq ( class ?gen145 ) physical_psychological_abuse_one_victim ) ) => ( calc ( bind $?gen147 ( create$ rule7_1-defeated rule5 $?gen148 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( positive-defeated $?gen147 ) )"))
-
-([rule7_1-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule7_1-defeasibly-dot-gen569)
-   (depends-on declare physical_psychological_abuse_one_victim life_threatening_torture physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule7_1] ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule7_1 $? ) ) ( test ( eq ( class ?gen145 ) physical_psychological_abuse_one_victim ) ) ( not ( and ?gen152 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen151 & : ( >= ?gen151 1 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( positive ~ 2 ) ( negative-overruled $?gen147 & : ( not ( member$ rule7_1 $?gen147 ) ) ) ) ) ) => ?gen145 <- ( physical_psychological_abuse_one_victim ( negative 0 ) )"))
-
-([rule7_1-defeasibly] of derived-attribute-rule
-   (pos-name rule7_1-defeasibly-gen571)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule7_1] ) ) ) ?gen152 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen151 & : ( >= ?gen151 1 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen147 & : ( not ( member$ rule7_1 $?gen147 ) ) ) ) ( test ( eq ( class ?gen145 ) physical_psychological_abuse_one_victim ) ) => ?gen145 <- ( physical_psychological_abuse_one_victim ( negative 1 ) ( negative-derivator rule7_1 ?gen152 ) )"))
-
-([rule7_1-overruled-dot] of derived-attribute-rule
-   (pos-name rule7_1-overruled-dot-gen573)
-   (depends-on declare physical_psychological_abuse_one_victim life_threatening_torture physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule7_1] ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen148 ) ( positive-overruled $?gen149 & : ( subseq-pos ( create$ rule7_1-overruled $?gen148 $$$ $?gen149 ) ) ) ) ( test ( eq ( class ?gen145 ) physical_psychological_abuse_one_victim ) ) ( not ( and ?gen152 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen151 & : ( >= ?gen151 1 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( negative-defeated $?gen147 & : ( not ( member$ rule7_1 $?gen147 ) ) ) ) ) ) => ( calc ( bind $?gen150 ( delete-member$ $?gen149 ( create$ rule7_1-overruled $?gen148 ) ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( positive-overruled $?gen150 ) )"))
-
-([rule7_1-overruled] of derived-attribute-rule
-   (pos-name rule7_1-overruled-gen575)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule7_1] ) ) ) ?gen152 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive ?gen151 & : ( >= ?gen151 1 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen148 ) ( positive-overruled $?gen149 & : ( not ( subseq-pos ( create$ rule7_1-overruled $?gen148 $$$ $?gen149 ) ) ) ) ( negative-defeated $?gen147 & : ( not ( member$ rule7_1 $?gen147 ) ) ) ) ( test ( eq ( class ?gen145 ) physical_psychological_abuse_one_victim ) ) => ( calc ( bind $?gen150 ( create$ rule7_1-overruled $?gen148 $?gen149 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( positive-overruled $?gen150 ) )"))
-
-([rule7_1-support] of derived-attribute-rule
-   (pos-name rule7_1-support-gen577)
-   (depends-on declare life_threatening_torture physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule7_1] ) ) ) ?gen144 <- ( life_threatening_torture ( defendant ?Defendant ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen147 & : ( not ( subseq-pos ( create$ rule7_1 ?gen144 $$$ $?gen147 ) ) ) ) ) ( test ( eq ( class ?gen145 ) physical_psychological_abuse_one_victim ) ) => ( calc ( bind $?gen150 ( create$ rule7_1 ?gen144 $?gen147 ) ) ) ?gen145 <- ( physical_psychological_abuse_one_victim ( negative-support $?gen150 ) )"))
-
-([rule7-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule7-defeasibly-dot-gen579)
-   (depends-on declare life_threatening_torture lc:case life_threatening_torture)
-   (implies life_threatening_torture)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule7] ) ) ) ?gen136 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule7 $? ) ) ( test ( eq ( class ?gen136 ) life_threatening_torture ) ) ( not ( and ?gen143 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen142 & : ( >= ?gen142 1 ) ) ) ?gen136 <- ( life_threatening_torture ( negative ~ 2 ) ( positive-overruled $?gen138 & : ( not ( member$ rule7 $?gen138 ) ) ) ) ) ) => ?gen136 <- ( life_threatening_torture ( positive 0 ) )"))
-
-([rule7-defeasibly] of derived-attribute-rule
-   (pos-name rule7-defeasibly-gen581)
-   (depends-on declare lc:case life_threatening_torture)
-   (implies life_threatening_torture)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule7] ) ) ) ?gen143 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen142 & : ( >= ?gen142 1 ) ) ) ?gen136 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen138 & : ( not ( member$ rule7 $?gen138 ) ) ) ) ( test ( eq ( class ?gen136 ) life_threatening_torture ) ) => ?gen136 <- ( life_threatening_torture ( positive 1 ) ( positive-derivator rule7 ?gen143 ) )"))
-
-([rule7-overruled-dot] of derived-attribute-rule
-   (pos-name rule7-overruled-dot-gen583)
-   (depends-on declare life_threatening_torture lc:case life_threatening_torture)
-   (implies life_threatening_torture)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule7] ) ) ) ?gen136 <- ( life_threatening_torture ( defendant ?Defendant ) ( negative-support $?gen139 ) ( negative-overruled $?gen140 & : ( subseq-pos ( create$ rule7-overruled $?gen139 $$$ $?gen140 ) ) ) ) ( test ( eq ( class ?gen136 ) life_threatening_torture ) ) ( not ( and ?gen143 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen142 & : ( >= ?gen142 1 ) ) ) ?gen136 <- ( life_threatening_torture ( positive-defeated $?gen138 & : ( not ( member$ rule7 $?gen138 ) ) ) ) ) ) => ( calc ( bind $?gen141 ( delete-member$ $?gen140 ( create$ rule7-overruled $?gen139 ) ) ) ) ?gen136 <- ( life_threatening_torture ( negative-overruled $?gen141 ) )"))
-
-([rule7-overruled] of derived-attribute-rule
-   (pos-name rule7-overruled-gen585)
-   (depends-on declare lc:case life_threatening_torture)
-   (implies life_threatening_torture)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule7] ) ) ) ?gen143 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen142 & : ( >= ?gen142 1 ) ) ) ?gen136 <- ( life_threatening_torture ( defendant ?Defendant ) ( negative-support $?gen139 ) ( negative-overruled $?gen140 & : ( not ( subseq-pos ( create$ rule7-overruled $?gen139 $$$ $?gen140 ) ) ) ) ( positive-defeated $?gen138 & : ( not ( member$ rule7 $?gen138 ) ) ) ) ( test ( eq ( class ?gen136 ) life_threatening_torture ) ) => ( calc ( bind $?gen141 ( create$ rule7-overruled $?gen139 $?gen140 ) ) ) ?gen136 <- ( life_threatening_torture ( negative-overruled $?gen141 ) )"))
-
-([rule7-support] of derived-attribute-rule
-   (pos-name rule7-support-gen587)
-   (depends-on declare lc:case life_threatening_torture)
-   (implies life_threatening_torture)
-   (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule7] ) ) ) ?gen135 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ) ?gen136 <- ( life_threatening_torture ( defendant ?Defendant ) ( positive-support $?gen138 & : ( not ( subseq-pos ( create$ rule7 ?gen135 $$$ $?gen138 ) ) ) ) ) ( test ( eq ( class ?gen136 ) life_threatening_torture ) ) => ( calc ( bind $?gen141 ( create$ rule7 ?gen135 $?gen138 ) ) ) ?gen136 <- ( life_threatening_torture ( positive-support $?gen141 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6_3] ) ) ) ?gen186 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ?gen187 <- ( movement_restrictions ( defendant ?Defendant ) ( negative-support $?gen189 & : ( not ( subseq-pos ( create$ rule6_3 ?gen186 $$$ $?gen189 ) ) ) ) ) ( test ( eq ( class ?gen187 ) movement_restrictions ) ) => ( calc ( bind $?gen192 ( create$ rule6_3 ?gen186 $?gen189 ) ) ) ?gen187 <- ( movement_restrictions ( negative-support $?gen192 ) )"))
 
 ([rule6_2-defeated-dot] of derived-attribute-rule
-   (pos-name rule6_2-defeated-dot-gen589)
-   (depends-on declare psychological_abuse_more_victims physical_psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule6_2-defeated-dot-gen492)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_death)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule6_2] ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive-defeated $?gen130 & : ( subseq-pos ( create$ rule6_2-defeated rule2 $$$ $?gen130 ) ) ) ) ( test ( eq ( class ?gen127 ) psychological_abuse_more_victims ) ) ( not ?gen134 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen133 & : ( >= ?gen133 1 ) ) ) ) => ( calc ( bind $?gen129 ( delete-member$ $?gen130 ( create$ rule6_2-defeated rule2 ) ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( positive-defeated $?gen129 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule6_2] ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen181 & : ( subseq-pos ( create$ rule6_2-defeated rule2 $$$ $?gen181 ) ) ) ) ( test ( eq ( class ?gen178 ) psychological_abuse_on_duty ) ) ( not ?gen185 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen184 & : ( >= ?gen184 1 ) ) ) ) => ( calc ( bind $?gen180 ( delete-member$ $?gen181 ( create$ rule6_2-defeated rule2 ) ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( positive-defeated $?gen180 ) )"))
 
 ([rule6_2-defeated] of derived-attribute-rule
-   (pos-name rule6_2-defeated-gen591)
-   (depends-on declare physical_psychological_abuse_more_victim psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule6_2-defeated-gen494)
+   (depends-on declare movement_restrictions_death psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule6_2] ) ) ) ?gen134 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen133 & : ( >= ?gen133 1 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive-defeated $?gen130 & : ( not ( subseq-pos ( create$ rule6_2-defeated rule2 $$$ $?gen130 ) ) ) ) ) ( test ( eq ( class ?gen127 ) psychological_abuse_more_victims ) ) => ( calc ( bind $?gen129 ( create$ rule6_2-defeated rule2 $?gen130 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( positive-defeated $?gen129 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule6_2] ) ) ) ?gen185 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen184 & : ( >= ?gen184 1 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen181 & : ( not ( subseq-pos ( create$ rule6_2-defeated rule2 $$$ $?gen181 ) ) ) ) ) ( test ( eq ( class ?gen178 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen180 ( create$ rule6_2-defeated rule2 $?gen181 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( positive-defeated $?gen180 ) )"))
 
 ([rule6_2-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule6_2-defeasibly-dot-gen593)
-   (depends-on declare psychological_abuse_more_victims physical_psychological_abuse_more_victim psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule6_2-defeasibly-dot-gen496)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_death psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6_2] ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule6_2 $? ) ) ( test ( eq ( class ?gen127 ) psychological_abuse_more_victims ) ) ( not ( and ?gen134 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen133 & : ( >= ?gen133 1 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( positive ~ 2 ) ( negative-overruled $?gen129 & : ( not ( member$ rule6_2 $?gen129 ) ) ) ) ) ) => ?gen127 <- ( psychological_abuse_more_victims ( negative 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6_2] ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule6_2 $? ) ) ( test ( eq ( class ?gen178 ) psychological_abuse_on_duty ) ) ( not ( and ?gen185 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen184 & : ( >= ?gen184 1 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( positive ~ 2 ) ( negative-overruled $?gen180 & : ( not ( member$ rule6_2 $?gen180 ) ) ) ) ) ) => ?gen178 <- ( psychological_abuse_on_duty ( negative 0 ) )"))
 
 ([rule6_2-defeasibly] of derived-attribute-rule
-   (pos-name rule6_2-defeasibly-gen595)
-   (depends-on declare physical_psychological_abuse_more_victim psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule6_2-defeasibly-gen498)
+   (depends-on declare movement_restrictions_death psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6_2] ) ) ) ?gen134 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen133 & : ( >= ?gen133 1 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen129 & : ( not ( member$ rule6_2 $?gen129 ) ) ) ) ( test ( eq ( class ?gen127 ) psychological_abuse_more_victims ) ) => ?gen127 <- ( psychological_abuse_more_victims ( negative 1 ) ( negative-derivator rule6_2 ?gen134 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6_2] ) ) ) ?gen185 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen184 & : ( >= ?gen184 1 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen180 & : ( not ( member$ rule6_2 $?gen180 ) ) ) ) ( test ( eq ( class ?gen178 ) psychological_abuse_on_duty ) ) => ?gen178 <- ( psychological_abuse_on_duty ( negative 1 ) ( negative-derivator rule6_2 ?gen185 ) )"))
 
 ([rule6_2-overruled-dot] of derived-attribute-rule
-   (pos-name rule6_2-overruled-dot-gen597)
-   (depends-on declare psychological_abuse_more_victims physical_psychological_abuse_more_victim psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule6_2-overruled-dot-gen500)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_death psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6_2] ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive-support $?gen130 ) ( positive-overruled $?gen131 & : ( subseq-pos ( create$ rule6_2-overruled $?gen130 $$$ $?gen131 ) ) ) ) ( test ( eq ( class ?gen127 ) psychological_abuse_more_victims ) ) ( not ( and ?gen134 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen133 & : ( >= ?gen133 1 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( negative-defeated $?gen129 & : ( not ( member$ rule6_2 $?gen129 ) ) ) ) ) ) => ( calc ( bind $?gen132 ( delete-member$ $?gen131 ( create$ rule6_2-overruled $?gen130 ) ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( positive-overruled $?gen132 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6_2] ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen181 ) ( positive-overruled $?gen182 & : ( subseq-pos ( create$ rule6_2-overruled $?gen181 $$$ $?gen182 ) ) ) ) ( test ( eq ( class ?gen178 ) psychological_abuse_on_duty ) ) ( not ( and ?gen185 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen184 & : ( >= ?gen184 1 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( negative-defeated $?gen180 & : ( not ( member$ rule6_2 $?gen180 ) ) ) ) ) ) => ( calc ( bind $?gen183 ( delete-member$ $?gen182 ( create$ rule6_2-overruled $?gen181 ) ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( positive-overruled $?gen183 ) )"))
 
 ([rule6_2-overruled] of derived-attribute-rule
-   (pos-name rule6_2-overruled-gen599)
-   (depends-on declare physical_psychological_abuse_more_victim psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule6_2-overruled-gen502)
+   (depends-on declare movement_restrictions_death psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6_2] ) ) ) ?gen134 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen133 & : ( >= ?gen133 1 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive-support $?gen130 ) ( positive-overruled $?gen131 & : ( not ( subseq-pos ( create$ rule6_2-overruled $?gen130 $$$ $?gen131 ) ) ) ) ( negative-defeated $?gen129 & : ( not ( member$ rule6_2 $?gen129 ) ) ) ) ( test ( eq ( class ?gen127 ) psychological_abuse_more_victims ) ) => ( calc ( bind $?gen132 ( create$ rule6_2-overruled $?gen130 $?gen131 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( positive-overruled $?gen132 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6_2] ) ) ) ?gen185 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen184 & : ( >= ?gen184 1 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen181 ) ( positive-overruled $?gen182 & : ( not ( subseq-pos ( create$ rule6_2-overruled $?gen181 $$$ $?gen182 ) ) ) ) ( negative-defeated $?gen180 & : ( not ( member$ rule6_2 $?gen180 ) ) ) ) ( test ( eq ( class ?gen178 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen183 ( create$ rule6_2-overruled $?gen181 $?gen182 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( positive-overruled $?gen183 ) )"))
 
 ([rule6_2-support] of derived-attribute-rule
-   (pos-name rule6_2-support-gen601)
-   (depends-on declare physical_psychological_abuse_more_victim psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule6_2-support-gen504)
+   (depends-on declare movement_restrictions_death psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6_2] ) ) ) ?gen126 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ?gen127 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( negative-support $?gen129 & : ( not ( subseq-pos ( create$ rule6_2 ?gen126 $$$ $?gen129 ) ) ) ) ) ( test ( eq ( class ?gen127 ) psychological_abuse_more_victims ) ) => ( calc ( bind $?gen132 ( create$ rule6_2 ?gen126 $?gen129 ) ) ) ?gen127 <- ( psychological_abuse_more_victims ( negative-support $?gen132 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6_2] ) ) ) ?gen177 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ?gen178 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative-support $?gen180 & : ( not ( subseq-pos ( create$ rule6_2 ?gen177 $$$ $?gen180 ) ) ) ) ) ( test ( eq ( class ?gen178 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen183 ( create$ rule6_2 ?gen177 $?gen180 ) ) ) ?gen178 <- ( psychological_abuse_on_duty ( negative-support $?gen183 ) )"))
 
 ([rule6_1-defeated-dot] of derived-attribute-rule
-   (pos-name rule6_1-defeated-dot-gen603)
-   (depends-on declare physical_abuse_more_victim physical_psychological_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule6_1-defeated-dot-gen506)
+   (depends-on declare psychological_abuse movement_restrictions_death)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule6_1] ) ) ) ?gen118 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen121 & : ( subseq-pos ( create$ rule6_1-defeated rule4 $$$ $?gen121 ) ) ) ) ( test ( eq ( class ?gen118 ) physical_abuse_more_victim ) ) ( not ?gen125 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen124 & : ( >= ?gen124 1 ) ) ) ) => ( calc ( bind $?gen120 ( delete-member$ $?gen121 ( create$ rule6_1-defeated rule4 ) ) ) ) ?gen118 <- ( physical_abuse_more_victim ( positive-defeated $?gen120 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule6_1] ) ) ) ?gen169 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen172 & : ( subseq-pos ( create$ rule6_1-defeated rule1 $$$ $?gen172 ) ) ) ) ( test ( eq ( class ?gen169 ) psychological_abuse ) ) ( not ?gen176 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen175 & : ( >= ?gen175 1 ) ) ) ) => ( calc ( bind $?gen171 ( delete-member$ $?gen172 ( create$ rule6_1-defeated rule1 ) ) ) ) ?gen169 <- ( psychological_abuse ( positive-defeated $?gen171 ) )"))
 
 ([rule6_1-defeated] of derived-attribute-rule
-   (pos-name rule6_1-defeated-gen605)
-   (depends-on declare physical_psychological_abuse_more_victim physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule6_1-defeated-gen508)
+   (depends-on declare movement_restrictions_death psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule6_1] ) ) ) ?gen125 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen124 & : ( >= ?gen124 1 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-defeated $?gen121 & : ( not ( subseq-pos ( create$ rule6_1-defeated rule4 $$$ $?gen121 ) ) ) ) ) ( test ( eq ( class ?gen118 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen120 ( create$ rule6_1-defeated rule4 $?gen121 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( positive-defeated $?gen120 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule6_1] ) ) ) ?gen176 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen175 & : ( >= ?gen175 1 ) ) ) ?gen169 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen172 & : ( not ( subseq-pos ( create$ rule6_1-defeated rule1 $$$ $?gen172 ) ) ) ) ) ( test ( eq ( class ?gen169 ) psychological_abuse ) ) => ( calc ( bind $?gen171 ( create$ rule6_1-defeated rule1 $?gen172 ) ) ) ?gen169 <- ( psychological_abuse ( positive-defeated $?gen171 ) )"))
 
 ([rule6_1-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule6_1-defeasibly-dot-gen607)
-   (depends-on declare physical_abuse_more_victim physical_psychological_abuse_more_victim physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule6_1-defeasibly-dot-gen510)
+   (depends-on declare psychological_abuse movement_restrictions_death psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6_1] ) ) ) ?gen118 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule6_1 $? ) ) ( test ( eq ( class ?gen118 ) physical_abuse_more_victim ) ) ( not ( and ?gen125 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen124 & : ( >= ?gen124 1 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( positive ~ 2 ) ( negative-overruled $?gen120 & : ( not ( member$ rule6_1 $?gen120 ) ) ) ) ) ) => ?gen118 <- ( physical_abuse_more_victim ( negative 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6_1] ) ) ) ?gen169 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule6_1 $? ) ) ( test ( eq ( class ?gen169 ) psychological_abuse ) ) ( not ( and ?gen176 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen175 & : ( >= ?gen175 1 ) ) ) ?gen169 <- ( psychological_abuse ( positive ~ 2 ) ( negative-overruled $?gen171 & : ( not ( member$ rule6_1 $?gen171 ) ) ) ) ) ) => ?gen169 <- ( psychological_abuse ( negative 0 ) )"))
 
 ([rule6_1-defeasibly] of derived-attribute-rule
-   (pos-name rule6_1-defeasibly-gen609)
-   (depends-on declare physical_psychological_abuse_more_victim physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule6_1-defeasibly-gen512)
+   (depends-on declare movement_restrictions_death psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6_1] ) ) ) ?gen125 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen124 & : ( >= ?gen124 1 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen120 & : ( not ( member$ rule6_1 $?gen120 ) ) ) ) ( test ( eq ( class ?gen118 ) physical_abuse_more_victim ) ) => ?gen118 <- ( physical_abuse_more_victim ( negative 1 ) ( negative-derivator rule6_1 ?gen125 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6_1] ) ) ) ?gen176 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen175 & : ( >= ?gen175 1 ) ) ) ?gen169 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen171 & : ( not ( member$ rule6_1 $?gen171 ) ) ) ) ( test ( eq ( class ?gen169 ) psychological_abuse ) ) => ?gen169 <- ( psychological_abuse ( negative 1 ) ( negative-derivator rule6_1 ?gen176 ) )"))
 
 ([rule6_1-overruled-dot] of derived-attribute-rule
-   (pos-name rule6_1-overruled-dot-gen611)
-   (depends-on declare physical_abuse_more_victim physical_psychological_abuse_more_victim physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule6_1-overruled-dot-gen514)
+   (depends-on declare psychological_abuse movement_restrictions_death psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6_1] ) ) ) ?gen118 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen121 ) ( positive-overruled $?gen122 & : ( subseq-pos ( create$ rule6_1-overruled $?gen121 $$$ $?gen122 ) ) ) ) ( test ( eq ( class ?gen118 ) physical_abuse_more_victim ) ) ( not ( and ?gen125 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen124 & : ( >= ?gen124 1 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( negative-defeated $?gen120 & : ( not ( member$ rule6_1 $?gen120 ) ) ) ) ) ) => ( calc ( bind $?gen123 ( delete-member$ $?gen122 ( create$ rule6_1-overruled $?gen121 ) ) ) ) ?gen118 <- ( physical_abuse_more_victim ( positive-overruled $?gen123 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6_1] ) ) ) ?gen169 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen172 ) ( positive-overruled $?gen173 & : ( subseq-pos ( create$ rule6_1-overruled $?gen172 $$$ $?gen173 ) ) ) ) ( test ( eq ( class ?gen169 ) psychological_abuse ) ) ( not ( and ?gen176 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen175 & : ( >= ?gen175 1 ) ) ) ?gen169 <- ( psychological_abuse ( negative-defeated $?gen171 & : ( not ( member$ rule6_1 $?gen171 ) ) ) ) ) ) => ( calc ( bind $?gen174 ( delete-member$ $?gen173 ( create$ rule6_1-overruled $?gen172 ) ) ) ) ?gen169 <- ( psychological_abuse ( positive-overruled $?gen174 ) )"))
 
 ([rule6_1-overruled] of derived-attribute-rule
-   (pos-name rule6_1-overruled-gen613)
-   (depends-on declare physical_psychological_abuse_more_victim physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule6_1-overruled-gen516)
+   (depends-on declare movement_restrictions_death psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6_1] ) ) ) ?gen125 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive ?gen124 & : ( >= ?gen124 1 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen121 ) ( positive-overruled $?gen122 & : ( not ( subseq-pos ( create$ rule6_1-overruled $?gen121 $$$ $?gen122 ) ) ) ) ( negative-defeated $?gen120 & : ( not ( member$ rule6_1 $?gen120 ) ) ) ) ( test ( eq ( class ?gen118 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen123 ( create$ rule6_1-overruled $?gen121 $?gen122 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( positive-overruled $?gen123 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6_1] ) ) ) ?gen176 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive ?gen175 & : ( >= ?gen175 1 ) ) ) ?gen169 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen172 ) ( positive-overruled $?gen173 & : ( not ( subseq-pos ( create$ rule6_1-overruled $?gen172 $$$ $?gen173 ) ) ) ) ( negative-defeated $?gen171 & : ( not ( member$ rule6_1 $?gen171 ) ) ) ) ( test ( eq ( class ?gen169 ) psychological_abuse ) ) => ( calc ( bind $?gen174 ( create$ rule6_1-overruled $?gen172 $?gen173 ) ) ) ?gen169 <- ( psychological_abuse ( positive-overruled $?gen174 ) )"))
 
 ([rule6_1-support] of derived-attribute-rule
-   (pos-name rule6_1-support-gen615)
-   (depends-on declare physical_psychological_abuse_more_victim physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule6_1-support-gen518)
+   (depends-on declare movement_restrictions_death psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6_1] ) ) ) ?gen117 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ?gen118 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen120 & : ( not ( subseq-pos ( create$ rule6_1 ?gen117 $$$ $?gen120 ) ) ) ) ) ( test ( eq ( class ?gen118 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen123 ( create$ rule6_1 ?gen117 $?gen120 ) ) ) ?gen118 <- ( physical_abuse_more_victim ( negative-support $?gen123 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6_1] ) ) ) ?gen168 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ?gen169 <- ( psychological_abuse ( defendant ?Defendant ) ( negative-support $?gen171 & : ( not ( subseq-pos ( create$ rule6_1 ?gen168 $$$ $?gen171 ) ) ) ) ) ( test ( eq ( class ?gen169 ) psychological_abuse ) ) => ( calc ( bind $?gen174 ( create$ rule6_1 ?gen168 $?gen171 ) ) ) ?gen169 <- ( psychological_abuse ( negative-support $?gen174 ) )"))
 
 ([rule6-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule6-defeasibly-dot-gen617)
-   (depends-on declare physical_psychological_abuse_more_victim lc:case lc:case lc:case physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
+   (pos-name rule6-defeasibly-dot-gen520)
+   (depends-on declare movement_restrictions_death lc:case movement_restrictions_death)
+   (implies movement_restrictions_death)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6] ) ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule6 $? ) ) ( test ( eq ( class ?gen105 ) physical_psychological_abuse_more_victim ) ) ( not ( and ?gen112 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen111 & : ( >= ?gen111 1 ) ) ) ?gen114 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen113 & : ( >= ?gen113 1 ) ) ) ?gen116 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen115 & : ( >= ?gen115 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( negative ~ 2 ) ( positive-overruled $?gen107 & : ( not ( member$ rule6 $?gen107 ) ) ) ) ) ) => ?gen105 <- ( physical_psychological_abuse_more_victim ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule6] ) ) ) ?gen160 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule6 $? ) ) ( test ( eq ( class ?gen160 ) movement_restrictions_death ) ) ( not ( and ?gen167 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"FATAL\" ) ( positive ?gen166 & : ( >= ?gen166 1 ) ) ) ?gen160 <- ( movement_restrictions_death ( negative ~ 2 ) ( positive-overruled $?gen162 & : ( not ( member$ rule6 $?gen162 ) ) ) ) ) ) => ?gen160 <- ( movement_restrictions_death ( positive 0 ) )"))
 
 ([rule6-defeasibly] of derived-attribute-rule
-   (pos-name rule6-defeasibly-gen619)
-   (depends-on declare lc:case lc:case lc:case physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
+   (pos-name rule6-defeasibly-gen522)
+   (depends-on declare lc:case movement_restrictions_death)
+   (implies movement_restrictions_death)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6] ) ) ) ?gen112 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen111 & : ( >= ?gen111 1 ) ) ) ?gen114 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen113 & : ( >= ?gen113 1 ) ) ) ?gen116 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen115 & : ( >= ?gen115 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen107 & : ( not ( member$ rule6 $?gen107 ) ) ) ) ( test ( eq ( class ?gen105 ) physical_psychological_abuse_more_victim ) ) => ?gen105 <- ( physical_psychological_abuse_more_victim ( positive 1 ) ( positive-derivator rule6 ?gen112 ?gen114 ?gen116 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule6] ) ) ) ?gen167 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"FATAL\" ) ( positive ?gen166 & : ( >= ?gen166 1 ) ) ) ?gen160 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen162 & : ( not ( member$ rule6 $?gen162 ) ) ) ) ( test ( eq ( class ?gen160 ) movement_restrictions_death ) ) => ?gen160 <- ( movement_restrictions_death ( positive 1 ) ( positive-derivator rule6 ?gen167 ) )"))
 
 ([rule6-overruled-dot] of derived-attribute-rule
-   (pos-name rule6-overruled-dot-gen621)
-   (depends-on declare physical_psychological_abuse_more_victim lc:case lc:case lc:case physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
+   (pos-name rule6-overruled-dot-gen524)
+   (depends-on declare movement_restrictions_death lc:case movement_restrictions_death)
+   (implies movement_restrictions_death)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6] ) ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen108 ) ( negative-overruled $?gen109 & : ( subseq-pos ( create$ rule6-overruled $?gen108 $$$ $?gen109 ) ) ) ) ( test ( eq ( class ?gen105 ) physical_psychological_abuse_more_victim ) ) ( not ( and ?gen112 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen111 & : ( >= ?gen111 1 ) ) ) ?gen114 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen113 & : ( >= ?gen113 1 ) ) ) ?gen116 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen115 & : ( >= ?gen115 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( positive-defeated $?gen107 & : ( not ( member$ rule6 $?gen107 ) ) ) ) ) ) => ( calc ( bind $?gen110 ( delete-member$ $?gen109 ( create$ rule6-overruled $?gen108 ) ) ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( negative-overruled $?gen110 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule6] ) ) ) ?gen160 <- ( movement_restrictions_death ( defendant ?Defendant ) ( negative-support $?gen163 ) ( negative-overruled $?gen164 & : ( subseq-pos ( create$ rule6-overruled $?gen163 $$$ $?gen164 ) ) ) ) ( test ( eq ( class ?gen160 ) movement_restrictions_death ) ) ( not ( and ?gen167 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"FATAL\" ) ( positive ?gen166 & : ( >= ?gen166 1 ) ) ) ?gen160 <- ( movement_restrictions_death ( positive-defeated $?gen162 & : ( not ( member$ rule6 $?gen162 ) ) ) ) ) ) => ( calc ( bind $?gen165 ( delete-member$ $?gen164 ( create$ rule6-overruled $?gen163 ) ) ) ) ?gen160 <- ( movement_restrictions_death ( negative-overruled $?gen165 ) )"))
 
 ([rule6-overruled] of derived-attribute-rule
-   (pos-name rule6-overruled-gen623)
-   (depends-on declare lc:case lc:case lc:case physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
+   (pos-name rule6-overruled-gen526)
+   (depends-on declare lc:case movement_restrictions_death)
+   (implies movement_restrictions_death)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6] ) ) ) ?gen112 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen111 & : ( >= ?gen111 1 ) ) ) ?gen114 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen113 & : ( >= ?gen113 1 ) ) ) ?gen116 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen115 & : ( >= ?gen115 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen108 ) ( negative-overruled $?gen109 & : ( not ( subseq-pos ( create$ rule6-overruled $?gen108 $$$ $?gen109 ) ) ) ) ( positive-defeated $?gen107 & : ( not ( member$ rule6 $?gen107 ) ) ) ) ( test ( eq ( class ?gen105 ) physical_psychological_abuse_more_victim ) ) => ( calc ( bind $?gen110 ( create$ rule6-overruled $?gen108 $?gen109 ) ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( negative-overruled $?gen110 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule6] ) ) ) ?gen167 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"FATAL\" ) ( positive ?gen166 & : ( >= ?gen166 1 ) ) ) ?gen160 <- ( movement_restrictions_death ( defendant ?Defendant ) ( negative-support $?gen163 ) ( negative-overruled $?gen164 & : ( not ( subseq-pos ( create$ rule6-overruled $?gen163 $$$ $?gen164 ) ) ) ) ( positive-defeated $?gen162 & : ( not ( member$ rule6 $?gen162 ) ) ) ) ( test ( eq ( class ?gen160 ) movement_restrictions_death ) ) => ( calc ( bind $?gen165 ( create$ rule6-overruled $?gen163 $?gen164 ) ) ) ?gen160 <- ( movement_restrictions_death ( negative-overruled $?gen165 ) )"))
 
 ([rule6-support] of derived-attribute-rule
-   (pos-name rule6-support-gen625)
-   (depends-on declare lc:case lc:case lc:case physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
+   (pos-name rule6-support-gen528)
+   (depends-on declare lc:case movement_restrictions_death)
+   (implies movement_restrictions_death)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6] ) ) ) ?gen101 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen102 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ?gen103 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen107 & : ( not ( subseq-pos ( create$ rule6 ?gen101 ?gen102 ?gen103 $$$ $?gen107 ) ) ) ) ) ( test ( eq ( class ?gen105 ) physical_psychological_abuse_more_victim ) ) => ( calc ( bind $?gen110 ( create$ rule6 ?gen101 ?gen102 ?gen103 $?gen107 ) ) ) ?gen105 <- ( physical_psychological_abuse_more_victim ( positive-support $?gen110 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule6] ) ) ) ?gen159 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"FATAL\" ) ) ?gen160 <- ( movement_restrictions_death ( defendant ?Defendant ) ( positive-support $?gen162 & : ( not ( subseq-pos ( create$ rule6 ?gen159 $$$ $?gen162 ) ) ) ) ) ( test ( eq ( class ?gen160 ) movement_restrictions_death ) ) => ( calc ( bind $?gen165 ( create$ rule6 ?gen159 $?gen162 ) ) ) ?gen160 <- ( movement_restrictions_death ( positive-support $?gen165 ) )"))
+
+([rule5_4-defeated-dot] of derived-attribute-rule
+   (pos-name rule5_4-defeated-dot-gen530)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions_life_threatening)
+   (implies movement_restrictions_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule5_4] ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen154 & : ( subseq-pos ( create$ rule5_4-defeated rule4 $$$ $?gen154 ) ) ) ) ( test ( eq ( class ?gen151 ) movement_restrictions_on_duty ) ) ( not ?gen158 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen157 & : ( >= ?gen157 1 ) ) ) ) => ( calc ( bind $?gen153 ( delete-member$ $?gen154 ( create$ rule5_4-defeated rule4 ) ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( positive-defeated $?gen153 ) )"))
+
+([rule5_4-defeated] of derived-attribute-rule
+   (pos-name rule5_4-defeated-gen532)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule5_4] ) ) ) ?gen158 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen157 & : ( >= ?gen157 1 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen154 & : ( not ( subseq-pos ( create$ rule5_4-defeated rule4 $$$ $?gen154 ) ) ) ) ) ( test ( eq ( class ?gen151 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen153 ( create$ rule5_4-defeated rule4 $?gen154 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( positive-defeated $?gen153 ) )"))
+
+([rule5_4-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule5_4-defeasibly-dot-gen534)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions_life_threatening movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5_4] ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule5_4 $? ) ) ( test ( eq ( class ?gen151 ) movement_restrictions_on_duty ) ) ( not ( and ?gen158 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen157 & : ( >= ?gen157 1 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( positive ~ 2 ) ( negative-overruled $?gen153 & : ( not ( member$ rule5_4 $?gen153 ) ) ) ) ) ) => ?gen151 <- ( movement_restrictions_on_duty ( negative 0 ) )"))
+
+([rule5_4-defeasibly] of derived-attribute-rule
+   (pos-name rule5_4-defeasibly-gen536)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5_4] ) ) ) ?gen158 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen157 & : ( >= ?gen157 1 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen153 & : ( not ( member$ rule5_4 $?gen153 ) ) ) ) ( test ( eq ( class ?gen151 ) movement_restrictions_on_duty ) ) => ?gen151 <- ( movement_restrictions_on_duty ( negative 1 ) ( negative-derivator rule5_4 ?gen158 ) )"))
+
+([rule5_4-overruled-dot] of derived-attribute-rule
+   (pos-name rule5_4-overruled-dot-gen538)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions_life_threatening movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5_4] ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-support $?gen154 ) ( positive-overruled $?gen155 & : ( subseq-pos ( create$ rule5_4-overruled $?gen154 $$$ $?gen155 ) ) ) ) ( test ( eq ( class ?gen151 ) movement_restrictions_on_duty ) ) ( not ( and ?gen158 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen157 & : ( >= ?gen157 1 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( negative-defeated $?gen153 & : ( not ( member$ rule5_4 $?gen153 ) ) ) ) ) ) => ( calc ( bind $?gen156 ( delete-member$ $?gen155 ( create$ rule5_4-overruled $?gen154 ) ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( positive-overruled $?gen156 ) )"))
+
+([rule5_4-overruled] of derived-attribute-rule
+   (pos-name rule5_4-overruled-gen540)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5_4] ) ) ) ?gen158 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen157 & : ( >= ?gen157 1 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-support $?gen154 ) ( positive-overruled $?gen155 & : ( not ( subseq-pos ( create$ rule5_4-overruled $?gen154 $$$ $?gen155 ) ) ) ) ( negative-defeated $?gen153 & : ( not ( member$ rule5_4 $?gen153 ) ) ) ) ( test ( eq ( class ?gen151 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen156 ( create$ rule5_4-overruled $?gen154 $?gen155 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( positive-overruled $?gen156 ) )"))
+
+([rule5_4-support] of derived-attribute-rule
+   (pos-name rule5_4-support-gen542)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5_4] ) ) ) ?gen150 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ?gen151 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative-support $?gen153 & : ( not ( subseq-pos ( create$ rule5_4 ?gen150 $$$ $?gen153 ) ) ) ) ) ( test ( eq ( class ?gen151 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen156 ( create$ rule5_4 ?gen150 $?gen153 ) ) ) ?gen151 <- ( movement_restrictions_on_duty ( negative-support $?gen156 ) )"))
+
+([rule5_3-defeated-dot] of derived-attribute-rule
+   (pos-name rule5_3-defeated-dot-gen544)
+   (depends-on declare movement_restrictions movement_restrictions_life_threatening)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule5_3] ) ) ) ?gen142 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-defeated $?gen145 & : ( subseq-pos ( create$ rule5_3-defeated rule3 $$$ $?gen145 ) ) ) ) ( test ( eq ( class ?gen142 ) movement_restrictions ) ) ( not ?gen149 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen148 & : ( >= ?gen148 1 ) ) ) ) => ( calc ( bind $?gen144 ( delete-member$ $?gen145 ( create$ rule5_3-defeated rule3 ) ) ) ) ?gen142 <- ( movement_restrictions ( positive-defeated $?gen144 ) )"))
+
+([rule5_3-defeated] of derived-attribute-rule
+   (pos-name rule5_3-defeated-gen546)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule5_3] ) ) ) ?gen149 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen148 & : ( >= ?gen148 1 ) ) ) ?gen142 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-defeated $?gen145 & : ( not ( subseq-pos ( create$ rule5_3-defeated rule3 $$$ $?gen145 ) ) ) ) ) ( test ( eq ( class ?gen142 ) movement_restrictions ) ) => ( calc ( bind $?gen144 ( create$ rule5_3-defeated rule3 $?gen145 ) ) ) ?gen142 <- ( movement_restrictions ( positive-defeated $?gen144 ) )"))
+
+([rule5_3-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule5_3-defeasibly-dot-gen548)
+   (depends-on declare movement_restrictions movement_restrictions_life_threatening movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5_3] ) ) ) ?gen142 <- ( movement_restrictions ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule5_3 $? ) ) ( test ( eq ( class ?gen142 ) movement_restrictions ) ) ( not ( and ?gen149 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen148 & : ( >= ?gen148 1 ) ) ) ?gen142 <- ( movement_restrictions ( positive ~ 2 ) ( negative-overruled $?gen144 & : ( not ( member$ rule5_3 $?gen144 ) ) ) ) ) ) => ?gen142 <- ( movement_restrictions ( negative 0 ) )"))
+
+([rule5_3-defeasibly] of derived-attribute-rule
+   (pos-name rule5_3-defeasibly-gen550)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5_3] ) ) ) ?gen149 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen148 & : ( >= ?gen148 1 ) ) ) ?gen142 <- ( movement_restrictions ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen144 & : ( not ( member$ rule5_3 $?gen144 ) ) ) ) ( test ( eq ( class ?gen142 ) movement_restrictions ) ) => ?gen142 <- ( movement_restrictions ( negative 1 ) ( negative-derivator rule5_3 ?gen149 ) )"))
+
+([rule5_3-overruled-dot] of derived-attribute-rule
+   (pos-name rule5_3-overruled-dot-gen552)
+   (depends-on declare movement_restrictions movement_restrictions_life_threatening movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5_3] ) ) ) ?gen142 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-support $?gen145 ) ( positive-overruled $?gen146 & : ( subseq-pos ( create$ rule5_3-overruled $?gen145 $$$ $?gen146 ) ) ) ) ( test ( eq ( class ?gen142 ) movement_restrictions ) ) ( not ( and ?gen149 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen148 & : ( >= ?gen148 1 ) ) ) ?gen142 <- ( movement_restrictions ( negative-defeated $?gen144 & : ( not ( member$ rule5_3 $?gen144 ) ) ) ) ) ) => ( calc ( bind $?gen147 ( delete-member$ $?gen146 ( create$ rule5_3-overruled $?gen145 ) ) ) ) ?gen142 <- ( movement_restrictions ( positive-overruled $?gen147 ) )"))
+
+([rule5_3-overruled] of derived-attribute-rule
+   (pos-name rule5_3-overruled-gen554)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5_3] ) ) ) ?gen149 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen148 & : ( >= ?gen148 1 ) ) ) ?gen142 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-support $?gen145 ) ( positive-overruled $?gen146 & : ( not ( subseq-pos ( create$ rule5_3-overruled $?gen145 $$$ $?gen146 ) ) ) ) ( negative-defeated $?gen144 & : ( not ( member$ rule5_3 $?gen144 ) ) ) ) ( test ( eq ( class ?gen142 ) movement_restrictions ) ) => ( calc ( bind $?gen147 ( create$ rule5_3-overruled $?gen145 $?gen146 ) ) ) ?gen142 <- ( movement_restrictions ( positive-overruled $?gen147 ) )"))
+
+([rule5_3-support] of derived-attribute-rule
+   (pos-name rule5_3-support-gen556)
+   (depends-on declare movement_restrictions_life_threatening movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5_3] ) ) ) ?gen141 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ?gen142 <- ( movement_restrictions ( defendant ?Defendant ) ( negative-support $?gen144 & : ( not ( subseq-pos ( create$ rule5_3 ?gen141 $$$ $?gen144 ) ) ) ) ) ( test ( eq ( class ?gen142 ) movement_restrictions ) ) => ( calc ( bind $?gen147 ( create$ rule5_3 ?gen141 $?gen144 ) ) ) ?gen142 <- ( movement_restrictions ( negative-support $?gen147 ) )"))
 
 ([rule5_2-defeated-dot] of derived-attribute-rule
-   (pos-name rule5_2-defeated-dot-gen627)
-   (depends-on declare psychological_abuse_one_victim physical_psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule5_2-defeated-dot-gen558)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_life_threatening)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule5_2] ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen96 & : ( subseq-pos ( create$ rule5_2-defeated rule1 $$$ $?gen96 ) ) ) ) ( test ( eq ( class ?gen93 ) psychological_abuse_one_victim ) ) ( not ?gen100 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen99 & : ( >= ?gen99 1 ) ) ) ) => ( calc ( bind $?gen95 ( delete-member$ $?gen96 ( create$ rule5_2-defeated rule1 ) ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( positive-defeated $?gen95 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule5_2] ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen136 & : ( subseq-pos ( create$ rule5_2-defeated rule2 $$$ $?gen136 ) ) ) ) ( test ( eq ( class ?gen133 ) psychological_abuse_on_duty ) ) ( not ?gen140 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen139 & : ( >= ?gen139 1 ) ) ) ) => ( calc ( bind $?gen135 ( delete-member$ $?gen136 ( create$ rule5_2-defeated rule2 ) ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( positive-defeated $?gen135 ) )"))
 
 ([rule5_2-defeated] of derived-attribute-rule
-   (pos-name rule5_2-defeated-gen629)
-   (depends-on declare physical_psychological_abuse_one_victim psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule5_2-defeated-gen560)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule5_2] ) ) ) ?gen100 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen99 & : ( >= ?gen99 1 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen96 & : ( not ( subseq-pos ( create$ rule5_2-defeated rule1 $$$ $?gen96 ) ) ) ) ) ( test ( eq ( class ?gen93 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen95 ( create$ rule5_2-defeated rule1 $?gen96 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( positive-defeated $?gen95 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule5_2] ) ) ) ?gen140 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen139 & : ( >= ?gen139 1 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen136 & : ( not ( subseq-pos ( create$ rule5_2-defeated rule2 $$$ $?gen136 ) ) ) ) ) ( test ( eq ( class ?gen133 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen135 ( create$ rule5_2-defeated rule2 $?gen136 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( positive-defeated $?gen135 ) )"))
 
 ([rule5_2-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule5_2-defeasibly-dot-gen631)
-   (depends-on declare psychological_abuse_one_victim physical_psychological_abuse_one_victim psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule5_2-defeasibly-dot-gen562)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_life_threatening psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5_2] ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule5_2 $? ) ) ( test ( eq ( class ?gen93 ) psychological_abuse_one_victim ) ) ( not ( and ?gen100 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen99 & : ( >= ?gen99 1 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( positive ~ 2 ) ( negative-overruled $?gen95 & : ( not ( member$ rule5_2 $?gen95 ) ) ) ) ) ) => ?gen93 <- ( psychological_abuse_one_victim ( negative 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5_2] ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule5_2 $? ) ) ( test ( eq ( class ?gen133 ) psychological_abuse_on_duty ) ) ( not ( and ?gen140 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen139 & : ( >= ?gen139 1 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( positive ~ 2 ) ( negative-overruled $?gen135 & : ( not ( member$ rule5_2 $?gen135 ) ) ) ) ) ) => ?gen133 <- ( psychological_abuse_on_duty ( negative 0 ) )"))
 
 ([rule5_2-defeasibly] of derived-attribute-rule
-   (pos-name rule5_2-defeasibly-gen633)
-   (depends-on declare physical_psychological_abuse_one_victim psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule5_2-defeasibly-gen564)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5_2] ) ) ) ?gen100 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen99 & : ( >= ?gen99 1 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen95 & : ( not ( member$ rule5_2 $?gen95 ) ) ) ) ( test ( eq ( class ?gen93 ) psychological_abuse_one_victim ) ) => ?gen93 <- ( psychological_abuse_one_victim ( negative 1 ) ( negative-derivator rule5_2 ?gen100 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5_2] ) ) ) ?gen140 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen139 & : ( >= ?gen139 1 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen135 & : ( not ( member$ rule5_2 $?gen135 ) ) ) ) ( test ( eq ( class ?gen133 ) psychological_abuse_on_duty ) ) => ?gen133 <- ( psychological_abuse_on_duty ( negative 1 ) ( negative-derivator rule5_2 ?gen140 ) )"))
 
 ([rule5_2-overruled-dot] of derived-attribute-rule
-   (pos-name rule5_2-overruled-dot-gen635)
-   (depends-on declare psychological_abuse_one_victim physical_psychological_abuse_one_victim psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule5_2-overruled-dot-gen566)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_life_threatening psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5_2] ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen96 ) ( positive-overruled $?gen97 & : ( subseq-pos ( create$ rule5_2-overruled $?gen96 $$$ $?gen97 ) ) ) ) ( test ( eq ( class ?gen93 ) psychological_abuse_one_victim ) ) ( not ( and ?gen100 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen99 & : ( >= ?gen99 1 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( negative-defeated $?gen95 & : ( not ( member$ rule5_2 $?gen95 ) ) ) ) ) ) => ( calc ( bind $?gen98 ( delete-member$ $?gen97 ( create$ rule5_2-overruled $?gen96 ) ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( positive-overruled $?gen98 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5_2] ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen136 ) ( positive-overruled $?gen137 & : ( subseq-pos ( create$ rule5_2-overruled $?gen136 $$$ $?gen137 ) ) ) ) ( test ( eq ( class ?gen133 ) psychological_abuse_on_duty ) ) ( not ( and ?gen140 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen139 & : ( >= ?gen139 1 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( negative-defeated $?gen135 & : ( not ( member$ rule5_2 $?gen135 ) ) ) ) ) ) => ( calc ( bind $?gen138 ( delete-member$ $?gen137 ( create$ rule5_2-overruled $?gen136 ) ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( positive-overruled $?gen138 ) )"))
 
 ([rule5_2-overruled] of derived-attribute-rule
-   (pos-name rule5_2-overruled-gen637)
-   (depends-on declare physical_psychological_abuse_one_victim psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule5_2-overruled-gen568)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5_2] ) ) ) ?gen100 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen99 & : ( >= ?gen99 1 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen96 ) ( positive-overruled $?gen97 & : ( not ( subseq-pos ( create$ rule5_2-overruled $?gen96 $$$ $?gen97 ) ) ) ) ( negative-defeated $?gen95 & : ( not ( member$ rule5_2 $?gen95 ) ) ) ) ( test ( eq ( class ?gen93 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen98 ( create$ rule5_2-overruled $?gen96 $?gen97 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( positive-overruled $?gen98 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5_2] ) ) ) ?gen140 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen139 & : ( >= ?gen139 1 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen136 ) ( positive-overruled $?gen137 & : ( not ( subseq-pos ( create$ rule5_2-overruled $?gen136 $$$ $?gen137 ) ) ) ) ( negative-defeated $?gen135 & : ( not ( member$ rule5_2 $?gen135 ) ) ) ) ( test ( eq ( class ?gen133 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen138 ( create$ rule5_2-overruled $?gen136 $?gen137 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( positive-overruled $?gen138 ) )"))
 
 ([rule5_2-support] of derived-attribute-rule
-   (pos-name rule5_2-support-gen639)
-   (depends-on declare physical_psychological_abuse_one_victim psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule5_2-support-gen570)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5_2] ) ) ) ?gen92 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ?gen93 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen95 & : ( not ( subseq-pos ( create$ rule5_2 ?gen92 $$$ $?gen95 ) ) ) ) ) ( test ( eq ( class ?gen93 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen98 ( create$ rule5_2 ?gen92 $?gen95 ) ) ) ?gen93 <- ( psychological_abuse_one_victim ( negative-support $?gen98 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5_2] ) ) ) ?gen132 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ?gen133 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative-support $?gen135 & : ( not ( subseq-pos ( create$ rule5_2 ?gen132 $$$ $?gen135 ) ) ) ) ) ( test ( eq ( class ?gen133 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen138 ( create$ rule5_2 ?gen132 $?gen135 ) ) ) ?gen133 <- ( psychological_abuse_on_duty ( negative-support $?gen138 ) )"))
 
 ([rule5_1-defeated-dot] of derived-attribute-rule
-   (pos-name rule5_1-defeated-dot-gen641)
-   (depends-on declare physical_abuse_one_victim physical_psychological_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule5_1-defeated-dot-gen572)
+   (depends-on declare psychological_abuse movement_restrictions_life_threatening)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule5_1] ) ) ) ?gen84 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen87 & : ( subseq-pos ( create$ rule5_1-defeated rule3 $$$ $?gen87 ) ) ) ) ( test ( eq ( class ?gen84 ) physical_abuse_one_victim ) ) ( not ?gen91 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen90 & : ( >= ?gen90 1 ) ) ) ) => ( calc ( bind $?gen86 ( delete-member$ $?gen87 ( create$ rule5_1-defeated rule3 ) ) ) ) ?gen84 <- ( physical_abuse_one_victim ( positive-defeated $?gen86 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule5_1] ) ) ) ?gen124 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen127 & : ( subseq-pos ( create$ rule5_1-defeated rule1 $$$ $?gen127 ) ) ) ) ( test ( eq ( class ?gen124 ) psychological_abuse ) ) ( not ?gen131 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen130 & : ( >= ?gen130 1 ) ) ) ) => ( calc ( bind $?gen126 ( delete-member$ $?gen127 ( create$ rule5_1-defeated rule1 ) ) ) ) ?gen124 <- ( psychological_abuse ( positive-defeated $?gen126 ) )"))
 
 ([rule5_1-defeated] of derived-attribute-rule
-   (pos-name rule5_1-defeated-gen643)
-   (depends-on declare physical_psychological_abuse_one_victim physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule5_1-defeated-gen574)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule5_1] ) ) ) ?gen91 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen90 & : ( >= ?gen90 1 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-defeated $?gen87 & : ( not ( subseq-pos ( create$ rule5_1-defeated rule3 $$$ $?gen87 ) ) ) ) ) ( test ( eq ( class ?gen84 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen86 ( create$ rule5_1-defeated rule3 $?gen87 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( positive-defeated $?gen86 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule5_1] ) ) ) ?gen131 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen130 & : ( >= ?gen130 1 ) ) ) ?gen124 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen127 & : ( not ( subseq-pos ( create$ rule5_1-defeated rule1 $$$ $?gen127 ) ) ) ) ) ( test ( eq ( class ?gen124 ) psychological_abuse ) ) => ( calc ( bind $?gen126 ( create$ rule5_1-defeated rule1 $?gen127 ) ) ) ?gen124 <- ( psychological_abuse ( positive-defeated $?gen126 ) )"))
 
 ([rule5_1-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule5_1-defeasibly-dot-gen645)
-   (depends-on declare physical_abuse_one_victim physical_psychological_abuse_one_victim physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule5_1-defeasibly-dot-gen576)
+   (depends-on declare psychological_abuse movement_restrictions_life_threatening psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5_1] ) ) ) ?gen84 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule5_1 $? ) ) ( test ( eq ( class ?gen84 ) physical_abuse_one_victim ) ) ( not ( and ?gen91 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen90 & : ( >= ?gen90 1 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( positive ~ 2 ) ( negative-overruled $?gen86 & : ( not ( member$ rule5_1 $?gen86 ) ) ) ) ) ) => ?gen84 <- ( physical_abuse_one_victim ( negative 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5_1] ) ) ) ?gen124 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule5_1 $? ) ) ( test ( eq ( class ?gen124 ) psychological_abuse ) ) ( not ( and ?gen131 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen130 & : ( >= ?gen130 1 ) ) ) ?gen124 <- ( psychological_abuse ( positive ~ 2 ) ( negative-overruled $?gen126 & : ( not ( member$ rule5_1 $?gen126 ) ) ) ) ) ) => ?gen124 <- ( psychological_abuse ( negative 0 ) )"))
 
 ([rule5_1-defeasibly] of derived-attribute-rule
-   (pos-name rule5_1-defeasibly-gen647)
-   (depends-on declare physical_psychological_abuse_one_victim physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule5_1-defeasibly-gen578)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5_1] ) ) ) ?gen91 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen90 & : ( >= ?gen90 1 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen86 & : ( not ( member$ rule5_1 $?gen86 ) ) ) ) ( test ( eq ( class ?gen84 ) physical_abuse_one_victim ) ) => ?gen84 <- ( physical_abuse_one_victim ( negative 1 ) ( negative-derivator rule5_1 ?gen91 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5_1] ) ) ) ?gen131 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen130 & : ( >= ?gen130 1 ) ) ) ?gen124 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen126 & : ( not ( member$ rule5_1 $?gen126 ) ) ) ) ( test ( eq ( class ?gen124 ) psychological_abuse ) ) => ?gen124 <- ( psychological_abuse ( negative 1 ) ( negative-derivator rule5_1 ?gen131 ) )"))
 
 ([rule5_1-overruled-dot] of derived-attribute-rule
-   (pos-name rule5_1-overruled-dot-gen649)
-   (depends-on declare physical_abuse_one_victim physical_psychological_abuse_one_victim physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule5_1-overruled-dot-gen580)
+   (depends-on declare psychological_abuse movement_restrictions_life_threatening psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5_1] ) ) ) ?gen84 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen87 ) ( positive-overruled $?gen88 & : ( subseq-pos ( create$ rule5_1-overruled $?gen87 $$$ $?gen88 ) ) ) ) ( test ( eq ( class ?gen84 ) physical_abuse_one_victim ) ) ( not ( and ?gen91 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen90 & : ( >= ?gen90 1 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( negative-defeated $?gen86 & : ( not ( member$ rule5_1 $?gen86 ) ) ) ) ) ) => ( calc ( bind $?gen89 ( delete-member$ $?gen88 ( create$ rule5_1-overruled $?gen87 ) ) ) ) ?gen84 <- ( physical_abuse_one_victim ( positive-overruled $?gen89 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5_1] ) ) ) ?gen124 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen127 ) ( positive-overruled $?gen128 & : ( subseq-pos ( create$ rule5_1-overruled $?gen127 $$$ $?gen128 ) ) ) ) ( test ( eq ( class ?gen124 ) psychological_abuse ) ) ( not ( and ?gen131 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen130 & : ( >= ?gen130 1 ) ) ) ?gen124 <- ( psychological_abuse ( negative-defeated $?gen126 & : ( not ( member$ rule5_1 $?gen126 ) ) ) ) ) ) => ( calc ( bind $?gen129 ( delete-member$ $?gen128 ( create$ rule5_1-overruled $?gen127 ) ) ) ) ?gen124 <- ( psychological_abuse ( positive-overruled $?gen129 ) )"))
 
 ([rule5_1-overruled] of derived-attribute-rule
-   (pos-name rule5_1-overruled-gen651)
-   (depends-on declare physical_psychological_abuse_one_victim physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule5_1-overruled-gen582)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5_1] ) ) ) ?gen91 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive ?gen90 & : ( >= ?gen90 1 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen87 ) ( positive-overruled $?gen88 & : ( not ( subseq-pos ( create$ rule5_1-overruled $?gen87 $$$ $?gen88 ) ) ) ) ( negative-defeated $?gen86 & : ( not ( member$ rule5_1 $?gen86 ) ) ) ) ( test ( eq ( class ?gen84 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen89 ( create$ rule5_1-overruled $?gen87 $?gen88 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( positive-overruled $?gen89 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5_1] ) ) ) ?gen131 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive ?gen130 & : ( >= ?gen130 1 ) ) ) ?gen124 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen127 ) ( positive-overruled $?gen128 & : ( not ( subseq-pos ( create$ rule5_1-overruled $?gen127 $$$ $?gen128 ) ) ) ) ( negative-defeated $?gen126 & : ( not ( member$ rule5_1 $?gen126 ) ) ) ) ( test ( eq ( class ?gen124 ) psychological_abuse ) ) => ( calc ( bind $?gen129 ( create$ rule5_1-overruled $?gen127 $?gen128 ) ) ) ?gen124 <- ( psychological_abuse ( positive-overruled $?gen129 ) )"))
 
 ([rule5_1-support] of derived-attribute-rule
-   (pos-name rule5_1-support-gen653)
-   (depends-on declare physical_psychological_abuse_one_victim physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule5_1-support-gen584)
+   (depends-on declare movement_restrictions_life_threatening psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5_1] ) ) ) ?gen83 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ?gen84 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen86 & : ( not ( subseq-pos ( create$ rule5_1 ?gen83 $$$ $?gen86 ) ) ) ) ) ( test ( eq ( class ?gen84 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen89 ( create$ rule5_1 ?gen83 $?gen86 ) ) ) ?gen84 <- ( physical_abuse_one_victim ( negative-support $?gen89 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5_1] ) ) ) ?gen123 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ?gen124 <- ( psychological_abuse ( defendant ?Defendant ) ( negative-support $?gen126 & : ( not ( subseq-pos ( create$ rule5_1 ?gen123 $$$ $?gen126 ) ) ) ) ) ( test ( eq ( class ?gen124 ) psychological_abuse ) ) => ( calc ( bind $?gen129 ( create$ rule5_1 ?gen123 $?gen126 ) ) ) ?gen124 <- ( psychological_abuse ( negative-support $?gen129 ) )"))
 
 ([rule5-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule5-defeasibly-dot-gen655)
-   (depends-on declare physical_psychological_abuse_one_victim lc:case lc:case lc:case physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
+   (pos-name rule5-defeasibly-dot-gen586)
+   (depends-on declare movement_restrictions_life_threatening lc:case movement_restrictions_life_threatening)
+   (implies movement_restrictions_life_threatening)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5] ) ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule5 $? ) ) ( test ( eq ( class ?gen71 ) physical_psychological_abuse_one_victim ) ) ( not ( and ?gen78 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen77 & : ( >= ?gen77 1 ) ) ) ?gen80 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen79 & : ( >= ?gen79 1 ) ) ) ?gen82 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen81 & : ( >= ?gen81 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( negative ~ 2 ) ( positive-overruled $?gen73 & : ( not ( member$ rule5 $?gen73 ) ) ) ) ) ) => ?gen71 <- ( physical_psychological_abuse_one_victim ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule5] ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule5 $? ) ) ( test ( eq ( class ?gen115 ) movement_restrictions_life_threatening ) ) ( not ( and ?gen122 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen121 & : ( >= ?gen121 1 ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( negative ~ 2 ) ( positive-overruled $?gen117 & : ( not ( member$ rule5 $?gen117 ) ) ) ) ) ) => ?gen115 <- ( movement_restrictions_life_threatening ( positive 0 ) )"))
 
 ([rule5-defeasibly] of derived-attribute-rule
-   (pos-name rule5-defeasibly-gen657)
-   (depends-on declare lc:case lc:case lc:case physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
+   (pos-name rule5-defeasibly-gen588)
+   (depends-on declare lc:case movement_restrictions_life_threatening)
+   (implies movement_restrictions_life_threatening)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5] ) ) ) ?gen78 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen77 & : ( >= ?gen77 1 ) ) ) ?gen80 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen79 & : ( >= ?gen79 1 ) ) ) ?gen82 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen81 & : ( >= ?gen81 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen73 & : ( not ( member$ rule5 $?gen73 ) ) ) ) ( test ( eq ( class ?gen71 ) physical_psychological_abuse_one_victim ) ) => ?gen71 <- ( physical_psychological_abuse_one_victim ( positive 1 ) ( positive-derivator rule5 ?gen78 ?gen80 ?gen82 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule5] ) ) ) ?gen122 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen121 & : ( >= ?gen121 1 ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen117 & : ( not ( member$ rule5 $?gen117 ) ) ) ) ( test ( eq ( class ?gen115 ) movement_restrictions_life_threatening ) ) => ?gen115 <- ( movement_restrictions_life_threatening ( positive 1 ) ( positive-derivator rule5 ?gen122 ) )"))
 
 ([rule5-overruled-dot] of derived-attribute-rule
-   (pos-name rule5-overruled-dot-gen659)
-   (depends-on declare physical_psychological_abuse_one_victim lc:case lc:case lc:case physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
+   (pos-name rule5-overruled-dot-gen590)
+   (depends-on declare movement_restrictions_life_threatening lc:case movement_restrictions_life_threatening)
+   (implies movement_restrictions_life_threatening)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5] ) ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen74 ) ( negative-overruled $?gen75 & : ( subseq-pos ( create$ rule5-overruled $?gen74 $$$ $?gen75 ) ) ) ) ( test ( eq ( class ?gen71 ) physical_psychological_abuse_one_victim ) ) ( not ( and ?gen78 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen77 & : ( >= ?gen77 1 ) ) ) ?gen80 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen79 & : ( >= ?gen79 1 ) ) ) ?gen82 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen81 & : ( >= ?gen81 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( positive-defeated $?gen73 & : ( not ( member$ rule5 $?gen73 ) ) ) ) ) ) => ( calc ( bind $?gen76 ( delete-member$ $?gen75 ( create$ rule5-overruled $?gen74 ) ) ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( negative-overruled $?gen76 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule5] ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( negative-support $?gen118 ) ( negative-overruled $?gen119 & : ( subseq-pos ( create$ rule5-overruled $?gen118 $$$ $?gen119 ) ) ) ) ( test ( eq ( class ?gen115 ) movement_restrictions_life_threatening ) ) ( not ( and ?gen122 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen121 & : ( >= ?gen121 1 ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( positive-defeated $?gen117 & : ( not ( member$ rule5 $?gen117 ) ) ) ) ) ) => ( calc ( bind $?gen120 ( delete-member$ $?gen119 ( create$ rule5-overruled $?gen118 ) ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( negative-overruled $?gen120 ) )"))
 
 ([rule5-overruled] of derived-attribute-rule
-   (pos-name rule5-overruled-gen661)
-   (depends-on declare lc:case lc:case lc:case physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
+   (pos-name rule5-overruled-gen592)
+   (depends-on declare lc:case movement_restrictions_life_threatening)
+   (implies movement_restrictions_life_threatening)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5] ) ) ) ?gen78 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen77 & : ( >= ?gen77 1 ) ) ) ?gen80 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen79 & : ( >= ?gen79 1 ) ) ) ?gen82 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen81 & : ( >= ?gen81 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen74 ) ( negative-overruled $?gen75 & : ( not ( subseq-pos ( create$ rule5-overruled $?gen74 $$$ $?gen75 ) ) ) ) ( positive-defeated $?gen73 & : ( not ( member$ rule5 $?gen73 ) ) ) ) ( test ( eq ( class ?gen71 ) physical_psychological_abuse_one_victim ) ) => ( calc ( bind $?gen76 ( create$ rule5-overruled $?gen74 $?gen75 ) ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( negative-overruled $?gen76 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule5] ) ) ) ?gen122 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ( positive ?gen121 & : ( >= ?gen121 1 ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( negative-support $?gen118 ) ( negative-overruled $?gen119 & : ( not ( subseq-pos ( create$ rule5-overruled $?gen118 $$$ $?gen119 ) ) ) ) ( positive-defeated $?gen117 & : ( not ( member$ rule5 $?gen117 ) ) ) ) ( test ( eq ( class ?gen115 ) movement_restrictions_life_threatening ) ) => ( calc ( bind $?gen120 ( create$ rule5-overruled $?gen118 $?gen119 ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( negative-overruled $?gen120 ) )"))
 
 ([rule5-support] of derived-attribute-rule
-   (pos-name rule5-support-gen663)
-   (depends-on declare lc:case lc:case lc:case physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
+   (pos-name rule5-support-gen594)
+   (depends-on declare lc:case movement_restrictions_life_threatening)
+   (implies movement_restrictions_life_threatening)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5] ) ) ) ?gen67 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen68 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ?gen69 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen73 & : ( not ( subseq-pos ( create$ rule5 ?gen67 ?gen68 ?gen69 $$$ $?gen73 ) ) ) ) ) ( test ( eq ( class ?gen71 ) physical_psychological_abuse_one_victim ) ) => ( calc ( bind $?gen76 ( create$ rule5 ?gen67 ?gen68 ?gen69 $?gen73 ) ) ) ?gen71 <- ( physical_psychological_abuse_one_victim ( positive-support $?gen76 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule5] ) ) ) ?gen114 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ) ?gen115 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ( positive-support $?gen117 & : ( not ( subseq-pos ( create$ rule5 ?gen114 $$$ $?gen117 ) ) ) ) ) ( test ( eq ( class ?gen115 ) movement_restrictions_life_threatening ) ) => ( calc ( bind $?gen120 ( create$ rule5 ?gen114 $?gen117 ) ) ) ?gen115 <- ( movement_restrictions_life_threatening ( positive-support $?gen120 ) )"))
+
+([rule4_3-defeated-dot] of derived-attribute-rule
+   (pos-name rule4_3-defeated-dot-gen596)
+   (depends-on declare movement_restrictions movement_restrictions_on_duty)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule4_3] ) ) ) ?gen106 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-defeated $?gen109 & : ( subseq-pos ( create$ rule4_3-defeated rule3 $$$ $?gen109 ) ) ) ) ( test ( eq ( class ?gen106 ) movement_restrictions ) ) ( not ?gen113 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen112 & : ( >= ?gen112 1 ) ) ) ) => ( calc ( bind $?gen108 ( delete-member$ $?gen109 ( create$ rule4_3-defeated rule3 ) ) ) ) ?gen106 <- ( movement_restrictions ( positive-defeated $?gen108 ) )"))
+
+([rule4_3-defeated] of derived-attribute-rule
+   (pos-name rule4_3-defeated-gen598)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule4_3] ) ) ) ?gen113 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen112 & : ( >= ?gen112 1 ) ) ) ?gen106 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-defeated $?gen109 & : ( not ( subseq-pos ( create$ rule4_3-defeated rule3 $$$ $?gen109 ) ) ) ) ) ( test ( eq ( class ?gen106 ) movement_restrictions ) ) => ( calc ( bind $?gen108 ( create$ rule4_3-defeated rule3 $?gen109 ) ) ) ?gen106 <- ( movement_restrictions ( positive-defeated $?gen108 ) )"))
+
+([rule4_3-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule4_3-defeasibly-dot-gen600)
+   (depends-on declare movement_restrictions movement_restrictions_on_duty movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule4_3] ) ) ) ?gen106 <- ( movement_restrictions ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule4_3 $? ) ) ( test ( eq ( class ?gen106 ) movement_restrictions ) ) ( not ( and ?gen113 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen112 & : ( >= ?gen112 1 ) ) ) ?gen106 <- ( movement_restrictions ( positive ~ 2 ) ( negative-overruled $?gen108 & : ( not ( member$ rule4_3 $?gen108 ) ) ) ) ) ) => ?gen106 <- ( movement_restrictions ( negative 0 ) )"))
+
+([rule4_3-defeasibly] of derived-attribute-rule
+   (pos-name rule4_3-defeasibly-gen602)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule4_3] ) ) ) ?gen113 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen112 & : ( >= ?gen112 1 ) ) ) ?gen106 <- ( movement_restrictions ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen108 & : ( not ( member$ rule4_3 $?gen108 ) ) ) ) ( test ( eq ( class ?gen106 ) movement_restrictions ) ) => ?gen106 <- ( movement_restrictions ( negative 1 ) ( negative-derivator rule4_3 ?gen113 ) )"))
+
+([rule4_3-overruled-dot] of derived-attribute-rule
+   (pos-name rule4_3-overruled-dot-gen604)
+   (depends-on declare movement_restrictions movement_restrictions_on_duty movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule4_3] ) ) ) ?gen106 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-support $?gen109 ) ( positive-overruled $?gen110 & : ( subseq-pos ( create$ rule4_3-overruled $?gen109 $$$ $?gen110 ) ) ) ) ( test ( eq ( class ?gen106 ) movement_restrictions ) ) ( not ( and ?gen113 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen112 & : ( >= ?gen112 1 ) ) ) ?gen106 <- ( movement_restrictions ( negative-defeated $?gen108 & : ( not ( member$ rule4_3 $?gen108 ) ) ) ) ) ) => ( calc ( bind $?gen111 ( delete-member$ $?gen110 ( create$ rule4_3-overruled $?gen109 ) ) ) ) ?gen106 <- ( movement_restrictions ( positive-overruled $?gen111 ) )"))
+
+([rule4_3-overruled] of derived-attribute-rule
+   (pos-name rule4_3-overruled-gen606)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule4_3] ) ) ) ?gen113 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen112 & : ( >= ?gen112 1 ) ) ) ?gen106 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-support $?gen109 ) ( positive-overruled $?gen110 & : ( not ( subseq-pos ( create$ rule4_3-overruled $?gen109 $$$ $?gen110 ) ) ) ) ( negative-defeated $?gen108 & : ( not ( member$ rule4_3 $?gen108 ) ) ) ) ( test ( eq ( class ?gen106 ) movement_restrictions ) ) => ( calc ( bind $?gen111 ( create$ rule4_3-overruled $?gen109 $?gen110 ) ) ) ?gen106 <- ( movement_restrictions ( positive-overruled $?gen111 ) )"))
+
+([rule4_3-support] of derived-attribute-rule
+   (pos-name rule4_3-support-gen608)
+   (depends-on declare movement_restrictions_on_duty movement_restrictions)
+   (implies movement_restrictions)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule4_3] ) ) ) ?gen105 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ?gen106 <- ( movement_restrictions ( defendant ?Defendant ) ( negative-support $?gen108 & : ( not ( subseq-pos ( create$ rule4_3 ?gen105 $$$ $?gen108 ) ) ) ) ) ( test ( eq ( class ?gen106 ) movement_restrictions ) ) => ( calc ( bind $?gen111 ( create$ rule4_3 ?gen105 $?gen108 ) ) ) ?gen106 <- ( movement_restrictions ( negative-support $?gen111 ) )"))
+
+([rule4_2-defeated-dot] of derived-attribute-rule
+   (pos-name rule4_2-defeated-dot-gen610)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule4_2] ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen100 & : ( subseq-pos ( create$ rule4_2-defeated rule2 $$$ $?gen100 ) ) ) ) ( test ( eq ( class ?gen97 ) psychological_abuse_on_duty ) ) ( not ?gen104 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen103 & : ( >= ?gen103 1 ) ) ) ) => ( calc ( bind $?gen99 ( delete-member$ $?gen100 ( create$ rule4_2-defeated rule2 ) ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( positive-defeated $?gen99 ) )"))
+
+([rule4_2-defeated] of derived-attribute-rule
+   (pos-name rule4_2-defeated-gen612)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule4_2] ) ) ) ?gen104 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen103 & : ( >= ?gen103 1 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen100 & : ( not ( subseq-pos ( create$ rule4_2-defeated rule2 $$$ $?gen100 ) ) ) ) ) ( test ( eq ( class ?gen97 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen99 ( create$ rule4_2-defeated rule2 $?gen100 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( positive-defeated $?gen99 ) )"))
+
+([rule4_2-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule4_2-defeasibly-dot-gen614)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_on_duty psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule4_2] ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule4_2 $? ) ) ( test ( eq ( class ?gen97 ) psychological_abuse_on_duty ) ) ( not ( and ?gen104 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen103 & : ( >= ?gen103 1 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( positive ~ 2 ) ( negative-overruled $?gen99 & : ( not ( member$ rule4_2 $?gen99 ) ) ) ) ) ) => ?gen97 <- ( psychological_abuse_on_duty ( negative 0 ) )"))
+
+([rule4_2-defeasibly] of derived-attribute-rule
+   (pos-name rule4_2-defeasibly-gen616)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule4_2] ) ) ) ?gen104 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen103 & : ( >= ?gen103 1 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen99 & : ( not ( member$ rule4_2 $?gen99 ) ) ) ) ( test ( eq ( class ?gen97 ) psychological_abuse_on_duty ) ) => ?gen97 <- ( psychological_abuse_on_duty ( negative 1 ) ( negative-derivator rule4_2 ?gen104 ) )"))
+
+([rule4_2-overruled-dot] of derived-attribute-rule
+   (pos-name rule4_2-overruled-dot-gen618)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions_on_duty psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule4_2] ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen100 ) ( positive-overruled $?gen101 & : ( subseq-pos ( create$ rule4_2-overruled $?gen100 $$$ $?gen101 ) ) ) ) ( test ( eq ( class ?gen97 ) psychological_abuse_on_duty ) ) ( not ( and ?gen104 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen103 & : ( >= ?gen103 1 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( negative-defeated $?gen99 & : ( not ( member$ rule4_2 $?gen99 ) ) ) ) ) ) => ( calc ( bind $?gen102 ( delete-member$ $?gen101 ( create$ rule4_2-overruled $?gen100 ) ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( positive-overruled $?gen102 ) )"))
+
+([rule4_2-overruled] of derived-attribute-rule
+   (pos-name rule4_2-overruled-gen620)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule4_2] ) ) ) ?gen104 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen103 & : ( >= ?gen103 1 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen100 ) ( positive-overruled $?gen101 & : ( not ( subseq-pos ( create$ rule4_2-overruled $?gen100 $$$ $?gen101 ) ) ) ) ( negative-defeated $?gen99 & : ( not ( member$ rule4_2 $?gen99 ) ) ) ) ( test ( eq ( class ?gen97 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen102 ( create$ rule4_2-overruled $?gen100 $?gen101 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( positive-overruled $?gen102 ) )"))
+
+([rule4_2-support] of derived-attribute-rule
+   (pos-name rule4_2-support-gen622)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule4_2] ) ) ) ?gen96 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ?gen97 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative-support $?gen99 & : ( not ( subseq-pos ( create$ rule4_2 ?gen96 $$$ $?gen99 ) ) ) ) ) ( test ( eq ( class ?gen97 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen102 ( create$ rule4_2 ?gen96 $?gen99 ) ) ) ?gen97 <- ( psychological_abuse_on_duty ( negative-support $?gen102 ) )"))
+
+([rule4_1-defeated-dot] of derived-attribute-rule
+   (pos-name rule4_1-defeated-dot-gen624)
+   (depends-on declare psychological_abuse movement_restrictions_on_duty)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule4_1] ) ) ) ?gen88 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen91 & : ( subseq-pos ( create$ rule4_1-defeated rule1 $$$ $?gen91 ) ) ) ) ( test ( eq ( class ?gen88 ) psychological_abuse ) ) ( not ?gen95 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen94 & : ( >= ?gen94 1 ) ) ) ) => ( calc ( bind $?gen90 ( delete-member$ $?gen91 ( create$ rule4_1-defeated rule1 ) ) ) ) ?gen88 <- ( psychological_abuse ( positive-defeated $?gen90 ) )"))
+
+([rule4_1-defeated] of derived-attribute-rule
+   (pos-name rule4_1-defeated-gen626)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule4_1] ) ) ) ?gen95 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen94 & : ( >= ?gen94 1 ) ) ) ?gen88 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen91 & : ( not ( subseq-pos ( create$ rule4_1-defeated rule1 $$$ $?gen91 ) ) ) ) ) ( test ( eq ( class ?gen88 ) psychological_abuse ) ) => ( calc ( bind $?gen90 ( create$ rule4_1-defeated rule1 $?gen91 ) ) ) ?gen88 <- ( psychological_abuse ( positive-defeated $?gen90 ) )"))
+
+([rule4_1-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule4_1-defeasibly-dot-gen628)
+   (depends-on declare psychological_abuse movement_restrictions_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule4_1] ) ) ) ?gen88 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule4_1 $? ) ) ( test ( eq ( class ?gen88 ) psychological_abuse ) ) ( not ( and ?gen95 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen94 & : ( >= ?gen94 1 ) ) ) ?gen88 <- ( psychological_abuse ( positive ~ 2 ) ( negative-overruled $?gen90 & : ( not ( member$ rule4_1 $?gen90 ) ) ) ) ) ) => ?gen88 <- ( psychological_abuse ( negative 0 ) )"))
+
+([rule4_1-defeasibly] of derived-attribute-rule
+   (pos-name rule4_1-defeasibly-gen630)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule4_1] ) ) ) ?gen95 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen94 & : ( >= ?gen94 1 ) ) ) ?gen88 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen90 & : ( not ( member$ rule4_1 $?gen90 ) ) ) ) ( test ( eq ( class ?gen88 ) psychological_abuse ) ) => ?gen88 <- ( psychological_abuse ( negative 1 ) ( negative-derivator rule4_1 ?gen95 ) )"))
+
+([rule4_1-overruled-dot] of derived-attribute-rule
+   (pos-name rule4_1-overruled-dot-gen632)
+   (depends-on declare psychological_abuse movement_restrictions_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule4_1] ) ) ) ?gen88 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen91 ) ( positive-overruled $?gen92 & : ( subseq-pos ( create$ rule4_1-overruled $?gen91 $$$ $?gen92 ) ) ) ) ( test ( eq ( class ?gen88 ) psychological_abuse ) ) ( not ( and ?gen95 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen94 & : ( >= ?gen94 1 ) ) ) ?gen88 <- ( psychological_abuse ( negative-defeated $?gen90 & : ( not ( member$ rule4_1 $?gen90 ) ) ) ) ) ) => ( calc ( bind $?gen93 ( delete-member$ $?gen92 ( create$ rule4_1-overruled $?gen91 ) ) ) ) ?gen88 <- ( psychological_abuse ( positive-overruled $?gen93 ) )"))
+
+([rule4_1-overruled] of derived-attribute-rule
+   (pos-name rule4_1-overruled-gen634)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule4_1] ) ) ) ?gen95 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive ?gen94 & : ( >= ?gen94 1 ) ) ) ?gen88 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen91 ) ( positive-overruled $?gen92 & : ( not ( subseq-pos ( create$ rule4_1-overruled $?gen91 $$$ $?gen92 ) ) ) ) ( negative-defeated $?gen90 & : ( not ( member$ rule4_1 $?gen90 ) ) ) ) ( test ( eq ( class ?gen88 ) psychological_abuse ) ) => ( calc ( bind $?gen93 ( create$ rule4_1-overruled $?gen91 $?gen92 ) ) ) ?gen88 <- ( psychological_abuse ( positive-overruled $?gen93 ) )"))
+
+([rule4_1-support] of derived-attribute-rule
+   (pos-name rule4_1-support-gen636)
+   (depends-on declare movement_restrictions_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule4_1] ) ) ) ?gen87 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ?gen88 <- ( psychological_abuse ( defendant ?Defendant ) ( negative-support $?gen90 & : ( not ( subseq-pos ( create$ rule4_1 ?gen87 $$$ $?gen90 ) ) ) ) ) ( test ( eq ( class ?gen88 ) psychological_abuse ) ) => ( calc ( bind $?gen93 ( create$ rule4_1 ?gen87 $?gen90 ) ) ) ?gen88 <- ( psychological_abuse ( negative-support $?gen93 ) )"))
 
 ([rule4-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule4-defeasibly-dot-gen665)
-   (depends-on declare physical_abuse_more_victim lc:case lc:case physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule4-defeasibly-dot-gen638)
+   (depends-on declare movement_restrictions_on_duty lc:case movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule4] ) ) ) ?gen57 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule4 $? ) ) ( test ( eq ( class ?gen57 ) physical_abuse_more_victim ) ) ( not ( and ?gen64 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen63 & : ( >= ?gen63 1 ) ) ) ?gen66 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen65 & : ( >= ?gen65 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen57 <- ( physical_abuse_more_victim ( negative ~ 2 ) ( positive-overruled $?gen59 & : ( not ( member$ rule4 $?gen59 ) ) ) ) ) ) => ?gen57 <- ( physical_abuse_more_victim ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule4] ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule4 $? ) ) ( test ( eq ( class ?gen79 ) movement_restrictions_on_duty ) ) ( not ( and ?gen86 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen85 & : ( >= ?gen85 1 ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( negative ~ 2 ) ( positive-overruled $?gen81 & : ( not ( member$ rule4 $?gen81 ) ) ) ) ) ) => ?gen79 <- ( movement_restrictions_on_duty ( positive 0 ) )"))
 
 ([rule4-defeasibly] of derived-attribute-rule
-   (pos-name rule4-defeasibly-gen667)
-   (depends-on declare lc:case lc:case physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule4-defeasibly-gen640)
+   (depends-on declare lc:case movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule4] ) ) ) ?gen64 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen63 & : ( >= ?gen63 1 ) ) ) ?gen66 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen65 & : ( >= ?gen65 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen57 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen59 & : ( not ( member$ rule4 $?gen59 ) ) ) ) ( test ( eq ( class ?gen57 ) physical_abuse_more_victim ) ) => ?gen57 <- ( physical_abuse_more_victim ( positive 1 ) ( positive-derivator rule4 ?gen64 ?gen66 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule4] ) ) ) ?gen86 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen85 & : ( >= ?gen85 1 ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen81 & : ( not ( member$ rule4 $?gen81 ) ) ) ) ( test ( eq ( class ?gen79 ) movement_restrictions_on_duty ) ) => ?gen79 <- ( movement_restrictions_on_duty ( positive 1 ) ( positive-derivator rule4 ?gen86 ) )"))
 
 ([rule4-overruled-dot] of derived-attribute-rule
-   (pos-name rule4-overruled-dot-gen669)
-   (depends-on declare physical_abuse_more_victim lc:case lc:case physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule4-overruled-dot-gen642)
+   (depends-on declare movement_restrictions_on_duty lc:case movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule4] ) ) ) ?gen57 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen60 ) ( negative-overruled $?gen61 & : ( subseq-pos ( create$ rule4-overruled $?gen60 $$$ $?gen61 ) ) ) ) ( test ( eq ( class ?gen57 ) physical_abuse_more_victim ) ) ( not ( and ?gen64 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen63 & : ( >= ?gen63 1 ) ) ) ?gen66 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen65 & : ( >= ?gen65 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen57 <- ( physical_abuse_more_victim ( positive-defeated $?gen59 & : ( not ( member$ rule4 $?gen59 ) ) ) ) ) ) => ( calc ( bind $?gen62 ( delete-member$ $?gen61 ( create$ rule4-overruled $?gen60 ) ) ) ) ?gen57 <- ( physical_abuse_more_victim ( negative-overruled $?gen62 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule4] ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative-support $?gen82 ) ( negative-overruled $?gen83 & : ( subseq-pos ( create$ rule4-overruled $?gen82 $$$ $?gen83 ) ) ) ) ( test ( eq ( class ?gen79 ) movement_restrictions_on_duty ) ) ( not ( and ?gen86 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen85 & : ( >= ?gen85 1 ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( positive-defeated $?gen81 & : ( not ( member$ rule4 $?gen81 ) ) ) ) ) ) => ( calc ( bind $?gen84 ( delete-member$ $?gen83 ( create$ rule4-overruled $?gen82 ) ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( negative-overruled $?gen84 ) )"))
 
 ([rule4-overruled] of derived-attribute-rule
-   (pos-name rule4-overruled-gen671)
-   (depends-on declare lc:case lc:case physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule4-overruled-gen644)
+   (depends-on declare lc:case movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule4] ) ) ) ?gen64 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen63 & : ( >= ?gen63 1 ) ) ) ?gen66 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen65 & : ( >= ?gen65 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen57 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( negative-support $?gen60 ) ( negative-overruled $?gen61 & : ( not ( subseq-pos ( create$ rule4-overruled $?gen60 $$$ $?gen61 ) ) ) ) ( positive-defeated $?gen59 & : ( not ( member$ rule4 $?gen59 ) ) ) ) ( test ( eq ( class ?gen57 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen62 ( create$ rule4-overruled $?gen60 $?gen61 ) ) ) ?gen57 <- ( physical_abuse_more_victim ( negative-overruled $?gen62 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule4] ) ) ) ?gen86 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen85 & : ( >= ?gen85 1 ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( negative-support $?gen82 ) ( negative-overruled $?gen83 & : ( not ( subseq-pos ( create$ rule4-overruled $?gen82 $$$ $?gen83 ) ) ) ) ( positive-defeated $?gen81 & : ( not ( member$ rule4 $?gen81 ) ) ) ) ( test ( eq ( class ?gen79 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen84 ( create$ rule4-overruled $?gen82 $?gen83 ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( negative-overruled $?gen84 ) )"))
 
 ([rule4-support] of derived-attribute-rule
-   (pos-name rule4-support-gen673)
-   (depends-on declare lc:case lc:case physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
+   (pos-name rule4-support-gen646)
+   (depends-on declare lc:case movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule4] ) ) ) ?gen54 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen55 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ?gen57 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ( positive-support $?gen59 & : ( not ( subseq-pos ( create$ rule4 ?gen54 ?gen55 $$$ $?gen59 ) ) ) ) ) ( test ( eq ( class ?gen57 ) physical_abuse_more_victim ) ) => ( calc ( bind $?gen62 ( create$ rule4 ?gen54 ?gen55 $?gen59 ) ) ) ?gen57 <- ( physical_abuse_more_victim ( positive-support $?gen62 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule4] ) ) ) ?gen78 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ) ?gen79 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ( positive-support $?gen81 & : ( not ( subseq-pos ( create$ rule4 ?gen78 $$$ $?gen81 ) ) ) ) ) ( test ( eq ( class ?gen79 ) movement_restrictions_on_duty ) ) => ( calc ( bind $?gen84 ( create$ rule4 ?gen78 $?gen81 ) ) ) ?gen79 <- ( movement_restrictions_on_duty ( positive-support $?gen84 ) )"))
+
+([rule3_2-defeated-dot] of derived-attribute-rule
+   (pos-name rule3_2-defeated-dot-gen648)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule3_2] ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen73 & : ( subseq-pos ( create$ rule3_2-defeated rule2 $$$ $?gen73 ) ) ) ) ( test ( eq ( class ?gen70 ) psychological_abuse_on_duty ) ) ( not ?gen77 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen76 & : ( >= ?gen76 1 ) ) ) ) => ( calc ( bind $?gen72 ( delete-member$ $?gen73 ( create$ rule3_2-defeated rule2 ) ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( positive-defeated $?gen72 ) )"))
+
+([rule3_2-defeated] of derived-attribute-rule
+   (pos-name rule3_2-defeated-gen650)
+   (depends-on declare movement_restrictions psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule3_2] ) ) ) ?gen77 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen76 & : ( >= ?gen76 1 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-defeated $?gen73 & : ( not ( subseq-pos ( create$ rule3_2-defeated rule2 $$$ $?gen73 ) ) ) ) ) ( test ( eq ( class ?gen70 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen72 ( create$ rule3_2-defeated rule2 $?gen73 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( positive-defeated $?gen72 ) )"))
+
+([rule3_2-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule3_2-defeasibly-dot-gen652)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule3_2] ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule3_2 $? ) ) ( test ( eq ( class ?gen70 ) psychological_abuse_on_duty ) ) ( not ( and ?gen77 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen76 & : ( >= ?gen76 1 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( positive ~ 2 ) ( negative-overruled $?gen72 & : ( not ( member$ rule3_2 $?gen72 ) ) ) ) ) ) => ?gen70 <- ( psychological_abuse_on_duty ( negative 0 ) )"))
+
+([rule3_2-defeasibly] of derived-attribute-rule
+   (pos-name rule3_2-defeasibly-gen654)
+   (depends-on declare movement_restrictions psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule3_2] ) ) ) ?gen77 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen76 & : ( >= ?gen76 1 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen72 & : ( not ( member$ rule3_2 $?gen72 ) ) ) ) ( test ( eq ( class ?gen70 ) psychological_abuse_on_duty ) ) => ?gen70 <- ( psychological_abuse_on_duty ( negative 1 ) ( negative-derivator rule3_2 ?gen77 ) )"))
+
+([rule3_2-overruled-dot] of derived-attribute-rule
+   (pos-name rule3_2-overruled-dot-gen656)
+   (depends-on declare psychological_abuse_on_duty movement_restrictions psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule3_2] ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen73 ) ( positive-overruled $?gen74 & : ( subseq-pos ( create$ rule3_2-overruled $?gen73 $$$ $?gen74 ) ) ) ) ( test ( eq ( class ?gen70 ) psychological_abuse_on_duty ) ) ( not ( and ?gen77 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen76 & : ( >= ?gen76 1 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( negative-defeated $?gen72 & : ( not ( member$ rule3_2 $?gen72 ) ) ) ) ) ) => ( calc ( bind $?gen75 ( delete-member$ $?gen74 ( create$ rule3_2-overruled $?gen73 ) ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( positive-overruled $?gen75 ) )"))
+
+([rule3_2-overruled] of derived-attribute-rule
+   (pos-name rule3_2-overruled-gen658)
+   (depends-on declare movement_restrictions psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule3_2] ) ) ) ?gen77 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen76 & : ( >= ?gen76 1 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen73 ) ( positive-overruled $?gen74 & : ( not ( subseq-pos ( create$ rule3_2-overruled $?gen73 $$$ $?gen74 ) ) ) ) ( negative-defeated $?gen72 & : ( not ( member$ rule3_2 $?gen72 ) ) ) ) ( test ( eq ( class ?gen70 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen75 ( create$ rule3_2-overruled $?gen73 $?gen74 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( positive-overruled $?gen75 ) )"))
+
+([rule3_2-support] of derived-attribute-rule
+   (pos-name rule3_2-support-gen660)
+   (depends-on declare movement_restrictions psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule3_2] ) ) ) ?gen69 <- ( movement_restrictions ( defendant ?Defendant ) ) ?gen70 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative-support $?gen72 & : ( not ( subseq-pos ( create$ rule3_2 ?gen69 $$$ $?gen72 ) ) ) ) ) ( test ( eq ( class ?gen70 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen75 ( create$ rule3_2 ?gen69 $?gen72 ) ) ) ?gen70 <- ( psychological_abuse_on_duty ( negative-support $?gen75 ) )"))
+
+([rule3_1-defeated-dot] of derived-attribute-rule
+   (pos-name rule3_1-defeated-dot-gen662)
+   (depends-on declare psychological_abuse movement_restrictions)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule3_1] ) ) ) ?gen61 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen64 & : ( subseq-pos ( create$ rule3_1-defeated rule1 $$$ $?gen64 ) ) ) ) ( test ( eq ( class ?gen61 ) psychological_abuse ) ) ( not ?gen68 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen67 & : ( >= ?gen67 1 ) ) ) ) => ( calc ( bind $?gen63 ( delete-member$ $?gen64 ( create$ rule3_1-defeated rule1 ) ) ) ) ?gen61 <- ( psychological_abuse ( positive-defeated $?gen63 ) )"))
+
+([rule3_1-defeated] of derived-attribute-rule
+   (pos-name rule3_1-defeated-gen664)
+   (depends-on declare movement_restrictions psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule3_1] ) ) ) ?gen68 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen67 & : ( >= ?gen67 1 ) ) ) ?gen61 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen64 & : ( not ( subseq-pos ( create$ rule3_1-defeated rule1 $$$ $?gen64 ) ) ) ) ) ( test ( eq ( class ?gen61 ) psychological_abuse ) ) => ( calc ( bind $?gen63 ( create$ rule3_1-defeated rule1 $?gen64 ) ) ) ?gen61 <- ( psychological_abuse ( positive-defeated $?gen63 ) )"))
+
+([rule3_1-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule3_1-defeasibly-dot-gen666)
+   (depends-on declare psychological_abuse movement_restrictions psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule3_1] ) ) ) ?gen61 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule3_1 $? ) ) ( test ( eq ( class ?gen61 ) psychological_abuse ) ) ( not ( and ?gen68 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen67 & : ( >= ?gen67 1 ) ) ) ?gen61 <- ( psychological_abuse ( positive ~ 2 ) ( negative-overruled $?gen63 & : ( not ( member$ rule3_1 $?gen63 ) ) ) ) ) ) => ?gen61 <- ( psychological_abuse ( negative 0 ) )"))
+
+([rule3_1-defeasibly] of derived-attribute-rule
+   (pos-name rule3_1-defeasibly-gen668)
+   (depends-on declare movement_restrictions psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule3_1] ) ) ) ?gen68 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen67 & : ( >= ?gen67 1 ) ) ) ?gen61 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen63 & : ( not ( member$ rule3_1 $?gen63 ) ) ) ) ( test ( eq ( class ?gen61 ) psychological_abuse ) ) => ?gen61 <- ( psychological_abuse ( negative 1 ) ( negative-derivator rule3_1 ?gen68 ) )"))
+
+([rule3_1-overruled-dot] of derived-attribute-rule
+   (pos-name rule3_1-overruled-dot-gen670)
+   (depends-on declare psychological_abuse movement_restrictions psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule3_1] ) ) ) ?gen61 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen64 ) ( positive-overruled $?gen65 & : ( subseq-pos ( create$ rule3_1-overruled $?gen64 $$$ $?gen65 ) ) ) ) ( test ( eq ( class ?gen61 ) psychological_abuse ) ) ( not ( and ?gen68 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen67 & : ( >= ?gen67 1 ) ) ) ?gen61 <- ( psychological_abuse ( negative-defeated $?gen63 & : ( not ( member$ rule3_1 $?gen63 ) ) ) ) ) ) => ( calc ( bind $?gen66 ( delete-member$ $?gen65 ( create$ rule3_1-overruled $?gen64 ) ) ) ) ?gen61 <- ( psychological_abuse ( positive-overruled $?gen66 ) )"))
+
+([rule3_1-overruled] of derived-attribute-rule
+   (pos-name rule3_1-overruled-gen672)
+   (depends-on declare movement_restrictions psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule3_1] ) ) ) ?gen68 <- ( movement_restrictions ( defendant ?Defendant ) ( positive ?gen67 & : ( >= ?gen67 1 ) ) ) ?gen61 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen64 ) ( positive-overruled $?gen65 & : ( not ( subseq-pos ( create$ rule3_1-overruled $?gen64 $$$ $?gen65 ) ) ) ) ( negative-defeated $?gen63 & : ( not ( member$ rule3_1 $?gen63 ) ) ) ) ( test ( eq ( class ?gen61 ) psychological_abuse ) ) => ( calc ( bind $?gen66 ( create$ rule3_1-overruled $?gen64 $?gen65 ) ) ) ?gen61 <- ( psychological_abuse ( positive-overruled $?gen66 ) )"))
+
+([rule3_1-support] of derived-attribute-rule
+   (pos-name rule3_1-support-gen674)
+   (depends-on declare movement_restrictions psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule3_1] ) ) ) ?gen60 <- ( movement_restrictions ( defendant ?Defendant ) ) ?gen61 <- ( psychological_abuse ( defendant ?Defendant ) ( negative-support $?gen63 & : ( not ( subseq-pos ( create$ rule3_1 ?gen60 $$$ $?gen63 ) ) ) ) ) ( test ( eq ( class ?gen61 ) psychological_abuse ) ) => ( calc ( bind $?gen66 ( create$ rule3_1 ?gen60 $?gen63 ) ) ) ?gen61 <- ( psychological_abuse ( negative-support $?gen66 ) )"))
 
 ([rule3-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule3-defeasibly-dot-gen675)
-   (depends-on declare physical_abuse_one_victim lc:case lc:case physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule3-defeasibly-dot-gen676)
+   (depends-on declare movement_restrictions lc:case movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule3] ) ) ) ?gen44 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule3 $? ) ) ( test ( eq ( class ?gen44 ) physical_abuse_one_victim ) ) ( not ( and ?gen51 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen50 & : ( >= ?gen50 1 ) ) ) ?gen53 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen52 & : ( >= ?gen52 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen44 <- ( physical_abuse_one_victim ( negative ~ 2 ) ( positive-overruled $?gen46 & : ( not ( member$ rule3 $?gen46 ) ) ) ) ) ) => ?gen44 <- ( physical_abuse_one_victim ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule3] ) ) ) ?gen52 <- ( movement_restrictions ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule3 $? ) ) ( test ( eq ( class ?gen52 ) movement_restrictions ) ) ( not ( and ?gen59 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_defendants ?num_of_defendants ) ( positive ?gen58 & : ( >= ?gen58 1 ) ) ) ?gen52 <- ( movement_restrictions ( negative ~ 2 ) ( positive-overruled $?gen54 & : ( not ( member$ rule3 $?gen54 ) ) ) ) ) ) => ?gen52 <- ( movement_restrictions ( positive 0 ) )"))
 
 ([rule3-defeasibly] of derived-attribute-rule
-   (pos-name rule3-defeasibly-gen677)
-   (depends-on declare lc:case lc:case physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule3-defeasibly-gen678)
+   (depends-on declare lc:case movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule3] ) ) ) ?gen51 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen50 & : ( >= ?gen50 1 ) ) ) ?gen53 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen52 & : ( >= ?gen52 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen44 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen46 & : ( not ( member$ rule3 $?gen46 ) ) ) ) ( test ( eq ( class ?gen44 ) physical_abuse_one_victim ) ) => ?gen44 <- ( physical_abuse_one_victim ( positive 1 ) ( positive-derivator rule3 ?gen51 ?gen53 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule3] ) ) ) ?gen59 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_defendants ?num_of_defendants ) ( positive ?gen58 & : ( >= ?gen58 1 ) ) ) ?gen52 <- ( movement_restrictions ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen54 & : ( not ( member$ rule3 $?gen54 ) ) ) ) ( test ( eq ( class ?gen52 ) movement_restrictions ) ) => ?gen52 <- ( movement_restrictions ( positive 1 ) ( positive-derivator rule3 ?gen59 ) )"))
 
 ([rule3-overruled-dot] of derived-attribute-rule
-   (pos-name rule3-overruled-dot-gen679)
-   (depends-on declare physical_abuse_one_victim lc:case lc:case physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule3-overruled-dot-gen680)
+   (depends-on declare movement_restrictions lc:case movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule3] ) ) ) ?gen44 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen47 ) ( negative-overruled $?gen48 & : ( subseq-pos ( create$ rule3-overruled $?gen47 $$$ $?gen48 ) ) ) ) ( test ( eq ( class ?gen44 ) physical_abuse_one_victim ) ) ( not ( and ?gen51 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen50 & : ( >= ?gen50 1 ) ) ) ?gen53 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen52 & : ( >= ?gen52 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen44 <- ( physical_abuse_one_victim ( positive-defeated $?gen46 & : ( not ( member$ rule3 $?gen46 ) ) ) ) ) ) => ( calc ( bind $?gen49 ( delete-member$ $?gen48 ( create$ rule3-overruled $?gen47 ) ) ) ) ?gen44 <- ( physical_abuse_one_victim ( negative-overruled $?gen49 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule3] ) ) ) ?gen52 <- ( movement_restrictions ( defendant ?Defendant ) ( negative-support $?gen55 ) ( negative-overruled $?gen56 & : ( subseq-pos ( create$ rule3-overruled $?gen55 $$$ $?gen56 ) ) ) ) ( test ( eq ( class ?gen52 ) movement_restrictions ) ) ( not ( and ?gen59 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_defendants ?num_of_defendants ) ( positive ?gen58 & : ( >= ?gen58 1 ) ) ) ?gen52 <- ( movement_restrictions ( positive-defeated $?gen54 & : ( not ( member$ rule3 $?gen54 ) ) ) ) ) ) => ( calc ( bind $?gen57 ( delete-member$ $?gen56 ( create$ rule3-overruled $?gen55 ) ) ) ) ?gen52 <- ( movement_restrictions ( negative-overruled $?gen57 ) )"))
 
 ([rule3-overruled] of derived-attribute-rule
-   (pos-name rule3-overruled-gen681)
-   (depends-on declare lc:case lc:case physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule3-overruled-gen682)
+   (depends-on declare lc:case movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule3] ) ) ) ?gen51 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen50 & : ( >= ?gen50 1 ) ) ) ?gen53 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ( positive ?gen52 & : ( >= ?gen52 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen44 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen47 ) ( negative-overruled $?gen48 & : ( not ( subseq-pos ( create$ rule3-overruled $?gen47 $$$ $?gen48 ) ) ) ) ( positive-defeated $?gen46 & : ( not ( member$ rule3 $?gen46 ) ) ) ) ( test ( eq ( class ?gen44 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen49 ( create$ rule3-overruled $?gen47 $?gen48 ) ) ) ?gen44 <- ( physical_abuse_one_victim ( negative-overruled $?gen49 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule3] ) ) ) ?gen59 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_defendants ?num_of_defendants ) ( positive ?gen58 & : ( >= ?gen58 1 ) ) ) ?gen52 <- ( movement_restrictions ( defendant ?Defendant ) ( negative-support $?gen55 ) ( negative-overruled $?gen56 & : ( not ( subseq-pos ( create$ rule3-overruled $?gen55 $$$ $?gen56 ) ) ) ) ( positive-defeated $?gen54 & : ( not ( member$ rule3 $?gen54 ) ) ) ) ( test ( eq ( class ?gen52 ) movement_restrictions ) ) => ( calc ( bind $?gen57 ( create$ rule3-overruled $?gen55 $?gen56 ) ) ) ?gen52 <- ( movement_restrictions ( negative-overruled $?gen57 ) )"))
 
 ([rule3-support] of derived-attribute-rule
-   (pos-name rule3-support-gen683)
-   (depends-on declare lc:case lc:case physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
+   (pos-name rule3-support-gen684)
+   (depends-on declare lc:case movement_restrictions)
+   (implies movement_restrictions)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule3] ) ) ) ?gen41 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen42 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ?gen44 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen46 & : ( not ( subseq-pos ( create$ rule3 ?gen41 ?gen42 $$$ $?gen46 ) ) ) ) ) ( test ( eq ( class ?gen44 ) physical_abuse_one_victim ) ) => ( calc ( bind $?gen49 ( create$ rule3 ?gen41 ?gen42 $?gen46 ) ) ) ?gen44 <- ( physical_abuse_one_victim ( positive-support $?gen49 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule3] ) ) ) ?gen51 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_defendants ?num_of_defendants ) ) ?gen52 <- ( movement_restrictions ( defendant ?Defendant ) ( positive-support $?gen54 & : ( not ( subseq-pos ( create$ rule3 ?gen51 $$$ $?gen54 ) ) ) ) ) ( test ( eq ( class ?gen52 ) movement_restrictions ) ) => ( calc ( bind $?gen57 ( create$ rule3 ?gen51 $?gen54 ) ) ) ?gen52 <- ( movement_restrictions ( positive-support $?gen57 ) )"))
+
+([rule2_1-defeated-dot] of derived-attribute-rule
+   (pos-name rule2_1-defeated-dot-gen686)
+   (depends-on declare psychological_abuse psychological_abuse_on_duty)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -3 [rule2_1] ) ) ) ?gen43 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen46 & : ( subseq-pos ( create$ rule2_1-defeated rule1 $$$ $?gen46 ) ) ) ) ( test ( eq ( class ?gen43 ) psychological_abuse ) ) ( not ?gen50 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen49 & : ( >= ?gen49 1 ) ) ) ) => ( calc ( bind $?gen45 ( delete-member$ $?gen46 ( create$ rule2_1-defeated rule1 ) ) ) ) ?gen43 <- ( psychological_abuse ( positive-defeated $?gen45 ) )"))
+
+([rule2_1-defeated] of derived-attribute-rule
+   (pos-name rule2_1-defeated-gen688)
+   (depends-on declare psychological_abuse_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 3 [rule2_1] ) ) ) ?gen50 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen49 & : ( >= ?gen49 1 ) ) ) ?gen43 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-defeated $?gen46 & : ( not ( subseq-pos ( create$ rule2_1-defeated rule1 $$$ $?gen46 ) ) ) ) ) ( test ( eq ( class ?gen43 ) psychological_abuse ) ) => ( calc ( bind $?gen45 ( create$ rule2_1-defeated rule1 $?gen46 ) ) ) ?gen43 <- ( psychological_abuse ( positive-defeated $?gen45 ) )"))
+
+([rule2_1-defeasibly-dot] of derived-attribute-rule
+   (pos-name rule2_1-defeasibly-dot-gen690)
+   (depends-on declare psychological_abuse psychological_abuse_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule2_1] ) ) ) ?gen43 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 1 ) ( negative-derivator rule2_1 $? ) ) ( test ( eq ( class ?gen43 ) psychological_abuse ) ) ( not ( and ?gen50 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen49 & : ( >= ?gen49 1 ) ) ) ?gen43 <- ( psychological_abuse ( positive ~ 2 ) ( negative-overruled $?gen45 & : ( not ( member$ rule2_1 $?gen45 ) ) ) ) ) ) => ?gen43 <- ( psychological_abuse ( negative 0 ) )"))
+
+([rule2_1-defeasibly] of derived-attribute-rule
+   (pos-name rule2_1-defeasibly-gen692)
+   (depends-on declare psychological_abuse_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule2_1] ) ) ) ?gen50 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen49 & : ( >= ?gen49 1 ) ) ) ?gen43 <- ( psychological_abuse ( defendant ?Defendant ) ( negative 0 ) ( positive ~ 2 ) ( negative-overruled $?gen45 & : ( not ( member$ rule2_1 $?gen45 ) ) ) ) ( test ( eq ( class ?gen43 ) psychological_abuse ) ) => ?gen43 <- ( psychological_abuse ( negative 1 ) ( negative-derivator rule2_1 ?gen50 ) )"))
+
+([rule2_1-overruled-dot] of derived-attribute-rule
+   (pos-name rule2_1-overruled-dot-gen694)
+   (depends-on declare psychological_abuse psychological_abuse_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule2_1] ) ) ) ?gen43 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen46 ) ( positive-overruled $?gen47 & : ( subseq-pos ( create$ rule2_1-overruled $?gen46 $$$ $?gen47 ) ) ) ) ( test ( eq ( class ?gen43 ) psychological_abuse ) ) ( not ( and ?gen50 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen49 & : ( >= ?gen49 1 ) ) ) ?gen43 <- ( psychological_abuse ( negative-defeated $?gen45 & : ( not ( member$ rule2_1 $?gen45 ) ) ) ) ) ) => ( calc ( bind $?gen48 ( delete-member$ $?gen47 ( create$ rule2_1-overruled $?gen46 ) ) ) ) ?gen43 <- ( psychological_abuse ( positive-overruled $?gen48 ) )"))
+
+([rule2_1-overruled] of derived-attribute-rule
+   (pos-name rule2_1-overruled-gen696)
+   (depends-on declare psychological_abuse_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule2_1] ) ) ) ?gen50 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive ?gen49 & : ( >= ?gen49 1 ) ) ) ?gen43 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen46 ) ( positive-overruled $?gen47 & : ( not ( subseq-pos ( create$ rule2_1-overruled $?gen46 $$$ $?gen47 ) ) ) ) ( negative-defeated $?gen45 & : ( not ( member$ rule2_1 $?gen45 ) ) ) ) ( test ( eq ( class ?gen43 ) psychological_abuse ) ) => ( calc ( bind $?gen48 ( create$ rule2_1-overruled $?gen46 $?gen47 ) ) ) ?gen43 <- ( psychological_abuse ( positive-overruled $?gen48 ) )"))
+
+([rule2_1-support] of derived-attribute-rule
+   (pos-name rule2_1-support-gen698)
+   (depends-on declare psychological_abuse_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (del-name nil)
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule2_1] ) ) ) ?gen42 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ?gen43 <- ( psychological_abuse ( defendant ?Defendant ) ( negative-support $?gen45 & : ( not ( subseq-pos ( create$ rule2_1 ?gen42 $$$ $?gen45 ) ) ) ) ) ( test ( eq ( class ?gen43 ) psychological_abuse ) ) => ( calc ( bind $?gen48 ( create$ rule2_1 ?gen42 $?gen45 ) ) ) ?gen43 <- ( psychological_abuse ( negative-support $?gen48 ) )"))
 
 ([rule2-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule2-defeasibly-dot-gen685)
-   (depends-on declare psychological_abuse_more_victims lc:case lc:case psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule2-defeasibly-dot-gen700)
+   (depends-on declare psychological_abuse_on_duty lc:case lc:case lc:case psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule2] ) ) ) ?gen31 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule2 $? ) ) ( test ( eq ( class ?gen31 ) psychological_abuse_more_victims ) ) ( not ( and ?gen38 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen37 & : ( >= ?gen37 1 ) ) ) ?gen40 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen39 & : ( >= ?gen39 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen31 <- ( psychological_abuse_more_victims ( negative ~ 2 ) ( positive-overruled $?gen33 & : ( not ( member$ rule2 $?gen33 ) ) ) ) ) ) => ?gen31 <- ( psychological_abuse_more_victims ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule2] ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule2 $? ) ) ( test ( eq ( class ?gen30 ) psychological_abuse_on_duty ) ) ( not ( and ?gen37 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen36 & : ( >= ?gen36 1 ) ) ) ?gen39 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen38 & : ( >= ?gen38 1 ) ) ) ?gen41 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen40 & : ( >= ?gen40 1 ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( negative ~ 2 ) ( positive-overruled $?gen32 & : ( not ( member$ rule2 $?gen32 ) ) ) ) ) ) => ?gen30 <- ( psychological_abuse_on_duty ( positive 0 ) )"))
 
 ([rule2-defeasibly] of derived-attribute-rule
-   (pos-name rule2-defeasibly-gen687)
-   (depends-on declare lc:case lc:case psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule2-defeasibly-gen702)
+   (depends-on declare lc:case lc:case lc:case psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule2] ) ) ) ?gen38 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen37 & : ( >= ?gen37 1 ) ) ) ?gen40 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen39 & : ( >= ?gen39 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen31 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen33 & : ( not ( member$ rule2 $?gen33 ) ) ) ) ( test ( eq ( class ?gen31 ) psychological_abuse_more_victims ) ) => ?gen31 <- ( psychological_abuse_more_victims ( positive 1 ) ( positive-derivator rule2 ?gen38 ?gen40 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule2] ) ) ) ?gen37 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen36 & : ( >= ?gen36 1 ) ) ) ?gen39 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen38 & : ( >= ?gen38 1 ) ) ) ?gen41 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen40 & : ( >= ?gen40 1 ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen32 & : ( not ( member$ rule2 $?gen32 ) ) ) ) ( test ( eq ( class ?gen30 ) psychological_abuse_on_duty ) ) => ?gen30 <- ( psychological_abuse_on_duty ( positive 1 ) ( positive-derivator rule2 ?gen37 ?gen39 ?gen41 ) )"))
 
 ([rule2-overruled-dot] of derived-attribute-rule
-   (pos-name rule2-overruled-dot-gen689)
-   (depends-on declare psychological_abuse_more_victims lc:case lc:case psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule2-overruled-dot-gen704)
+   (depends-on declare psychological_abuse_on_duty lc:case lc:case lc:case psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule2] ) ) ) ?gen31 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( negative-support $?gen34 ) ( negative-overruled $?gen35 & : ( subseq-pos ( create$ rule2-overruled $?gen34 $$$ $?gen35 ) ) ) ) ( test ( eq ( class ?gen31 ) psychological_abuse_more_victims ) ) ( not ( and ?gen38 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen37 & : ( >= ?gen37 1 ) ) ) ?gen40 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen39 & : ( >= ?gen39 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen31 <- ( psychological_abuse_more_victims ( positive-defeated $?gen33 & : ( not ( member$ rule2 $?gen33 ) ) ) ) ) ) => ( calc ( bind $?gen36 ( delete-member$ $?gen35 ( create$ rule2-overruled $?gen34 ) ) ) ) ?gen31 <- ( psychological_abuse_more_victims ( negative-overruled $?gen36 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule2] ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative-support $?gen33 ) ( negative-overruled $?gen34 & : ( subseq-pos ( create$ rule2-overruled $?gen33 $$$ $?gen34 ) ) ) ) ( test ( eq ( class ?gen30 ) psychological_abuse_on_duty ) ) ( not ( and ?gen37 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen36 & : ( >= ?gen36 1 ) ) ) ?gen39 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen38 & : ( >= ?gen38 1 ) ) ) ?gen41 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen40 & : ( >= ?gen40 1 ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( positive-defeated $?gen32 & : ( not ( member$ rule2 $?gen32 ) ) ) ) ) ) => ( calc ( bind $?gen35 ( delete-member$ $?gen34 ( create$ rule2-overruled $?gen33 ) ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( negative-overruled $?gen35 ) )"))
 
 ([rule2-overruled] of derived-attribute-rule
-   (pos-name rule2-overruled-gen691)
-   (depends-on declare lc:case lc:case psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule2-overruled-gen706)
+   (depends-on declare lc:case lc:case lc:case psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule2] ) ) ) ?gen38 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen37 & : ( >= ?gen37 1 ) ) ) ?gen40 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen39 & : ( >= ?gen39 1 ) ) ) ( test ( > ?num_of_victims 1 ) ) ?gen31 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( negative-support $?gen34 ) ( negative-overruled $?gen35 & : ( not ( subseq-pos ( create$ rule2-overruled $?gen34 $$$ $?gen35 ) ) ) ) ( positive-defeated $?gen33 & : ( not ( member$ rule2 $?gen33 ) ) ) ) ( test ( eq ( class ?gen31 ) psychological_abuse_more_victims ) ) => ( calc ( bind $?gen36 ( create$ rule2-overruled $?gen34 $?gen35 ) ) ) ?gen31 <- ( psychological_abuse_more_victims ( negative-overruled $?gen36 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule2] ) ) ) ?gen37 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen36 & : ( >= ?gen36 1 ) ) ) ?gen39 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen38 & : ( >= ?gen38 1 ) ) ) ?gen41 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ( positive ?gen40 & : ( >= ?gen40 1 ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( negative-support $?gen33 ) ( negative-overruled $?gen34 & : ( not ( subseq-pos ( create$ rule2-overruled $?gen33 $$$ $?gen34 ) ) ) ) ( positive-defeated $?gen32 & : ( not ( member$ rule2 $?gen32 ) ) ) ) ( test ( eq ( class ?gen30 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen35 ( create$ rule2-overruled $?gen33 $?gen34 ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( negative-overruled $?gen35 ) )"))
 
 ([rule2-support] of derived-attribute-rule
-   (pos-name rule2-support-gen693)
-   (depends-on declare lc:case lc:case psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
+   (pos-name rule2-support-gen708)
+   (depends-on declare lc:case lc:case lc:case psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule2] ) ) ) ?gen28 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen29 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ?gen31 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ( positive-support $?gen33 & : ( not ( subseq-pos ( create$ rule2 ?gen28 ?gen29 $$$ $?gen33 ) ) ) ) ) ( test ( eq ( class ?gen31 ) psychological_abuse_more_victims ) ) => ( calc ( bind $?gen36 ( create$ rule2 ?gen28 ?gen29 $?gen33 ) ) ) ?gen31 <- ( psychological_abuse_more_victims ( positive-support $?gen36 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule2] ) ) ) ?gen27 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ?gen28 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ) ?gen29 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ) ?gen30 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ( positive-support $?gen32 & : ( not ( subseq-pos ( create$ rule2 ?gen27 ?gen28 ?gen29 $$$ $?gen32 ) ) ) ) ) ( test ( eq ( class ?gen30 ) psychological_abuse_on_duty ) ) => ( calc ( bind $?gen35 ( create$ rule2 ?gen27 ?gen28 ?gen29 $?gen32 ) ) ) ?gen30 <- ( psychological_abuse_on_duty ( positive-support $?gen35 ) )"))
 
 ([rule1-defeasibly-dot] of derived-attribute-rule
-   (pos-name rule1-defeasibly-dot-gen695)
-   (depends-on declare psychological_abuse_one_victim lc:case lc:case psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule1-defeasibly-dot-gen710)
+   (depends-on declare psychological_abuse lc:case lc:case psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule1] ) ) ) ?gen18 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule1 $? ) ) ( test ( eq ( class ?gen18 ) psychological_abuse_one_victim ) ) ( not ( and ?gen25 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen24 & : ( >= ?gen24 1 ) ) ) ?gen27 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen26 & : ( >= ?gen26 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen18 <- ( psychological_abuse_one_victim ( negative ~ 2 ) ( positive-overruled $?gen20 & : ( not ( member$ rule1 $?gen20 ) ) ) ) ) ) => ?gen18 <- ( psychological_abuse_one_victim ( positive 0 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -1 [rule1] ) ) ) ?gen17 <- ( psychological_abuse ( defendant ?Defendant ) ( positive 1 ) ( positive-derivator rule1 $? ) ) ( test ( eq ( class ?gen17 ) psychological_abuse ) ) ( not ( and ?gen24 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen23 & : ( >= ?gen23 1 ) ) ) ?gen26 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen25 & : ( >= ?gen25 1 ) ) ) ?gen17 <- ( psychological_abuse ( negative ~ 2 ) ( positive-overruled $?gen19 & : ( not ( member$ rule1 $?gen19 ) ) ) ) ) ) => ?gen17 <- ( psychological_abuse ( positive 0 ) )"))
 
 ([rule1-defeasibly] of derived-attribute-rule
-   (pos-name rule1-defeasibly-gen697)
-   (depends-on declare lc:case lc:case psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule1-defeasibly-gen712)
+   (depends-on declare lc:case lc:case psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule1] ) ) ) ?gen25 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen24 & : ( >= ?gen24 1 ) ) ) ?gen27 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen26 & : ( >= ?gen26 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen18 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen20 & : ( not ( member$ rule1 $?gen20 ) ) ) ) ( test ( eq ( class ?gen18 ) psychological_abuse_one_victim ) ) => ?gen18 <- ( psychological_abuse_one_victim ( positive 1 ) ( positive-derivator rule1 ?gen25 ?gen27 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 1 [rule1] ) ) ) ?gen24 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen23 & : ( >= ?gen23 1 ) ) ) ?gen26 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen25 & : ( >= ?gen25 1 ) ) ) ?gen17 <- ( psychological_abuse ( defendant ?Defendant ) ( positive 0 ) ( negative ~ 2 ) ( positive-overruled $?gen19 & : ( not ( member$ rule1 $?gen19 ) ) ) ) ( test ( eq ( class ?gen17 ) psychological_abuse ) ) => ?gen17 <- ( psychological_abuse ( positive 1 ) ( positive-derivator rule1 ?gen24 ?gen26 ) )"))
 
 ([rule1-overruled-dot] of derived-attribute-rule
-   (pos-name rule1-overruled-dot-gen699)
-   (depends-on declare psychological_abuse_one_victim lc:case lc:case psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule1-overruled-dot-gen714)
+   (depends-on declare psychological_abuse lc:case lc:case psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule1] ) ) ) ?gen18 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen21 ) ( negative-overruled $?gen22 & : ( subseq-pos ( create$ rule1-overruled $?gen21 $$$ $?gen22 ) ) ) ) ( test ( eq ( class ?gen18 ) psychological_abuse_one_victim ) ) ( not ( and ?gen25 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen24 & : ( >= ?gen24 1 ) ) ) ?gen27 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen26 & : ( >= ?gen26 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen18 <- ( psychological_abuse_one_victim ( positive-defeated $?gen20 & : ( not ( member$ rule1 $?gen20 ) ) ) ) ) ) => ( calc ( bind $?gen23 ( delete-member$ $?gen22 ( create$ rule1-overruled $?gen21 ) ) ) ) ?gen18 <- ( psychological_abuse_one_victim ( negative-overruled $?gen23 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority -2 [rule1] ) ) ) ?gen17 <- ( psychological_abuse ( defendant ?Defendant ) ( negative-support $?gen20 ) ( negative-overruled $?gen21 & : ( subseq-pos ( create$ rule1-overruled $?gen20 $$$ $?gen21 ) ) ) ) ( test ( eq ( class ?gen17 ) psychological_abuse ) ) ( not ( and ?gen24 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen23 & : ( >= ?gen23 1 ) ) ) ?gen26 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen25 & : ( >= ?gen25 1 ) ) ) ?gen17 <- ( psychological_abuse ( positive-defeated $?gen19 & : ( not ( member$ rule1 $?gen19 ) ) ) ) ) ) => ( calc ( bind $?gen22 ( delete-member$ $?gen21 ( create$ rule1-overruled $?gen20 ) ) ) ) ?gen17 <- ( psychological_abuse ( negative-overruled $?gen22 ) )"))
 
 ([rule1-overruled] of derived-attribute-rule
-   (pos-name rule1-overruled-gen701)
-   (depends-on declare lc:case lc:case psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule1-overruled-gen716)
+   (depends-on declare lc:case lc:case psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule1] ) ) ) ?gen25 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ( positive ?gen24 & : ( >= ?gen24 1 ) ) ) ?gen27 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen26 & : ( >= ?gen26 1 ) ) ) ( test ( < ?num_of_victims 2 ) ) ?gen18 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( negative-support $?gen21 ) ( negative-overruled $?gen22 & : ( not ( subseq-pos ( create$ rule1-overruled $?gen21 $$$ $?gen22 ) ) ) ) ( positive-defeated $?gen20 & : ( not ( member$ rule1 $?gen20 ) ) ) ) ( test ( eq ( class ?gen18 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen23 ( create$ rule1-overruled $?gen21 $?gen22 ) ) ) ?gen18 <- ( psychological_abuse_one_victim ( negative-overruled $?gen23 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 2 [rule1] ) ) ) ?gen24 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ( positive ?gen23 & : ( >= ?gen23 1 ) ) ) ?gen26 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ( positive ?gen25 & : ( >= ?gen25 1 ) ) ) ?gen17 <- ( psychological_abuse ( defendant ?Defendant ) ( negative-support $?gen20 ) ( negative-overruled $?gen21 & : ( not ( subseq-pos ( create$ rule1-overruled $?gen20 $$$ $?gen21 ) ) ) ) ( positive-defeated $?gen19 & : ( not ( member$ rule1 $?gen19 ) ) ) ) ( test ( eq ( class ?gen17 ) psychological_abuse ) ) => ( calc ( bind $?gen22 ( create$ rule1-overruled $?gen20 $?gen21 ) ) ) ?gen17 <- ( psychological_abuse ( negative-overruled $?gen22 ) )"))
 
 ([rule1-support] of derived-attribute-rule
-   (pos-name rule1-support-gen703)
-   (depends-on declare lc:case lc:case psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
+   (pos-name rule1-support-gen718)
+   (depends-on declare lc:case lc:case psychological_abuse)
+   (implies psychological_abuse)
    (del-name nil)
-   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule1] ) ) ) ?gen15 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen16 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ?gen18 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ( positive-support $?gen20 & : ( not ( subseq-pos ( create$ rule1 ?gen15 ?gen16 $$$ $?gen20 ) ) ) ) ) ( test ( eq ( class ?gen18 ) psychological_abuse_one_victim ) ) => ( calc ( bind $?gen23 ( create$ rule1 ?gen15 ?gen16 $?gen20 ) ) ) ?gen18 <- ( psychological_abuse_one_victim ( positive-support $?gen23 ) )"))
+   (derived-attribute-rule "( declare ( priority ( calc-defeasible-priority 5 [rule1] ) ) ) ?gen15 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ?gen16 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ) ?gen17 <- ( psychological_abuse ( defendant ?Defendant ) ( positive-support $?gen19 & : ( not ( subseq-pos ( create$ rule1 ?gen15 ?gen16 $$$ $?gen19 ) ) ) ) ) ( test ( eq ( class ?gen17 ) psychological_abuse ) ) => ( calc ( bind $?gen22 ( create$ rule1 ?gen15 ?gen16 $?gen19 ) ) ) ?gen17 <- ( psychological_abuse ( positive-support $?gen22 ) )"))
 
-([pn_life_threatening_torture_max-deductive] of ntm-deductive-rule
-   (pos-name pn_life_threatening_torture_max-deductive-gen354)
-   (depends-on life_threatening_torture max_imprisonment)
+([pn_movement_restrct_death_max-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_death_max-deductive-gen343)
+   (depends-on movement_restrictions_death max_imprisonment)
    (implies max_imprisonment)
-   (deductive-rule "?gen315 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 5 ) ) ) => ( max_imprisonment ( value 5 ) )")
-   (production-rule "( defrule pn_life_threatening_torture_max-deductive-gen354 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen315 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 5 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 5 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 5 ) ) ) ( make-instance ?oid of max_imprisonment ( value 5 ) ) )")
+   (deductive-rule "?gen303 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 12 ) ) ) => ( max_imprisonment ( value 12 ) )")
+   (production-rule "( defrule pn_movement_restrct_death_max-deductive-gen343 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen303 ) ( is-a movement_restrictions_death ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 12 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 12 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 12 ) ) ) ( make-instance ?oid of max_imprisonment ( value 12 ) ) )")
    (derived-class max_imprisonment))
 
-([pn_life_threatening_torture_min-deductive] of ntm-deductive-rule
-   (pos-name pn_life_threatening_torture_min-deductive-gen353)
-   (depends-on life_threatening_torture min_imprisonment)
+([pn_movement_restrct_death_min-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_death_min-deductive-gen342)
+   (depends-on movement_restrictions_death min_imprisonment)
    (implies min_imprisonment)
-   (deductive-rule "?gen306 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 1 ) ) ) => ( min_imprisonment ( value 1 ) )")
-   (production-rule "( defrule pn_life_threatening_torture_min-deductive-gen353 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen306 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 1 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ( make-instance ?oid of min_imprisonment ( value 1 ) ) )")
+   (deductive-rule "?gen294 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 2 ) ) ) => ( min_imprisonment ( value 2 ) )")
+   (production-rule "( defrule pn_movement_restrct_death_min-deductive-gen342 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen294 ) ( is-a movement_restrictions_death ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 2 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ( make-instance ?oid of min_imprisonment ( value 2 ) ) )")
    (derived-class min_imprisonment))
 
-([pn_phy_psy_more_person_max-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_psy_more_person_max-deductive-gen352)
-   (depends-on physical_psychological_abuse_more_victim max_imprisonment)
+([pn_movement_restrct_life_threatening_max-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_life_threatening_max-deductive-gen341)
+   (depends-on movement_restrictions_life_threatening max_imprisonment)
    (implies max_imprisonment)
-   (deductive-rule "?gen297 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 15 ) ) ) => ( max_imprisonment ( value 15 ) )")
-   (production-rule "( defrule pn_phy_psy_more_person_max-deductive-gen352 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen297 ) ( is-a physical_psychological_abuse_more_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 15 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 15 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 15 ) ) ) ( make-instance ?oid of max_imprisonment ( value 15 ) ) )")
+   (deductive-rule "?gen285 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 8 ) ) ) => ( max_imprisonment ( value 8 ) )")
+   (production-rule "( defrule pn_movement_restrct_life_threatening_max-deductive-gen341 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen285 ) ( is-a movement_restrictions_life_threatening ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 8 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 8 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 8 ) ) ) ( make-instance ?oid of max_imprisonment ( value 8 ) ) )")
    (derived-class max_imprisonment))
 
-([pn_phy_psy_more_person_min-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_psy_more_person_min-deductive-gen351)
-   (depends-on physical_psychological_abuse_more_victim min_imprisonment)
+([pn_movement_restrct_life_threatening_min-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_life_threatening_min-deductive-gen340)
+   (depends-on movement_restrictions_life_threatening min_imprisonment)
    (implies min_imprisonment)
-   (deductive-rule "?gen288 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 2 ) ) ) => ( min_imprisonment ( value 2 ) )")
-   (production-rule "( defrule pn_phy_psy_more_person_min-deductive-gen351 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen288 ) ( is-a physical_psychological_abuse_more_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 2 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ( make-instance ?oid of min_imprisonment ( value 2 ) ) )")
+   (deductive-rule "?gen276 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 1 ) ) ) => ( min_imprisonment ( value 1 ) )")
+   (production-rule "( defrule pn_movement_restrct_life_threatening_min-deductive-gen340 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen276 ) ( is-a movement_restrictions_life_threatening ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 1 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ( make-instance ?oid of min_imprisonment ( value 1 ) ) )")
    (derived-class min_imprisonment))
 
-([pn_phy_psy_one_person_max-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_psy_one_person_max-deductive-gen350)
-   (depends-on physical_psychological_abuse_one_victim max_imprisonment)
+([pn_movement_restrct_on_duty_max-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_on_duty_max-deductive-gen339)
+   (depends-on movement_restrictions_on_duty max_imprisonment)
    (implies max_imprisonment)
-   (deductive-rule "?gen279 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 15 ) ) ) => ( max_imprisonment ( value 15 ) )")
-   (production-rule "( defrule pn_phy_psy_one_person_max-deductive-gen350 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen279 ) ( is-a physical_psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 15 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 15 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 15 ) ) ) ( make-instance ?oid of max_imprisonment ( value 15 ) ) )")
+   (deductive-rule "?gen267 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 5 ) ) ) => ( max_imprisonment ( value 5 ) )")
+   (production-rule "( defrule pn_movement_restrct_on_duty_max-deductive-gen339 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen267 ) ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 5 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 5 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 5 ) ) ) ( make-instance ?oid of max_imprisonment ( value 5 ) ) )")
    (derived-class max_imprisonment))
 
-([pn_phy_psy_one_person_min-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_psy_one_person_min-deductive-gen349)
-   (depends-on physical_psychological_abuse_one_victim min_imprisonment)
+([pn_movement_restrct_on_duty_min-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_on_duty_min-deductive-gen338)
+   (depends-on movement_restrictions_on_duty min_imprisonment)
    (implies min_imprisonment)
-   (deductive-rule "?gen270 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 2 ) ) ) => ( min_imprisonment ( value 2 ) )")
-   (production-rule "( defrule pn_phy_psy_one_person_min-deductive-gen349 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen270 ) ( is-a physical_psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 2 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ( make-instance ?oid of min_imprisonment ( value 2 ) ) )")
+   (deductive-rule "?gen258 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 1 ) ) ) => ( min_imprisonment ( value 1 ) )")
+   (production-rule "( defrule pn_movement_restrct_on_duty_min-deductive-gen338 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen258 ) ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 1 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ( make-instance ?oid of min_imprisonment ( value 1 ) ) )")
    (derived-class min_imprisonment))
 
-([pn_psy_more_person_max-deductive] of ntm-deductive-rule
-   (pos-name pn_psy_more_person_max-deductive-gen348)
-   (depends-on psychological_abuse_more_victims max_imprisonment)
+([pn_movement_restrct_max-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_max-deductive-gen337)
+   (depends-on movement_restrictions max_imprisonment)
    (implies max_imprisonment)
-   (deductive-rule "?gen261 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 10 ) ) ) => ( max_imprisonment ( value 10 ) )")
-   (production-rule "( defrule pn_psy_more_person_max-deductive-gen348 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen261 ) ( is-a psychological_abuse_more_victims ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 10 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 10 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 10 ) ) ) ( make-instance ?oid of max_imprisonment ( value 10 ) ) )")
+   (deductive-rule "?gen249 <- ( movement_restrictions ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 1 ) ) ) => ( max_imprisonment ( value 1 ) )")
+   (production-rule "( defrule pn_movement_restrct_max-deductive-gen337 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen249 ) ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 1 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 1 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 1 ) ) ) ( make-instance ?oid of max_imprisonment ( value 1 ) ) )")
    (derived-class max_imprisonment))
 
-([pn_psy_more_person_min-deductive] of ntm-deductive-rule
-   (pos-name pn_psy_more_person_min-deductive-gen347)
-   (depends-on psychological_abuse_more_victims min_imprisonment)
+([pn_movement_restrct_min-deductive] of ntm-deductive-rule
+   (pos-name pn_movement_restrct_min-deductive-gen336)
+   (depends-on movement_restrictions min_imprisonment)
    (implies min_imprisonment)
-   (deductive-rule "?gen252 <- ( psychological_abuse_more_victims ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 5 ) ) ) => ( min_imprisonment ( value 5 ) )")
-   (production-rule "( defrule pn_psy_more_person_min-deductive-gen347 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen252 ) ( is-a psychological_abuse_more_victims ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 5 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 5 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 5 ) ) ) ( make-instance ?oid of min_imprisonment ( value 5 ) ) )")
+   (deductive-rule "?gen240 <- ( movement_restrictions ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 0 ) ) ) => ( min_imprisonment ( value 0 ) )")
+   (production-rule "( defrule pn_movement_restrct_min-deductive-gen336 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen240 ) ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 0 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 0 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 0 ) ) ) ( make-instance ?oid of min_imprisonment ( value 0 ) ) )")
    (derived-class min_imprisonment))
 
-([pn_phy_more_person_max-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_more_person_max-deductive-gen346)
-   (depends-on physical_abuse_more_victim max_imprisonment)
+([pn_psy_abuse_on_duty_max-deductive] of ntm-deductive-rule
+   (pos-name pn_psy_abuse_on_duty_max-deductive-gen335)
+   (depends-on psychological_abuse_on_duty max_imprisonment)
    (implies max_imprisonment)
-   (deductive-rule "?gen243 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 6 ) ) ) => ( max_imprisonment ( value 6 ) )")
-   (production-rule "( defrule pn_phy_more_person_max-deductive-gen346 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen243 ) ( is-a physical_abuse_more_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 6 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 6 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 6 ) ) ) ( make-instance ?oid of max_imprisonment ( value 6 ) ) )")
+   (deductive-rule "?gen231 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 8 ) ) ) => ( max_imprisonment ( value 8 ) )")
+   (production-rule "( defrule pn_psy_abuse_on_duty_max-deductive-gen335 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen231 ) ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 8 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 8 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 8 ) ) ) ( make-instance ?oid of max_imprisonment ( value 8 ) ) )")
    (derived-class max_imprisonment))
 
-([pn_phy_more_person_min-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_more_person_min-deductive-gen345)
-   (depends-on physical_abuse_more_victim min_imprisonment)
+([pn_psy_abuse_on_duty_min-deductive] of ntm-deductive-rule
+   (pos-name pn_psy_abuse_on_duty_min-deductive-gen334)
+   (depends-on psychological_abuse_on_duty min_imprisonment)
    (implies min_imprisonment)
-   (deductive-rule "?gen234 <- ( physical_abuse_more_victim ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 3 ) ) ) => ( min_imprisonment ( value 3 ) )")
-   (production-rule "( defrule pn_phy_more_person_min-deductive-gen345 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen234 ) ( is-a physical_abuse_more_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 3 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 3 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 3 ) ) ) ( make-instance ?oid of min_imprisonment ( value 3 ) ) )")
+   (deductive-rule "?gen222 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 1 ) ) ) => ( min_imprisonment ( value 1 ) )")
+   (production-rule "( defrule pn_psy_abuse_on_duty_min-deductive-gen334 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen222 ) ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 1 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 1 ) ) ) ( make-instance ?oid of min_imprisonment ( value 1 ) ) )")
    (derived-class min_imprisonment))
 
-([pn_phy_one_person_max-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_one_person_max-deductive-gen344)
-   (depends-on physical_abuse_one_victim max_imprisonment)
+([pn_psy_abuse_max-deductive] of ntm-deductive-rule
+   (pos-name pn_psy_abuse_max-deductive-gen333)
+   (depends-on psychological_abuse max_imprisonment)
    (implies max_imprisonment)
-   (deductive-rule "?gen225 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 6 ) ) ) => ( max_imprisonment ( value 6 ) )")
-   (production-rule "( defrule pn_phy_one_person_max-deductive-gen344 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen225 ) ( is-a physical_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 6 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 6 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 6 ) ) ) ( make-instance ?oid of max_imprisonment ( value 6 ) ) )")
+   (deductive-rule "?gen213 <- ( psychological_abuse ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 3 ) ) ) => ( max_imprisonment ( value 3 ) )")
+   (production-rule "( defrule pn_psy_abuse_max-deductive-gen333 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen213 ) ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 3 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 3 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 3 ) ) ) ( make-instance ?oid of max_imprisonment ( value 3 ) ) )")
    (derived-class max_imprisonment))
 
-([pn_phy_one_person_min-deductive] of ntm-deductive-rule
-   (pos-name pn_phy_one_person_min-deductive-gen343)
-   (depends-on physical_abuse_one_victim min_imprisonment)
+([pn_psy_abuse_min-deductive] of ntm-deductive-rule
+   (pos-name pn_psy_abuse_min-deductive-gen332)
+   (depends-on psychological_abuse min_imprisonment)
    (implies min_imprisonment)
-   (deductive-rule "?gen216 <- ( physical_abuse_one_victim ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 3 ) ) ) => ( min_imprisonment ( value 3 ) )")
-   (production-rule "( defrule pn_phy_one_person_min-deductive-gen343 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen216 ) ( is-a physical_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 3 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 3 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 3 ) ) ) ( make-instance ?oid of min_imprisonment ( value 3 ) ) )")
+   (deductive-rule "?gen204 <- ( psychological_abuse ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 0 ) ) ) => ( min_imprisonment ( value 0 ) )")
+   (production-rule "( defrule pn_psy_abuse_min-deductive-gen332 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen204 ) ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 0 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 0 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 0 ) ) ) ( make-instance ?oid of min_imprisonment ( value 0 ) ) )")
    (derived-class min_imprisonment))
 
-([pn_psy_one_person_max-deductive] of ntm-deductive-rule
-   (pos-name pn_psy_one_person_max-deductive-gen342)
-   (depends-on psychological_abuse_one_victim max_imprisonment)
-   (implies max_imprisonment)
-   (deductive-rule "?gen207 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ) ( not ( max_imprisonment ( value 5 ) ) ) => ( max_imprisonment ( value 5 ) )")
-   (production-rule "( defrule pn_psy_one_person_max-deductive-gen342 ( declare ( salience ( calc-salience max_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen207 ) ( is-a psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a max_imprisonment ) ( value 5 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat max_imprisonment 5 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat max_imprisonment 5 ) ) ) ( make-instance ?oid of max_imprisonment ( value 5 ) ) )")
-   (derived-class max_imprisonment))
+([rule6_4-deductive] of ntm-deductive-rule
+   (pos-name rule6_4-deductive-gen331)
+   (depends-on movement_restrictions_death movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (deductive-rule "?gen195 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ( not ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ) => ( movement_restrictions_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule6_4-deductive-gen331 ( declare ( salience ( calc-salience movement_restrictions_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen195 ) ( is-a movement_restrictions_death ) ( defendant ?Defendant ) ) ( not ( object ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions_on_duty ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions_on_duty))
 
-([pn_psy_one_person_min-deductive] of ntm-deductive-rule
-   (pos-name pn_psy_one_person_min-deductive-gen341)
-   (depends-on psychological_abuse_one_victim min_imprisonment)
-   (implies min_imprisonment)
-   (deductive-rule "?gen198 <- ( psychological_abuse_one_victim ( defendant ?Defendant ) ) ( not ( min_imprisonment ( value 2 ) ) ) => ( min_imprisonment ( value 2 ) )")
-   (production-rule "( defrule pn_psy_one_person_min-deductive-gen341 ( declare ( salience ( calc-salience min_imprisonment ) ) ) ( run-deductive-rules ) ( object ( name ?gen198 ) ( is-a psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a min_imprisonment ) ( value 2 ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat min_imprisonment 2 ) ) ) ( make-instance ?oid of min_imprisonment ( value 2 ) ) )")
-   (derived-class min_imprisonment))
-
-([rule7_6-deductive] of ntm-deductive-rule
-   (pos-name rule7_6-deductive-gen340)
-   (depends-on life_threatening_torture psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
-   (deductive-rule "?gen189 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( psychological_abuse_one_victim ( defendant ?Defendant ) ) ) => ( psychological_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule7_6-deductive-gen340 ( declare ( salience ( calc-salience psychological_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen189 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class psychological_abuse_one_victim))
-
-([rule7_5-deductive] of ntm-deductive-rule
-   (pos-name rule7_5-deductive-gen339)
-   (depends-on life_threatening_torture psychological_abuse_more_victim)
-   (implies psychological_abuse_more_victim)
-   (deductive-rule "?gen180 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( psychological_abuse_more_victim ( defendant ?Defendant ) ) ) => ( psychological_abuse_more_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule7_5-deductive-gen339 ( declare ( salience ( calc-salience psychological_abuse_more_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen180 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_more_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_more_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_more_victim ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_more_victim ( defendant ?Defendant ) ) )")
-   (derived-class psychological_abuse_more_victim))
-
-([rule7_4-deductive] of ntm-deductive-rule
-   (pos-name rule7_4-deductive-gen338)
-   (depends-on life_threatening_torture physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (deductive-rule "?gen171 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( physical_abuse_one_victim ( defendant ?Defendant ) ) ) => ( physical_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule7_4-deductive-gen338 ( declare ( salience ( calc-salience physical_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen171 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a physical_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of physical_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_abuse_one_victim))
-
-([rule7_3-deductive] of ntm-deductive-rule
-   (pos-name rule7_3-deductive-gen337)
-   (depends-on life_threatening_torture physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (deductive-rule "?gen162 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( physical_abuse_more_victim ( defendant ?Defendant ) ) ) => ( physical_abuse_more_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule7_3-deductive-gen337 ( declare ( salience ( calc-salience physical_abuse_more_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen162 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a physical_abuse_more_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_abuse_more_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_abuse_more_victim ?Defendant ) ) ) ( make-instance ?oid of physical_abuse_more_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_abuse_more_victim))
-
-([rule7_2-deductive] of ntm-deductive-rule
-   (pos-name rule7_2-deductive-gen336)
-   (depends-on life_threatening_torture physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (deductive-rule "?gen153 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ) => ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule7_2-deductive-gen336 ( declare ( salience ( calc-salience physical_psychological_abuse_more_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen153 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a physical_psychological_abuse_more_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_more_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_more_victim ?Defendant ) ) ) ( make-instance ?oid of physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_psychological_abuse_more_victim))
-
-([rule7_1-deductive] of ntm-deductive-rule
-   (pos-name rule7_1-deductive-gen335)
-   (depends-on life_threatening_torture physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (deductive-rule "?gen144 <- ( life_threatening_torture ( defendant ?Defendant ) ) ( not ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ) => ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule7_1-deductive-gen335 ( declare ( salience ( calc-salience physical_psychological_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen144 ) ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ( not ( object ( is-a physical_psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_psychological_abuse_one_victim))
-
-([rule7-deductive] of ntm-deductive-rule
-   (pos-name rule7-deductive-gen334)
-   (depends-on lc:case life_threatening_torture)
-   (implies life_threatening_torture)
-   (deductive-rule "?gen135 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ) ( not ( life_threatening_torture ( defendant ?Defendant ) ) ) => ( life_threatening_torture ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule7-deductive-gen334 ( declare ( salience ( calc-salience life_threatening_torture ) ) ) ( run-deductive-rules ) ( object ( name ?gen135 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ) ( not ( object ( is-a life_threatening_torture ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat life_threatening_torture ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat life_threatening_torture ?Defendant ) ) ) ( make-instance ?oid of life_threatening_torture ( defendant ?Defendant ) ) )")
-   (derived-class life_threatening_torture))
+([rule6_3-deductive] of ntm-deductive-rule
+   (pos-name rule6_3-deductive-gen330)
+   (depends-on movement_restrictions_death movement_restrictions)
+   (implies movement_restrictions)
+   (deductive-rule "?gen186 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ( not ( movement_restrictions ( defendant ?Defendant ) ) ) => ( movement_restrictions ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule6_3-deductive-gen330 ( declare ( salience ( calc-salience movement_restrictions ) ) ) ( run-deductive-rules ) ( object ( name ?gen186 ) ( is-a movement_restrictions_death ) ( defendant ?Defendant ) ) ( not ( object ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions))
 
 ([rule6_2-deductive] of ntm-deductive-rule
-   (pos-name rule6_2-deductive-gen333)
-   (depends-on physical_psychological_abuse_more_victim psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
-   (deductive-rule "?gen126 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ( not ( psychological_abuse_more_victims ( defendant ?Defendant ) ) ) => ( psychological_abuse_more_victims ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule6_2-deductive-gen333 ( declare ( salience ( calc-salience psychological_abuse_more_victims ) ) ) ( run-deductive-rules ) ( object ( name ?gen126 ) ( is-a physical_psychological_abuse_more_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_more_victims ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_more_victims ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_more_victims ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_more_victims ( defendant ?Defendant ) ) )")
-   (derived-class psychological_abuse_more_victims))
+   (pos-name rule6_2-deductive-gen329)
+   (depends-on movement_restrictions_death psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (deductive-rule "?gen177 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ( not ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ) => ( psychological_abuse_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule6_2-deductive-gen329 ( declare ( salience ( calc-salience psychological_abuse_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen177 ) ( is-a movement_restrictions_death ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse_on_duty))
 
 ([rule6_1-deductive] of ntm-deductive-rule
-   (pos-name rule6_1-deductive-gen332)
-   (depends-on physical_psychological_abuse_more_victim physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (deductive-rule "?gen117 <- ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ( not ( physical_abuse_more_victim ( defendant ?Defendant ) ) ) => ( physical_abuse_more_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule6_1-deductive-gen332 ( declare ( salience ( calc-salience physical_abuse_more_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen117 ) ( is-a physical_psychological_abuse_more_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a physical_abuse_more_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_abuse_more_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_abuse_more_victim ?Defendant ) ) ) ( make-instance ?oid of physical_abuse_more_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_abuse_more_victim))
+   (pos-name rule6_1-deductive-gen328)
+   (depends-on movement_restrictions_death psychological_abuse)
+   (implies psychological_abuse)
+   (deductive-rule "?gen168 <- ( movement_restrictions_death ( defendant ?Defendant ) ) ( not ( psychological_abuse ( defendant ?Defendant ) ) ) => ( psychological_abuse ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule6_1-deductive-gen328 ( declare ( salience ( calc-salience psychological_abuse ) ) ) ( run-deductive-rules ) ( object ( name ?gen168 ) ( is-a movement_restrictions_death ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse))
 
 ([rule6-deductive] of ntm-deductive-rule
-   (pos-name rule6-deductive-gen331)
-   (depends-on lc:case lc:case lc:case physical_psychological_abuse_more_victim)
-   (implies physical_psychological_abuse_more_victim)
-   (deductive-rule "?gen101 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen102 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ?gen103 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ( not ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) ) => ( physical_psychological_abuse_more_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule6-deductive-gen331 ( declare ( salience ( calc-salience physical_psychological_abuse_more_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen101 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ( object ( name ?gen102 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( object ( name ?gen103 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ( not ( object ( is-a physical_psychological_abuse_more_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_more_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_more_victim ?Defendant ) ) ) ( make-instance ?oid of physical_psychological_abuse_more_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_psychological_abuse_more_victim))
+   (pos-name rule6-deductive-gen327)
+   (depends-on lc:case movement_restrictions_death)
+   (implies movement_restrictions_death)
+   (deductive-rule "?gen159 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"FATAL\" ) ) ( not ( movement_restrictions_death ( defendant ?Defendant ) ) ) => ( movement_restrictions_death ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule6-deductive-gen327 ( declare ( salience ( calc-salience movement_restrictions_death ) ) ) ( run-deductive-rules ) ( object ( name ?gen159 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:injury_severity \"FATAL\" ) ) ( not ( object ( is-a movement_restrictions_death ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions_death ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions_death ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions_death ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions_death))
+
+([rule5_4-deductive] of ntm-deductive-rule
+   (pos-name rule5_4-deductive-gen326)
+   (depends-on movement_restrictions_life_threatening movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (deductive-rule "?gen150 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ( not ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ) => ( movement_restrictions_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule5_4-deductive-gen326 ( declare ( salience ( calc-salience movement_restrictions_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen150 ) ( is-a movement_restrictions_life_threatening ) ( defendant ?Defendant ) ) ( not ( object ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions_on_duty ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions_on_duty))
+
+([rule5_3-deductive] of ntm-deductive-rule
+   (pos-name rule5_3-deductive-gen325)
+   (depends-on movement_restrictions_life_threatening movement_restrictions)
+   (implies movement_restrictions)
+   (deductive-rule "?gen141 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ( not ( movement_restrictions ( defendant ?Defendant ) ) ) => ( movement_restrictions ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule5_3-deductive-gen325 ( declare ( salience ( calc-salience movement_restrictions ) ) ) ( run-deductive-rules ) ( object ( name ?gen141 ) ( is-a movement_restrictions_life_threatening ) ( defendant ?Defendant ) ) ( not ( object ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions))
 
 ([rule5_2-deductive] of ntm-deductive-rule
-   (pos-name rule5_2-deductive-gen330)
-   (depends-on physical_psychological_abuse_one_victim psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
-   (deductive-rule "?gen92 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ( not ( psychological_abuse_one_victim ( defendant ?Defendant ) ) ) => ( psychological_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule5_2-deductive-gen330 ( declare ( salience ( calc-salience psychological_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen92 ) ( is-a physical_psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class psychological_abuse_one_victim))
+   (pos-name rule5_2-deductive-gen324)
+   (depends-on movement_restrictions_life_threatening psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (deductive-rule "?gen132 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ( not ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ) => ( psychological_abuse_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule5_2-deductive-gen324 ( declare ( salience ( calc-salience psychological_abuse_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen132 ) ( is-a movement_restrictions_life_threatening ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse_on_duty))
 
 ([rule5_1-deductive] of ntm-deductive-rule
-   (pos-name rule5_1-deductive-gen329)
-   (depends-on physical_psychological_abuse_one_victim physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (deductive-rule "?gen83 <- ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ( not ( physical_abuse_one_victim ( defendant ?Defendant ) ) ) => ( physical_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule5_1-deductive-gen329 ( declare ( salience ( calc-salience physical_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen83 ) ( is-a physical_psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ( not ( object ( is-a physical_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of physical_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_abuse_one_victim))
+   (pos-name rule5_1-deductive-gen323)
+   (depends-on movement_restrictions_life_threatening psychological_abuse)
+   (implies psychological_abuse)
+   (deductive-rule "?gen123 <- ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ( not ( psychological_abuse ( defendant ?Defendant ) ) ) => ( psychological_abuse ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule5_1-deductive-gen323 ( declare ( salience ( calc-salience psychological_abuse ) ) ) ( run-deductive-rules ) ( object ( name ?gen123 ) ( is-a movement_restrictions_life_threatening ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse))
 
 ([rule5-deductive] of ntm-deductive-rule
-   (pos-name rule5-deductive-gen328)
-   (depends-on lc:case lc:case lc:case physical_psychological_abuse_one_victim)
-   (implies physical_psychological_abuse_one_victim)
-   (deductive-rule "?gen67 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen68 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ?gen69 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ( not ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) ) => ( physical_psychological_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule5-deductive-gen328 ( declare ( salience ( calc-salience physical_psychological_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen67 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ( object ( name ?gen68 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( object ( name ?gen69 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ( not ( object ( is-a physical_psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_psychological_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of physical_psychological_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_psychological_abuse_one_victim))
+   (pos-name rule5-deductive-gen322)
+   (depends-on lc:case movement_restrictions_life_threatening)
+   (implies movement_restrictions_life_threatening)
+   (deductive-rule "?gen114 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ) ( not ( movement_restrictions_life_threatening ( defendant ?Defendant ) ) ) => ( movement_restrictions_life_threatening ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule5-deductive-gen322 ( declare ( salience ( calc-salience movement_restrictions_life_threatening ) ) ) ( run-deductive-rules ) ( object ( name ?gen114 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:injury_severity \"LIFE_THREATENING\" ) ) ( not ( object ( is-a movement_restrictions_life_threatening ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions_life_threatening ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions_life_threatening ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions_life_threatening ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions_life_threatening))
+
+([rule4_3-deductive] of ntm-deductive-rule
+   (pos-name rule4_3-deductive-gen321)
+   (depends-on movement_restrictions_on_duty movement_restrictions)
+   (implies movement_restrictions)
+   (deductive-rule "?gen105 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ( not ( movement_restrictions ( defendant ?Defendant ) ) ) => ( movement_restrictions ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule4_3-deductive-gen321 ( declare ( salience ( calc-salience movement_restrictions ) ) ) ( run-deductive-rules ) ( object ( name ?gen105 ) ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions))
+
+([rule4_2-deductive] of ntm-deductive-rule
+   (pos-name rule4_2-deductive-gen320)
+   (depends-on movement_restrictions_on_duty psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (deductive-rule "?gen96 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ( not ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ) => ( psychological_abuse_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule4_2-deductive-gen320 ( declare ( salience ( calc-salience psychological_abuse_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen96 ) ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse_on_duty))
+
+([rule4_1-deductive] of ntm-deductive-rule
+   (pos-name rule4_1-deductive-gen319)
+   (depends-on movement_restrictions_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (deductive-rule "?gen87 <- ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ( not ( psychological_abuse ( defendant ?Defendant ) ) ) => ( psychological_abuse ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule4_1-deductive-gen319 ( declare ( salience ( calc-salience psychological_abuse ) ) ) ( run-deductive-rules ) ( object ( name ?gen87 ) ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse))
 
 ([rule4-deductive] of ntm-deductive-rule
-   (pos-name rule4-deductive-gen327)
-   (depends-on lc:case lc:case physical_abuse_more_victim)
-   (implies physical_abuse_more_victim)
-   (deductive-rule "?gen54 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen55 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ( not ( physical_abuse_more_victim ( defendant ?Defendant ) ) ) => ( physical_abuse_more_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule4-deductive-gen327 ( declare ( salience ( calc-salience physical_abuse_more_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen54 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ( object ( name ?gen55 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ( not ( object ( is-a physical_abuse_more_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_abuse_more_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_abuse_more_victim ?Defendant ) ) ) ( make-instance ?oid of physical_abuse_more_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_abuse_more_victim))
+   (pos-name rule4-deductive-gen318)
+   (depends-on lc:case movement_restrictions_on_duty)
+   (implies movement_restrictions_on_duty)
+   (deductive-rule "?gen78 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ) ( not ( movement_restrictions_on_duty ( defendant ?Defendant ) ) ) => ( movement_restrictions_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule4-deductive-gen318 ( declare ( salience ( calc-salience movement_restrictions_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen78 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ) ( not ( object ( is-a movement_restrictions_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions_on_duty ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions_on_duty))
+
+([rule3_2-deductive] of ntm-deductive-rule
+   (pos-name rule3_2-deductive-gen317)
+   (depends-on movement_restrictions psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (deductive-rule "?gen69 <- ( movement_restrictions ( defendant ?Defendant ) ) ( not ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ) => ( psychological_abuse_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule3_2-deductive-gen317 ( declare ( salience ( calc-salience psychological_abuse_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen69 ) ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse_on_duty))
+
+([rule3_1-deductive] of ntm-deductive-rule
+   (pos-name rule3_1-deductive-gen316)
+   (depends-on movement_restrictions psychological_abuse)
+   (implies psychological_abuse)
+   (deductive-rule "?gen60 <- ( movement_restrictions ( defendant ?Defendant ) ) ( not ( psychological_abuse ( defendant ?Defendant ) ) ) => ( psychological_abuse ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule3_1-deductive-gen316 ( declare ( salience ( calc-salience psychological_abuse ) ) ) ( run-deductive-rules ) ( object ( name ?gen60 ) ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse))
 
 ([rule3-deductive] of ntm-deductive-rule
-   (pos-name rule3-deductive-gen326)
-   (depends-on lc:case lc:case physical_abuse_one_victim)
-   (implies physical_abuse_one_victim)
-   (deductive-rule "?gen41 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen42 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ( not ( physical_abuse_one_victim ( defendant ?Defendant ) ) ) => ( physical_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule3-deductive-gen326 ( declare ( salience ( calc-salience physical_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen41 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ( object ( name ?gen42 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ( not ( object ( is-a physical_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat physical_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat physical_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of physical_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class physical_abuse_one_victim))
+   (pos-name rule3-deductive-gen315)
+   (depends-on lc:case movement_restrictions)
+   (implies movement_restrictions)
+   (deductive-rule "?gen51 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_defendants ?num_of_defendants ) ) ( not ( movement_restrictions ( defendant ?Defendant ) ) ) => ( movement_restrictions ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule3-deductive-gen315 ( declare ( salience ( calc-salience movement_restrictions ) ) ) ( run-deductive-rules ) ( object ( name ?gen51 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:num_of_defendants ?num_of_defendants ) ) ( not ( object ( is-a movement_restrictions ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat movement_restrictions ?Defendant ) ) ) ( make-instance ?oid of movement_restrictions ( defendant ?Defendant ) ) )")
+   (derived-class movement_restrictions))
+
+([rule2_1-deductive] of ntm-deductive-rule
+   (pos-name rule2_1-deductive-gen314)
+   (depends-on psychological_abuse_on_duty psychological_abuse)
+   (implies psychological_abuse)
+   (deductive-rule "?gen42 <- ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ( not ( psychological_abuse ( defendant ?Defendant ) ) ) => ( psychological_abuse ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule2_1-deductive-gen314 ( declare ( salience ( calc-salience psychological_abuse ) ) ) ( run-deductive-rules ) ( object ( name ?gen42 ) ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ( not ( object ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse))
 
 ([rule2-deductive] of ntm-deductive-rule
-   (pos-name rule2-deductive-gen325)
-   (depends-on lc:case lc:case psychological_abuse_more_victims)
-   (implies psychological_abuse_more_victims)
-   (deductive-rule "?gen28 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen29 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ( not ( psychological_abuse_more_victims ( defendant ?Defendant ) ) ) => ( psychological_abuse_more_victims ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule2-deductive-gen325 ( declare ( salience ( calc-salience psychological_abuse_more_victims ) ) ) ( run-deductive-rules ) ( object ( name ?gen28 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ( object ( name ?gen29 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( > ?num_of_victims 1 ) ) ( not ( object ( is-a psychological_abuse_more_victims ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_more_victims ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_more_victims ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_more_victims ( defendant ?Defendant ) ) )")
-   (derived-class psychological_abuse_more_victims))
+   (pos-name rule2-deductive-gen313)
+   (depends-on lc:case lc:case lc:case psychological_abuse_on_duty)
+   (implies psychological_abuse_on_duty)
+   (deductive-rule "?gen27 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ?gen28 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ) ?gen29 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ) ( not ( psychological_abuse_on_duty ( defendant ?Defendant ) ) ) => ( psychological_abuse_on_duty ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule2-deductive-gen313 ( declare ( salience ( calc-salience psychological_abuse_on_duty ) ) ) ( run-deductive-rules ) ( object ( name ?gen27 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( object ( name ?gen28 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ) ( object ( name ?gen29 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:on_duty \"true\" ) ) ( not ( object ( is-a psychological_abuse_on_duty ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_on_duty ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_on_duty ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse_on_duty))
 
 ([rule1-deductive] of ntm-deductive-rule
-   (pos-name rule1-deductive-gen324)
-   (depends-on lc:case lc:case psychological_abuse_one_victim)
-   (implies psychological_abuse_one_victim)
-   (deductive-rule "?gen15 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ?gen16 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ( not ( psychological_abuse_one_victim ( defendant ?Defendant ) ) ) => ( psychological_abuse_one_victim ( defendant ?Defendant ) )")
-   (production-rule "( defrule rule1-deductive-gen324 ( declare ( salience ( calc-salience psychological_abuse_one_victim ) ) ) ( run-deductive-rules ) ( object ( name ?gen15 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:num_of_victims ?num_of_victims ) ) ( object ( name ?gen16 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( test ( < ?num_of_victims 2 ) ) ( not ( object ( is-a psychological_abuse_one_victim ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse_one_victim ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse_one_victim ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse_one_victim ( defendant ?Defendant ) ) )")
-   (derived-class psychological_abuse_one_victim))
+   (pos-name rule1-deductive-gen312)
+   (depends-on lc:case lc:case psychological_abuse)
+   (implies psychological_abuse)
+   (deductive-rule "?gen15 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ?gen16 <- ( lc:case ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ) ( not ( psychological_abuse ( defendant ?Defendant ) ) ) => ( psychological_abuse ( defendant ?Defendant ) )")
+   (production-rule "( defrule rule1-deductive-gen312 ( declare ( salience ( calc-salience psychological_abuse ) ) ) ( run-deductive-rules ) ( object ( name ?gen15 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:psychological_abuse_involved \"true\" ) ) ( object ( name ?gen16 ) ( is-a lc:case ) ( lc:defendant ?Defendant ) ( lc:physical_abuse_involved \"false\" ) ) ( not ( object ( is-a psychological_abuse ) ( defendant ?Defendant ) ) ) ( test ( not ( instance-existp ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ) ) => ( bind ?oid ( symbol-to-instance-name ( sym-cat psychological_abuse ?Defendant ) ) ) ( make-instance ?oid of psychological_abuse ( defendant ?Defendant ) ) )")
+   (derived-class psychological_abuse))
 
