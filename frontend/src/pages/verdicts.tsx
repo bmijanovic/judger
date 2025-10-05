@@ -57,13 +57,27 @@ export const Verdicts = () => {
             ))}
         </Box>
         <Box sx={{overflow: "auto", width: '100%'}}>
-            {selectedVerdict != null &&
-                <div style={{color: 'black', padding: '20px', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6'}}>
-                    <h2 style={{marginBottom: '30px', textTransform: 'uppercase'}}>
+            {selectedVerdict != null && (
+                <div
+                    style={{
+                        color: 'black',
+                        padding: '20px',
+                        maxWidth: '800px',
+                        margin: '0 auto',
+                        lineHeight: '1.6',
+                    }}
+                >
+                    <h2 style={{ marginBottom: '30px', textTransform: 'uppercase' }}>
                         Verdict: {selectedVerdict.verdictNumber}
                     </h2>
 
-                    <table style={{width: '100%', borderCollapse: 'collapse', marginBottom: '20px'}}>
+                    <table
+                        style={{
+                            width: '100%',
+                            borderCollapse: 'collapse',
+                            marginBottom: '20px',
+                        }}
+                    >
                         <tbody>
                         {[
                             ['Court', selectedVerdict.court],
@@ -75,41 +89,55 @@ export const Verdicts = () => {
                             ['Applied Provisions', selectedVerdict.appliedProvisions],
                             ['Verdict Type', selectedVerdict.verdict],
                             ['Number of Defendants', selectedVerdict.numDefendants],
-                            ['Previously Convicted', selectedVerdict.previouslyConvicted ? 'Yes' : 'No'],
+                            [
+                                'Previously Convicted',
+                                selectedVerdict.previouslyConvicted ? 'Yes' : 'No',
+                            ],
                             ['Aware of Illegality', selectedVerdict.awareOfIllegality ? 'Yes' : 'No'],
                             ['Defendant Financial Status', selectedVerdict.defendantFinancialStatus],
                             ['Number of Victims Endangered', selectedVerdict.numVictimsEndangered],
-                            ['Physical Abuse Involved', selectedVerdict.physicalAbuseInvolved ? 'Yes' : 'No'],
-                            ['Psychological Abuse Involved', selectedVerdict.psychologicalAbuseInvolved ? 'Yes' : 'No'],
+                            [
+                                'Physical Abuse Involved',
+                                selectedVerdict.physicalAbuseInvolved ? 'Yes' : 'No',
+                            ],
+                            [
+                                'Psychological Abuse Involved',
+                                selectedVerdict.psychologicalAbuseInvolved ? 'Yes' : 'No',
+                            ],
+                            ['Weapon Type', selectedVerdict.weaponType],
+                            ['Injury Severity', selectedVerdict.injurySeverity],
+                            [
+                                'Injury Descriptions',
+                                <ul style={{ paddingLeft: '20px', margin: 0 }}>
+                                    {selectedVerdict.injuryDescriptions.map((desc, i) => (
+                                        <li key={i} style={{ marginBottom: '8px' }}>
+                                            {desc}
+                                        </li>
+                                    ))}
+                                </ul>,
+                            ],
                         ].map(([label, value], i) => (
-                            <tr key={label} style={{backgroundColor: i % 2 === 0 ? '#f9f9f9' : '#ffffff'}}>
-                                <td style={{
-                                    padding: '10px',
-                                    fontWeight: 'bold',
-                                    verticalAlign: 'top',
-                                    width: '40%'
-                                }}>{label}:
+                            <tr
+                                key={label}
+                                style={{ backgroundColor: i % 2 === 0 ? '#f9f9f9' : '#ffffff' }}
+                            >
+                                <td
+                                    style={{
+                                        padding: '10px',
+                                        fontWeight: 'bold',
+                                        verticalAlign: 'top',
+                                        width: '40%',
+                                    }}
+                                >
+                                    {label}:
                                 </td>
-                                <td style={{padding: '10px'}}>{value}</td>
+                                <td style={{ padding: '10px' }}>{value}</td>
                             </tr>
                         ))}
                         </tbody>
                     </table>
-
-                    <h3 style={{marginTop: '30px'}}>Injury Descriptions:</h3>
-                    <ul style={{paddingLeft: '20px'}}>
-                        {selectedVerdict.injuryDescriptions.map((desc, i) => (
-                            <li key={i} style={{marginBottom: '8px'}}>{desc}</li>
-                        ))}
-                    </ul>
-
-                    <h3>Actions Taken Against Victim:</h3>
-                    <p>{selectedVerdict.actionsTakenAgainstVictim}</p>
-
-                    <h3>Methods of Restraint:</h3>
-                    <p>{selectedVerdict.methodsOfRestraint}</p>
-                </div>}
-
+                </div>
+            )}
 
         </Box>
 
