@@ -91,9 +91,9 @@
                 <ruleml:if>
                     <ruleml:And>
                         <ruleml:Atom>
-                            <ruleml:Rel iri="lc:num_of_victims"/>
+                            <ruleml:Rel iri="lc:num_of_defendants"/>
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                            <ruleml:Var type="num_of_victims">num_of_defendants</ruleml:Var>
+                            <ruleml:Var type="num_of_defendants">num_of_defendants</ruleml:Var>
                         </ruleml:Atom>
                         <ruleml:Or>
                                 <ruleml:Atom>
@@ -503,6 +503,17 @@
             <ruleml:Rule key=":rule7" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:num_of_defendants"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Var type="num_of_defendants">num_of_defendants</ruleml:Var>
+                        </ruleml:Atom>
+                        <ruleml:Expr>
+                            <ruleml:Fun>&lt;=</ruleml:Fun>
+                            <ruleml:Var>num_of_defendants</ruleml:Var>
+                            <ruleml:Ind>1</ruleml:Ind>
+                        </ruleml:Expr>
+
                         <ruleml:Or>
                             <ruleml:Atom>
                                 <ruleml:Rel iri="lc:psychological_abuse_involved"/>
@@ -622,13 +633,17 @@
             <ruleml:Rule key=":rule8" closure="universal" strength="defeasible">
                 <ruleml:if>
                     <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel iri="lc:num_of_defendants"/>
+                            <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
+                            <ruleml:Var type="num_of_defendants">num_of_defendants</ruleml:Var>
+                        </ruleml:Atom>
+                        <ruleml:Expr>
+                            <ruleml:Fun>&gt;=</ruleml:Fun>
+                            <ruleml:Var>num_of_defendants</ruleml:Var>
+                            <ruleml:Ind>2</ruleml:Ind>
+                        </ruleml:Expr>
                         <ruleml:Or>
-                            <ruleml:Atom>
-                                <ruleml:Rel iri="lc:num_of_victims"/>
-                                <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
-                                <ruleml:Var type="num_of_victims">num_of_defendants</ruleml:Var>
-                            </ruleml:Atom>
-
                             <ruleml:Atom>
                                 <ruleml:Rel iri="lc:psychological_abuse_involved"/>
                                 <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
@@ -645,11 +660,6 @@
                             <ruleml:Var type="lc:defendant">Defendant</ruleml:Var>
                             <ruleml:Data xsi:type="xs:string">BLACKMAIL</ruleml:Data>
                         </ruleml:Atom>
-                        <ruleml:Expr>
-                            <ruleml:Fun>&gt;</ruleml:Fun>
-                            <ruleml:Var>num_of_defendants</ruleml:Var>
-                            <ruleml:Ind>1</ruleml:Ind>
-                        </ruleml:Expr>
                     </ruleml:And>
                 </ruleml:if>
                 <ruleml:then>
@@ -740,6 +750,27 @@
                     <ruleml:Negation>
                         <ruleml:Atom>
                             <ruleml:Rel>movement_restrictions_on_duty</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:Negation>
+                </ruleml:then>
+            </ruleml:Rule>
+        </lrml:PrescriptiveStatement>
+        <!--                Negacije ps8-->
+        <lrml:PrescriptiveStatement key="ps8_7">
+            <ruleml:Rule key=":rule8_7" closure="universal" strength="defeasible">
+                <ruleml:if>
+                    <ruleml:And>
+                        <ruleml:Atom>
+                            <ruleml:Rel>coercion_abuse_multiple_defendant</ruleml:Rel>
+                            <ruleml:Var type=":defendant">Defendant</ruleml:Var>
+                        </ruleml:Atom>
+                    </ruleml:And>
+                </ruleml:if>
+                <ruleml:then>
+                    <ruleml:Negation>
+                        <ruleml:Atom>
+                            <ruleml:Rel>coercion_abuse</ruleml:Rel>
                             <ruleml:Var type=":defendant">Defendant</ruleml:Var>
                         </ruleml:Atom>
                     </ruleml:Negation>
@@ -913,7 +944,7 @@
                     <ruleml:Atom>
                         <ruleml:Rel iri=":min_imprisonment"/>
                         <ruleml:Var>Years</ruleml:Var>
-                        <ruleml:Ind>0.25</ruleml:Ind>
+                        <ruleml:Ind>0</ruleml:Ind>
                     </ruleml:Atom>
                 </lrml:Obligation>
             </lrml:SuborderList>

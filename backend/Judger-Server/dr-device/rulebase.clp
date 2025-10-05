@@ -1,5 +1,5 @@
 (import-rdf "facts.rdf")
-		(export-rdf export.rdf  movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)
+		(export-rdf export.rdf  coercion_abuse_multiple_defendant coercion_abuse movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)
 		(export-proof proof.ruleml)
 		
 (defeasiblerule rule1
@@ -349,6 +349,198 @@
 	
 ) 
 	
+(defeasiblerule rule7
+		 
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:num_of_defendants ?num_of_defendants)
+	)  
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:injury_severity "BLACKMAIL")
+	) 
+  => 
+	 
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) 
+) 
+	
+(defeasiblerule rule7_1
+		(declare (superior rule1 )) 
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule7_2
+		(declare (superior rule2 )) 
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule7_3
+		(declare (superior rule3 )) 
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule7_4
+		(declare (superior rule4 )) 
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8
+		 
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:num_of_defendants ?num_of_defendants)
+	)  
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:injury_severity "BLACKMAIL")
+	) 
+  => 
+	 
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) 
+) 
+	
+(defeasiblerule rule8_1
+		(declare (superior rule1 )) 
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8_2
+		(declare (superior rule2 )) 
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8_3
+		(declare (superior rule3 )) 
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8_4
+		(declare (superior rule4 )) 
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule8_7
+		 
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
 (defeasiblerule pn_psy_abuse_min
 		 
 	(psychological_abuse 
@@ -506,6 +698,62 @@
 (defeasiblerule pn_movement_restrct_death_max
 		 
 	(movement_restrictions_death 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 12)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_min
+		 
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 0)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_max
+		 
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 3)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_multiple_defendant_min
+		 
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 2)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_multiple_defendant_max
+		 
+	(coercion_abuse_multiple_defendant 
 		(
 		 defendant ?Defendant)
 	) 

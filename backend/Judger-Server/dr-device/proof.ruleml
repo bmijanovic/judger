@@ -4,20 +4,32 @@
      <!ENTITY proof-export "http://startrek.csd.auth.gr/dr-device/proof/proof.ruleml#">
 ]>
 
-<RuleML rdf_import='"facts.rdf"' rdf_export='export.rdf' rdf_export_classes="movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment" rulebase='rulebase.ruleml' xmlns="http://www.ruleml.org/0.91/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.ruleml.org/0.91/xsd http://lpis.csd.auth.gr/systems/dr-device/dr-device-0.81.xsd">
+<RuleML rdf_import='"facts.rdf"' rdf_export='export.rdf' rdf_export_classes="coercion_abuse_multiple_defendant coercion_abuse movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment" rulebase='rulebase.ruleml' xmlns="http://www.ruleml.org/0.91/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.ruleml.org/0.91/xsd http://lpis.csd.auth.gr/systems/dr-device/dr-device-0.81.xsd">
 <Grounds>
 <Defeasibly_Proved>
 <oid>
 <Ind uri='&proof-export;proof1'>proof1</Ind>
 </oid>
 <Literal>
-<RDF_resource uri='&export;movement_restrictions_life_threatening1'/>
+<RDF_resource uri='&export;coercion_abuse_multiple_defendant1'/>
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;rule5'/>
+<rule_ref rule='&rulebase;rule8'/>
 </supportive_rule>
 <defeasible_body_grounds>
+<Definitely_Proved>
+<Literal>
+<RDF_resource uri='&lc;counterfeiting_case'/>
+</Literal>
+<Definite_Proof>
+<strict_clause>
+<Fact>
+<RDF_resource uri='&lc;counterfeiting_case'/>
+</Fact>
+</strict_clause>
+</Definite_Proof>
+</Definitely_Proved>
 <Definitely_Proved>
 <Literal>
 <RDF_resource uri='&lc;counterfeiting_case'/>
@@ -45,7 +57,7 @@
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;rule5_4'/>
+<rule_ref rule='&rulebase;rule8_4'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
@@ -55,22 +67,8 @@
 <Blocked>
 <Blocked_Defeasible_rule>
 <rule_ref rule='&rulebase;rule4'/>
-<defeasible_body_grounds>
-<Definitely_Proved>
-<Literal>
-<RDF_resource uri='&lc;counterfeiting_case'/>
-</Literal>
-<Definite_Proof>
-<strict_clause>
-<Fact>
-<RDF_resource uri='&lc;counterfeiting_case'/>
-</Fact>
-</strict_clause>
-</Definite_Proof>
-</Definitely_Proved>
-</defeasible_body_grounds>
 <Attacked_by_Superior>
-<rule_ref rule='&rulebase;rule5_4'/>
+<rule_ref rule='&rulebase;rule8_4'/>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
 </defeasible_body_grounds>
@@ -89,7 +87,7 @@
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;rule5_3'/>
+<rule_ref rule='&rulebase;rule8_3'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
@@ -114,7 +112,7 @@
 </Definitely_Proved>
 </defeasible_body_grounds>
 <Attacked_by_Superior>
-<rule_ref rule='&rulebase;rule5_3'/>
+<rule_ref rule='&rulebase;rule8_3'/>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
 </defeasible_body_grounds>
@@ -133,7 +131,7 @@
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;rule5_2'/>
+<rule_ref rule='&rulebase;rule8_2'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
@@ -144,7 +142,7 @@
 <Blocked_Defeasible_rule>
 <rule_ref rule='&rulebase;rule2'/>
 <Attacked_by_Superior>
-<rule_ref rule='&rulebase;rule5_2'/>
+<rule_ref rule='&rulebase;rule8_2'/>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
 </defeasible_body_grounds>
@@ -163,7 +161,7 @@
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;rule5_1'/>
+<rule_ref rule='&rulebase;rule8_1'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
@@ -174,7 +172,7 @@
 <Blocked_Defeasible_rule>
 <rule_ref rule='&rulebase;rule1'/>
 <Attacked_by_Superior>
-<rule_ref rule='&rulebase;rule5_1'/>
+<rule_ref rule='&rulebase;rule8_1'/>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
 </defeasible_body_grounds>
@@ -193,7 +191,7 @@
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;pn_movement_restrct_life_threatening_min'/>
+<rule_ref rule='&rulebase;pn_coercion_abuse_multiple_defendant_min'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
@@ -212,7 +210,7 @@
 </Literal>
 <Defeasible_Proof>
 <supportive_rule>
-<rule_ref rule='&rulebase;pn_movement_restrct_life_threatening_max'/>
+<rule_ref rule='&rulebase;pn_coercion_abuse_multiple_defendant_max'/>
 </supportive_rule>
 <defeasible_body_grounds>
 <proof_ref proof='&proof-export;proof1'/>
