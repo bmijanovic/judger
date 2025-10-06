@@ -3,10 +3,10 @@
         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
         xmlns:lc="http://informatika.ftn.uns.ac.rs/legal-case.rdf#">
-    <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case">
+    <lc:case rdf:about="http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case">
         <lc:name>Case 01</lc:name>
         <lc:defendant>John Doe</lc:defendant>
-        <lc:num_of_victims rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</lc:num_of_victims>
+        <lc:num_of_victims rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</lc:num_of_victims>
         <lc:previously_convicted>false</lc:previously_convicted>
         <lc:psychological_abuse_involved>false</lc:psychological_abuse_involved>
         <lc:physical_abuse_involved>false</lc:physical_abuse_involved>

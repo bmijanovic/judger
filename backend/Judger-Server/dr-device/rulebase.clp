@@ -1,5 +1,5 @@
 (import-rdf "facts.rdf")
-		(export-rdf export.rdf  coercion_abuse_multiple_defendant coercion_abuse movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)
+		(export-rdf export.rdf  coercion_abuse_multiple_victims coercion_abuse_on_duty coercion_abuse_multiple_defendant coercion_abuse movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)
 		(export-proof proof.ruleml)
 		
 (defeasiblerule rule1
@@ -357,7 +357,12 @@
 	
 		(
 		 lc:num_of_defendants ?num_of_defendants)
-	)  
+	) 
+		(test 
+		(<=  ?num_of_defendants 1
+		)
+	)
+	 
 	(lc:case 
 		(
 		 lc:defendant ?Defendant)
@@ -445,7 +450,12 @@
 	
 		(
 		 lc:num_of_defendants ?num_of_defendants)
-	)  
+	) 
+		(test 
+		(>=  ?num_of_defendants 2
+		)
+	)
+	 
 	(lc:case 
 		(
 		 lc:defendant ?Defendant)
@@ -525,9 +535,97 @@
 	
 ) 
 	
-(defeasiblerule rule8_7
+(defeasiblerule rule9
 		 
-	(coercion_abuse_multiple_defendant 
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:injury_severity "BLACKMAIL")
+	)  
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:on_duty "true")
+	) 
+  => 
+	 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+) 
+	
+(defeasiblerule rule9_1
+		(declare (superior rule1 )) 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule9_2
+		(declare (superior rule2 )) 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule9_3
+		(declare (superior rule3 )) 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule9_4
+		(declare (superior rule4 )) 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule9_7
+		(declare (superior rule7 )) 
+	(coercion_abuse_on_duty 
 		(
 		 defendant ?Defendant)
 	) 
@@ -535,6 +633,163 @@
 	
 		(not  
 	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule9_8
+		(declare (superior rule8 )) 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10
+		 
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:num_of_victims ?num_of_victims)
+	) 
+		(test 
+		(>=  ?num_of_victims 2
+		)
+	)
+	 
+	(lc:case 
+		(
+		 lc:defendant ?Defendant)
+	
+		(
+		 lc:injury_severity "BLACKMAIL")
+	) 
+  => 
+	 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+) 
+	
+(defeasiblerule rule10_1
+		(declare (superior rule1 )) 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_2
+		(declare (superior rule2 )) 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(psychological_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_3
+		(declare (superior rule3 )) 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_4
+		(declare (superior rule4 )) 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(movement_restrictions_on_duty 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_7
+		(declare (superior rule7 )) 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(coercion_abuse 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_8
+		(declare (superior rule8 )) 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(coercion_abuse_multiple_defendant 
+		(
+		 defendant ?Defendant)
+	) )
+	
+) 
+	
+(defeasiblerule rule10_9
+		(declare (superior rule9 )) 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	
+		(not  
+	(coercion_abuse_on_duty 
 		(
 		 defendant ?Defendant)
 	) )
@@ -762,6 +1017,62 @@
 	(max_imprisonment 
 		(
 		 value 12)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_on_duty_min
+		 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 1)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_on_duty_max
+		 
+	(coercion_abuse_on_duty 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 5)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_multiple_victims_min
+		 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(min_imprisonment 
+		(
+		 value 1)
+	) 
+) 
+	
+(defeasiblerule pn_coercion_abuse_multiple_victims_max
+		 
+	(coercion_abuse_multiple_victims 
+		(
+		 defendant ?Defendant)
+	) 
+  => 
+	 
+	(max_imprisonment 
+		(
+		 value 5)
 	) 
 ) 
 	

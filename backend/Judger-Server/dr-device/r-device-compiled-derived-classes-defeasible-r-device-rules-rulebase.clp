@@ -6,5 +6,7 @@
 ( defclass movement_restrictions_death ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass coercion_abuse ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass coercion_abuse_multiple_defendant ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass coercion_abuse_on_duty ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
+( defclass coercion_abuse_multiple_victims ( is-a DERIVED-CLASS ) ( slot defendant ( type ?VARIABLE ) ) )
 ( defclass min_imprisonment ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )
 ( defclass max_imprisonment ( is-a DERIVED-CLASS ) ( slot value ( type INTEGER ) ) )

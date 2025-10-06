@@ -100,7 +100,7 @@ public class DrDeviceService {
                 "        xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"\n" +
                 "        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema#\"\n" +
                 "        xmlns:lc=\"http://informatika.ftn.uns.ac.rs/legal-case.rdf#\">\n" +
-                "    <lc:case rdf:about=\"http://informatika.ftn.uns.ac.rs/legal-case.rdf#counterfeiting_case\">\n" +
+                "    <lc:case rdf:about=\"http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case\">\n" +
                 "        <lc:name>Case 01</lc:name>\n" +
                 "        <lc:defendant>John Doe</lc:defendant>\n" +
                 "        <lc:num_of_victims rdf:datatype=\"http://www.w3.org/2001/XMLSchema#integer\">" + verdict.getNumVictimsEndangered() + "</lc:num_of_victims>\n" +
@@ -150,6 +150,8 @@ public class DrDeviceService {
         r.add("movement_restrictions_death");
         r.add("coercion_abuse");
         r.add("coercion_abuse_multiple_defendant");
+        r.add("coercion_abuse_on_duty");
+        r.add("coercion_abuse_multiple_victims");
 
         return r;
     }
@@ -165,6 +167,8 @@ public class DrDeviceService {
         r.put("movement_restrictions_death", "Okrivljeni je počinio krivično delo radnji protivpravno zatvoranje, držanje zatvorenog ili ograničavanje slobode kretanja usled čega je nastala smrt lica (čl 162. st 4.).");
         r.put("coercion_abuse", "Okrivljeni je silom ili prijetnjom prinudio drugog da nešto učini ili ne učini ili trpi (čl 165 st 1.).");
         r.put("coercion_abuse_multiple_defendant", "Okrivljeni je silom ili prijetnjom prinudio drugog da nešto učini ili ne učini ili trpi u čemu je učestvovalo više okrivljenih (čl 165 st 4.).");
+        r.put("coercion_abuse_on_duty", "Okrivljeni je silom ili prijetnjom prinudio drugog da nešto učini ili ne učini ili trpi tokom vršenja službene dužnosti (čl 167 st 2.).");
+        r.put("coercion_abuse_multiple_victims", "Okrivljeni je silom ili prijetnjom prinudio drugog da nešto učini ili ne učini ili trpi tokom čega je ugroženo više lica (čl 168 st 2.).");
 
 
         r.put("min_imprisonment", "Te ga sud primjenom pomenutih propisa osuđuje na zatvorsku kaznu u trajanju od minimum ");

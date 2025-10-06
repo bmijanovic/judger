@@ -2,4 +2,4 @@
 (import-rdf-files facts.rdf)
 (load-compiled-dr-device rulebase.clp)
 (go-dr-device)
-(dr-device_export_rdf rulebase.ruleml export.rdf proof.ruleml coercion_abuse_multiple_defendant coercion_abuse movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)
+(dr-device_export_rdf rulebase.ruleml export.rdf proof.ruleml coercion_abuse_multiple_victims coercion_abuse_on_duty coercion_abuse_multiple_defendant coercion_abuse movement_restrictions_death movement_restrictions_life_threatening movement_restrictions_on_duty movement_restrictions psychological_abuse_on_duty psychological_abuse min_imprisonment max_imprisonment)

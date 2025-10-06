@@ -32,7 +32,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule8_1-deductive-gen479] [rule7_1-deductive-gen474] [rule6_1-deductive-gen469] [rule5_1-deductive-gen464] [rule4_1-deductive-gen460] [rule3_1-deductive-gen457] [rule2_1-deductive-gen455] [rule1-deductive-gen453]))
+   (deductive-rules [rule10_1-deductive-gen662] [rule9_1-deductive-gen655] [rule8_1-deductive-gen650] [rule7_1-deductive-gen645] [rule6_1-deductive-gen640] [rule5_1-deductive-gen635] [rule4_1-deductive-gen631] [rule3_1-deductive-gen628] [rule2_1-deductive-gen626] [rule1-deductive-gen624]))
 
 ([psychological_abuse_on_duty-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -68,7 +68,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule8_2-deductive-gen480] [rule7_2-deductive-gen475] [rule6_2-deductive-gen470] [rule5_2-deductive-gen465] [rule4_2-deductive-gen461] [rule3_2-deductive-gen458] [rule2-deductive-gen454]))
+   (deductive-rules [rule10_2-deductive-gen663] [rule9_2-deductive-gen656] [rule8_2-deductive-gen651] [rule7_2-deductive-gen646] [rule6_2-deductive-gen641] [rule5_2-deductive-gen636] [rule4_2-deductive-gen632] [rule3_2-deductive-gen629] [rule2-deductive-gen625]))
 
 ([movement_restrictions-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -104,7 +104,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule8_3-deductive-gen481] [rule7_3-deductive-gen476] [rule6_3-deductive-gen471] [rule5_3-deductive-gen466] [rule4_3-deductive-gen462] [rule3-deductive-gen456]))
+   (deductive-rules [rule10_3-deductive-gen664] [rule9_3-deductive-gen657] [rule8_3-deductive-gen652] [rule7_3-deductive-gen647] [rule6_3-deductive-gen642] [rule5_3-deductive-gen637] [rule4_3-deductive-gen633] [rule3-deductive-gen627]))
 
 ([movement_restrictions_on_duty-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -140,7 +140,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule8_4-deductive-gen482] [rule7_4-deductive-gen477] [rule6_4-deductive-gen472] [rule5_4-deductive-gen467] [rule4-deductive-gen459]))
+   (deductive-rules [rule10_4-deductive-gen665] [rule9_4-deductive-gen658] [rule8_4-deductive-gen653] [rule7_4-deductive-gen648] [rule6_4-deductive-gen643] [rule5_4-deductive-gen638] [rule4-deductive-gen630]))
 
 ([movement_restrictions_life_threatening-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -176,7 +176,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule5-deductive-gen463]))
+   (deductive-rules [rule5-deductive-gen634]))
 
 ([movement_restrictions_death-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -212,7 +212,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule6-deductive-gen468]))
+   (deductive-rules [rule6-deductive-gen639]))
 
 ([coercion_abuse-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -248,7 +248,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule8_7-deductive-gen483] [rule7-deductive-gen473]))
+   (deductive-rules [rule10_7-deductive-gen666] [rule9_7-deductive-gen659] [rule7-deductive-gen644]))
 
 ([coercion_abuse_multiple_defendant-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -284,7 +284,79 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [rule8-deductive-gen478]))
+   (deductive-rules [rule10_8-deductive-gen667] [rule9_8-deductive-gen660] [rule8-deductive-gen649]))
+
+([coercion_abuse_on_duty-derived-class] of derived-class-inst
+   (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
+   (aliases rdfs:seeAlso rdfs:isDefinedBy)
+   (positive 0)
+   (negative 0)
+   (positive-derivator)
+   (negative-derivator)
+   (positive-support)
+   (negative-support)
+   (positive-overruled)
+   (negative-overruled)
+   (positive-defeated)
+   (negative-defeated)
+   (proof nil)
+   (uri nil)
+   (source rdf)
+   (lc:name)
+   (lc:defendant)
+   (lc:previously_convicted)
+   (lc:psychological_abuse_involved)
+   (lc:physical_abuse_involved)
+   (lc:financial_status)
+   (lc:injury_severity)
+   (lc:on_duty)
+   (lc:num_of_victims)
+   (lc:num_of_defendants)
+   (rdfs:isDefinedBy)
+   (rdf:type [rdfs:Class])
+   (rdf:value)
+   (rdfs:comment)
+   (rdfs:label coercion_abuse_on_duty)
+   (rdfs:seeAlso)
+   (rdfs:subClassOf [derived-class-inst])
+   (stratum 0)
+   (deductive-rules [rule10_9-deductive-gen668] [rule9-deductive-gen654]))
+
+([coercion_abuse_multiple_victims-derived-class] of derived-class-inst
+   (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
+   (aliases rdfs:seeAlso rdfs:isDefinedBy)
+   (positive 0)
+   (negative 0)
+   (positive-derivator)
+   (negative-derivator)
+   (positive-support)
+   (negative-support)
+   (positive-overruled)
+   (negative-overruled)
+   (positive-defeated)
+   (negative-defeated)
+   (proof nil)
+   (uri nil)
+   (source rdf)
+   (lc:name)
+   (lc:defendant)
+   (lc:previously_convicted)
+   (lc:psychological_abuse_involved)
+   (lc:physical_abuse_involved)
+   (lc:financial_status)
+   (lc:injury_severity)
+   (lc:on_duty)
+   (lc:num_of_victims)
+   (lc:num_of_defendants)
+   (rdfs:isDefinedBy)
+   (rdf:type [rdfs:Class])
+   (rdf:value)
+   (rdfs:comment)
+   (rdfs:label coercion_abuse_multiple_victims)
+   (rdfs:seeAlso)
+   (rdfs:subClassOf [derived-class-inst])
+   (stratum 0)
+   (deductive-rules [rule10-deductive-gen661]))
 
 ([min_imprisonment-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -320,7 +392,7 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [pn_coercion_abuse_multiple_defendant_min-deductive-gen498] [pn_coercion_abuse_min-deductive-gen496] [pn_movement_restrct_death_min-deductive-gen494] [pn_movement_restrct_life_threatening_min-deductive-gen492] [pn_movement_restrct_on_duty_min-deductive-gen490] [pn_movement_restrct_min-deductive-gen488] [pn_psy_abuse_on_duty_min-deductive-gen486] [pn_psy_abuse_min-deductive-gen484]))
+   (deductive-rules [pn_coercion_abuse_multiple_victims_min-deductive-gen687] [pn_coercion_abuse_on_duty_min-deductive-gen685] [pn_coercion_abuse_multiple_defendant_min-deductive-gen683] [pn_coercion_abuse_min-deductive-gen681] [pn_movement_restrct_death_min-deductive-gen679] [pn_movement_restrct_life_threatening_min-deductive-gen677] [pn_movement_restrct_on_duty_min-deductive-gen675] [pn_movement_restrct_min-deductive-gen673] [pn_psy_abuse_on_duty_min-deductive-gen671] [pn_psy_abuse_min-deductive-gen669]))
 
 ([max_imprisonment-derived-class] of derived-class-inst
    (class-refs rdfs:isDefinedBy rdfs:Resource rdf:type rdfs:Class rdfs:seeAlso rdfs:Resource rdfs:subClassOf rdfs:Class deductive-rules r-device-rule)
@@ -356,5 +428,5 @@
    (rdfs:seeAlso)
    (rdfs:subClassOf [derived-class-inst])
    (stratum 0)
-   (deductive-rules [pn_coercion_abuse_multiple_defendant_max-deductive-gen499] [pn_coercion_abuse_max-deductive-gen497] [pn_movement_restrct_death_max-deductive-gen495] [pn_movement_restrct_life_threatening_max-deductive-gen493] [pn_movement_restrct_on_duty_max-deductive-gen491] [pn_movement_restrct_max-deductive-gen489] [pn_psy_abuse_on_duty_max-deductive-gen487] [pn_psy_abuse_max-deductive-gen485]))
+   (deductive-rules [pn_coercion_abuse_multiple_victims_max-deductive-gen688] [pn_coercion_abuse_on_duty_max-deductive-gen686] [pn_coercion_abuse_multiple_defendant_max-deductive-gen684] [pn_coercion_abuse_max-deductive-gen682] [pn_movement_restrct_death_max-deductive-gen680] [pn_movement_restrct_life_threatening_max-deductive-gen678] [pn_movement_restrct_on_duty_max-deductive-gen676] [pn_movement_restrct_max-deductive-gen674] [pn_psy_abuse_on_duty_max-deductive-gen672] [pn_psy_abuse_max-deductive-gen670]))
 
