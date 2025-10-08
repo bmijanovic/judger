@@ -25,8 +25,8 @@ for _, row in df.iterrows():
         "criminalOffense": trunc(row["criminalOffense"]),
         "appliedProvisions": trunc(row["appliedProvisions"].split(";")),
         "verdict": trunc(row["verdict"] or "PRISON"),
-        "numDefendants": int(row.get("numDefendants", 0)),
-        "previouslyConvicted": row.get("previouslyConvicted", "False").lower() == "true",
+        "numDefendants": int(row.get("num_defendants", 0)),
+        "previouslyConvicted": row.get("previously_convicted", "False").lower() == "true",
         "awareOfIllegality": row.get("awareOfIllegality", "False").lower() == "true",
         "defendantFinancialStatus": trunc(row.get("defendantFinancialStatus", "POOR")),
         "numVictimsEndangered": int(row.get("numVictimsEndangered", 0)),
@@ -35,7 +35,8 @@ for _, row in df.iterrows():
         # Ako ima više opisa povreda, možeš parsirati niz; ovde šaljemo listu sa jednim stringom (truncirano)
         "injuryDescriptions": [trunc(row["injuryDescriptions"])] if row["injuryDescriptions"] else [],
         "weaponType": trunc(row["weaponType"]),
-        "injurySeverity": trunc(row["injurySeverity"])
+        "injurySeverity": trunc(row["injurySeverity"]),
+        "onDuty": row.get("onDuty", "False").lower() == "true",
     }
 
     resp = requests.post(url, headers=headers, json=payload)

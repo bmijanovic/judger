@@ -1,0 +1,37 @@
+
+DR-DEVICE: A Defeasible Logic Reasoner for the Semantic Web
+
+Programmed by Dr. Nick Bassiliades
+       Dept. of Informatics, Aristotle University of Thessaloniki, Greece
+in cooperation with Prof. Grigorios Antoniou
+       Institute of Computer Science, FO.R.T.H., Heraklion, Greece
+
+
+Local RULE access at Path: rulebase.ruleml
+
+
+Translating RuleML syntax to DR-DEVICE native syntax for file: rulebase
+
+
+Translating DR-DEVICE rules to R-DEVICE rules...
+Loading namespaces: facts 
+Parsing RDF file: facts.rdf
+
+
+ ok
+
+
+Loading R-DEVICE rules... ok
+
+Translating R-DEVICE rules... ok
+
+Running R-DEVICE rules...
+
+End of inferencing!
+
+Running R-DEVICE rules...
+
+End of inferencing!
+
+Extracting results... ok
+

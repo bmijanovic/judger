@@ -1,0 +1,11 @@
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#case> .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#name> "Case 01" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#defendant> "John Doe" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#num_of_victims> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#previously_convicted> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#psychological_abuse_involved> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#physical_abuse_involved> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#financial_status> "middle_income" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#injury_severity> "BLACKMAIL" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#on_duty> "false" .
+<http://informatika.ftn.uns.ac.rs/legal-case.rdf#movement_restrictions_case> <http://informatika.ftn.uns.ac.rs/legal-case.rdf#num_of_defendants> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .

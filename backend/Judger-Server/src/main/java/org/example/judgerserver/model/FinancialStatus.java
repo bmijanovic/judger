@@ -8,3 +8,11 @@ public enum FinancialStatus {
     WEALTHY,
     UNKNOWN,
 }
+
+/*
+
+
+
+
+
+ */

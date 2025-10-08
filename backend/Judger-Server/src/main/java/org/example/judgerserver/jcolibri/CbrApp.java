@@ -21,6 +21,7 @@ import org.example.judgerserver.dto.SimilarVerdict;
 import org.example.judgerserver.jcolibri.CaseDescription;
 import org.example.judgerserver.jcolibri.TabularSimilarity;
 import org.example.judgerserver.model.FinancialStatus;
+import org.example.judgerserver.model.InjurySeverity;
 import org.example.judgerserver.model.Verdict;
 import org.example.judgerserver.model.VerdictType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,6 +87,44 @@ public class CbrApp implements StandardCBRApplication {
                     int dist = Math.abs(financialOrder.get(s1) - financialOrder.get(s2));
                     double similarity = 1.0 - (dist / 4.0);  // normalizovana razlika
                     financialSim.setSimilarity(s1, s2, similarity);
+                }
+            }
+        }
+
+        TabularSimilarity injurySim = new TabularSimilarity(Arrays.asList(
+                InjurySeverity.BLACKMAIL.name(),
+                InjurySeverity.MINOR.name(),
+                InjurySeverity.LIFE_THREATENING.name(),
+                InjurySeverity.FATAL.name(),
+                InjurySeverity.NONE.name()
+        ));
+
+        String[] injuryStatuses = {
+                InjurySeverity.BLACKMAIL.name(),
+                InjurySeverity.MINOR.name(),
+                InjurySeverity.LIFE_THREATENING.name(),
+                InjurySeverity.FATAL.name(),
+                InjurySeverity.NONE.name()
+        };
+
+        Map<String, Integer> injuryOrder = Map.of(
+                "BLACKMAIL", 0,
+                "MINOR", 1,
+                "LIFE_THREATENING", 2,
+                "FATAL", 3,
+                "NONE", -1
+        );
+
+        for (String s1 : injuryStatuses) {
+            for (String s2 : injuryStatuses) {
+                if (s1.equals(s2)) {
+                    injurySim.setSimilarity(s1, s2, 1.0);
+                } else if (s1.equals("NONE") || s2.equals("NONE")) {
+                    injurySim.setSimilarity(s1, s2, 0.5);
+                } else {
+                    int dist = Math.abs(injuryOrder.get(s1) - injuryOrder.get(s2));
+                    double similarity = 1.0 - (dist / 4.0);  // normalizovana razlika
+                    injurySim.setSimilarity(s1, s2, similarity);
                 }
             }
         }

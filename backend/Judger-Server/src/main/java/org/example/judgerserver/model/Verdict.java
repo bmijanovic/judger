@@ -56,6 +56,10 @@ public class Verdict {
     @Column(name = "previously_convicted")
     private Boolean previouslyConvicted;
 
+    // "Da li je okrivljeni bio na duznosti?"
+    @Column(name = "on_duty")
+    private Boolean onDuty;
+
     // "Da li je okrivljeni bio svestan da krši zakon?"
     @Column(name = "aware_of_illegality")
     private Boolean awareOfIllegality;
