@@ -59,37 +59,25 @@ public class CbrApp implements StandardCBRApplication {
                 FinancialStatus.UNKNOWN.name()
         ));
 
-        String[] financialStatuses = {
-                FinancialStatus.POOR.name(),
-                FinancialStatus.LOW_INCOME.name(),
-                FinancialStatus.MIDDLE_INCOME.name(),
-                FinancialStatus.HIGH_INCOME.name(),
-                FinancialStatus.WEALTHY.name(),
-                FinancialStatus.UNKNOWN.name()
-        };
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.POOR), String.valueOf(FinancialStatus.LOW_INCOME), 0.85);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.POOR), String.valueOf(FinancialStatus.MIDDLE_INCOME), 0.5);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.POOR), String.valueOf(FinancialStatus.HIGH_INCOME), 0.25);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.POOR), String.valueOf(FinancialStatus.WEALTHY), 0.1);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.POOR), String.valueOf(FinancialStatus.UNKNOWN), 0.0);
 
-        Map<String, Integer> financialOrder = Map.of(
-                "POOR", 0,
-                "LOW_INCOME", 1,
-                "MIDDLE_INCOME", 2,
-                "HIGH_INCOME", 3,
-                "WEALTHY", 4,
-                "UNKNOWN", -1
-        );
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.LOW_INCOME), String.valueOf(FinancialStatus.MIDDLE_INCOME), 0.7);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.LOW_INCOME), String.valueOf(FinancialStatus.HIGH_INCOME), 0.4);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.LOW_INCOME), String.valueOf(FinancialStatus.WEALTHY), 0.2);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.LOW_INCOME), String.valueOf(FinancialStatus.UNKNOWN), 0.0);
 
-        for (String s1 : financialStatuses) {
-            for (String s2 : financialStatuses) {
-                if (s1.equals(s2)) {
-                    financialSim.setSimilarity(s1, s2, 1.0);
-                } else if (s1.equals("UNKNOWN") || s2.equals("UNKNOWN")) {
-                    financialSim.setSimilarity(s1, s2, 0.5);
-                } else {
-                    int dist = Math.abs(financialOrder.get(s1) - financialOrder.get(s2));
-                    double similarity = 1.0 - (dist / 4.0);  // normalizovana razlika
-                    financialSim.setSimilarity(s1, s2, similarity);
-                }
-            }
-        }
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.MIDDLE_INCOME), String.valueOf(FinancialStatus.HIGH_INCOME), 0.75);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.MIDDLE_INCOME), String.valueOf(FinancialStatus.WEALTHY), 0.5);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.MIDDLE_INCOME), String.valueOf(FinancialStatus.UNKNOWN), 0.0);
+
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.HIGH_INCOME), String.valueOf(FinancialStatus.WEALTHY), 0.85);
+        financialSim.setSimilarity(String.valueOf(FinancialStatus.UNKNOWN), String.valueOf(FinancialStatus.UNKNOWN), 0.0);
+
+        simConfig.addMapping(new Attribute("financialStatus", CaseDescription.class), financialSim);
 
         TabularSimilarity injurySim = new TabularSimilarity(Arrays.asList(
                 InjurySeverity.BLACKMAIL.name(),
@@ -99,76 +87,24 @@ public class CbrApp implements StandardCBRApplication {
                 InjurySeverity.NONE.name()
         ));
 
-        String[] injuryStatuses = {
-                InjurySeverity.BLACKMAIL.name(),
-                InjurySeverity.MINOR.name(),
-                InjurySeverity.LIFE_THREATENING.name(),
-                InjurySeverity.FATAL.name(),
-                InjurySeverity.NONE.name()
-        };
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.BLACKMAIL), String.valueOf(InjurySeverity.MINOR), 0.3);
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.BLACKMAIL), String.valueOf(InjurySeverity.LIFE_THREATENING), 0.1);
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.BLACKMAIL), String.valueOf(InjurySeverity.FATAL), 0.05);
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.BLACKMAIL), String.valueOf(InjurySeverity.NONE), 0.0);
 
-        Map<String, Integer> injuryOrder = Map.of(
-                "BLACKMAIL", 0,
-                "MINOR", 1,
-                "LIFE_THREATENING", 2,
-                "FATAL", 3,
-                "NONE", -1
-        );
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.MINOR), String.valueOf(InjurySeverity.LIFE_THREATENING), 0.6);
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.MINOR), String.valueOf(InjurySeverity.FATAL), 0.3);
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.MINOR), String.valueOf(InjurySeverity.NONE), 0.0);
 
-        for (String s1 : injuryStatuses) {
-            for (String s2 : injuryStatuses) {
-                if (s1.equals(s2)) {
-                    injurySim.setSimilarity(s1, s2, 1.0);
-                } else if (s1.equals("NONE") || s2.equals("NONE")) {
-                    injurySim.setSimilarity(s1, s2, 0.5);
-                } else {
-                    int dist = Math.abs(injuryOrder.get(s1) - injuryOrder.get(s2));
-                    double similarity = 1.0 - (dist / 4.0);  // normalizovana razlika
-                    injurySim.setSimilarity(s1, s2, similarity);
-                }
-            }
-        }
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.LIFE_THREATENING), String.valueOf(InjurySeverity.FATAL), 0.8);
+        injurySim.setSimilarity(String.valueOf(InjurySeverity.LIFE_THREATENING), String.valueOf(InjurySeverity.NONE), 0.0);
 
-        simConfig.addMapping(new Attribute("defendantFinancialStatus", CaseDescription.class), financialSim);
-
-
-        TabularSimilarity verdictSim = new TabularSimilarity(Arrays.asList(
-                VerdictType.PRISON.name(),
-                VerdictType.SUSPENDED.name(),
-                VerdictType.ACQUITTED.name()
-        ));
-
-        String[] verdicts = {
-                VerdictType.PRISON.name(),
-                VerdictType.SUSPENDED.name(),
-                VerdictType.ACQUITTED.name()
-        };
-
-        Map<String, Integer> verdictOrder = Map.of(
-                "PRISON", 0,
-                "SUSPENDED", 1,
-                "ACQUITTED", 2
-        );
-
-        for (String v1 : verdicts) {
-            for (String v2 : verdicts) {
-                if (v1.equals(v2)) {
-                    verdictSim.setSimilarity(v1, v2, 1.0);
-                } else {
-                    int dist = Math.abs(verdictOrder.get(v1) - verdictOrder.get(v2));
-                    double similarity = 1.0 - (dist / 2.0);  // 0–1 skala
-                    verdictSim.setSimilarity(v1, v2, similarity);
-                }
-            }
-        }
-
-        simConfig.addMapping(new Attribute("verdict", CaseDescription.class), verdictSim);
+        simConfig.addMapping(new Attribute("injurySeverity", CaseDescription.class), injurySim);
 
         simConfig.addMapping(new Attribute("numDefendants", CaseDescription.class), new Interval(5));
         simConfig.addMapping(new Attribute("numVictimsEndangered", CaseDescription.class), new Interval(5));
 
         TabularSimilarity boolSim = new TabularSimilarity(Arrays.asList("true", "false"));
-
         simConfig.addMapping(new Attribute("previouslyConvicted", CaseDescription.class), boolSim);
         simConfig.addMapping(new Attribute("awareOfIllegality", CaseDescription.class), boolSim);
         simConfig.addMapping(new Attribute("physicalAbuseInvolved", CaseDescription.class), boolSim);
