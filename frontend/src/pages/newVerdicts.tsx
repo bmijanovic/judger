@@ -9,34 +9,12 @@ import {
     Typography,
     IconButton,
 } from '@mui/material';
-import {useNavigate} from "react-router";
+import { useNavigate } from 'react-router';
 
 const verdictTypes = ['PRISON', 'SUSPENDED', 'ACQUITTED'];
 const financialStatuses = ['POOR','LOW_INCOME', 'MIDDLE_INCOME', 'HIGH_INCOME','WEALTHY','UNKNOWN'];
 const weaponTypes = ['NONE', 'BLUNT_OBJECT', 'SHARP_OBJECT', 'FIREARM', 'EXPLOSIVE', 'OTHER'];
 const injurySeverities = ['NONE', 'BLACKMAIL', 'MINOR', 'LIFE_THREATENING', 'FATAL'];
-
-
-interface FormErrors {
-    court?: string;
-    verdictNumber?: string;
-    date?: string;
-    judgeName?: string;
-    prosecutor?: string;
-    defendantName?: string;
-    criminalOffense?: string;
-    numDefendants?: string;
-    numVictimsEndangered?: string;
-    defendantFinancialStatus?: string;
-    injuryDescriptions?: string;
-    weaponType?: string;
-    injurySeverity?: string;
-}
-
-interface PatchErrors {
-    verdict?: string;
-    appliedProvisions?: string;
-}
 
 export const NewVerdicts = () => {
     const [formData, setFormData] = useState({
@@ -61,14 +39,15 @@ export const NewVerdicts = () => {
     });
 
     const navigate = useNavigate();
-    const [similarVerdicts, setSimilarVerdicts] = useState([]);
+    const [similarityVerdicts, setSimilarityVerdicts] = useState([]);
+    const [ruleVerdict, setRuleVerdict] = useState("");
     const [createdVerdictId, setCreatedVerdictId] = useState(null);
     const [patchData, setPatchData] = useState({
         verdict: '',
         appliedProvisions: []
     });
-    const [formErrors, setFormErrors] = useState<FormErrors>({});
-    const [patchErrors, setPatchErrors] = useState<PatchErrors>({});
+    const [formErrors, setFormErrors] = useState({});
+    const [patchErrors, setPatchErrors] = useState({});
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -76,7 +55,6 @@ export const NewVerdicts = () => {
             ...prev,
             [name]: type === 'checkbox' ? checked : value,
         }));
-
         setFormErrors((prev) => ({ ...prev, [name]: '' }));
     };
 
@@ -89,23 +67,13 @@ export const NewVerdicts = () => {
         setPatchErrors((prev) => ({ ...prev, [name]: '' }));
     };
 
-    // Validate New Verdict form
+    // Validation
     const validateForm = () => {
-        const errors = {};
+        const errors: any = {};
         const requiredFields = [
-            'court',
-            'verdictNumber',
-            'date',
-            'judgeName',
-            'prosecutor',
-            'defendantName',
-            'criminalOffense',
-            'numDefendants',
-            'numVictimsEndangered',
-            'defendantFinancialStatus',
-            'injuryDescriptions',
-            'weaponType',
-            'injurySeverity'
+            'court', 'verdictNumber', 'date', 'judgeName', 'prosecutor',
+            'defendantName', 'criminalOffense', 'numDefendants', 'numVictimsEndangered',
+            'defendantFinancialStatus', 'weaponType', 'injurySeverity'
         ];
 
         requiredFields.forEach((field) => {
@@ -114,39 +82,23 @@ export const NewVerdicts = () => {
             }
         });
 
-        if (formData.numDefendants && Number(formData.numDefendants) <= 0) {
+        if (formData.numDefendants && Number(formData.numDefendants) <= 0)
             errors.numDefendants = 'Must be at least 1';
-        }
-
-        if (formData.numVictimsEndangered && Number(formData.numVictimsEndangered) <= 0) {
+        if (formData.numVictimsEndangered && Number(formData.numVictimsEndangered) <= 0)
             errors.numVictimsEndangered = 'Must be at least 1';
-        }
 
-        if (
-            !formData.injuryDescriptions ||
-            formData.injuryDescriptions.length === 0 ||
-            formData.injuryDescriptions.some((p) => p.trim() === '')
-        ) {
-            errors.injuryDescriptions = 'All descriptions must be non-empty';
-        }
+        if (!formData.injuryDescriptions.length && formData.injurySeverity.toUpperCase() != "NONE")
+            errors.injuryDescriptions = 'Add at least one description';
 
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
     };
 
-    // Validate Patch (Finalize Verdict) form
     const validatePatchForm = () => {
-        const errors = {};
+        const errors: any = {};
         if (!patchData.verdict) errors.verdict = 'This field is required';
-
-        if (
-            !patchData.appliedProvisions ||
-            patchData.appliedProvisions.length === 0 ||
-            patchData.appliedProvisions.some((p) => p.trim() === '')
-        ) {
-            errors.appliedProvisions = 'All provisions must be non-empty';
-        }
-
+        if (!patchData.appliedProvisions.length)
+            errors.appliedProvisions = 'Add at least one provision';
         setPatchErrors(errors);
         return Object.keys(errors).length === 0;
     };
@@ -156,7 +108,6 @@ export const NewVerdicts = () => {
         if (!validateForm()) return;
 
         const payload = { ...formData };
-
         try {
             const res = await fetch('http://localhost:8080/verdicts', {
                 method: 'POST',
@@ -165,79 +116,52 @@ export const NewVerdicts = () => {
             });
 
             if (res.ok) {
-                const createdVerdict = await res.json();
-                setCreatedVerdictId(createdVerdict.id);
+                const created = await res.json();
+                setCreatedVerdictId(created.id);
                 alert('Verdict submitted successfully!');
-
                 setFormData({
-                    court: '',
-                    verdictNumber: '',
-                    date: '',
-                    judgeName: '',
-                    prosecutor: '',
-                    defendantName: '',
-                    criminalOffense: '',
-                    numDefendants: '',
-                    numVictimsEndangered: '',
-                    previouslyConvicted: false,
-                    awareOfIllegality: false,
-                    defendantFinancialStatus: '',
-                    physicalAbuseInvolved: false,
-                    psychologicalAbuseInvolved: false,
-                    injuryDescriptions: [],
-                    weaponType: '',
-                    injurySeverity: '',
-                    onDuty: false
+                    court: '', verdictNumber: '', date: '', judgeName: '',
+                    prosecutor: '', defendantName: '', criminalOffense: '',
+                    numDefendants: '', numVictimsEndangered: '',
+                    previouslyConvicted: false, awareOfIllegality: false,
+                    defendantFinancialStatus: '', physicalAbuseInvolved: false,
+                    psychologicalAbuseInvolved: false, injuryDescriptions: [],
+                    weaponType: '', injurySeverity: '', onDuty: false
                 });
                 setFormErrors({});
 
-                const simRes = await fetch(`http://localhost:8080/verdicts/${createdVerdict.id}/similar`);
-                if (simRes.ok) {
-                    const simData = await simRes.json();
-                    setSimilarVerdicts(simData);
-
-                    setPatchData({
-                        verdict: createdVerdict.verdict || '',
-                        appliedProvisions: createdVerdict.appliedProvisions || ''
-                    });
-                } else {
-                    console.warn('Could not fetch similar verdicts');
-                }
-            } else {
-                alert('Error submitting verdict.');
-            }
+                const simRes = await fetch(`http://localhost:8080/verdicts/${created.id}/similar`);
+                if (simRes.ok) setSimilarityVerdicts(await simRes.json());
+                const ruleRes = await fetch(`http://localhost:8080/verdicts/${created.id}/rule`);
+                if (ruleRes .ok) setRuleVerdict(await ruleRes.text());
+            } else alert('Error submitting verdict.');
         } catch (err) {
-            console.error('Error:', err);
+            console.error(err);
             alert('Submission failed.');
         }
     };
 
     const handlePatchSubmit = async () => {
-        if (!createdVerdictId) return;
-        if (!validatePatchForm()) return;
-
+        if (!createdVerdictId || !validatePatchForm()) return;
         try {
             const res = await fetch(`http://localhost:8080/verdicts/${createdVerdictId}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(patchData),
             });
-
             if (res.ok) {
-                const updated = await res.json();
-                alert('Verdict submited successfully!');
-                console.log('Updated verdict:', updated);
+                alert('Verdict finalized successfully!');
                 navigate('/');
-            } else {
-                alert('Error patching verdict.');
-            }
+            } else alert('Error patching verdict.');
         } catch (err) {
-            console.error('Error:', err);
+            console.error(err);
             alert('Patch failed.');
         }
     };
 
     const [newInjuryDesc, setNewInjuryDesc] = useState('');
+    const [newProvision, setNewProvision] = useState('');
+
     const handleAddInjuryDescription = () => {
         if (newInjuryDesc.trim() === '') return;
         setFormData((prev) => ({
@@ -246,14 +170,14 @@ export const NewVerdicts = () => {
         }));
         setNewInjuryDesc('');
     };
-    const handleRemoveInjuryDescription = (index) => {
+
+    const handleRemoveInjuryDescription = (i) => {
         setFormData((prev) => ({
             ...prev,
-            injuryDescriptions: prev.injuryDescriptions.filter((_, i) => i !== index),
+            injuryDescriptions: prev.injuryDescriptions.filter((_, index) => index !== i),
         }));
     };
 
-    const [newProvision, setNewProvision] = useState('');
     const handleAddProvision = () => {
         if (newProvision.trim() === '') return;
         setPatchData((prev) => ({
@@ -262,307 +186,135 @@ export const NewVerdicts = () => {
         }));
         setNewProvision('');
     };
-    const handleRemoveProvision = (index) => {
+
+    const handleRemoveProvision = (i) => {
         setPatchData((prev) => ({
             ...prev,
-            appliedProvisions: prev.appliedProvisions.filter((_, i) => i !== index),
+            appliedProvisions: prev.appliedProvisions.filter((_, index) => index !== i),
         }));
     };
 
     return (
-        <Box sx={{ maxWidth: 800, mx: 'auto', p: 3, color: 'black' }}>
+        <Box sx={{ maxWidth: 900, mx: 'auto', p: 4, color: 'black' }}>
+            {/* ==================== NEW VERDICT FORM ==================== */}
             {!createdVerdictId && (
-                <Box>
-                    <Typography variant="h5" gutterBottom>New Verdict</Typography>
+                <Box sx={{ p: 4, borderRadius: 3, boxShadow: 2, bgcolor: 'background.paper' }}>
+                    <Typography sx={{mb: 3}} variant="h5" gutterBottom>New Verdict</Typography>
                     <form onSubmit={handleSubmit}>
-                        <Box sx={{ display: 'flex', width: '100%', flexDirection: 'row' }}>
-                            <TextField
-                                sx={{ mr: 3 }}
-                                fullWidth
-                                label="Court"
-                                name="court"
-                                value={formData.court}
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.court}
-                                helperText={formErrors.court || ''}
-                            />
-                            <TextField
-                                sx={{ ml: 3 }}
-                                fullWidth
-                                label="Verdict Number"
-                                name="verdictNumber"
-                                value={formData.verdictNumber}
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.verdictNumber}
-                                helperText={formErrors.verdictNumber || ''}
-                            />
+                        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3 }}>
+                            <TextField label="Court" name="court" value={formData.court} onChange={handleChange}
+                                       error={!!formErrors.court} helperText={formErrors.court} fullWidth />
+                            <TextField label="Verdict Number" name="verdictNumber" value={formData.verdictNumber}
+                                       onChange={handleChange} error={!!formErrors.verdictNumber} helperText={formErrors.verdictNumber} fullWidth />
+                            <TextField type="date" label="Date" name="date" value={formData.date}
+                                       onChange={handleChange} InputLabelProps={{ shrink: true }}
+                                       error={!!formErrors.date} helperText={formErrors.date} fullWidth />
+                            <TextField label="Judge Name" name="judgeName" value={formData.judgeName}
+                                       onChange={handleChange} error={!!formErrors.judgeName} helperText={formErrors.judgeName} fullWidth />
+                            <TextField label="Prosecutor" name="prosecutor" value={formData.prosecutor}
+                                       onChange={handleChange} error={!!formErrors.prosecutor} helperText={formErrors.prosecutor} fullWidth />
+                            <TextField label="Defendant Name" name="defendantName" value={formData.defendantName}
+                                       onChange={handleChange} error={!!formErrors.defendantName} helperText={formErrors.defendantName} fullWidth />
                         </Box>
 
-                        <Box sx={{ display: 'flex', width: '100%', flexDirection: 'row' }}>
-                            <TextField
-                                sx={{ mr: 3 }}
-                                fullWidth
-                                type="date"
-                                label="Date"
-                                name="date"
-                                value={formData.date}
-                                onChange={handleChange}
-                                margin="normal"
-                                InputLabelProps={{ shrink: true }}
-                                error={!!formErrors.date}
-                                helperText={formErrors.date || ''}
-                            />
-                            <TextField
-                                sx={{ ml: 3 }}
-                                fullWidth
-                                label="Judge Name"
-                                name="judgeName"
-                                value={formData.judgeName}
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.judgeName}
-                                helperText={formErrors.judgeName || ''}
-                            />
-                        </Box>
+                        <TextField fullWidth sx={{ mt: 3 }} label="Criminal Offense" name="criminalOffense"
+                                   value={formData.criminalOffense} onChange={handleChange}
+                                   error={!!formErrors.criminalOffense} helperText={formErrors.criminalOffense} />
 
-                        <Box sx={{ display: 'flex', width: '100%', flexDirection: 'row' }}>
-                            <TextField
-                                sx={{ mr: 3 }}
-                                fullWidth
-                                label="Prosecutor"
-                                name="prosecutor"
-                                value={formData.prosecutor}
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.prosecutor}
-                                helperText={formErrors.prosecutor || ''}
-                            />
-                            <TextField
-                                sx={{ ml: 3 }}
-                                fullWidth
-                                label="Defendant Name"
-                                name="defendantName"
-                                value={formData.defendantName}
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.defendantName}
-                                helperText={formErrors.defendantName || ''}
-                            />
-                        </Box>
-
-                        <TextField
-                            fullWidth
-                            label="Criminal Offense"
-                            name="criminalOffense"
-                            value={formData.criminalOffense}
-                            onChange={handleChange}
-                            margin="normal"
-                            error={!!formErrors.criminalOffense}
-                            helperText={formErrors.criminalOffense || ''}
-                        />
-
-                        <Box sx={{ display: 'flex', width: '100%', flexDirection: 'row' }}>
-                            <Box sx={{ display: 'flex', mr: 3, width: '100%', gap: 3}}>
-                                <TextField
-                                    fullWidth
-                                    label="Number of Defendants"
-                                    type="number"
-                                    name="numDefendants"
-                                    value={formData.numDefendants}
-                                    onChange={handleChange}
-                                    margin="normal"
-                                    slotProps={{ htmlInput: { min: 1 } }}
-                                    error={!!formErrors.numDefendants}
-                                    helperText={formErrors.numDefendants || ''}
-                                />
-
-                                <TextField
-                                    fullWidth
-                                    label="Number of Victims"
-                                    type="number"
-                                    name="numVictimsEndangered"
-                                    value={formData.numVictimsEndangered}
-                                    onChange={handleChange}
-                                    margin="normal"
-                                    slotProps={{ htmlInput: { min: 1 } }}
-                                    error={!!formErrors.numVictimsEndangered}
-                                    helperText={formErrors.numVictimsEndangered || ''}
-                                />
-                            </Box>
-
-                            <TextField
-                                sx={{ ml: 3 }}
-                                select
-                                fullWidth
-                                label="Financial Status"
-                                name="defendantFinancialStatus"
-                                value={formData.defendantFinancialStatus}
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.defendantFinancialStatus}
-                                helperText={formErrors.defendantFinancialStatus || ''}
-                            >
+                        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 3, mt: 3 }}>
+                            <TextField label="Number of Defendants" type="number" name="numDefendants"
+                                       value={formData.numDefendants} onChange={handleChange}
+                                       error={!!formErrors.numDefendants} helperText={formErrors.numDefendants} />
+                            <TextField label="Number of Victims" type="number" name="numVictimsEndangered"
+                                       value={formData.numVictimsEndangered} onChange={handleChange}
+                                       error={!!formErrors.numVictimsEndangered} helperText={formErrors.numVictimsEndangered} />
+                            <TextField select label="Financial Status" name="defendantFinancialStatus"
+                                       value={formData.defendantFinancialStatus} onChange={handleChange}
+                                       error={!!formErrors.defendantFinancialStatus} helperText={formErrors.defendantFinancialStatus}>
                                 {financialStatuses.map((s) => (
-                                    <MenuItem key={s} value={s}>{s}</MenuItem>
+                                    <MenuItem key={s} value={s}>{s.replace("_", " ")}</MenuItem>
                                 ))}
                             </TextField>
                         </Box>
 
-                        <Box
-                            sx={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(2, 1fr)',
-                                gap: 1,
-                                mt: 1,
-                            }}
-                        >
-                            <FormControlLabel
-                                control={<Checkbox checked={formData.physicalAbuseInvolved} onChange={handleChange} name="physicalAbuseInvolved" />}
-                                label="Physical Abuse Involved"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox checked={formData.psychologicalAbuseInvolved} onChange={handleChange} name="psychologicalAbuseInvolved" />}
-                                label="Psychological Abuse Involved"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox checked={formData.previouslyConvicted} onChange={handleChange} name="previouslyConvicted" />}
-                                label="Previously Convicted"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox checked={formData.awareOfIllegality} onChange={handleChange} name="awareOfIllegality" />}
-                                label="Aware of Illegality"
-                            />
-                            <FormControlLabel
-                                control={<Checkbox checked={formData.onDuty} onChange={handleChange} name="onDuty" />}
-                                label="On Duty"
-                            />
+                        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2, mt: 3 }}>
+                            <FormControlLabel control={<Checkbox checked={formData.physicalAbuseInvolved}
+                                                                 onChange={handleChange} name="physicalAbuseInvolved" />} label="Physical Abuse" />
+                            <FormControlLabel control={<Checkbox checked={formData.psychologicalAbuseInvolved}
+                                                                 onChange={handleChange} name="psychologicalAbuseInvolved" />} label="Psychological Abuse" />
+                            <FormControlLabel control={<Checkbox checked={formData.previouslyConvicted}
+                                                                 onChange={handleChange} name="previouslyConvicted" />} label="Previously Convicted" />
+                            <FormControlLabel control={<Checkbox checked={formData.awareOfIllegality}
+                                                                 onChange={handleChange} name="awareOfIllegality" />} label="Aware of Illegality" />
+                            <FormControlLabel control={<Checkbox checked={formData.onDuty}
+                                                                 onChange={handleChange} name="onDuty" />} label="On Duty" />
                         </Box>
 
-
-                        <Box sx={{ display: 'flex', width: '100%', flexDirection: 'row' }}>
-                            <TextField
-                                sx={{ mr: 3 }}
-                                select
-                                fullWidth
-                                label="Weapon Type"
-                                name="weaponType"
-                                value={formData.weaponType}
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.weaponType}
-                                helperText={formErrors.weaponType || ''}
-                            >
-                                {weaponTypes.map((s) => (
-                                    <MenuItem key={s} value={s}>{s}</MenuItem>
-                                ))}
+                        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3, mt: 3 }}>
+                            <TextField select label="Weapon Type" name="weaponType" value={formData.weaponType}
+                                       onChange={handleChange} error={!!formErrors.weaponType} helperText={formErrors.weaponType}>
+                                {weaponTypes.map((s) => <MenuItem key={s} value={s}>{s.replace("_", " ")}</MenuItem>)}
                             </TextField>
-
-                            <TextField
-                                sx={{ ml: 3 }}
-                                select
-                                fullWidth
-                                label="Ijury Severity"
-                                name="injurySeverity"
-                                value={formData.injurySeverity }
-                                onChange={handleChange}
-                                margin="normal"
-                                error={!!formErrors.injurySeverity }
-                                helperText={formErrors.injurySeverity  || ''}
-                            >
-                                {injurySeverities.map((s) => (
-                                    <MenuItem key={s} value={s}>{s}</MenuItem>
-                                ))}
+                            <TextField select label="Injury Severity" name="injurySeverity" value={formData.injurySeverity}
+                                       onChange={handleChange} error={!!formErrors.injurySeverity} helperText={formErrors.injurySeverity}>
+                                {injurySeverities.map((s) => <MenuItem key={s} value={s}>{s.replace("_", " ")}</MenuItem>)}
                             </TextField>
                         </Box>
 
-                        <Box sx={{ mt: 2 }}>
-                            <Typography variant="subtitle1">Injury Descriptions</Typography>
+                        {/* INJURY DESCRIPTIONS */}
+                        <Box sx={{ mt: 4, p: 3, borderRadius: 2, bgcolor: '#fafafa' }}>
+                            <Typography variant="subtitle1" gutterBottom>Injury Descriptions</Typography>
                             <Box sx={{ display: 'flex', gap: 1, mt: 1 }}>
-                                <TextField
-                                    fullWidth
-                                    label="Add Injury Description"
-                                    value={newInjuryDesc}
-                                    error={!!formErrors.injuryDescriptions}
-                                    onChange={(e) => setNewInjuryDesc(e.target.value)}
-                                />
-                                <Button variant="contained" onClick={handleAddInjuryDescription}>
-                                    Add
-                                </Button>
+                                <TextField fullWidth label="Add Injury Description"
+                                           value={newInjuryDesc} onChange={(e) => setNewInjuryDesc(e.target.value)}
+                                           error={!!formErrors.injuryDescriptions} helperText={formErrors.injuryDescriptions} />
+                                <Button variant="contained" onClick={handleAddInjuryDescription}>Add</Button>
                             </Box>
 
-                            {/* Display list of added descriptions */}
-                            <Box sx={{ mt: 1 }}>
+                            <Box sx={{ mt: 2 }}>
                                 {formData.injuryDescriptions.length === 0 ? (
-                                    <Typography variant="body2" color="text.secondary">
-                                        No injury descriptions added yet.
-                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">No injury descriptions yet.</Typography>
                                 ) : (
                                     formData.injuryDescriptions.map((desc, i) => (
-                                        <Box
-                                            key={i}
-                                            sx={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'space-between',
-                                                border: '1px solid #ccc',
-                                                borderRadius: 1,
-                                                p: 1,
-                                                mb: 0.5,
-                                                gap: 1,
-                                            }}
-                                        >
-                                            <Typography
-                                                sx={{
-                                                    flex: 1,
-                                                    wordBreak: 'break-word',
-                                                    overflowWrap: 'anywhere',
-                                                    textAlign: 'left',
-                                                }}
-                                            >
-                                                {desc}
-                                            </Typography>
-
-                                            <IconButton
-                                                color="error"
-                                                onClick={() => handleRemoveInjuryDescription(i)}
-                                                sx={{ flexShrink: 0 }}
-                                            >
-                                                ❌
-                                            </IconButton>
+                                        <Box key={i} sx={{
+                                            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                            border: '1px solid #ddd', borderRadius: 1, p: 1, mb: 0.5, bgcolor: 'white'
+                                        }}>
+                                            <Typography sx={{ flex: 1 }}>{desc}</Typography>
+                                            <IconButton color="error" onClick={() => handleRemoveInjuryDescription(i)}>❌</IconButton>
                                         </Box>
                                     ))
                                 )}
                             </Box>
                         </Box>
 
-                        <Button type="submit" variant="contained" sx={{ mt: 3 }}>Initialize Verdict</Button>
+                        <Button type="submit" variant="contained" color="primary" sx={{ mt: 4, px: 4, borderRadius: 2 }}>
+                            Initialize Verdict
+                        </Button>
                     </form>
                 </Box>
             )}
 
-            {similarVerdicts.length > 0 && (
-                <Box sx={{ mt: 5 }}>
+            {/* SIMILAR VERDICTS */}
+            {similarityVerdicts.length > 0 && (
+                <Box sx={{ mt: 5, p: 3, borderRadius: 2, boxShadow: 1, bgcolor: 'background.paper' }}>
                     <Typography variant="h6" gutterBottom>Similar Verdicts</Typography>
-                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                        <thead>
+                    <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0 }}>
+                        <thead style={{ backgroundColor: '#f5f5f5' }}>
                         <tr>
-                            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Verdict Number</th>
-                            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Court</th>
-                            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Financial Status</th>
-                            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Verdict Type</th>
-                            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Similarity</th>
+                            {['Verdict Number', 'Court', 'Financial Status', 'Verdict Type', 'Similarity'].map((h) => (
+                                <th key={h} style={{ borderBottom: '2px solid #ccc', padding: '8px', textAlign: 'left' }}>{h}</th>
+                            ))}
                         </tr>
                         </thead>
                         <tbody>
-                        {similarVerdicts.map((v) => (
-                            <tr key={v.id}>
-                                <td style={{ border: '1px solid #ccc', padding: '8px' }}>{v.verdictNumber}</td>
-                                <td style={{ border: '1px solid #ccc', padding: '8px' }}>{v.court}</td>
-                                <td style={{ border: '1px solid #ccc', padding: '8px' }}>{v.defendantFinancialStatus}</td>
-                                <td style={{ border: '1px solid #ccc', padding: '8px' }}>{v.verdict}</td>
-                                <td style={{ border: '1px solid #ccc', padding: '8px' }}>{(v.similarity * 100).toFixed(2)}%</td>
+                        {similarityVerdicts.map((v, i) => (
+                            <tr key={v.id} style={{ backgroundColor: i % 2 ? '#fafafa' : 'white' }}>
+                                <td style={{ padding: '8px', borderBottom: '1px solid #ddd' }}>{v.verdictNumber}</td>
+                                <td style={{ padding: '8px', borderBottom: '1px solid #ddd' }}>{v.court}</td>
+                                <td style={{ padding: '8px', borderBottom: '1px solid #ddd' }}>{v.defendantFinancialStatus.replace("_", " ")}</td>
+                                <td style={{ padding: '8px', borderBottom: '1px solid #ddd' }}>{v.verdict}</td>
+                                <td style={{ padding: '8px', borderBottom: '1px solid #ddd' }}>{(v.similarity * 100).toFixed(2)}%</td>
                             </tr>
                         ))}
                         </tbody>
@@ -570,88 +322,56 @@ export const NewVerdicts = () => {
                 </Box>
             )}
 
-            {createdVerdictId && (
-                <Box sx={{ mt: 3 }}>
-                    <Typography variant="h6" gutterBottom>Finalize Verdict</Typography>
+            {/* RULE-BASED VERDICT */}
+            {ruleVerdict && (
+                <Box sx={{ mt: 5, p: 3, borderRadius: 2, bgcolor: '#f9f9ff', border: '1px solid #e0e0ff' }}>
+                    <Typography variant="h6" gutterBottom color="primary">
+                        Rule Based Verdict Recommendation
+                    </Typography>
+                    <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
+                        {ruleVerdict}
+                    </Typography>
+                </Box>
+            )}
 
-                    <TextField
-                        sx={{ mr: 3 }}
-                        select
-                        fullWidth
-                        label="Verdict Type"
-                        name="verdict"
-                        value={patchData.verdict}
-                        onChange={handlePatchChange}
-                        margin="normal"
-                        error={!!patchErrors.verdict}
-                        helperText={patchErrors.verdict || ''}
-                    >
-                        {verdictTypes.map((v) => (
-                            <MenuItem key={v} value={v}>{v}</MenuItem>
-                        ))}
+            {/* FINALIZE VERDICT */}
+            {createdVerdictId && (
+                <Box sx={{ mt: 5, p: 4, borderRadius: 3, boxShadow: 2, bgcolor: 'background.paper' }}>
+                    <Typography variant="h6" gutterBottom>Finalize Verdict</Typography>
+                    <TextField select fullWidth label="Verdict Type" name="verdict" value={patchData.verdict}
+                               onChange={handlePatchChange} error={!!patchErrors.verdict} helperText={patchErrors.verdict}>
+                        {verdictTypes.map((v) => <MenuItem key={v} value={v}>{v.replace("_", " ")}</MenuItem>)}
                     </TextField>
 
-                    <Box sx={{ mt: 2 }}>
+                    <Box sx={{ mt: 3 }}>
                         <Typography variant="subtitle1">Applied Provisions</Typography>
-
                         <Box sx={{ display: 'flex', gap: 1, mt: 1 }}>
-                            <TextField
-                                fullWidth
-                                label="Add Provision"
-                                value={newProvision}
-                                onChange={(e) => setNewProvision(e.target.value)}
-                                error={!!patchErrors.appliedProvisions}
-                                helperText={patchErrors.appliedProvisions || ''}
-                            />
-                            <Button variant="contained" onClick={handleAddProvision}>
-                                Add
-                            </Button>
+                            <TextField fullWidth label="Add Provision" value={newProvision}
+                                       onChange={(e) => setNewProvision(e.target.value)} error={!!patchErrors.appliedProvisions}
+                                       helperText={patchErrors.appliedProvisions} />
+                            <Button variant="contained" onClick={handleAddProvision}>Add</Button>
                         </Box>
 
-                        {/* Display added provisions */}
-                        <Box sx={{ mt: 1 }}>
+                        <Box sx={{ mt: 2 }}>
                             {patchData.appliedProvisions.length === 0 ? (
-                                <Typography variant="body2" color="text.secondary">
-                                    No provisions added yet.
-                                </Typography>
+                                <Typography variant="body2" color="text.secondary">No provisions added yet.</Typography>
                             ) : (
                                 patchData.appliedProvisions.map((prov, i) => (
-                                    <Box
-                                        key={i}
-                                        sx={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'flex-start',
-                                            border: '1px solid #ccc',
-                                            borderRadius: 1,
-                                            p: 1,
-                                            mb: 0.5,
-                                            gap: 1,
-                                        }}
-                                    >
-                                        <Typography
-                                            sx={{
-                                                flex: 1,
-                                                wordBreak: 'break-word',
-                                                overflowWrap: 'anywhere',
-                                            }}
-                                        >
-                                            {prov}
-                                        </Typography>
-                                        <IconButton
-                                            color="error"
-                                            onClick={() => handleRemoveProvision(i)}
-                                            sx={{ flexShrink: 0 }}
-                                        >
-                                            ❌
-                                        </IconButton>
+                                    <Box key={i} sx={{
+                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                        border: '1px solid #ddd', borderRadius: 1, p: 1, mb: 0.5, bgcolor: 'white'
+                                    }}>
+                                        <Typography sx={{ flex: 1 }}>{prov}</Typography>
+                                        <IconButton color="error" onClick={() => handleRemoveProvision(i)}>❌</IconButton>
                                     </Box>
                                 ))
                             )}
                         </Box>
                     </Box>
 
-                    <Button variant="contained" sx={{ mt: 2 }} onClick={handlePatchSubmit}>Submit Verdict</Button>
+                    <Button onClick={handlePatchSubmit} variant="contained" color="success" sx={{ mt: 4, px: 4, borderRadius: 2 }}>
+                        Finalize Verdict
+                    </Button>
                 </Box>
             )}
         </Box>

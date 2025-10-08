@@ -86,15 +86,20 @@ export const Verdicts = () => {
                             ['Prosecutor', selectedVerdict.prosecutor],
                             ['Defendant(s)', selectedVerdict.defendantName],
                             ['Criminal Offense', selectedVerdict.criminalOffense],
-                            ['Applied Provisions', selectedVerdict.appliedProvisions],
-                            ['Verdict Type', selectedVerdict.verdict],
+                            [
+                                'Applied Provisions',
+                                <Typography sx={{ ml: 2 }}>
+                                    {selectedVerdict.appliedProvisions.join(', ')}
+                                </Typography>,
+                            ],
+                            ['Verdict Type', selectedVerdict.verdict.replace("_", " ")],
                             ['Number of Defendants', selectedVerdict.numDefendants],
                             [
                                 'Previously Convicted',
                                 selectedVerdict.previouslyConvicted ? 'Yes' : 'No',
                             ],
                             ['Aware of Illegality', selectedVerdict.awareOfIllegality ? 'Yes' : 'No'],
-                            ['Defendant Financial Status', selectedVerdict.defendantFinancialStatus],
+                            ['Defendant Financial Status', selectedVerdict.defendantFinancialStatus.replace("_", " ")],
                             ['Number of Victims Endangered', selectedVerdict.numVictimsEndangered],
                             [
                                 'Physical Abuse Involved',
@@ -104,8 +109,8 @@ export const Verdicts = () => {
                                 'Psychological Abuse Involved',
                                 selectedVerdict.psychologicalAbuseInvolved ? 'Yes' : 'No',
                             ],
-                            ['Weapon Type', selectedVerdict.weaponType],
-                            ['Injury Severity', selectedVerdict.injurySeverity],
+                            ['Weapon Type', selectedVerdict.weaponType.replace("_", " ")],
+                            ['Injury Severity', selectedVerdict.injurySeverity.replace("_", " ")],
                             [
                                 'Injury Descriptions',
                                 <ul style={{ paddingLeft: '20px', margin: 0 }}>
