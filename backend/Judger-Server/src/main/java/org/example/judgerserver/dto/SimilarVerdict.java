@@ -30,15 +30,15 @@ public class SimilarVerdict {
     private Set<String> appliedProvisions;
     private VerdictType verdict;
     private Integer numDefendants;
-    private Boolean previouslyConvicted;
-    private Boolean awareOfIllegality;
-    private FinancialStatus defendantFinancialStatus;
+    private String previouslyConvicted;
+    private String awareOfIllegality;
+    private String defendantFinancialStatus;
     private Integer numVictimsEndangered;
-    private Boolean physicalAbuseInvolved;
-    private Boolean psychologicalAbuseInvolved;
+    private String physicalAbuseInvolved;
+    private String psychologicalAbuseInvolved;
     private Set<String> injuryDescriptions;
     private WeaponType weaponType;
-    private InjurySeverity injurySeverity;
+    private String injurySeverity;
 
     private double similarity;
 
@@ -82,7 +82,7 @@ public class SimilarVerdict {
                 numDefendants + separator +
                 previouslyConvicted + separator +
                 awareOfIllegality + separator +
-                (defendantFinancialStatus != null ? defendantFinancialStatus.name().toLowerCase() : "unknown") + separator +
+                (defendantFinancialStatus != null ? defendantFinancialStatus.toLowerCase() : "unknown") + separator +
                 numVictimsEndangered + separator +
                 physicalAbuseInvolved + separator +
                 psychologicalAbuseInvolved + separator +

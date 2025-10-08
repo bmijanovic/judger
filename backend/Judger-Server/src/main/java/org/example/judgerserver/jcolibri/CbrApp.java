@@ -77,7 +77,7 @@ public class CbrApp implements StandardCBRApplication {
         financialSim.setSimilarity(String.valueOf(FinancialStatus.HIGH_INCOME), String.valueOf(FinancialStatus.WEALTHY), 0.85);
         financialSim.setSimilarity(String.valueOf(FinancialStatus.UNKNOWN), String.valueOf(FinancialStatus.UNKNOWN), 0.0);
 
-        simConfig.addMapping(new Attribute("financialStatus", CaseDescription.class), financialSim);
+        simConfig.addMapping(new Attribute("defendantFinancialStatus", CaseDescription.class), financialSim);
 
         TabularSimilarity injurySim = new TabularSimilarity(Arrays.asList(
                 InjurySeverity.BLACKMAIL.name(),
@@ -109,6 +109,7 @@ public class CbrApp implements StandardCBRApplication {
         simConfig.addMapping(new Attribute("awareOfIllegality", CaseDescription.class), boolSim);
         simConfig.addMapping(new Attribute("physicalAbuseInvolved", CaseDescription.class), boolSim);
         simConfig.addMapping(new Attribute("psychologicalAbuseInvolved", CaseDescription.class), boolSim);
+
 
     }
 
@@ -156,6 +157,7 @@ public class CbrApp implements StandardCBRApplication {
 
             CaseDescription cd = new CaseDescription(data);
             query.setDescription(cd);
+            recommender.cycle(query);
             recommender.postCycle();
             return ((CbrApp) recommender).getSimilarCases(query);
 

@@ -28,16 +28,16 @@ public class CaseDescription implements CaseComponent {
     private VerdictType verdict;
 
     private Integer numDefendants;
-    private Boolean previouslyConvicted;
-    private Boolean awareOfIllegality;
-    private FinancialStatus defendantFinancialStatus;
+    private String previouslyConvicted;
+    private String awareOfIllegality;
+    private String defendantFinancialStatus;
     private Integer numVictimsEndangered;
-    private Boolean physicalAbuseInvolved;
-    private Boolean psychologicalAbuseInvolved;
+    private String physicalAbuseInvolved;
+    private String psychologicalAbuseInvolved;
 
     private Set<String> injuryDescriptions;
     private WeaponType weaponType;
-    private InjurySeverity injurySeverity;
+    private String injurySeverity;
 
     public CaseDescription(Verdict v) {
         this.id = v.getId();
@@ -52,15 +52,15 @@ public class CaseDescription implements CaseComponent {
         this.verdict = v.getVerdict();
 
         this.numDefendants = v.getNumDefendants();
-        this.previouslyConvicted = v.getPreviouslyConvicted();
-        this.awareOfIllegality = v.getAwareOfIllegality();
-        this.defendantFinancialStatus = v.getDefendantFinancialStatus();
+        this.previouslyConvicted = v.getPreviouslyConvicted().toString();
+        this.awareOfIllegality = v.getAwareOfIllegality().toString();
+        this.defendantFinancialStatus = v.getDefendantFinancialStatus().name();
         this.numVictimsEndangered = v.getNumVictimsEndangered();
-        this.physicalAbuseInvolved = v.getPhysicalAbuseInvolved();
-        this.psychologicalAbuseInvolved = v.getPsychologicalAbuseInvolved();
+        this.physicalAbuseInvolved = v.getPhysicalAbuseInvolved().toString();
+        this.psychologicalAbuseInvolved = v.getPsychologicalAbuseInvolved().toString();
         this.injuryDescriptions = v.getInjuryDescriptions();
         this.weaponType = v.getWeaponType();
-        this.injurySeverity = v.getInjurySeverity();
+        this.injurySeverity = v.getInjurySeverity().name();
     }
 
     private String truncate(String s) {
